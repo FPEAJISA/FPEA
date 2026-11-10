@@ -1,0 +1,23 @@
+Compared modules: 400, functions: 8429
+Agree 8093 (96.01%), disagree 336 (3.99%)
+
+Confusion matrix (naming rule, debug-based) → count
+  both contamination          : 986
+  both normal                 : 7107
+  naming only (over-removal)  : 332
+  debug only (missed)         : 4
+
+[Examples flagged only by the naming rule — may actually be source functions]
+   rcu_lock_release                                          src line 271
+   rcu_lock_acquire                                          src line 266
+   __traceiter_musb_urb_rx                                   src line 216
+   __bpf_trace_musb_regw                                     src line 89
+   trace_raw_output_musb_regw                                src line 89
+   trace_event_raw_event_musb_isr                            src line 153
+   perf_trace_musb_regl                                      src line 121
+   __traceiter_musb_log                                      src line 26
+[Contamination only by the debug criterion — compiler symbols missed by the naming rule]
+   exit_boot_func                                            no DISubprogram
+   efi_pe_entry                                              no DISubprogram
+   efi_exit                                                  no DISubprogram
+   efi_main                                                  no DISubprogram

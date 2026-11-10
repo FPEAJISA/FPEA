@@ -1,0 +1,212 @@
+{
+ "G085": {
+  "fn": "dcn10_enable_stream_timing",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:101",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:101",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:101",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G105": {
+  "fn": "dcn10_disable_plane",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:55",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:55",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:55",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G120": {
+  "fn": "r100_pll_rreg",
+  "unit_reg_loc": "drivers/gpu/drm/radeon/radeon_asic.c:103",
+  "A": "drivers/gpu/drm/radeon/radeon_asic.c:103",
+  "B": "drivers/gpu/drm/radeon/radeon_asic.c:103",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_radeon_radeon.bc.json",
+    [
+     "C4"
+    ]
+   ]
+  ]
+ },
+ "G141": {
+  "fn": "gm107_therm_new",
+  "unit_reg_loc": "drivers/gpu/drm/nouveau/nvkm/engine/device/base.c:1962",
+  "A": "drivers/gpu/drm/nouveau/nvkm/engine/device/base.c:1962",
+  "B": "drivers/gpu/drm/nouveau/nvkm/engine/device/base.c:1962",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_nouveau_nouveau.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G154": {
+  "fn": "dcn10_dpp_pg_control",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:113",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:113",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:113",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G194": {
+  "fn": "rtl_8723e_c2h_command_handle",
+  "unit_reg_loc": "drivers/net/wireless/realtek/rtlwifi/rtl8723ae/sw.c:231",
+  "A": "drivers/net/wireless/realtek/rtlwifi/rtl8723ae/sw.c:231",
+  "B": "drivers/net/wireless/realtek/rtlwifi/rtl8723ae/sw.c:231",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_net_wireless_realtek_rtlwifi_rtl8723ae_rtl8723ae.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G219": {
+  "fn": "rvt_alloc_pd",
+  "unit_reg_loc": "drivers/infiniband/sw/rdmavt/vt.c:331",
+  "A": "drivers/infiniband/sw/rdmavt/vt.c:331",
+  "B": "drivers/infiniband/sw/rdmavt/vt.c:331",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_infiniband_sw_rdmavt_rdmavt.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G260": {
+  "fn": "avc_remote_ctrl_work",
+  "unit_reg_loc": "drivers/media/firewire/firedtv-fw.c:271",
+  "A": "drivers/media/firewire/firedtv-fw.c:271",
+  "B": "drivers/media/firewire/firedtv-fw.c:271",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_media_firewire_firedtv.bc.json",
+    [
+     "C4"
+    ]
+   ]
+  ]
+ },
+ "G266": {
+  "fn": "dcn10_unblank_stream",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:51",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:51",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:51",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G295": {
+  "fn": "vsc85xx_link_change_notify",
+  "unit_reg_loc": "drivers/net/phy/mscc/mscc_main.c:2659",
+  "A": "drivers/net/phy/mscc/mscc_main.c:2659",
+  "B": "drivers/net/phy/mscc/mscc_main.c:2659",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_net_phy_mscc_mscc.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G361": {
+  "fn": "dcn10_prepare_bandwidth",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:59",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:59",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:59",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G372": {
+  "fn": "dcn10_enable_power_gating_plane",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:112",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:112",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:112",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G386": {
+  "fn": "dcn10_set_cursor_attribute",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:74",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:74",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:74",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G428": {
+  "fn": "nvkm_i2c_bit_xfer",
+  "unit_reg_loc": "drivers/gpu/drm/nouveau/nvkm/subdev/i2c/busnv04.c:79",
+  "A": "drivers/gpu/drm/nouveau/nvkm/subdev/i2c/busgf119.c:79",
+  "B": "drivers/gpu/drm/nouveau/nvkm/subdev/i2c/busnv04.c:79",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_nouveau_nouveau.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ },
+ "G439": {
+  "fn": "dcn10_hubp_pg_control",
+  "unit_reg_loc": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:114",
+  "A": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:114",
+  "B": "drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:114",
+  "link_fpea": [
+   [
+    "_home_user_linux_bc_linked-nosan14-5.17.11_modules_drivers_gpu_drm_amd_amdgpu_amdgpu.bc.json",
+    [
+     "C1"
+    ]
+   ]
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "designated": 8964,
+ "has_fn": 3944,
+ "with_header": 7183,
+ "index_same": 7147,
+ "semantic_hit": 3341,
+ "no_header": 1781,
+ "index_moved": 36,
+ "wrong_field_fn": 23,
+ "intended_missed": 4,
+ "units": 15913,
+ "version": "5.19.17",
+ "header_col": "5.19",
+ "rate_has_fn": 44.0,
+ "rate_semantic_within_header": 46.51
+}

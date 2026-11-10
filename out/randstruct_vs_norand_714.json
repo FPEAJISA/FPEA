@@ -1,0 +1,16 @@
+{
+ "rand": {
+  "FPEA": 163919,
+  "defined": 301306
+ },
+ "norand": {
+  "FPEA": 163919,
+  "defined": 301291
+ },
+ "common": 19649,
+ "identical_units": 19649,
+ "differ_units": 0,
+ "only_rand": 0,
+ "only_norand": 0,
+ "differ_list": []
+}

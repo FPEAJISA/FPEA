@@ -1,0 +1,11 @@
+{
+ "syscalls": 362,
+ "ioctl_uapi": 1914,
+ "ioctl_all": 2229,
+ "fops_def": 1734,
+ "ops_def": 3831,
+ "net_proto": 127,
+ "module_init": 2053,
+ "module_exit": 2462,
+ "request_irq": 3488
+}

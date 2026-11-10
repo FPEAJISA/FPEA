@@ -1,0 +1,305 @@
+{
+ "lost": {
+  "WRITE_HDR": 356,
+  "MY_IOCTL": 150,
+  "INT_HANDLER_T": 38,
+  "READ_HDR": 369,
+  "IOCTL_CAND": 38
+ },
+ "gained": {
+  "IOCTL_CAND": 36,
+  "INT_HANDLER_T": 52,
+  "MY_IOCTL": 10,
+  "WRITE_HDR": 17,
+  "READ_HDR": 12
+ },
+ "cause": {
+  "WRITE_HDR|A_not_defined": 22,
+  "MY_IOCTL|B_no_initializer": 138,
+  "READ_HDR|B_no_initializer": 356,
+  "WRITE_HDR|B_no_initializer": 331,
+  "IOCTL_CAND|A_not_defined": 37,
+  "INT_HANDLER_T|A_not_defined": 29,
+  "MY_IOCTL|A_not_defined": 8,
+  "MY_IOCTL|C_index_shift": 3,
+  "READ_HDR|C_index_shift": 3,
+  "WRITE_HDR|C_index_shift": 3,
+  "READ_HDR|A_not_defined": 10,
+  "INT_HANDLER_T|B_no_initializer": 5,
+  "INT_HANDLER_T|E_struct_not_in_rule": 4,
+  "MY_IOCTL|E_struct_not_in_rule": 1,
+  "IOCTL_CAND|B_no_initializer": 1
+ },
+ "examples": {
+  "WRITE_HDR|A_not_defined": [
+   [
+    "ice_gnss_tty_write",
+    "A_not_defined"
+   ],
+   [
+    "read_descriptors",
+    "A_not_defined"
+   ],
+   [
+    "dp_dpcd_address_write",
+    "A_not_defined"
+   ],
+   [
+    "dp_dpcd_data_write",
+    "A_not_defined"
+   ],
+   [
+    "dp_dpcd_size_write",
+    "A_not_defined"
+   ]
+  ],
+  "MY_IOCTL|B_no_initializer": [
+   [
+    "spidev_compat_ioctl",
+    "B_no_initializer"
+   ],
+   [
+    "spidev_ioctl",
+    "B_no_initializer"
+   ],
+   [
+    "aspeed_p2a_ioctl",
+    "B_no_initializer"
+   ],
+   [
+    "pfrt_log_ioctl",
+    "B_no_initializer"
+   ],
+   [
+    "media_request_ioctl",
+    "B_no_initializer"
+   ]
+  ],
+  "READ_HDR|B_no_initializer": [
+   [
+    "spidev_read",
+    "B_no_initializer"
+   ],
+   [
+    "ixgbe_dbg_netdev_ops_read",
+    "B_no_initializer"
+   ],
+   [
+    "ixgbe_dbg_reg_ops_read",
+    "B_no_initializer"
+   ],
+   [
+    "media_read",
+    "B_no_initializer"
+   ],
+   [
+    "vpu_debug_read",
+    "B_no_initializer"
+   ]
+  ],
+  "WRITE_HDR|B_no_initializer": [
+   [
+    "spidev_write",
+    "B_no_initializer"
+   ],
+   [
+    "wwan_hwsim_debugfs_devcreate_write",
+    "B_no_initializer"
+   ],
+   [
+    "wwan_hwsim_debugfs_devdestroy_write",
+    "B_no_initializer"
+   ],
+   [
+    "wwan_hwsim_debugfs_portcreate_write",
+    "B_no_initializer"
+   ],
+   [
+    "wwan_hwsim_debugfs_portdestroy_write",
+    "B_no_initializer"
+   ]
+  ],
+  "IOCTL_CAND|A_not_defined": [
+   [
+    "radeon_gem_pread_ioctl",
+    "A_not_defined"
+   ],
+   [
+    "radeon_gem_pwrite_ioctl",
+    "A_not_defined"
+   ],
+   [
+    "drm_fb_helper_ioctl",
+    "A_not_defined"
+   ],
+   [
+    "intel_sprite_set_colorkey_ioctl",
+    "A_not_defined"
+   ],
+   [
+    "drm_legacy_addmap_ioctl",
+    "A_not_defined"
+   ]
+  ],
+  "INT_HANDLER_T|A_not_defined": [
+   [
+    "dio48e_irq_handler",
+    "A_not_defined"
+   ],
+   [
+    "mt7921_irq_handler",
+    "A_not_defined"
+   ],
+   [
+    "stm32_usart_threaded_interrupt",
+    "A_not_defined"
+   ],
+   [
+    "sun6i_csi_isr",
+    "A_not_defined"
+   ],
+   [
+    "idio_16_irq_handler",
+    "A_not_defined"
+   ]
+  ],
+  "MY_IOCTL|A_not_defined": [
+   [
+    "ppp_sync_poll",
+    "A_not_defined"
+   ],
+   [
+    "pkt_close",
+    "A_not_defined"
+   ],
+   [
+    "ppp_asynctty_poll",
+    "A_not_defined"
+   ],
+   [
+    "psb_unlocked_ioctl",
+    "A_not_defined"
+   ],
+   [
+    "fb_compat_ioctl",
+    "A_not_defined"
+   ]
+  ],
+  "MY_IOCTL|C_index_shift": [
+   [
+    "vfio_fsl_mc_ioctl",
+    "C_index_shift:vfio_device_ops@11 (rule [])"
+   ],
+   [
+    "hisi_acc_vfio_pci_ioctl",
+    "C_index_shift:vfio_device_ops@11 (rule [])"
+   ],
+   [
+    "intel_vgpu_ioctl",
+    "C_index_shift:vfio_device_ops@11 (rule [])"
+   ]
+  ],
+  "READ_HDR|C_index_shift": [
+   [
+    "vfio_fsl_mc_read",
+    "C_index_shift:vfio_device_ops@9 (rule [3])"
+   ],
+   [
+    "hisi_acc_vfio_pci_read",
+    "C_index_shift:vfio_device_ops@9 (rule [3])"
+   ],
+   [
+    "intel_vgpu_read",
+    "C_index_shift:vfio_device_ops@9 (rule [3])"
+   ]
+  ],
+  "WRITE_HDR|C_index_shift": [
+   [
+    "vfio_fsl_mc_write",
+    "C_index_shift:vfio_device_ops@10 (rule [4])"
+   ],
+   [
+    "hisi_acc_vfio_pci_write",
+    "C_index_shift:vfio_device_ops@10 (rule [4])"
+   ],
+   [
+    "intel_vgpu_write",
+    "C_index_shift:vfio_device_ops@10 (rule [4])"
+   ]
+  ],
+  "READ_HDR|A_not_defined": [
+   [
+    "dp_dpcd_data_read",
+    "A_not_defined"
+   ],
+   [
+    "mtip_hw_read_device_status",
+    "A_not_defined"
+   ],
+   [
+    "mt7915_fw_ser_get",
+    "A_not_defined"
+   ],
+   [
+    "fb_read",
+    "A_not_defined"
+   ],
+   [
+    "gpu_state_read",
+    "A_not_defined"
+   ]
+  ],
+  "INT_HANDLER_T|B_no_initializer": [
+   [
+    "ravb_emac_interrupt",
+    "B_no_initializer"
+   ],
+   [
+    "vcnl4010_irq_thread",
+    "B_no_initializer"
+   ],
+   [
+    "rvu_cpt_af_ras_intr_handler",
+    "B_no_initializer"
+   ],
+   [
+    "rvu_cpt_af_rvu_intr_handler",
+    "B_no_initializer"
+   ],
+   [
+    "s3c24xx_serial_rx_irq",
+    "B_no_initializer"
+   ]
+  ],
+  "INT_HANDLER_T|E_struct_not_in_rule": [
+   [
+    "exynos_dsi_te_irq_handler",
+    "E_struct_not_in_rule:samsung_dsim_host_ops"
+   ],
+   [
+    "msg2638_ts_irq_handler",
+    "E_struct_not_in_rule:msg_chip_data"
+   ],
+   [
+    "cd321x_interrupt",
+    "E_struct_not_in_rule:tipd_data"
+   ],
+   [
+    "tps6598x_interrupt",
+    "E_struct_not_in_rule:tipd_data"
+   ]
+  ],
+  "MY_IOCTL|E_struct_not_in_rule": [
+   [
+    "esas2r_proc_ioctl",
+    "E_struct_not_in_rule:proc_ops"
+   ]
+  ],
+  "IOCTL_CAND|B_no_initializer": [
+   [
+    "lineevent_ioctl",
+    "B_no_initializer"
+   ]
+  ]
+ }
+}

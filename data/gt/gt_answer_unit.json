@@ -1,0 +1,3250 @@
+{
+ "G001": {
+  "fn": "init_pci_device_addresses",
+  "module": "pm80xx_hwi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G002": {
+  "fn": "drm_atomic_helper_wait_for_dependencies",
+  "module": "drm_atomic_helper",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G003": {
+  "fn": "ath9k_eeprom_request_cb",
+  "module": "init",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G004": {
+  "fn": "vidioc_enum_input",
+  "module": "cx23885-video",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G005": {
+  "fn": "get_data",
+  "module": "intel_i2c",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G006": {
+  "fn": "core_tpg_set_initiator_node_queue_depth",
+  "module": "target_core_tpg",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G007": {
+  "fn": "netif_tx_disable",
+  "module": "sh_eth",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G008": {
+  "fn": "mlx5e_destroy_vlan_table",
+  "module": "en_fs",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G009": {
+  "fn": "read_write",
+  "module": "rtsx_scsi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G010": {
+  "fn": "ntb_transport_register_client_dev",
+  "module": "ntb_transport",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G011": {
+  "fn": "datai_run",
+  "module": "aha152x_core",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G012": {
+  "fn": "cmd_handler_pipe_control",
+  "module": "cmd_parser",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G013": {
+  "fn": "sunxi_mmc_hw_reset",
+  "module": "sunxi-mmc",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G014": {
+  "fn": "max8973_dcdc_set_voltage_sel",
+  "module": "max8973-regulator",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G015": {
+  "fn": "amplc_pci236_pci_probe",
+  "module": "amplc_pci236",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G016": {
+  "fn": "loop_set_carrier_report",
+  "module": "rc-loopback",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G017": {
+  "fn": "spi_imx_dma_rx_callback",
+  "module": "spi-imx",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G018": {
+  "fn": "send_tasklet",
+  "module": "fmdrv_common",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G019": {
+  "fn": "internal_display_show",
+  "module": "amdgpu_dm_debugfs",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G020": {
+  "fn": "xpc_timeout_partition_disengage",
+  "module": "xpc_main",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G021": {
+  "fn": "radeon_i2c_init",
+  "module": "radeon_i2c",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G022": {
+  "fn": "keyspan_setup",
+  "module": "keyspan_remote",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G023": {
+  "fn": "qmp_cdev_get_cur_state",
+  "module": "qcom_aoss",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G024": {
+  "fn": "brcmu_d11n_decchspec",
+  "module": "d11",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G025": {
+  "fn": "free_rx_sc_rcu",
+  "module": "macsec",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G026": {
+  "fn": "serial_omap_runtime_resume",
+  "module": "omap-serial",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G027": {
+  "fn": "pnp_range_reserved",
+  "module": "resource",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G028": {
+  "fn": "dr_ste_v1_build_flex_parser_0_init",
+  "module": "dr_ste_v1",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G029": {
+  "fn": "qed_roce_sp_modify_responder",
+  "module": "qed_roce",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G030": {
+  "fn": "max17040_stop_work",
+  "module": "max17040_battery",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G031": {
+  "fn": "bdw_primary_disable_flip_done",
+  "module": "i9xx_plane",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G032": {
+  "fn": "airo_get_rts",
+  "module": "airo",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G033": {
+  "fn": "vsc85xx_ts_write_csr",
+  "module": "mscc_ptp",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G034": {
+  "fn": "fwtable_reg_write_fw_domains",
+  "module": "intel_uncore",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G035": {
+  "fn": "mtu3_qmu_exit",
+  "module": "mtu3_qmu",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G036": {
+  "fn": "pnp_add_dma_resource",
+  "module": "resource",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G037": {
+  "fn": "bcma_sprom_get",
+  "module": "sprom",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G038": {
+  "fn": "hfa384x_read_regs",
+  "module": "hostap_cs",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G039": {
+  "fn": "gv100_fb_init_page",
+  "module": "gv100",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G040": {
+  "fn": "sh_eth_dev_init",
+  "module": "sh_eth",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G041": {
+  "fn": "myri10ge_unmap_tx_dma",
+  "module": "myri10ge",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G042": {
+  "fn": "bfa_fcs_lport_fdmi_sm_disabled",
+  "module": "bfa_fcs_lport",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G043": {
+  "fn": "e1000_clean_rx_irq",
+  "module": "netdev",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G044": {
+  "fn": "ath9k_cancel_hw_scan",
+  "module": "main",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G045": {
+  "fn": "on20_disconnect",
+  "module": "on20",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G046": {
+  "fn": "ib_sa_mcmember_rec_callback",
+  "module": "sa_query",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G047": {
+  "fn": "rpr0521_drdy_irq_handler",
+  "module": "rpr0521",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G048": {
+  "fn": "applesmc_init_smcreg",
+  "module": "applesmc",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G049": {
+  "fn": "sas_phy_match",
+  "module": "scsi_transport_sas",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G050": {
+  "fn": "usbhsc_power_ctrl",
+  "module": "common",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G051": {
+  "fn": "copy_overflow",
+  "module": "hiddev",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G052": {
+  "fn": "drm_reset_display_info",
+  "module": "drm_edid",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G053": {
+  "fn": "nhi_shutdown",
+  "module": "nhi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G054": {
+  "fn": "es58x_fd_handle_urb_cmd",
+  "module": "es58x_fd",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G055": {
+  "fn": "st_scsi_execute_end",
+  "module": "st",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G056": {
+  "fn": "s3c24xx_serial_put_poll_char",
+  "module": "samsung_tty",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G057": {
+  "fn": "tegra_nand_runtime_resume",
+  "module": "tegra_nand",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G058": {
+  "fn": "marvell_nfc_hw_ecc_bch_write_page_raw",
+  "module": "marvell_nand",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G059": {
+  "fn": "gr_ep0_testmode_complete",
+  "module": "gr_udc",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G060": {
+  "fn": "adl_pci7x3x_do_insn_bits",
+  "module": "adl_pci7x3x",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G061": {
+  "fn": "pqi_raid_synchronous_complete",
+  "module": "smartpqi_init",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G062": {
+  "fn": "dcn31_link_encoder_set_dio_phy_mux",
+  "module": "dcn31_dio_link_encoder",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G063": {
+  "fn": "bfa_cb_rport_scn_online",
+  "module": "bfa_fcs_rport",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G064": {
+  "fn": "denali_indexed_write",
+  "module": "denali",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G065": {
+  "fn": "rtw8723d_shutdown",
+  "module": "rtw8723d",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G066": {
+  "fn": "imx_obtain_fixed_clk_hw",
+  "module": "clk",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G067": {
+  "fn": "type_show",
+  "module": "sysfs_slave_dpn",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G068": {
+  "fn": "ite_open",
+  "module": "ite-cir",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G069": {
+  "fn": "exynos_adc_ts_open",
+  "module": "exynos_adc",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G070": {
+  "fn": "sdma_map_rcu_callback",
+  "module": "sdma",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G071": {
+  "fn": "rtw_txframes_pending",
+  "module": "rtw_xmit",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G072": {
+  "fn": "sxgbe_set_ctxt_rx_owner",
+  "module": "sxgbe_desc",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G073": {
+  "fn": "wl1251_enable_line_irq",
+  "module": "sdio",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G074": {
+  "fn": "ath10k_wmi_event_scan",
+  "module": "wmi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G075": {
+  "fn": "core_tpg_add_node_to_devs",
+  "module": "target_core_tpg",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G076": {
+  "fn": "mlx5e_add_l2_flow_rule",
+  "module": "en_fs",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G077": {
+  "fn": "lxt973_probe",
+  "module": "lxt",
+  "fpea_positive": true,
+  "signals": [
+   "C1",
+   "C5"
+  ]
+ },
+ "G078": {
+  "fn": "program_sh_mem_settings",
+  "module": "kfd_device_queue_manager",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G079": {
+  "fn": "btintel_read_boot_params",
+  "module": "btintel",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G080": {
+  "fn": "gdm_mux_send",
+  "module": "gdm_mux",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G081": {
+  "fn": "fbcon_get_requirement",
+  "module": "fbcon",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G082": {
+  "fn": "mwifiex_check_auto_tdls",
+  "module": "tdls",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G083": {
+  "fn": "dt3155_init_board",
+  "module": "dt3155",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G084": {
+  "fn": "si1145_trigger_handler",
+  "module": "si1145",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G085": {
+  "fn": "dcn10_enable_stream_timing",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G086": {
+  "fn": "spi_imx_buf_tx_swap",
+  "module": "spi-imx",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G087": {
+  "fn": "altera_ci_start_feed_1",
+  "module": "altera-ci",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G088": {
+  "fn": "lio_target_np_iser_show",
+  "module": "iscsi_target_configfs",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G089": {
+  "fn": "rtw_init_hwxmits",
+  "module": "rtw_xmit",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G090": {
+  "fn": "drm_gtf2_2j",
+  "module": "drm_edid",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G091": {
+  "fn": "devm_iio_device_unreg",
+  "module": "industrialio-core",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G092": {
+  "fn": "rsi_91x_init",
+  "module": "rsi_91x_main",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G093": {
+  "fn": "ichx_gpio_get_direction",
+  "module": "gpio-ich",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G094": {
+  "fn": "scmi_iio_sensor_update_cb",
+  "module": "scmi_iio",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G095": {
+  "fn": "mdio_mux_read",
+  "module": "mdio-mux",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G096": {
+  "fn": "gpio_mockup_set_config",
+  "module": "gpio-mockup",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G097": {
+  "fn": "vmw_pm_freeze",
+  "module": "vmwgfx_drv",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G098": {
+  "fn": "gehc_achc_probe",
+  "module": "gehc-achc",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G099": {
+  "fn": "ath6kl_init_hw_restart",
+  "module": "init",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G100": {
+  "fn": "pca9541_release_bus",
+  "module": "i2c-mux-pca9541",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G101": {
+  "fn": "read_file_queues",
+  "module": "debug",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G102": {
+  "fn": "port100_tg_configure_hw",
+  "module": "port100",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G103": {
+  "fn": "setgain",
+  "module": "pac7311",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G104": {
+  "fn": "bcm203x_complete",
+  "module": "bcm203x",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G105": {
+  "fn": "dcn10_disable_plane",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G106": {
+  "fn": "dpu_hw_ctl_update_pending_flush_intf",
+  "module": "dpu_hw_ctl",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G107": {
+  "fn": "felix_port_policer_add",
+  "module": "felix",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G108": {
+  "fn": "mdio_mux_iproc_switch_fn",
+  "module": "mdio-mux-bcm-iproc",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G109": {
+  "fn": "marvell_nfc_hw_ecc_hmg_read_oob_raw",
+  "module": "marvell_nand",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G110": {
+  "fn": "imx_mmdc_mask_handshake",
+  "module": "clk",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G111": {
+  "fn": "wacom_pl_irq",
+  "module": "wacom_wac",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G112": {
+  "fn": "ahd_suspend",
+  "module": "aic79xx_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G113": {
+  "fn": "vhost_net_set_features",
+  "module": "net",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G114": {
+  "fn": "qedf_ll2_process_skb",
+  "module": "qedf_main",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G115": {
+  "fn": "cxgbit_close_con_rpl",
+  "module": "cxgbit_cm",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G116": {
+  "fn": "usnic_fwd_carrier_up",
+  "module": "usnic_fwd",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G117": {
+  "fn": "dt3k_ai_cmdtest",
+  "module": "dt3000",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G118": {
+  "fn": "as73211_read_raw",
+  "module": "as73211",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G119": {
+  "fn": "__cdns_host_init",
+  "module": "host",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G120": {
+  "fn": "r100_pll_rreg",
+  "module": "r100",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G121": {
+  "fn": "panfrost_job_fini",
+  "module": "panfrost_job",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G122": {
+  "fn": "rockchip_usb2phy_linestate_irq",
+  "module": "phy-rockchip-inno-usb2",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G123": {
+  "fn": "atomisp_open",
+  "module": "atomisp_fops",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G124": {
+  "fn": "csi2_try_format",
+  "module": "ispcsi2",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G125": {
+  "fn": "ssusb_gadget_ip_sleep_check",
+  "module": "mtu3_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G126": {
+  "fn": "local_lock_release",
+  "module": "main",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G127": {
+  "fn": "ni6527_intr_cmdtest",
+  "module": "ni_6527",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G128": {
+  "fn": "if_usb_prog_firmware",
+  "module": "if_usb",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G129": {
+  "fn": "freecom_writedata",
+  "module": "freecom",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G130": {
+  "fn": "r100_set_common_regs",
+  "module": "r100",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G131": {
+  "fn": "geneve_dev_create_fb",
+  "module": "geneve",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G132": {
+  "fn": "gs_close",
+  "module": "u_serial",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G133": {
+  "fn": "nouveau_drm_device_init",
+  "module": "nouveau_drm",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G134": {
+  "fn": "cmp_break_pp_connection",
+  "module": "firedtv-avc",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G135": {
+  "fn": "end_clone_bio",
+  "module": "dm-rq",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G136": {
+  "fn": "lpfc_sli_abort_fcp_cmpl",
+  "module": "lpfc_sli",
+  "fpea_positive": true,
+  "signals": [
+   "C4",
+   "C5"
+  ]
+ },
+ "G137": {
+  "fn": "setlightfreq",
+  "module": "zc3xx",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G138": {
+  "fn": "core_alua_show_tg_pt_gp_info",
+  "module": "target_core_alua",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G139": {
+  "fn": "brcmf_chip_sb_resetcore",
+  "module": "chip",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G140": {
+  "fn": "execlists_submission_tasklet",
+  "module": "intel_execlists_submission",
+  "fpea_positive": true,
+  "signals": [
+   "C3",
+   "C4"
+  ]
+ },
+ "G141": {
+  "fn": "gm107_therm_new",
+  "module": "gm107",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G142": {
+  "fn": "rtw_fw_c2h_cmd_rx_irqsafe",
+  "module": "fw",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G143": {
+  "fn": "external_encoder_control_v3",
+  "module": "command_table2",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G144": {
+  "fn": "efx_siena_sriov_reset_vf_work",
+  "module": "siena_sriov",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G145": {
+  "fn": "rtw_xmit",
+  "module": "rtw_xmit",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G146": {
+  "fn": "mcp4725_write_raw",
+  "module": "mcp4725",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G147": {
+  "fn": "acpi_get_parent",
+  "module": "nsxfobj",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G148": {
+  "fn": "dib0090_get_wbd_target",
+  "module": "dib0090",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G149": {
+  "fn": "hyperv_reg_block_invalidate",
+  "module": "pci-hyperv-intf",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G150": {
+  "fn": "vnic_intr_free",
+  "module": "vnic_intr",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G151": {
+  "fn": "ibx_set_infoframes",
+  "module": "intel_hdmi",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G152": {
+  "fn": "spi_lp8841_rtc_set_cs",
+  "module": "spi-lp8841-rtc",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G153": {
+  "fn": "rpi_exp_gpio_probe",
+  "module": "gpio-raspberrypi-exp",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G154": {
+  "fn": "dcn10_dpp_pg_control",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G155": {
+  "fn": "vlv_hdmi_post_disable",
+  "module": "g4x_hdmi",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G156": {
+  "fn": "at91_adc_rl_interrupt",
+  "module": "at91_adc",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G157": {
+  "fn": "adjust_display_pll_v3",
+  "module": "command_table",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G158": {
+  "fn": "i2c_dw_init_slave",
+  "module": "i2c-designware-slave",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G159": {
+  "fn": "metadata_take_snap",
+  "module": "dm-era-target",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G160": {
+  "fn": "ucsi_unregister_port_psy",
+  "module": "psy",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G161": {
+  "fn": "dev_pagemap_percpu_release",
+  "module": "iomap",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G162": {
+  "fn": "gsm_mux_net_init",
+  "module": "n_gsm",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G163": {
+  "fn": "idt_ntb_msg_outbits",
+  "module": "ntb_hw_idt",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G164": {
+  "fn": "iw_conn_req_handler",
+  "module": "cma",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G165": {
+  "fn": "ath_rx_edma_cleanup",
+  "module": "recv",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G166": {
+  "fn": "ath10k_mac_op_set_coverage_class",
+  "module": "mac",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G167": {
+  "fn": "setexposure",
+  "module": "zc3xx",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G168": {
+  "fn": "ahd_abort_scbs",
+  "module": "aic79xx_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G169": {
+  "fn": "r100_mc_stop",
+  "module": "r100",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G170": {
+  "fn": "ghes_irq_func",
+  "module": "ghes",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G171": {
+  "fn": "rs_stay_in_table",
+  "module": "rs",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G172": {
+  "fn": "fc_seq_start_next",
+  "module": "fc_exch",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G173": {
+  "fn": "_rtl92e_watchdog_timer_cb",
+  "module": "rtl_core",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G174": {
+  "fn": "tse_set_rx_mode",
+  "module": "altera_tse_main",
+  "fpea_positive": true,
+  "signals": [
+   "C1",
+   "C4",
+   "C5"
+  ]
+ },
+ "G175": {
+  "fn": "apci1032_interrupt",
+  "module": "addi_apci_1032",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G176": {
+  "fn": "ath10k_ahb_halt_chip",
+  "module": "ahb",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G177": {
+  "fn": "vfio_group_unpin_pages",
+  "module": "vfio",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G178": {
+  "fn": "ata_acpi_ap_notify_dock",
+  "module": "libata-acpi",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G179": {
+  "fn": "ines_hwtstamp",
+  "module": "ptp_ines",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G180": {
+  "fn": "wil_debugfs_ulong_set",
+  "module": "debugfs",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G181": {
+  "fn": "intel_connector_update_modes",
+  "module": "intel_connector",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G182": {
+  "fn": "gem_init_rings",
+  "module": "macb_main",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G183": {
+  "fn": "check_int_v1_v2",
+  "module": "mxc_nand",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G184": {
+  "fn": "restart_offloadq",
+  "module": "sge",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G185": {
+  "fn": "vmw_bo_unpin",
+  "module": "vmwgfx_bo",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G186": {
+  "fn": "get_vid",
+  "module": "tpm_i2c_nuvoton",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G187": {
+  "fn": "mhi_toggle_dev_wake_nop",
+  "module": "pm",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G188": {
+  "fn": "qla2x00_timer",
+  "module": "qla_os",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G189": {
+  "fn": "ntb_transport_max_size",
+  "module": "ntb_transport",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G190": {
+  "fn": "i2c_dw_check_stopbit",
+  "module": "i2c-designware-master",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G191": {
+  "fn": "qm_irq",
+  "module": "qm",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G192": {
+  "fn": "vmw_shader_free",
+  "module": "vmwgfx_shader",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G193": {
+  "fn": "spwr_battery_prop_technology",
+  "module": "surface_battery",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G194": {
+  "fn": "rtl_8723e_c2h_command_handle",
+  "module": "hal_btc",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G195": {
+  "fn": "mcam_ctlr_dma_contig",
+  "module": "mcam-core",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G196": {
+  "fn": "qm_work_process",
+  "module": "qm",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G197": {
+  "fn": "dwc2_unreserve_timer_fn",
+  "module": "hcd_queue",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G198": {
+  "fn": "ath11k_qmi_assign_target_mem_chunk",
+  "module": "qmi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G199": {
+  "fn": "btintel_configure_setup",
+  "module": "btintel",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G200": {
+  "fn": "beiscsi_disable_port",
+  "module": "be_main",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G201": {
+  "fn": "clk_alpha_pll_hwfsm_is_enabled",
+  "module": "clk-alpha-pll",
+  "fpea_positive": true,
+  "signals": [
+   "C1",
+   "C3"
+  ]
+ },
+ "G202": {
+  "fn": "ntb_transport_setup_qp_msi",
+  "module": "ntb_transport",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G203": {
+  "fn": "sev_irq_handler",
+  "module": "sev-dev",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G204": {
+  "fn": "acpi_gpio_chip_dh",
+  "module": "gpiolib-acpi",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G205": {
+  "fn": "pc87360_find",
+  "module": "pc87360",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G206": {
+  "fn": "ahd_sg_setup",
+  "module": "aic79xx_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G207": {
+  "fn": "dpu_hw_lm_setup_border_color",
+  "module": "dpu_hw_lm",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G208": {
+  "fn": "s626_ai_inttrig",
+  "module": "s626",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G209": {
+  "fn": "bcm5201_suspend",
+  "module": "sungem_phy",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G210": {
+  "fn": "iio_register_sw_trigger_type",
+  "module": "industrialio-sw-trigger",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G211": {
+  "fn": "imx2_wdt_isr",
+  "module": "imx2_wdt",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G212": {
+  "fn": "g4x_post_disable_dp",
+  "module": "g4x_dp",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G213": {
+  "fn": "ipr_reset_alert",
+  "module": "ipr",
+  "fpea_positive": true,
+  "signals": [
+   "C4",
+   "C5"
+  ]
+ },
+ "G214": {
+  "fn": "core_alua_set_lba_map",
+  "module": "target_core_alua",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G215": {
+  "fn": "debug_bandwidth_open",
+  "module": "ehci-hcd",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G216": {
+  "fn": "hwi_enable_intr",
+  "module": "be_main",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G217": {
+  "fn": "al_fic_irq_set_type",
+  "module": "irq-al-fic",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G218": {
+  "fn": "rvu_switch_update_rules",
+  "module": "rvu_switch",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G219": {
+  "fn": "rvt_alloc_pd",
+  "module": "pd",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G220": {
+  "fn": "core_alua_show_secondary_status",
+  "module": "target_core_alua",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G221": {
+  "fn": "r100_pll_errata_after_index",
+  "module": "r100",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G222": {
+  "fn": "ntb_transport_link_query",
+  "module": "ntb_transport",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G223": {
+  "fn": "vmw_bo_pin_in_vram_or_gmr",
+  "module": "vmwgfx_bo",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G224": {
+  "fn": "trace_mtu3_zlp_exp_gpd",
+  "module": "mtu3_qmu",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G225": {
+  "fn": "t3b_intr",
+  "module": "sge",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G226": {
+  "fn": "ioh_gpio_direction_input",
+  "module": "gpio-ml-ioh",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G227": {
+  "fn": "ssusb_gadget_suspend",
+  "module": "mtu3_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G228": {
+  "fn": "savage3D_waitfifo",
+  "module": "savagefb_driver",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G229": {
+  "fn": "bnx2x_empty_rx_mode_wait",
+  "module": "bnx2x_sp",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G230": {
+  "fn": "mousedev_free",
+  "module": "mousedev",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G231": {
+  "fn": "txx9ndfmc_read_buf",
+  "module": "txx9ndfmc",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G232": {
+  "fn": "msm_disp_state_print",
+  "module": "msm_disp_snapshot_util",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G233": {
+  "fn": "btintel_bootup",
+  "module": "btintel",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G234": {
+  "fn": "usbdux_pwm_write",
+  "module": "usbdux",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G235": {
+  "fn": "nfp_abm_ctrl_read_q_xstats",
+  "module": "ctrl",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G236": {
+  "fn": "ia_css_macc1_5_vmem_encode",
+  "module": "ia_css_macc1_5.host",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G237": {
+  "fn": "dwc2_driver_remove",
+  "module": "platform",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G238": {
+  "fn": "__nfp_abm_ctrl_set_q_lvl",
+  "module": "ctrl",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G239": {
+  "fn": "core_alua_allocate_lu_gp",
+  "module": "target_core_alua",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G240": {
+  "fn": "amdgpu_sa_bo_new",
+  "module": "amdgpu_sa",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G241": {
+  "fn": "devm_delayed_work_drop",
+  "module": "extcon-palmas",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G242": {
+  "fn": "ath6kl_upload_firmware",
+  "module": "init",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G243": {
+  "fn": "intel_attach_broadcast_rgb_property",
+  "module": "intel_connector",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G244": {
+  "fn": "rsi_91x_deinit",
+  "module": "rsi_91x_main",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G245": {
+  "fn": "dib0090_update_tuning_table_7090",
+  "module": "dib0090",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G246": {
+  "fn": "dwc3_interrupt",
+  "module": "gadget",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G247": {
+  "fn": "iwl_mvm_mac_tsf_id_iter",
+  "module": "mac-ctxt",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G248": {
+  "fn": "beiscsi_free_mem",
+  "module": "be_main",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G249": {
+  "fn": "mthca_array_clear",
+  "module": "mthca_allocator",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G250": {
+  "fn": "dm_wq_work",
+  "module": "dm",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G251": {
+  "fn": "core_alua_store_offline_bit",
+  "module": "target_core_alua",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G252": {
+  "fn": "wacom_update_led",
+  "module": "wacom_wac",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G253": {
+  "fn": "zd1211b_al2230_init_hw",
+  "module": "zd_rf_al2230",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G254": {
+  "fn": "adv7511_get_edid",
+  "module": "adv7511_drv",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G255": {
+  "fn": "ccp_free_chan_resources",
+  "module": "ccp-dmaengine",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G256": {
+  "fn": "irdma_null_ws_reset",
+  "module": "ctrl",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G257": {
+  "fn": "dvb_usb_fe_init",
+  "module": "dvb_usb_core",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G258": {
+  "fn": "xpc_process_connect",
+  "module": "xpc_channel",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G259": {
+  "fn": "vega20_validate_power_level_request",
+  "module": "vega20_powertune",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G260": {
+  "fn": "avc_remote_ctrl_work",
+  "module": "firedtv-avc",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G261": {
+  "fn": "vidioc_try_fmt",
+  "module": "jpeg-core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G262": {
+  "fn": "vfio_info_cap_add",
+  "module": "vfio",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G263": {
+  "fn": "i2c_bit_add_bus",
+  "module": "i2c-algo-bit",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G264": {
+  "fn": "uvd_v5_0_ring_get_rptr",
+  "module": "uvd_v5_0",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G265": {
+  "fn": "debugfs_trace_show",
+  "module": "vchiq_debugfs",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G266": {
+  "fn": "dcn10_unblank_stream",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G267": {
+  "fn": "rhashtable_lookup_fast",
+  "module": "core_acl_flex_actions",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G268": {
+  "fn": "dib8000_update_pll",
+  "module": "dib8000",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G269": {
+  "fn": "sh_msiof_spi_write_fifo_8",
+  "module": "spi-sh-msiof",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G270": {
+  "fn": "con_close",
+  "module": "vt",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G271": {
+  "fn": "wacom_setup_intuos",
+  "module": "wacom_wac",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G272": {
+  "fn": "rx_poll",
+  "module": "sundance",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G273": {
+  "fn": "airspy_enum_freq_bands",
+  "module": "airspy",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G274": {
+  "fn": "ath10k_wmi_tlv_swba_parse",
+  "module": "wmi-tlv",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G275": {
+  "fn": "apple_dart_irq",
+  "module": "apple-dart",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G276": {
+  "fn": "iproc_gpio_direction_output",
+  "module": "pinctrl-iproc-gpio",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G277": {
+  "fn": "lpfc_cmpl_els_logo_acc",
+  "module": "lpfc_els",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G278": {
+  "fn": "wacom_show_remote0_mode",
+  "module": "wacom_sys",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G279": {
+  "fn": "virtio_rpmsg_announce_destroy",
+  "module": "virtio_rpmsg_bus",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G280": {
+  "fn": "hip04_set_mac_address",
+  "module": "hip04_eth",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G281": {
+  "fn": "sxgbe_tx_ctxt_desc_close",
+  "module": "sxgbe_desc",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G282": {
+  "fn": "asus_acpi_add",
+  "module": "asus-laptop",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G283": {
+  "fn": "xlgmac_unmap_desc_data",
+  "module": "dwc-xlgmac-desc",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G284": {
+  "fn": "xgbe_phy_cur_mode",
+  "module": "xgbe-phy-v2",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G285": {
+  "fn": "mxm_wmi_supported",
+  "module": "mxm-wmi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G286": {
+  "fn": "whiteheat_port_remove",
+  "module": "whiteheat",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G287": {
+  "fn": "map_seg_store",
+  "module": "ht16k33",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G288": {
+  "fn": "nand_sync",
+  "module": "nand_base",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G289": {
+  "fn": "hybrid_get_cpu_scaling",
+  "module": "intel_pstate",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G290": {
+  "fn": "cx23885_sp2_ci_ctrl",
+  "module": "cx23885-dvb",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G291": {
+  "fn": "core_alua_store_secondary_write_metadata",
+  "module": "target_core_alua",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G292": {
+  "fn": "vrf_finish_output",
+  "module": "vrf",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G293": {
+  "fn": "sethvflip",
+  "module": "pac7311",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G294": {
+  "fn": "pqi_irq_handler",
+  "module": "smartpqi_init",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G295": {
+  "fn": "vsc85xx_link_change_notify",
+  "module": "mscc_ptp",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G296": {
+  "fn": "mtu3_u3_ltssm_isr",
+  "module": "mtu3_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G297": {
+  "fn": "fake_rw_store",
+  "module": "scsi_debug",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G298": {
+  "fn": "pm_runtime_work",
+  "module": "runtime",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G299": {
+  "fn": "gen4_init_dev",
+  "module": "ntb_hw_gen4",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G300": {
+  "fn": "af9005_fe_release",
+  "module": "af9005-fe",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G301": {
+  "fn": "usbhs_sys_function_ctrl",
+  "module": "common",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G302": {
+  "fn": "iop_adma_prep_dma_xor_val",
+  "module": "iop-adma",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G303": {
+  "fn": "ahd_read_seeprom",
+  "module": "aic79xx_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G304": {
+  "fn": "mpt3sas_init_warpdrive_properties",
+  "module": "mpt3sas_warpdrive",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G305": {
+  "fn": "sh_msiof_spi_read_fifo_32",
+  "module": "spi-sh-msiof",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G306": {
+  "fn": "_rtl92s_firmware_set_h2c_cmd",
+  "module": "fw",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G307": {
+  "fn": "create_mkey_callback",
+  "module": "mr",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G308": {
+  "fn": "intel_pwm_disable_backlight",
+  "module": "intel_backlight",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G309": {
+  "fn": "mtu3_qmu_flush",
+  "module": "mtu3_qmu",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G310": {
+  "fn": "r100_mm_rreg_slow",
+  "module": "r100",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G311": {
+  "fn": "wakeup_sta_to_xmit",
+  "module": "rtw_xmit",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G312": {
+  "fn": "mf6x4_ai_insn_read",
+  "module": "mf6x4",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G313": {
+  "fn": "acpi_db_bus_walk",
+  "module": "dbnames",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G314": {
+  "fn": "rt2400pci_start_queue",
+  "module": "rt2400pci",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G315": {
+  "fn": "write_endio",
+  "module": "dm-bufio",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G316": {
+  "fn": "lirc_dev_init",
+  "module": "lirc_dev",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G317": {
+  "fn": "_base_readl_aero",
+  "module": "mpt3sas_base",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G318": {
+  "fn": "bfa_fcs_fabric_sm_cleanup",
+  "module": "bfa_fcs",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G319": {
+  "fn": "ecm_notify_complete",
+  "module": "f_ecm",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G320": {
+  "fn": "aspeed_gpio_change_cmd_source",
+  "module": "gpio-aspeed",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G321": {
+  "fn": "s_sync0",
+  "module": "i915_request",
+  "fpea_positive": true,
+  "signals": [
+   "C1",
+   "C5"
+  ]
+ },
+ "G322": {
+  "fn": "remote_mac_store",
+  "module": "netconsole",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G323": {
+  "fn": "power_supply_match_device_node",
+  "module": "power_supply_core",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G324": {
+  "fn": "reset_one_mii_phy",
+  "module": "sungem_phy",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G325": {
+  "fn": "nfp_net_reconfig_post",
+  "module": "nfp_net_common",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G326": {
+  "fn": "vega10_pp_tables_initialize",
+  "module": "vega10_processpptables",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G327": {
+  "fn": "uas_zap_pending",
+  "module": "uas",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G328": {
+  "fn": "drm_get_color_range_name",
+  "module": "drm_color_mgmt",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G329": {
+  "fn": "cec_5v_gpio_irq_handler",
+  "module": "cec-gpio",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G330": {
+  "fn": "mlx5e_enable_cvlan_filter",
+  "module": "en_fs",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G331": {
+  "fn": "lpfc_get_cfgparam",
+  "module": "lpfc_attr",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G332": {
+  "fn": "mlxsw_afa_block_append_qos_dsfield",
+  "module": "core_acl_flex_actions",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G333": {
+  "fn": "read_phy_register",
+  "module": "rtsx_scsi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G334": {
+  "fn": "cfm",
+  "module": "cfm",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G335": {
+  "fn": "highlander_i2c_irq",
+  "module": "i2c-highlander",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G336": {
+  "fn": "mlxsw_afa_block_activity_get",
+  "module": "core_acl_flex_actions",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G337": {
+  "fn": "ath11k_core_fetch_regdb",
+  "module": "core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G338": {
+  "fn": "nfp_net_irqs_alloc",
+  "module": "nfp_net_common",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G339": {
+  "fn": "innolux_panel_add",
+  "module": "panel-innolux-p079zca",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G340": {
+  "fn": "multi_config_check",
+  "module": "serial_cs",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G341": {
+  "fn": "amdgpu_gmc_ras_fini",
+  "module": "amdgpu_gmc",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G342": {
+  "fn": "ath11k_core_firmware_request",
+  "module": "core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G343": {
+  "fn": "ath10k_wmi_event_update_stats",
+  "module": "wmi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G344": {
+  "fn": "vsc73xx_gpio_get_direction",
+  "module": "vitesse-vsc73xx-core",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G345": {
+  "fn": "drm_atomic_helper_wait_for_flip_done",
+  "module": "drm_atomic_helper",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G346": {
+  "fn": "ep93xx_irq",
+  "module": "ep93xx_eth",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G347": {
+  "fn": "ath5k_hw_disable_pspoll",
+  "module": "caps",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G348": {
+  "fn": "dr_ste_v1_set_byte_mask",
+  "module": "dr_ste_v1",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G349": {
+  "fn": "fc_seq_send",
+  "module": "fc_exch",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G350": {
+  "fn": "tegra_gpio_irq_release_resources",
+  "module": "gpio-tegra",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G351": {
+  "fn": "pxa2xx_pmx_gpio_set_direction",
+  "module": "pinctrl-pxa2xx",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G352": {
+  "fn": "fbcon_fb_unregistered",
+  "module": "fbcon",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G353": {
+  "fn": "i915_gem_object_pin_to_display_plane",
+  "module": "i915_gem_domain",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G354": {
+  "fn": "omap3isp_csi2_cleanup",
+  "module": "ispcsi2",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G355": {
+  "fn": "perf_service_work",
+  "module": "ntb_perf",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G356": {
+  "fn": "mipid02_probe",
+  "module": "st-mipid02",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G357": {
+  "fn": "dwc3_remove",
+  "module": "core",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G358": {
+  "fn": "stv0367ter_filt_coeff_init",
+  "module": "stv0367",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G359": {
+  "fn": "xlgmac_config_rsf_mode",
+  "module": "dwc-xlgmac-hw",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G360": {
+  "fn": "tusb_remove",
+  "module": "tusb6010",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G361": {
+  "fn": "dcn10_prepare_bandwidth",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G362": {
+  "fn": "cxgbi_ppm_init",
+  "module": "libcxgb_ppm",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G363": {
+  "fn": "ali15x3_probe",
+  "module": "i2c-ali15x3",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G364": {
+  "fn": "nfp_abm_ctrl_read_q_stats",
+  "module": "ctrl",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G365": {
+  "fn": "sprd_eic_request",
+  "module": "gpio-eic-sprd",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G366": {
+  "fn": "ath11k_qmi_wlanfw_m3_info_send",
+  "module": "qmi",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G367": {
+  "fn": "tvp7002_s_ctrl",
+  "module": "tvp7002",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G368": {
+  "fn": "get_led_named",
+  "module": "leds-ss4200",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G369": {
+  "fn": "cfm_init",
+  "module": "cfm",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G370": {
+  "fn": "ypan_down",
+  "module": "fbcon",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G371": {
+  "fn": "apc_agent_timeout",
+  "module": "port_config",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G372": {
+  "fn": "dcn10_enable_power_gating_plane",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G373": {
+  "fn": "lxfb_probe",
+  "module": "lxfb_core",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G374": {
+  "fn": "amdgpu_gmc_get_pde_for_bo",
+  "module": "amdgpu_gmc",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G375": {
+  "fn": "felix_lag_leave",
+  "module": "felix",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G376": {
+  "fn": "ccp_dmaengine_unregister",
+  "module": "ccp-dmaengine",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G377": {
+  "fn": "phy_axg_mipi_pcie_analog_power_off",
+  "module": "phy-meson-axg-mipi-pcie-analog",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G378": {
+  "fn": "scmi_reg_is_enabled",
+  "module": "scmi-regulator",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G379": {
+  "fn": "com20020_probe",
+  "module": "com20020_cs",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G380": {
+  "fn": "ap_handle_timer",
+  "module": "hostap_ap",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G381": {
+  "fn": "qib_sdma_update_7220_tail",
+  "module": "qib_iba7220",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G382": {
+  "fn": "picolcd_cir_close",
+  "module": "hid-picolcd_cir",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G383": {
+  "fn": "bfa_fcs_rport_plogi_create",
+  "module": "bfa_fcs_rport",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G384": {
+  "fn": "dln2_adc_triggered_buffer_predisable",
+  "module": "dln2-adc",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G385": {
+  "fn": "adu_disconnect",
+  "module": "adutux",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G386": {
+  "fn": "dcn10_set_cursor_attribute",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G387": {
+  "fn": "dm_atomic_destroy_state",
+  "module": "amdgpu_dm",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G388": {
+  "fn": "drm_mm_scan_init_with_range",
+  "module": "drm_mm",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G389": {
+  "fn": "vz89x_i2c_xfer",
+  "module": "vz89x",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G390": {
+  "fn": "alloc_wrb_handle",
+  "module": "be_main",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G391": {
+  "fn": "con_start",
+  "module": "vt",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G392": {
+  "fn": "ad7877_gpio3_store",
+  "module": "ad7877",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G393": {
+  "fn": "intc_irqpin_irq_enable",
+  "module": "irq-renesas-intc-irqpin",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G394": {
+  "fn": "bcm_sysport_wol_isr",
+  "module": "bcmsysport",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G395": {
+  "fn": "flakey_status",
+  "module": "dm-flakey",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G396": {
+  "fn": "iio_ev_value_show",
+  "module": "industrialio-event",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G397": {
+  "fn": "channel_store",
+  "module": "mesh",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G398": {
+  "fn": "mtu3_set_speed",
+  "module": "mtu3_core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G399": {
+  "fn": "dmi_entry_raw_read_helper",
+  "module": "dmi-sysfs",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G400": {
+  "fn": "v4l_stub_g_audio",
+  "module": "v4l2-ioctl",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G401": {
+  "fn": "dvb_dvr_do_ioctl",
+  "module": "dmxdev",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G402": {
+  "fn": "ucan_write_bulk_callback",
+  "module": "ucan",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G403": {
+  "fn": "amd_powersave_bias_target",
+  "module": "amd_freq_sensitivity",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G404": {
+  "fn": "mlx4_ib_netdev_event",
+  "module": "main",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G405": {
+  "fn": "vsc8584_config_ts_intr",
+  "module": "mscc_ptp",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G406": {
+  "fn": "hiddev_ioctl_usage",
+  "module": "hiddev",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G407": {
+  "fn": "vc4_hdmi_connector_get_modes",
+  "module": "vc4_hdmi",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G408": {
+  "fn": "transmitter_control_fallback",
+  "module": "command_table2",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G409": {
+  "fn": "rtw_fw_send_h2c_command",
+  "module": "fw",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G410": {
+  "fn": "btintel_boot",
+  "module": "btintel",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G411": {
+  "fn": "gb_sdio_mrq_work",
+  "module": "sdio",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G412": {
+  "fn": "mlx5e_destroy_ttc_table",
+  "module": "en_fs",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G413": {
+  "fn": "m88ds3103_get_i2c_adapter",
+  "module": "m88ds3103",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G414": {
+  "fn": "netxen_nic_hw_write_wx_128M",
+  "module": "netxen_nic_hw",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G415": {
+  "fn": "mtk_nfc_exec_op",
+  "module": "mtk_nand",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G416": {
+  "fn": "dwc2_lowlevel_hw_disable",
+  "module": "platform",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G417": {
+  "fn": "dal_irq_service_dce110_create",
+  "module": "irq_service_dce110",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G418": {
+  "fn": "kthread",
+  "module": "aoecmd",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G419": {
+  "fn": "mlx5e_vport_context_update_vlans",
+  "module": "en_fs",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G420": {
+  "fn": "mt76x02_send_tx_status",
+  "module": "mt76x02_mac",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G421": {
+  "fn": "rt2400pci_config",
+  "module": "rt2400pci",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G422": {
+  "fn": "iscsi_check_valuelist_for_support",
+  "module": "iscsi_target_parameters",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G423": {
+  "fn": "core_alua_store_tg_pt_gp_info",
+  "module": "target_core_alua",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G424": {
+  "fn": "scpi_device_get_power_state",
+  "module": "arm_scpi",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G425": {
+  "fn": "goldfish_pipe_read",
+  "module": "goldfish_pipe",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G426": {
+  "fn": "ath10k_wmi_tlv_op_pull_mgmt_rx_ev",
+  "module": "wmi-tlv",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G427": {
+  "fn": "zinitix_input_close",
+  "module": "zinitix",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G428": {
+  "fn": "nvkm_i2c_bit_xfer",
+  "module": "bit",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G429": {
+  "fn": "eem_linkcmd_complete",
+  "module": "cdc_eem",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G430": {
+  "fn": "task_fn_power_on",
+  "module": "host",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G431": {
+  "fn": "imx_drm_encoder_parse_of",
+  "module": "imx-drm-core",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G432": {
+  "fn": "ebu_dma_rx_callback",
+  "module": "intel-nand-controller",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ },
+ "G433": {
+  "fn": "nfp_net_rx_rings_prepare",
+  "module": "nfp_net_common",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G434": {
+  "fn": "ipoib_cm_skb_reap",
+  "module": "ipoib_cm",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G435": {
+  "fn": "aspeed_adc_clk_disable_unprepare",
+  "module": "aspeed_adc",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G436": {
+  "fn": "ads131e08_read_reg",
+  "module": "ti-ads131e08",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G437": {
+  "fn": "cp_tx_timeout",
+  "module": "8139cp",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G438": {
+  "fn": "lpfc_sli4_pdev_reg_request",
+  "module": "lpfc_attr",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G439": {
+  "fn": "dcn10_hubp_pg_control",
+  "module": "dcn10_hw_sequencer",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G440": {
+  "fn": "mt76x02_mac_write_txwi",
+  "module": "mt76x02_mac",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G441": {
+  "fn": "devm_clk_match",
+  "module": "clk",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G442": {
+  "fn": "fxas21002c_data_rdy_trigger_set_state",
+  "module": "fxas21002c_core",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G443": {
+  "fn": "unittest_unflatten_overlay_base",
+  "module": "unittest",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G444": {
+  "fn": "fb_console_init",
+  "module": "fbcon",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G445": {
+  "fn": "drm_atomic_helper_commit_cleanup_done",
+  "module": "drm_atomic_helper",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G446": {
+  "fn": "iwl_mvm_scan_condition_iterator",
+  "module": "scan",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G447": {
+  "fn": "resp_read_dt0",
+  "module": "scsi_debug",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G448": {
+  "fn": "mlxsw_afa_block_append_qos_switch_prio",
+  "module": "core_acl_flex_actions",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G449": {
+  "fn": "rproc_coredump_set_elf_info",
+  "module": "remoteproc_coredump",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G450": {
+  "fn": "adc_jack_handler",
+  "module": "extcon-adc-jack",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G451": {
+  "fn": "vsc7514_phylink_mac_link_up",
+  "module": "ocelot_net",
+  "fpea_positive": true,
+  "signals": [
+   "C1"
+  ]
+ },
+ "G452": {
+  "fn": "glink_smem_tx_avail",
+  "module": "qcom_glink_smem",
+  "fpea_positive": true,
+  "signals": [
+   "C4"
+  ]
+ },
+ "G453": {
+  "fn": "__i915_vma_active",
+  "module": "i915_vma",
+  "fpea_positive": true,
+  "signals": [
+   "C3"
+  ]
+ },
+ "G454": {
+  "fn": "ideapad_dytc_profile_exit",
+  "module": "ideapad-laptop",
+  "fpea_positive": false,
+  "signals": []
+ },
+ "G455": {
+  "fn": "bnxt_gro_func_5731x",
+  "module": "bnxt",
+  "fpea_positive": true,
+  "signals": [
+   "C5"
+  ]
+ }
+}

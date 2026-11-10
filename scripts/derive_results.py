@@ -1,0 +1,445 @@
+#!/usr/bin/env python3
+"""Stages 3-4: rebuild the paper's derived result files from the stored FPEA/UAFX unit outputs
+(data/fpea_out) and the expert CSVs (data/expert_pkg), then compare them with the stored copies
+in data/results. Works without the bitcode trees.
+Outputs ($FPEA_OUTDIR, default out/): version_results.json, strata_pop.json, typed_vs_opaque.json,
+randstruct_vs_norand_714.json, subsystem_ratio.json, link_layer_q15.json, fp_types.json,
+metrics.json (kappa, precision, recall, CI), derive_report.md (also printed to stdout).
+Invoked by run_all.sh derive: `python3 scripts/derive_results.py` (paths come from env.sh)."""
+import csv
+import json
+import math
+import os
+from collections import Counter, defaultdict
+
+# ---- paths (env.sh variables, defaults = the measurement server layout)
+R = os.environ.get('FPEA_REPRO', os.path.expanduser('~/fpea_gt/repro'))
+OUTD = os.environ.get('FPEA_OUT', f'{R}/data/fpea_out')
+LINKOUT = os.environ.get('FPEA_LINKOUT', f'{R}/data/link/fpea_out')
+DATA = os.environ.get('FPEA_DATA', f'{R}/data')
+RES = os.environ.get('FPEA_RESULTS', f'{R}/data/results')
+O = os.environ.get('FPEA_OUTDIR', f'{R}/out')
+EXP = f'{DATA}/expert_pkg'
+
+# kernel versions with a stored FPEA run (rf_<v>/ rw_<v>/ list_<v>.txt under OUTD)
+VERSIONS = ('5.17.11', '5.19.17', '6.9', '7.1.4', '7.1.4-norand')
+BASE_VERSION = '5.17.11'
+
+
+# ---------------------------------------------------------------- loading helpers
+def list_path(version):
+    """Unit list file of one version."""
+    return f'{OUTD}/list_{version}.txt'
+
+
+def read_unit_list(path):
+    """Non-empty, stripped lines of a unit list."""
+    return [line.strip() for line in open(path) if line.strip()]
+
+
+def relkey(path):
+    """Unit path relative to the kernel's drivers/ directory (unchanged if not under drivers/)."""
+    return path.split('/drivers/', 1)[1] if '/drivers/' in path else path
+
+
+def load_json(path):
+    return json.load(open(path))
+
+
+def dump_json(obj, path, ensure_ascii=True):
+    """Write a result JSON (indent=1; ensure_ascii as in the original per-file calls)."""
+    with open(path, 'w') as out:
+        json.dump(obj, out, indent=1, ensure_ascii=ensure_ascii)
+
+
+def read_csv_by_id(path):
+    """Expert CSV -> {id: row dict} (columns keep their Korean names)."""
+    return {row['id']: row for row in csv.DictReader(open(path, encoding='utf-8-sig'))}
+
+
+def load_version(version, rw=True):
+    """Aggregate one version's FPEA (rf_) and UAFX (rw_) unit outputs.
+
+    Returns (aggregate dict, {unit: fpea json}, UAFX set, FPEA set); the sets hold
+    (unit, function) pairs.
+    """
+    units = read_unit_list(list_path(version))
+    per = {}
+    uafx_set = set()
+    kinds = Counter()
+    uafx_nonempty = uafx_files = 0
+    for unit in units:
+        name = unit.replace('/', '_')
+        fpea_path = f'{OUTD}/rf_{version}/{name}.json'
+        if not os.path.exists(fpea_path):
+            continue
+        per[unit] = load_json(fpea_path)
+        uafx_path = f'{OUTD}/rw_{version}/{name}.txt'
+        if rw and os.path.exists(uafx_path):
+            uafx_files += 1
+            uafx_lines = [line.strip() for line in open(uafx_path, errors='replace')
+                          if line.strip()]
+            if uafx_lines:
+                uafx_nonempty += 1
+            for line in uafx_lines:
+                fields = line.split(':')
+                if len(fields) >= 2:
+                    uafx_set.add((unit, fields[1]))
+                    kinds[fields[0]] += 1
+    fpea_set = {(unit, fn) for unit, d in per.items() for fn in d['entries']}
+    n_fpea = len(fpea_set)
+    inter = len(uafx_set & fpea_set)
+    agg = dict(units=len(units), fpea_json_missing=len(units) - len(per), FPEA=n_fpea,
+               defined=sum(d['defined'] for d in per.values()),
+               uafx_files=uafx_files, uafx_nonempty=uafx_nonempty, baseline=len(uafx_set),
+               inter=inter, wl_minus_fpea=len(uafx_set) - inter,
+               miss_rate=round((n_fpea - inter) / n_fpea * 100, 2) if n_fpea else None,
+               baseline_kinds=dict(kinds))
+    return agg, per, uafx_set, fpea_set
+
+
+# ---------------------------------------------------------------- statistics helpers
+def stratum(sig):
+    """Stratum of a signal list: C3 > C5 > C4only (C4 without C1) > C1."""
+    s = set(sig)
+    if 'C3' in s:
+        return 'C3'
+    if 'C5' in s:
+        return 'C5'
+    if 'C4' in s and 'C1' not in s:
+        return 'C4only'
+    return 'C1'
+
+
+def wilson(k, n, z=1.96):
+    """Wilson score interval for k successes out of n."""
+    if n == 0:
+        return (0.0, 0.0)
+    p = k / n
+    d = 1 + z * z / n
+    c = (p + z * z / (2 * n)) / d
+    h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
+    return (c - h, c + h)
+
+
+# ---------------------------------------------------------------- reference set (455 items)
+class ReferenceSet:
+    """Expert verdicts (rA/rB), the adjudication of the disagreements and the answer key."""
+
+    def __init__(self):
+        self.ans = load_json(f'{DATA}/gt/gt_answer_unit.json')
+        self.ra = read_csv_by_id(f'{EXP}/rA.csv')
+        self.rb = read_csv_by_id(f'{EXP}/rB.csv')
+        self.adj = read_csv_by_id(f'{EXP}/adjudication_17_final.csv')
+        self.ids = sorted(self.ra)
+        # final label: the common verdict, or the adjudicator's one when A and B disagree
+        self.final = {i: (self.ra[i]['verdict'] if self.ra[i]['verdict'] == self.rb[i]['verdict']
+                          else self.adj[i]['adjudicated_verdict']) for i in self.ids}
+        self.pos = [i for i in self.ids if self.ans[i]['fpea_positive']]
+        self.neg = [i for i in self.ids if not self.ans[i]['fpea_positive']]
+
+    def disagree(self, i):
+        return self.ra[i]['verdict'] != self.rb[i]['verdict']
+
+    def final_rule(self, i):
+        """Rule behind the final label; adjudicated items are marked with '(adjudicated)'."""
+        if self.disagree(i):
+            return self.adj[i]['adjudicated_rule'] + '(adjudicated)'
+        a, b = self.ra[i]['rule'], self.rb[i]['rule']
+        return a if a == b else f'{a}/{b}'
+
+    def tp_rule(self, i):
+        """Same as final_rule but without the '(adjudicated)' mark (used for tp_rules)."""
+        if self.disagree(i):
+            return self.adj[i]['adjudicated_rule']
+        if self.ra[i]['rule'] == self.rb[i]['rule']:
+            return self.ra[i]['rule']
+        return self.ra[i]['rule'] + '/' + self.rb[i]['rule']
+
+    def fp_note(self, i):
+        """Adjudicator's reason, or B's (else A's) remark, for a false positive."""
+        if self.disagree(i):
+            return self.adj[i]['adjudication_reason']
+        return self.rb[i]['remark'] or self.ra[i]['remark']
+
+    def stratum_of(self, i):
+        return stratum(self.ans[i]['signals'])
+
+
+# ---------------------------------------------------------------- comparison with data/results
+def same(a, b, path=''):
+    """Structural equality; numbers within 1e-6, 'per_unit' sub-dicts ignored."""
+    if isinstance(a, dict) and isinstance(b, dict):
+        return all(k in b and same(a[k], b[k], path + '/' + str(k))
+                   for k in a if k not in ('per_unit',))
+    if isinstance(a, list) and isinstance(b, list):
+        return len(a) == len(b) and all(same(x, y, path) for x, y in zip(a, b))
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)) and not isinstance(a, bool):
+        return abs(float(a) - float(b)) < 1e-6
+    return a == b
+
+
+def compare(report, name, new, oldpath):
+    """Append (name, SAME/DIFF/NO STORED) to the report."""
+    if not os.path.exists(oldpath):
+        report.append((name, 'NO STORED'))
+        return
+    old = load_json(oldpath)
+    ok = same(old, new)
+    report.append((name, 'SAME' if ok else 'DIFF'))
+
+
+def compare_version_results(report, name, new, oldpath):
+    """Like compare(), but uafx_files of 7.1.4* is excluded.
+
+    For 7.1.4 (clang16 bitcode) run_all.sh run-fpea skips the UAFX (LLVM14 tool) run (the original
+    measurement left 19649 empty txt files: only uafx_files differs, uafx_nonempty/baseline/inter
+    are 0 in both). In the reproduction output uafx_files is 0, so only that key of 7.1.4* is
+    excluded from the comparison.
+    """
+    if not os.path.exists(oldpath):
+        report.append((name, 'NO STORED'))
+        return
+    old = load_json(oldpath)
+    for v in ('7.1.4', '7.1.4-norand'):
+        if v in old:
+            old[v].pop('uafx_files', None)
+    report.append((name, 'SAME' if same(old, new) else 'DIFF'))
+
+
+# ---------------------------------------------------------------- derived files, in output order
+def derive_version_results(report):
+    """version_results.json: per-version aggregate. Returns (aggregates, per-unit FPEA json)."""
+    results = {}
+    per_unit = {}
+    for v in VERSIONS:
+        results[v], per_unit[v], _, _ = load_version(v)
+    dump_json(results, f'{O}/version_results.json', ensure_ascii=False)
+    compare_version_results(report, 'version_results.json', results,
+                            f'{RES}/version_results.json')
+    return results, per_unit
+
+
+def derive_strata_pop(report, results, per_unit):
+    """strata_pop.json: stratum population of 5.17.11. Returns (json, weights, nF, tot_def)."""
+    strata = Counter()
+    c2only = 0
+    for d in per_unit[BASE_VERSION].values():
+        for fn, signals in d['entries'].items():
+            if set(signals) == {'C2'}:
+                c2only += 1
+            else:
+                strata[stratum(signals)] += 1
+    n_fpea = results[BASE_VERSION]['FPEA']
+    tot = results[BASE_VERSION]['defined']
+    weights = {k: strata[k] / n_fpea for k in strata}
+    weights['C2'] = c2only / n_fpea
+    spj = dict(strata=dict(strata), c2only=c2only, nF=n_fpea, tot_def=tot, W_true=weights)
+    dump_json(spj, f'{O}/strata_pop.json')
+    compare(report, 'strata_pop.json', spj, f'{RES}/strata_pop.json')
+    return spj, weights, n_fpea, tot
+
+
+def derive_subsystem_ratio(report, per_unit):
+    """subsystem_ratio.json: subsystems with >= 1000 defined functions, by descending ratio."""
+    sub = defaultdict(lambda: [0, 0])
+    for unit, d in per_unit[BASE_VERSION].items():
+        if '/drivers/' not in unit:
+            continue
+        subsystem = relkey(unit).split('/')[0]
+        sub[subsystem][0] += d['defined']
+        sub[subsystem][1] += len(d['entries'])
+    ratios = sorted([dict(subsystem=s, defined=a, fpea=b, ratio=round(b / a * 100, 1))
+                     for s, (a, b) in sub.items() if a >= 1000],
+                    key=lambda x: (-x['ratio'], -x['fpea']))
+    dump_json(ratios, f'{O}/subsystem_ratio.json')
+    old_path = f'{RES}/subsystem_ratio.json'
+    by_name = lambda x: x['subsystem']
+    ok = (os.path.exists(old_path)
+          and sorted(load_json(old_path), key=by_name) == sorted(ratios, key=by_name))
+    report.append(('subsystem_ratio.json (order ignored)', 'SAME' if ok else 'DIFF'))
+
+
+def derive_typed_vs_opaque(report, results, per_unit, n_fpea):
+    """typed_vs_opaque.json: 5.17.11 clang14 units vs clang16 units, common units."""
+    f16 = {}
+    for unit in read_unit_list(list_path('nosan16')):
+        path = f'{OUTD}/rf_nosan16/{unit.replace("/", "_")}.json'
+        if os.path.exists(path):
+            f16[relkey(unit)] = set(load_json(path)['entries'])
+    f14 = {}
+    for unit, d in per_unit[BASE_VERSION].items():
+        if '/drivers/' not in unit:
+            continue
+        # clang14 units are hidden files (dir/.name.o.bc): drop the leading dot to match clang16
+        k = relkey(unit)
+        k = k.rsplit('/', 1)[0] + '/' + k.rsplit('/', 1)[1][1:]
+        f14[k] = set(d['entries'])
+    com = set(f14) & set(f16)
+    to = dict(units14=results[BASE_VERSION]['units'], units16=len(f16), common=len(com),
+              f14=sum(len(f14[k]) for k in com), f16=sum(len(f16[k]) for k in com),
+              diff_units=sum(1 for k in com if f14[k] != f16[k]),
+              symdiff=sum(len(f14[k] ^ f16[k]) for k in com),
+              F14_all=n_fpea, F16_all=sum(len(v) for v in f16.values()))
+    dump_json(to, f'{O}/typed_vs_opaque.json')
+    compare(report, 'typed_vs_opaque.json', to, f'{RES}/typed_vs_opaque.json')
+
+
+def derive_randstruct_vs_norand(report, results, per_unit):
+    """randstruct_vs_norand_714.json: 7.1.4 RANDSTRUCT_FULL vs RANDSTRUCT_NONE, common units."""
+    rand = {relkey(unit): set(d['entries']) for unit, d in per_unit['7.1.4'].items()}
+    norand = {relkey(unit): set(d['entries']) for unit, d in per_unit['7.1.4-norand'].items()}
+    cm = set(rand) & set(norand)
+    differ = sorted(k for k in cm if rand[k] != norand[k])
+    rn = dict(rand=dict(FPEA=results['7.1.4']['FPEA'], defined=results['7.1.4']['defined']),
+              norand=dict(FPEA=results['7.1.4-norand']['FPEA'],
+                          defined=results['7.1.4-norand']['defined']),
+              common=len(cm), identical_units=len(cm) - len(differ), differ_units=len(differ),
+              only_rand=sum(len(rand[k] - norand[k]) for k in cm),
+              only_norand=sum(len(norand[k] - rand[k]) for k in cm), differ_list=differ)
+    dump_json(rn, f'{O}/randstruct_vs_norand_714.json')
+    compare(report, 'randstruct_vs_norand_714.json', rn, f'{RES}/randstruct_vs_norand_714.json')
+
+
+def derive_metrics(report, ref, weights, n_fpea, tot):
+    """metrics.json: kappa, precision (simple + stratum-weighted), population-corrected recall.
+
+    Same formulas as final_calc_expert.py + review_check.py. Returns (metrics, TP, FP).
+    """
+    ids, final, pos, neg = ref.ids, ref.final, ref.pos, ref.neg
+    # inter-rater agreement (Cohen's kappa) between A and B
+    n = len(ids)
+    pairs = [(ref.ra[i]['verdict'], ref.rb[i]['verdict']) for i in ids]
+    po = sum(a == b for a, b in pairs) / n
+    cats = sorted({x for p in pairs for x in p})
+    pe = sum((sum(a == c for a, _ in pairs) / n) * (sum(b == c for _, b in pairs) / n)
+             for c in cats)
+    kappa = (po - pe) / (1 - pe)
+    # precision on the FPEA positives, per stratum, weighted by the population shares
+    TP = sum(final[i] == '1' for i in pos)
+    FP = sum(final[i] == '0' for i in pos)
+    by = defaultdict(lambda: [0, 0])
+    for i in pos:
+        by[ref.stratum_of(i)][0 if final[i] == '1' else 1] += 1
+    num = var = 0
+    byst = {}
+    for s, (t, f_) in by.items():
+        nn = t + f_
+        p = t / nn
+        lo, hi = wilson(t, nn)
+        num += weights[s] * p
+        var += weights[s] ** 2 * p * (1 - p) / nn
+        byst[s] = dict(n=nn, TP=t, FP=f_, precision=round(p, 4), ci=[round(lo, 4), round(hi, 4)],
+                       W=round(weights[s], 4))
+    wp = num + weights['C2']
+    se = math.sqrt(var)
+    # recall, corrected to the population of defined functions
+    n1 = sum(final[i] == '1' for i in neg)
+    nq = sum(final[i] == '?' for i in neg)
+    neg_pop = tot - n_fpea
+    TP_pop = n_fpea * wp
+    FN_pop = neg_pop * nq / len(neg)
+    lo, hi = wilson(nq, len(neg))
+    metrics = dict(n=n, agree=round(po, 4), kappa=round(kappa, 4), TP=TP, FP=FP,
+                   prec_simple=round(TP / (TP + FP), 4),
+                   prec_simple_ci=[round(x, 4) for x in wilson(TP, TP + FP)],
+                   wprec_true=round(wp, 5), wprec_se=round(se, 4),
+                   wprec_ci=[round(wp - 1.96 * se, 4), round(wp + 1.96 * se, 4)], byst=byst,
+                   neg_fn=n1, neg_q=nq, neg_pop=neg_pop, TP_pop=round(TP_pop),
+                   FN_pop=round(FN_pop), recall=round(TP_pop / (TP_pop + FN_pop), 4),
+                   recall_ci=[round(TP_pop / (TP_pop + hi * neg_pop), 4),
+                              round(TP_pop / (TP_pop + lo * neg_pop), 4)],
+                   recall_direct=round(TP / (TP + n1 + nq), 4),
+                   recall_rule_of_three=round(TP_pop / (TP_pop + 3 / len(neg) * neg_pop), 4),
+                   final_dist=dict(Counter(final.values())),
+                   adj_dist=dict(Counter(ref.adj[i]['adjudicated_verdict'] for i in ref.adj)))
+    dump_json(metrics, f'{O}/metrics.json', ensure_ascii=False)
+    fre = load_json(f'{RES}/final_result_expert.json')
+    rc = load_json(f'{RES}/review_check.json')
+    ok_fre = abs(fre['kappa'] - kappa) < 1e-6 and fre['TP'] == TP and fre['FP'] == FP
+    report.append(('metrics vs final_result_expert.json (κ,TP,FP)', 'SAME' if ok_fre else 'DIFF'))
+    ok_rc = abs(rc['wprec'] - wp) < 1e-6 and abs(rc['TP_pop'] - TP_pop) < 1e-3
+    report.append(('metrics vs review_check.json (wprec,TP_pop)', 'SAME' if ok_rc else 'DIFF'))
+    return metrics, TP, FP
+
+
+def derive_fp_types(report, ref):
+    """fp_types.json: the false positives by stratum and rule, with the experts' notes."""
+    ids, final, pos, neg, ans = ref.ids, ref.final, ref.pos, ref.neg, ref.ans
+    fpids = [i for i in pos if final[i] == '0']
+    ft = dict(fp_ids=fpids,
+              fp_by_stratum=dict(Counter(ref.stratum_of(i) for i in fpids)),
+              fp_by_rule=dict(Counter(ref.final_rule(i).replace('(adjudicated)', '') for i in fpids)),
+              fp_rule_x_stratum={},
+              A_rules=dict(Counter(ref.ra[i]['rule'] for i in ids)),
+              B_rules=dict(Counter(ref.rb[i]['rule'] for i in ids)),
+              tp_rules=dict(Counter(ref.tp_rule(i) for i in pos if final[i] == '1')),
+              neg_rules=dict(Counter(ref.final_rule(i) for i in neg)),
+              fp_detail=[dict(id=i, fn=ans[i]['fn'], module=ans[i]['module'],
+                              stratum=ref.stratum_of(i), signals=ans[i]['signals'],
+                              rule=ref.final_rule(i), note=ref.fp_note(i)) for i in fpids])
+    for i in fpids:
+        rule = ref.final_rule(i).replace('(adjudicated)', '')
+        ft['fp_rule_x_stratum'].setdefault(rule, Counter())[ref.stratum_of(i)] += 1
+    ft['fp_rule_x_stratum'] = {k: dict(v) for k, v in ft['fp_rule_x_stratum'].items()}
+    dump_json(ft, f'{O}/fp_types.json', ensure_ascii=False)
+    old = load_json(f'{RES}/fp_types.json')
+    ok = (sorted(old['fp_ids']) == sorted(fpids)
+          and old['fp_by_stratum'] == ft['fp_by_stratum']
+          and sorted(old['fp_by_rule'].values()) == sorted(ft['fp_by_rule'].values()))
+    report.append(('fp_types.json (fp_ids, stratum/rule counts)', 'SAME' if ok else 'DIFF'))
+
+
+def derive_link_layer_q15(report, ref):
+    """link_layer_q15.json: the '?' negatives (registration in another file) vs the link layer."""
+    ans = ref.ans
+    qids = [i for i in ref.neg if ref.final[i] == '?']
+    link = defaultdict(list)
+    for jf in os.listdir(LINKOUT):
+        d = load_json(f'{LINKOUT}/{jf}')
+        for fn, signals in d['entries'].items():
+            link[fn].append((jf, sorted(signals)))
+    q = {}
+    for i in qids:
+        reg_loc = ref.rb[i]['evidence'] or ref.ra[i]['evidence']
+        q[i] = dict(fn=ans[i]['fn'], unit_reg_loc=reg_loc.split(';')[0],
+                    A=ref.ra[i]['evidence'], B=ref.rb[i]['evidence'],
+                    link_fpea=link.get(ans[i]['fn'], []))
+    dump_json(q, f'{O}/link_layer_q15.json', ensure_ascii=False)
+    oldq = load_json(f'{RES}/link_layer_q15.json')
+    ok = (set(oldq) == set(q)
+          and all(sorted(x[1]) == sorted(oldq[i]['link_fpea'][0][1])
+                  for i in q for x in q[i]['link_fpea'][:1]))
+    report.append(('link_layer_q15.json (id, link signals)', 'SAME' if ok else 'DIFF'))
+
+
+# ---------------------------------------------------------------- report
+def write_summary(report, metrics, TP, FP):
+    """derive_report.md (+ stdout): the comparison lines and the headline metrics."""
+    lines = ['# derive_results.py comparison results', '']
+    lines += [f'- {k}: {v}' for k, v in report]
+    lines += ['', f"- metrics: κ {metrics['kappa']} agreement {metrics['agree']} TP {TP} FP {FP}"
+                  f" simple P {metrics['prec_simple']} weighted P {metrics['wprec_true']}"
+                  f" (SE {metrics['wprec_se']}) recall {metrics['recall']} {metrics['recall_ci']}"]
+    with open(f'{O}/derive_report.md', 'w') as out:
+        out.write('\n'.join(lines) + '\n')
+    print('\n'.join(lines))
+
+
+def main():
+    os.makedirs(O, exist_ok=True)
+    report = []
+    results, per_unit = derive_version_results(report)
+    _, weights, n_fpea, tot = derive_strata_pop(report, results, per_unit)
+    derive_subsystem_ratio(report, per_unit)
+    derive_typed_vs_opaque(report, results, per_unit, n_fpea)
+    derive_randstruct_vs_norand(report, results, per_unit)
+    ref = ReferenceSet()
+    metrics, TP, FP = derive_metrics(report, ref, weights, n_fpea, tot)
+    derive_fp_types(report, ref)
+    derive_link_layer_q15(report, ref)
+    write_summary(report, metrics, TP, FP)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,8502 @@
+[
+ {
+  "id": "G001",
+  "fn": "init_pci_device_addresses",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/pm8001/.pm80xx_hwi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "pm80xx_chip_init",
+    "pm80xx_chip_soft_rst"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G002",
+  "fn": "drm_atomic_helper_wait_for_dependencies",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/.drm_atomic_helper.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 1,
+   "callers": [
+    "commit_tail"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G003",
+  "fn": "ath9k_eeprom_request_cb",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath9k/.init.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G004",
+  "fn": "vidioc_enum_input",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/pci/cx23885/.cx23885-video.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G005",
+  "fn": "get_data",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/gma500/.intel_i2c.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G006",
+  "fn": "core_tpg_set_initiator_node_queue_depth",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_tpg.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G007",
+  "fn": "netif_tx_disable",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/renesas/.sh_eth.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "sh_eth_set_ringparam"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G008",
+  "fn": "mlx5e_destroy_vlan_table",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlx5/core/.en_fs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "mlx5e_create_flow_steering",
+    "mlx5e_destroy_flow_steering"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G009",
+  "fn": "read_write",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/rts5208/.rtsx_scsi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "rtsx_scsi_handler"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G010",
+  "fn": "ntb_transport_register_client_dev",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ntb/.ntb_transport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G011",
+  "fn": "datai_run",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/pcmcia/.aha152x_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G012",
+  "fn": "cmd_handler_pipe_control",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/gvt/.cmd_parser.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G013",
+  "fn": "sunxi_mmc_hw_reset",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mmc/host/.sunxi-mmc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G014",
+  "fn": "max8973_dcdc_set_voltage_sel",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/regulator/.max8973-regulator.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G015",
+  "fn": "amplc_pci236_pci_probe",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.amplc_pci236.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G016",
+  "fn": "loop_set_carrier_report",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/rc/.rc-loopback.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G017",
+  "fn": "spi_imx_dma_rx_callback",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/spi/.spi-imx.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G018",
+  "fn": "send_tasklet",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/radio/wl128x/.fmdrv_common.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G019",
+  "fn": "internal_display_show",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/amdgpu_dm/.amdgpu_dm_debugfs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G020",
+  "fn": "xpc_timeout_partition_disengage",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/misc/sgi-xp/.xpc_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G021",
+  "fn": "radeon_i2c_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/radeon/.radeon_i2c.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G022",
+  "fn": "keyspan_setup",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/input/misc/.keyspan_remote.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "keyspan_probe"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G023",
+  "fn": "qmp_cdev_get_cur_state",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/soc/qcom/.qcom_aoss.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G024",
+  "fn": "brcmu_d11n_decchspec",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/broadcom/brcm80211/brcmutil/.d11.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G025",
+  "fn": "free_rx_sc_rcu",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/.macsec.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G026",
+  "fn": "serial_omap_runtime_resume",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/tty/serial/.omap-serial.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G027",
+  "fn": "pnp_range_reserved",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/pnp/.resource.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G028",
+  "fn": "dr_ste_v1_build_flex_parser_0_init",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlx5/core/steering/.dr_ste_v1.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G029",
+  "fn": "qed_roce_sp_modify_responder",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/qlogic/qed/.qed_roce.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "qed_roce_modify_qp"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G030",
+  "fn": "max17040_stop_work",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "teardown",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/power/supply/.max17040_battery.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G031",
+  "fn": "bdw_primary_disable_flip_done",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/display/.i9xx_plane.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G032",
+  "fn": "airo_get_rts",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/cisco/.airo.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G033",
+  "fn": "vsc85xx_ts_write_csr",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/phy/mscc/.mscc_ptp.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 14,
+   "callers": [
+    "__vsc85xx_gettime",
+    "__vsc85xx_settime",
+    "vsc8584_config_ts_intr",
+    "vsc8584_handle_ts_interrupt",
+    "vsc8584_ptp_init"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G034",
+  "fn": "fwtable_reg_write_fw_domains",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/.intel_uncore.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G035",
+  "fn": "mtu3_qmu_exit",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/mtu3/.mtu3_qmu.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G036",
+  "fn": "pnp_add_dma_resource",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/pnp/.resource.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G037",
+  "fn": "bcma_sprom_get",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/bcma/.sprom.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G038",
+  "fn": "hfa384x_read_regs",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/intersil/hostap/.hostap_cs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G039",
+  "fn": "gv100_fb_init_page",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/nouveau/nvkm/subdev/fb/.gv100.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G040",
+  "fn": "sh_eth_dev_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/renesas/.sh_eth.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 3,
+   "callers": [
+    "sh_eth_open",
+    "sh_eth_set_ringparam",
+    "sh_eth_tx_timeout"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G041",
+  "fn": "myri10ge_unmap_tx_dma",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/myricom/myri10ge/.myri10ge.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "myri10ge_xmit"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G042",
+  "fn": "bfa_fcs_lport_fdmi_sm_disabled",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/bfa/.bfa_fcs_lport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G043",
+  "fn": "e1000_clean_rx_irq",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/intel/e1000e/.netdev.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G044",
+  "fn": "ath9k_cancel_hw_scan",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath9k/.main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G045",
+  "fn": "on20_disconnect",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/block/paride/.on20.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G046",
+  "fn": "ib_sa_mcmember_rec_callback",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/core/.sa_query.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G047",
+  "fn": "rpr0521_drdy_irq_handler",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/light/.rpr0521.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G048",
+  "fn": "applesmc_init_smcreg",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hwmon/.applesmc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "applesmc_probe",
+    "init_module"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G049",
+  "fn": "sas_phy_match",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/.scsi_transport_sas.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G050",
+  "fn": "usbhsc_power_ctrl",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/renesas_usbhs/.common.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 5,
+   "callers": [
+    "usbhs_probe",
+    "usbhs_remove",
+    "usbhsc_hotplug",
+    "usbhsc_resume",
+    "usbhsc_suspend"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G051",
+  "fn": "copy_overflow",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hid/usbhid/.hiddev.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "hiddev_ioctl_string"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G052",
+  "fn": "drm_reset_display_info",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/.drm_edid.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G053",
+  "fn": "nhi_shutdown",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/thunderbolt/.nhi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "nhi_probe",
+    "nhi_remove"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G054",
+  "fn": "es58x_fd_handle_urb_cmd",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/can/usb/etas_es58x/.es58x_fd.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G055",
+  "fn": "st_scsi_execute_end",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/.st.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G056",
+  "fn": "s3c24xx_serial_put_poll_char",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/tty/serial/.samsung_tty.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G057",
+  "fn": "tegra_nand_runtime_resume",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.tegra_nand.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G058",
+  "fn": "marvell_nfc_hw_ecc_bch_write_page_raw",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.marvell_nand.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G059",
+  "fn": "gr_ep0_testmode_complete",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/gadget/udc/.gr_udc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G060",
+  "fn": "adl_pci7x3x_do_insn_bits",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.adl_pci7x3x.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G061",
+  "fn": "pqi_raid_synchronous_complete",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/smartpqi/.smartpqi_init.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G062",
+  "fn": "dcn31_link_encoder_set_dio_phy_mux",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn31/.dcn31_dio_link_encoder.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G063",
+  "fn": "bfa_cb_rport_scn_online",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/bfa/.bfa_fcs_rport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G064",
+  "fn": "denali_indexed_write",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.denali.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G065",
+  "fn": "rtw8723d_shutdown",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/realtek/rtw88/.rtw8723d.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G066",
+  "fn": "imx_obtain_fixed_clk_hw",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/clk/imx/.clk.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G067",
+  "fn": "type_show",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/soundwire/.sysfs_slave_dpn.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G068",
+  "fn": "ite_open",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/rc/.ite-cir.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G069",
+  "fn": "exynos_adc_ts_open",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/adc/.exynos_adc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G070",
+  "fn": "sdma_map_rcu_callback",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/hw/hfi1/.sdma.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G071",
+  "fn": "rtw_txframes_pending",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/rtl8723bs/core/.rtw_xmit.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G072",
+  "fn": "sxgbe_set_ctxt_rx_owner",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/samsung/sxgbe/.sxgbe_desc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G073",
+  "fn": "wl1251_enable_line_irq",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ti/wl1251/.sdio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G074",
+  "fn": "ath10k_wmi_event_scan",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath10k/.wmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 4,
+   "callers": [
+    "ath10k_wmi_10_1_op_rx",
+    "ath10k_wmi_10_2_op_rx",
+    "ath10k_wmi_10_4_op_rx",
+    "ath10k_wmi_op_rx"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G075",
+  "fn": "core_tpg_add_node_to_devs",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_tpg.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 1,
+   "callers": [
+    "core_tpg_check_initiator_node_acl"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G076",
+  "fn": "mlx5e_add_l2_flow_rule",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlx5/core/.en_fs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "mlx5e_execute_l2_action",
+    "mlx5e_set_rx_mode_work"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G077",
+  "fn": "lxt973_probe",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C1",
+   "C5"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/phy/.lxt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G078",
+  "fn": "program_sh_mem_settings",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/amdkfd/.kfd_device_queue_manager.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G079",
+  "fn": "btintel_read_boot_params",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/bluetooth/.btintel.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 1,
+   "callers": [
+    "btintel_bootloader_setup"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G080",
+  "fn": "gdm_mux_send",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/gdm724x/.gdm_mux.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G081",
+  "fn": "fbcon_get_requirement",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/video/fbdev/core/.fbcon.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G082",
+  "fn": "mwifiex_check_auto_tdls",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/marvell/mwifiex/.tdls.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G083",
+  "fn": "dt3155_init_board",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/pci/dt3155/.dt3155.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "dt3155_probe"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G084",
+  "fn": "si1145_trigger_handler",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/light/.si1145.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G085",
+  "fn": "dcn10_enable_stream_timing",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G086",
+  "fn": "spi_imx_buf_tx_swap",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/spi/.spi-imx.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G087",
+  "fn": "altera_ci_start_feed_1",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/pci/cx23885/.altera-ci.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G088",
+  "fn": "lio_target_np_iser_show",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/iscsi/.iscsi_target_configfs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G089",
+  "fn": "rtw_init_hwxmits",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/rtl8723bs/core/.rtw_xmit.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G090",
+  "fn": "drm_gtf2_2j",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/.drm_edid.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "drm_mode_std"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G091",
+  "fn": "devm_iio_device_unreg",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "teardown",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/.industrialio-core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G092",
+  "fn": "rsi_91x_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/rsi/.rsi_91x_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G093",
+  "fn": "ichx_gpio_get_direction",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpio-ich.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G094",
+  "fn": "scmi_iio_sensor_update_cb",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/common/scmi_sensors/.scmi_iio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G095",
+  "fn": "mdio_mux_read",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/mdio/.mdio-mux.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G096",
+  "fn": "gpio_mockup_set_config",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpio-mockup.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G097",
+  "fn": "vmw_pm_freeze",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/vmwgfx/.vmwgfx_drv.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G098",
+  "fn": "gehc_achc_probe",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/misc/.gehc-achc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G099",
+  "fn": "ath6kl_init_hw_restart",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath6kl/.init.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G100",
+  "fn": "pca9541_release_bus",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/i2c/muxes/.i2c-mux-pca9541.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "pca9541_probe",
+    "pca9541_release_chan"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G101",
+  "fn": "read_file_queues",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath9k/.debug.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G102",
+  "fn": "port100_tg_configure_hw",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/nfc/.port100.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "port100_listen_mdaa"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G103",
+  "fn": "setgain",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/usb/gspca/.pac7311.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "sd_s_ctrl",
+    "sd_start"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G104",
+  "fn": "bcm203x_complete",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/bluetooth/.bcm203x.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G105",
+  "fn": "dcn10_disable_plane",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G106",
+  "fn": "dpu_hw_ctl_update_pending_flush_intf",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/msm/disp/dpu1/.dpu_hw_ctl.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G107",
+  "fn": "felix_port_policer_add",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/dsa/ocelot/.felix.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G108",
+  "fn": "mdio_mux_iproc_switch_fn",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/mdio/.mdio-mux-bcm-iproc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G109",
+  "fn": "marvell_nfc_hw_ecc_hmg_read_oob_raw",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.marvell_nand.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G110",
+  "fn": "imx_mmdc_mask_handshake",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/clk/imx/.clk.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G111",
+  "fn": "wacom_pl_irq",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hid/.wacom_wac.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "wacom_wac_irq"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G112",
+  "fn": "ahd_suspend",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/aic7xxx/.aic79xx_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G113",
+  "fn": "vhost_net_set_features",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/vhost/.net.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "vhost_net_ioctl"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G114",
+  "fn": "qedf_ll2_process_skb",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/qedf/.qedf_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G115",
+  "fn": "cxgbit_close_con_rpl",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/iscsi/cxgbit/.cxgbit_cm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G116",
+  "fn": "usnic_fwd_carrier_up",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/hw/usnic/.usnic_fwd.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G117",
+  "fn": "dt3k_ai_cmdtest",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.dt3000.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G118",
+  "fn": "as73211_read_raw",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/light/.as73211.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G119",
+  "fn": "__cdns_host_init",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/cdns3/.host.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G120",
+  "fn": "r100_pll_rreg",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/radeon/.r100.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G121",
+  "fn": "panfrost_job_fini",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/panfrost/.panfrost_job.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G122",
+  "fn": "rockchip_usb2phy_linestate_irq",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/phy/rockchip/.phy-rockchip-inno-usb2.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "rockchip_usb2phy_irq"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G123",
+  "fn": "atomisp_open",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/media/atomisp/pci/.atomisp_fops.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G124",
+  "fn": "csi2_try_format",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/platform/omap3isp/.ispcsi2.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "csi2_enum_frame_size",
+    "csi2_set_format"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G125",
+  "fn": "ssusb_gadget_ip_sleep_check",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/mtu3/.mtu3_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G126",
+  "fn": "local_lock_release",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/netronome/nfp/flower/.main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "nfp_flower_get_port_id_from_netdev"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G127",
+  "fn": "ni6527_intr_cmdtest",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.ni_6527.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G128",
+  "fn": "if_usb_prog_firmware",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/marvell/libertas/.if_usb.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G129",
+  "fn": "freecom_writedata",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/storage/.freecom.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "freecom_transport"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G130",
+  "fn": "r100_set_common_regs",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/radeon/.r100.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 1,
+   "callers": [
+    "r100_startup"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G131",
+  "fn": "geneve_dev_create_fb",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/.geneve.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G132",
+  "fn": "gs_close",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/gadget/function/.u_serial.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G133",
+  "fn": "nouveau_drm_device_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/nouveau/.nouveau_drm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "nouveau_drm_probe",
+    "nouveau_platform_device_create"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G134",
+  "fn": "cmp_break_pp_connection",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/firewire/.firedtv-avc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G135",
+  "fn": "end_clone_bio",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/md/.dm-rq.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G136",
+  "fn": "lpfc_sli_abort_fcp_cmpl",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C4",
+   "C5"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/lpfc/.lpfc_sli.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G137",
+  "fn": "setlightfreq",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/usb/gspca/.zc3xx.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "sd_start",
+    "zcxx_s_ctrl"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G138",
+  "fn": "core_alua_show_tg_pt_gp_info",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_alua.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G139",
+  "fn": "brcmf_chip_sb_resetcore",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/broadcom/brcm80211/brcmfmac/.chip.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G140",
+  "fn": "execlists_submission_tasklet",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3",
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/gt/.intel_execlists_submission.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G141",
+  "fn": "gm107_therm_new",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/nouveau/nvkm/subdev/therm/.gm107.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G142",
+  "fn": "rtw_fw_c2h_cmd_rx_irqsafe",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/realtek/rtw88/.fw.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G143",
+  "fn": "external_encoder_control_v3",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/bios/.command_table2.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G144",
+  "fn": "efx_siena_sriov_reset_vf_work",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/sfc/.siena_sriov.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G145",
+  "fn": "rtw_xmit",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/rtl8723bs/core/.rtw_xmit.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G146",
+  "fn": "mcp4725_write_raw",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/dac/.mcp4725.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G147",
+  "fn": "acpi_get_parent",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/acpi/acpica/.nsxfobj.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G148",
+  "fn": "dib0090_get_wbd_target",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/dvb-frontends/.dib0090.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G149",
+  "fn": "hyperv_reg_block_invalidate",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/pci/controller/.pci-hyperv-intf.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G150",
+  "fn": "vnic_intr_free",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/cisco/enic/.vnic_intr.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G151",
+  "fn": "ibx_set_infoframes",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/display/.intel_hdmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G152",
+  "fn": "spi_lp8841_rtc_set_cs",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/spi/.spi-lp8841-rtc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G153",
+  "fn": "rpi_exp_gpio_probe",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpio-raspberrypi-exp.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G154",
+  "fn": "dcn10_dpp_pg_control",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G155",
+  "fn": "vlv_hdmi_post_disable",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/display/.g4x_hdmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G156",
+  "fn": "at91_adc_rl_interrupt",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/adc/.at91_adc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G157",
+  "fn": "adjust_display_pll_v3",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/bios/.command_table.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G158",
+  "fn": "i2c_dw_init_slave",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/i2c/busses/.i2c-designware-slave.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G159",
+  "fn": "metadata_take_snap",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/md/.dm-era-target.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G160",
+  "fn": "ucsi_unregister_port_psy",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/typec/ucsi/.psy.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G161",
+  "fn": "dev_pagemap_percpu_release",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "teardown",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/tools/testing/nvdimm/test/.iomap.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G162",
+  "fn": "gsm_mux_net_init",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/tty/.n_gsm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G163",
+  "fn": "idt_ntb_msg_outbits",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ntb/hw/idt/.ntb_hw_idt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G164",
+  "fn": "iw_conn_req_handler",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/core/.cma.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G165",
+  "fn": "ath_rx_edma_cleanup",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath9k/.recv.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "ath_rx_cleanup",
+    "ath_rx_init"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G166",
+  "fn": "ath10k_mac_op_set_coverage_class",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath10k/.mac.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G167",
+  "fn": "setexposure",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/usb/gspca/.zc3xx.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "zcxx_s_ctrl"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G168",
+  "fn": "ahd_abort_scbs",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/aic7xxx/.aic79xx_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 5,
+   "callers": [
+    "ahd_handle_devreset",
+    "ahd_handle_nonpkt_busfree",
+    "ahd_handle_pkt_busfree",
+    "ahd_handle_seqint",
+    "ahd_reset_channel"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G169",
+  "fn": "r100_mc_stop",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/radeon/.r100.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 2,
+   "callers": [
+    "r100_asic_reset",
+    "r100_startup"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G170",
+  "fn": "ghes_irq_func",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/acpi/apei/.ghes.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G171",
+  "fn": "rs_stay_in_table",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/intel/iwlwifi/dvm/.rs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "rs_rate_scale_perform",
+    "rs_tx_status"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G172",
+  "fn": "fc_seq_start_next",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/libfc/.fc_exch.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G173",
+  "fn": "_rtl92e_watchdog_timer_cb",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/rtl8192e/rtl8192e/.rtl_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G174",
+  "fn": "tse_set_rx_mode",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C1",
+   "C4",
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/altera/.altera_tse_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G175",
+  "fn": "apci1032_interrupt",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.addi_apci_1032.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G176",
+  "fn": "ath10k_ahb_halt_chip",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath10k/.ahb.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 4,
+   "callers": [
+    "ath10k_ahb_hif_power_up",
+    "ath10k_ahb_prepare_device",
+    "ath10k_ahb_probe",
+    "ath10k_ahb_remove"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G177",
+  "fn": "vfio_group_unpin_pages",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/vfio/.vfio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G178",
+  "fn": "ata_acpi_ap_notify_dock",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ata/.libata-acpi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G179",
+  "fn": "ines_hwtstamp",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ptp/.ptp_ines.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G180",
+  "fn": "wil_debugfs_ulong_set",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/wil6210/.debugfs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G181",
+  "fn": "intel_connector_update_modes",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/display/.intel_connector.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G182",
+  "fn": "gem_init_rings",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/cadence/.macb_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G183",
+  "fn": "check_int_v1_v2",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.mxc_nand.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G184",
+  "fn": "restart_offloadq",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/chelsio/cxgb3/.sge.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G185",
+  "fn": "vmw_bo_unpin",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/vmwgfx/.vmwgfx_bo.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G186",
+  "fn": "get_vid",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/char/tpm/.tpm_i2c_nuvoton.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "i2c_nuvoton_probe"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G187",
+  "fn": "mhi_toggle_dev_wake_nop",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/bus/mhi/core/.pm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G188",
+  "fn": "qla2x00_timer",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/qla2xxx/.qla_os.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G189",
+  "fn": "ntb_transport_max_size",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ntb/.ntb_transport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G190",
+  "fn": "i2c_dw_check_stopbit",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/i2c/busses/.i2c-designware-master.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "i2c_dw_xfer"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G191",
+  "fn": "qm_irq",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/crypto/hisilicon/.qm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G192",
+  "fn": "vmw_shader_free",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "teardown",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/vmwgfx/.vmwgfx_shader.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G193",
+  "fn": "spwr_battery_prop_technology",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/power/supply/.surface_battery.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "spwr_battery_get_property"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G194",
+  "fn": "rtl_8723e_c2h_command_handle",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/realtek/rtlwifi/rtl8723ae/.hal_btc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G195",
+  "fn": "mcam_ctlr_dma_contig",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/platform/marvell-ccic/.mcam-core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G196",
+  "fn": "qm_work_process",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/crypto/hisilicon/.qm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G197",
+  "fn": "dwc2_unreserve_timer_fn",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/dwc2/.hcd_queue.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G198",
+  "fn": "ath11k_qmi_assign_target_mem_chunk",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath11k/.qmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "ath11k_qmi_msg_mem_request_cb"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G199",
+  "fn": "btintel_configure_setup",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/bluetooth/.btintel.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G200",
+  "fn": "beiscsi_disable_port",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/be2iscsi/.be_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 3,
+   "callers": [
+    "beiscsi_eeh_err_detected",
+    "beiscsi_recover_port",
+    "beiscsi_remove"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G201",
+  "fn": "clk_alpha_pll_hwfsm_is_enabled",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C1",
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/clk/qcom/.clk-alpha-pll.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G202",
+  "fn": "ntb_transport_setup_qp_msi",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ntb/.ntb_transport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "ntb_transport_link_work",
+    "ntb_transport_msi_desc_changed"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G203",
+  "fn": "sev_irq_handler",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/crypto/ccp/.sev-dev.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G204",
+  "fn": "acpi_gpio_chip_dh",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "teardown",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpiolib-acpi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G205",
+  "fn": "pc87360_find",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hwmon/.pc87360.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "init_module"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G206",
+  "fn": "ahd_sg_setup",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/aic7xxx/.aic79xx_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G207",
+  "fn": "dpu_hw_lm_setup_border_color",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/msm/disp/dpu1/.dpu_hw_lm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G208",
+  "fn": "s626_ai_inttrig",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.s626.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G209",
+  "fn": "bcm5201_suspend",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/.sungem_phy.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G210",
+  "fn": "iio_register_sw_trigger_type",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/.industrialio-sw-trigger.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G211",
+  "fn": "imx2_wdt_isr",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/watchdog/.imx2_wdt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G212",
+  "fn": "g4x_post_disable_dp",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/display/.g4x_dp.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G213",
+  "fn": "ipr_reset_alert",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C4",
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/.ipr.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G214",
+  "fn": "core_alua_set_lba_map",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_alua.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G215",
+  "fn": "debug_bandwidth_open",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/host/.ehci-hcd.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G216",
+  "fn": "hwi_enable_intr",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/be2iscsi/.be_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "beiscsi_dev_probe",
+    "beiscsi_enable_port"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G217",
+  "fn": "al_fic_irq_set_type",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/irqchip/.irq-al-fic.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G218",
+  "fn": "rvu_switch_update_rules",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/marvell/octeontx2/af/.rvu_switch.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G219",
+  "fn": "rvt_alloc_pd",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/sw/rdmavt/.pd.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G220",
+  "fn": "core_alua_show_secondary_status",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_alua.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G221",
+  "fn": "r100_pll_errata_after_index",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/radeon/.r100.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G222",
+  "fn": "ntb_transport_link_query",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ntb/.ntb_transport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G223",
+  "fn": "vmw_bo_pin_in_vram_or_gmr",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/vmwgfx/.vmwgfx_bo.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G224",
+  "fn": "trace_mtu3_zlp_exp_gpd",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/mtu3/.mtu3_qmu.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "qmu_tx_zlp_error_handler"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G225",
+  "fn": "t3b_intr",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/chelsio/cxgb3/.sge.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G226",
+  "fn": "ioh_gpio_direction_input",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpio-ml-ioh.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G227",
+  "fn": "ssusb_gadget_suspend",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/mtu3/.mtu3_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G228",
+  "fn": "savage3D_waitfifo",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/video/fbdev/savage/.savagefb_driver.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G229",
+  "fn": "bnx2x_empty_rx_mode_wait",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/broadcom/bnx2x/.bnx2x_sp.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G230",
+  "fn": "mousedev_free",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/input/.mousedev.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G231",
+  "fn": "txx9ndfmc_read_buf",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.txx9ndfmc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G232",
+  "fn": "msm_disp_state_print",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/msm/disp/.msm_disp_snapshot_util.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G233",
+  "fn": "btintel_bootup",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/bluetooth/.btintel.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G234",
+  "fn": "usbdux_pwm_write",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.usbdux.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G235",
+  "fn": "nfp_abm_ctrl_read_q_xstats",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/netronome/nfp/abm/.ctrl.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G236",
+  "fn": "ia_css_macc1_5_vmem_encode",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/media/atomisp/pci/isp/kernels/macc/macc1_5/.ia_css_macc1_5.host.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G237",
+  "fn": "dwc2_driver_remove",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/dwc2/.platform.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G238",
+  "fn": "__nfp_abm_ctrl_set_q_lvl",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/netronome/nfp/abm/.ctrl.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G239",
+  "fn": "core_alua_allocate_lu_gp",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_alua.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G240",
+  "fn": "amdgpu_sa_bo_new",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/amdgpu/.amdgpu_sa.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G241",
+  "fn": "devm_delayed_work_drop",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "teardown",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/extcon/.extcon-palmas.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G242",
+  "fn": "ath6kl_upload_firmware",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath6kl/.init.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "__ath6kl_init_hw_start"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G243",
+  "fn": "intel_attach_broadcast_rgb_property",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/display/.intel_connector.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G244",
+  "fn": "rsi_91x_deinit",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/rsi/.rsi_91x_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G245",
+  "fn": "dib0090_update_tuning_table_7090",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/dvb-frontends/.dib0090.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G246",
+  "fn": "dwc3_interrupt",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/dwc3/.gadget.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "dwc3_gadget_process_pending_events"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G247",
+  "fn": "iwl_mvm_mac_tsf_id_iter",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/intel/iwlwifi/mvm/.mac-ctxt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "iwl_mvm_mac_iface_iterator"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G248",
+  "fn": "beiscsi_free_mem",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/be2iscsi/.be_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "beiscsi_dev_probe",
+    "beiscsi_remove"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G249",
+  "fn": "mthca_array_clear",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/hw/mthca/.mthca_allocator.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G250",
+  "fn": "dm_wq_work",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/md/.dm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G251",
+  "fn": "core_alua_store_offline_bit",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_alua.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G252",
+  "fn": "wacom_update_led",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hid/.wacom_wac.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 3,
+   "callers": [
+    "wacom_intuos_irq",
+    "wacom_intuos_pro2_bt_irq",
+    "wacom_wac_pad_event"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G253",
+  "fn": "zd1211b_al2230_init_hw",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/zydas/zd1211rw/.zd_rf_al2230.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G254",
+  "fn": "adv7511_get_edid",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/bridge/adv7511/.adv7511_drv.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 3,
+   "callers": [
+    "adv7511_bridge_get_edid",
+    "adv7511_connector_get_modes",
+    "adv7511_detect"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G255",
+  "fn": "ccp_free_chan_resources",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/crypto/ccp/.ccp-dmaengine.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G256",
+  "fn": "irdma_null_ws_reset",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/hw/irdma/.ctrl.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G257",
+  "fn": "dvb_usb_fe_init",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/usb/dvb-usb-v2/.dvb_usb_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G258",
+  "fn": "xpc_process_connect",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/misc/sgi-xp/.xpc_channel.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "xpc_process_openclose_chctl_flags",
+    "xpc_process_sent_chctl_flags"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G259",
+  "fn": "vega20_validate_power_level_request",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/pm/powerplay/hwmgr/.vega20_powertune.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G260",
+  "fn": "avc_remote_ctrl_work",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/firewire/.firedtv-avc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G261",
+  "fn": "vidioc_try_fmt",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/platform/s5p-jpeg/.jpeg-core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 3,
+   "callers": [
+    "s5p_jpeg_s_fmt_vid_out",
+    "s5p_jpeg_try_fmt_vid_cap",
+    "s5p_jpeg_try_fmt_vid_out"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G262",
+  "fn": "vfio_info_cap_add",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/vfio/.vfio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G263",
+  "fn": "i2c_bit_add_bus",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/i2c/algos/.i2c-algo-bit.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G264",
+  "fn": "uvd_v5_0_ring_get_rptr",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/amdgpu/.uvd_v5_0.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G265",
+  "fn": "debugfs_trace_show",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/vc04_services/interface/vchiq_arm/.vchiq_debugfs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G266",
+  "fn": "dcn10_unblank_stream",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G267",
+  "fn": "rhashtable_lookup_fast",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlxsw/.core_acl_flex_actions.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 4,
+   "callers": [
+    "mlxsw_afa_block_append_drop",
+    "mlxsw_afa_block_append_fwd",
+    "mlxsw_afa_block_append_police",
+    "mlxsw_afa_block_commit"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G268",
+  "fn": "dib8000_update_pll",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/dvb-frontends/.dib8000.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G269",
+  "fn": "sh_msiof_spi_write_fifo_8",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/spi/.spi-sh-msiof.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G270",
+  "fn": "con_close",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/tty/vt/.vt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G271",
+  "fn": "wacom_setup_intuos",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hid/.wacom_wac.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "wacom_setup_pen_input_capabilities"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G272",
+  "fn": "rx_poll",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/dlink/.sundance.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G273",
+  "fn": "airspy_enum_freq_bands",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/usb/airspy/.airspy.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G274",
+  "fn": "ath10k_wmi_tlv_swba_parse",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath10k/.wmi-tlv.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G275",
+  "fn": "apple_dart_irq",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iommu/.apple-dart.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G276",
+  "fn": "iproc_gpio_direction_output",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/pinctrl/bcm/.pinctrl-iproc-gpio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G277",
+  "fn": "lpfc_cmpl_els_logo_acc",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/lpfc/.lpfc_els.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G278",
+  "fn": "wacom_show_remote0_mode",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hid/.wacom_sys.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G279",
+  "fn": "virtio_rpmsg_announce_destroy",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/rpmsg/.virtio_rpmsg_bus.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G280",
+  "fn": "hip04_set_mac_address",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/hisilicon/.hip04_eth.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G281",
+  "fn": "sxgbe_tx_ctxt_desc_close",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/samsung/sxgbe/.sxgbe_desc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G282",
+  "fn": "asus_acpi_add",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/platform/x86/.asus-laptop.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G283",
+  "fn": "xlgmac_unmap_desc_data",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/synopsys/.dwc-xlgmac-desc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "xlgmac_free_ring",
+    "xlgmac_map_tx_skb"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G284",
+  "fn": "xgbe_phy_cur_mode",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/amd/xgbe/.xgbe-phy-v2.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G285",
+  "fn": "mxm_wmi_supported",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/platform/x86/.mxm-wmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G286",
+  "fn": "whiteheat_port_remove",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/serial/.whiteheat.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G287",
+  "fn": "map_seg_store",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/auxdisplay/.ht16k33.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G288",
+  "fn": "nand_sync",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.nand_base.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G289",
+  "fn": "hybrid_get_cpu_scaling",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/cpufreq/.intel_pstate.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G290",
+  "fn": "cx23885_sp2_ci_ctrl",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/pci/cx23885/.cx23885-dvb.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G291",
+  "fn": "core_alua_store_secondary_write_metadata",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_alua.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G292",
+  "fn": "vrf_finish_output",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/.vrf.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "vrf_output"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G293",
+  "fn": "sethvflip",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/usb/gspca/.pac7311.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "sd_s_ctrl",
+    "sd_start"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G294",
+  "fn": "pqi_irq_handler",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/smartpqi/.smartpqi_init.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G295",
+  "fn": "vsc85xx_link_change_notify",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/phy/mscc/.mscc_ptp.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G296",
+  "fn": "mtu3_u3_ltssm_isr",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/mtu3/.mtu3_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "mtu3_irq"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G297",
+  "fn": "fake_rw_store",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/.scsi_debug.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G298",
+  "fn": "pm_runtime_work",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/base/power/.runtime.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G299",
+  "fn": "gen4_init_dev",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ntb/hw/intel/.ntb_hw_gen4.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G300",
+  "fn": "af9005_fe_release",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/usb/dvb-usb/.af9005-fe.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G301",
+  "fn": "usbhs_sys_function_ctrl",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/renesas_usbhs/.common.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G302",
+  "fn": "iop_adma_prep_dma_xor_val",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/dma/.iop-adma.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "iop_adma_xor_val_self_test"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G303",
+  "fn": "ahd_read_seeprom",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/aic7xxx/.aic79xx_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G304",
+  "fn": "mpt3sas_init_warpdrive_properties",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/mpt3sas/.mpt3sas_warpdrive.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G305",
+  "fn": "sh_msiof_spi_read_fifo_32",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/spi/.spi-sh-msiof.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G306",
+  "fn": "_rtl92s_firmware_set_h2c_cmd",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/realtek/rtlwifi/rtl8192se/.fw.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "rtl92s_set_fw_joinbss_report_cmd",
+    "rtl92s_set_fw_pwrmode_cmd"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G307",
+  "fn": "create_mkey_callback",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/hw/mlx5/.mr.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G308",
+  "fn": "intel_pwm_disable_backlight",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/display/.intel_backlight.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G309",
+  "fn": "mtu3_qmu_flush",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/mtu3/.mtu3_qmu.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G310",
+  "fn": "r100_mm_rreg_slow",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/radeon/.r100.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G311",
+  "fn": "wakeup_sta_to_xmit",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/rtl8723bs/core/.rtw_xmit.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G312",
+  "fn": "mf6x4_ai_insn_read",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/comedi/drivers/.mf6x4.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G313",
+  "fn": "acpi_db_bus_walk",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/acpi/acpica/.dbnames.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G314",
+  "fn": "rt2400pci_start_queue",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ralink/rt2x00/.rt2400pci.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G315",
+  "fn": "write_endio",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/md/.dm-bufio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G316",
+  "fn": "lirc_dev_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/rc/.lirc_dev.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G317",
+  "fn": "_base_readl_aero",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/mpt3sas/.mpt3sas_base.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G318",
+  "fn": "bfa_fcs_fabric_sm_cleanup",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/bfa/.bfa_fcs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G319",
+  "fn": "ecm_notify_complete",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/gadget/function/.f_ecm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G320",
+  "fn": "aspeed_gpio_change_cmd_source",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpio-aspeed.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "aspeed_gpio_probe"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G321",
+  "fn": "s_sync0",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C1",
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/.i915_request.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G322",
+  "fn": "remote_mac_store",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/.netconsole.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G323",
+  "fn": "power_supply_match_device_node",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/power/supply/.power_supply_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G324",
+  "fn": "reset_one_mii_phy",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/.sungem_phy.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 4,
+   "callers": [
+    "bcm5400_init",
+    "bcm5401_init",
+    "bcm5411_init",
+    "sungem_phy_probe"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G325",
+  "fn": "nfp_net_reconfig_post",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/netronome/nfp/.nfp_net_common.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "nfp_net_mbox_reconfig_post",
+    "nfp_net_set_rx_mode"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G326",
+  "fn": "vega10_pp_tables_initialize",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/pm/powerplay/hwmgr/.vega10_processpptables.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G327",
+  "fn": "uas_zap_pending",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/storage/.uas.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "uas_disconnect",
+    "uas_eh_device_reset_handler"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G328",
+  "fn": "drm_get_color_range_name",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/.drm_color_mgmt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G329",
+  "fn": "cec_5v_gpio_irq_handler",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/cec/platform/cec-gpio/.cec-gpio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G330",
+  "fn": "mlx5e_enable_cvlan_filter",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlx5/core/.en_fs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G331",
+  "fn": "lpfc_get_cfgparam",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/lpfc/.lpfc_attr.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G332",
+  "fn": "mlxsw_afa_block_append_qos_dsfield",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlxsw/.core_acl_flex_actions.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G333",
+  "fn": "read_phy_register",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/rts5208/.rtsx_scsi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "rtsx_scsi_handler"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G334",
+  "fn": "cfm",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/fddi/skfp/.cfm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G335",
+  "fn": "highlander_i2c_irq",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/i2c/busses/.i2c-highlander.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G336",
+  "fn": "mlxsw_afa_block_activity_get",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlxsw/.core_acl_flex_actions.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G337",
+  "fn": "ath11k_core_fetch_regdb",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath11k/.core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G338",
+  "fn": "nfp_net_irqs_alloc",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/netronome/nfp/.nfp_net_common.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G339",
+  "fn": "innolux_panel_add",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/panel/.panel-innolux-p079zca.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "innolux_panel_probe"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G340",
+  "fn": "multi_config_check",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/tty/serial/8250/.serial_cs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G341",
+  "fn": "amdgpu_gmc_ras_fini",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/amdgpu/.amdgpu_gmc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G342",
+  "fn": "ath11k_core_firmware_request",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath11k/.core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 1,
+   "callers": [
+    "ath11k_core_fetch_board_data_api_1"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G343",
+  "fn": "ath10k_wmi_event_update_stats",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath10k/.wmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 3,
+   "callers": [
+    "ath10k_wmi_10_1_op_rx",
+    "ath10k_wmi_10_2_op_rx",
+    "ath10k_wmi_10_4_op_rx"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G344",
+  "fn": "vsc73xx_gpio_get_direction",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/dsa/.vitesse-vsc73xx-core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G345",
+  "fn": "drm_atomic_helper_wait_for_flip_done",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/.drm_atomic_helper.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G346",
+  "fn": "ep93xx_irq",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/cirrus/.ep93xx_eth.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G347",
+  "fn": "ath5k_hw_disable_pspoll",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath5k/.caps.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G348",
+  "fn": "dr_ste_v1_set_byte_mask",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlx5/core/steering/.dr_ste_v1.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G349",
+  "fn": "fc_seq_send",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/libfc/.fc_exch.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G350",
+  "fn": "tegra_gpio_irq_release_resources",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpio-tegra.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G351",
+  "fn": "pxa2xx_pmx_gpio_set_direction",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/pinctrl/pxa/.pinctrl-pxa2xx.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G352",
+  "fn": "fbcon_fb_unregistered",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/video/fbdev/core/.fbcon.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G353",
+  "fn": "i915_gem_object_pin_to_display_plane",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/gem/.i915_gem_domain.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G354",
+  "fn": "omap3isp_csi2_cleanup",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/platform/omap3isp/.ispcsi2.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G355",
+  "fn": "perf_service_work",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/ntb/test/.ntb_perf.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G356",
+  "fn": "mipid02_probe",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/i2c/.st-mipid02.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G357",
+  "fn": "dwc3_remove",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/dwc3/.core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G358",
+  "fn": "stv0367ter_filt_coeff_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/dvb-frontends/.stv0367.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "stv0367ter_algo"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G359",
+  "fn": "xlgmac_config_rsf_mode",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/synopsys/.dwc-xlgmac-hw.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G360",
+  "fn": "tusb_remove",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/musb/.tusb6010.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G361",
+  "fn": "dcn10_prepare_bandwidth",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G362",
+  "fn": "cxgbi_ppm_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/chelsio/libcxgb/.libcxgb_ppm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G363",
+  "fn": "ali15x3_probe",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/i2c/busses/.i2c-ali15x3.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G364",
+  "fn": "nfp_abm_ctrl_read_q_stats",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/netronome/nfp/abm/.ctrl.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G365",
+  "fn": "sprd_eic_request",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpio/.gpio-eic-sprd.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G366",
+  "fn": "ath11k_qmi_wlanfw_m3_info_send",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath11k/.qmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "ath11k_qmi_driver_event_work"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G367",
+  "fn": "tvp7002_s_ctrl",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/i2c/.tvp7002.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G368",
+  "fn": "get_led_named",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/leds/.leds-ss4200.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "set_power_light_amber_noblink"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G369",
+  "fn": "cfm_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/fddi/skfp/.cfm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G370",
+  "fn": "ypan_down",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/video/fbdev/core/.fbcon.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "fbcon_scroll"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G371",
+  "fn": "apc_agent_timeout",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/isci/.port_config.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G372",
+  "fn": "dcn10_enable_power_gating_plane",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G373",
+  "fn": "lxfb_probe",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/video/fbdev/geode/.lxfb_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G374",
+  "fn": "amdgpu_gmc_get_pde_for_bo",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/amdgpu/.amdgpu_gmc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G375",
+  "fn": "felix_lag_leave",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/dsa/ocelot/.felix.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G376",
+  "fn": "ccp_dmaengine_unregister",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/crypto/ccp/.ccp-dmaengine.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G377",
+  "fn": "phy_axg_mipi_pcie_analog_power_off",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/phy/amlogic/.phy-meson-axg-mipi-pcie-analog.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G378",
+  "fn": "scmi_reg_is_enabled",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/regulator/.scmi-regulator.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G379",
+  "fn": "com20020_probe",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "probe-remove",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/arcnet/.com20020_cs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G380",
+  "fn": "ap_handle_timer",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/intersil/hostap/.hostap_ap.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G381",
+  "fn": "qib_sdma_update_7220_tail",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/hw/qib/.qib_iba7220.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G382",
+  "fn": "picolcd_cir_close",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hid/.hid-picolcd_cir.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G383",
+  "fn": "bfa_fcs_rport_plogi_create",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/bfa/.bfa_fcs_rport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G384",
+  "fn": "dln2_adc_triggered_buffer_predisable",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/adc/.dln2-adc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G385",
+  "fn": "adu_disconnect",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/misc/.adutux.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G386",
+  "fn": "dcn10_set_cursor_attribute",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G387",
+  "fn": "dm_atomic_destroy_state",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/amdgpu_dm/.amdgpu_dm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "amdgpu_dm_atomic_check"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G388",
+  "fn": "drm_mm_scan_init_with_range",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/.drm_mm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G389",
+  "fn": "vz89x_i2c_xfer",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/chemical/.vz89x.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G390",
+  "fn": "alloc_wrb_handle",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/be2iscsi/.be_main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G391",
+  "fn": "con_start",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/tty/vt/.vt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G392",
+  "fn": "ad7877_gpio3_store",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/input/touchscreen/.ad7877.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G393",
+  "fn": "intc_irqpin_irq_enable",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/irqchip/.irq-renesas-intc-irqpin.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G394",
+  "fn": "bcm_sysport_wol_isr",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "irq",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/broadcom/.bcmsysport.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G395",
+  "fn": "flakey_status",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/md/.dm-flakey.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G396",
+  "fn": "iio_ev_value_show",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/.industrialio-event.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G397",
+  "fn": "channel_store",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/marvell/libertas/.mesh.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G398",
+  "fn": "mtu3_set_speed",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/mtu3/.mtu3_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "mtu3_start"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G399",
+  "fn": "dmi_entry_raw_read_helper",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/firmware/.dmi-sysfs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G400",
+  "fn": "v4l_stub_g_audio",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/v4l2-core/.v4l2-ioctl.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G401",
+  "fn": "dvb_dvr_do_ioctl",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/dvb-core/.dmxdev.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G402",
+  "fn": "ucan_write_bulk_callback",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/can/usb/.ucan.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G403",
+  "fn": "amd_powersave_bias_target",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/cpufreq/.amd_freq_sensitivity.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G404",
+  "fn": "mlx4_ib_netdev_event",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/hw/mlx4/.main.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G405",
+  "fn": "vsc8584_config_ts_intr",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/phy/mscc/.mscc_ptp.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G406",
+  "fn": "hiddev_ioctl_usage",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/hid/usbhid/.hiddev.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "hiddev_ioctl"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G407",
+  "fn": "vc4_hdmi_connector_get_modes",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/vc4/.vc4_hdmi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G408",
+  "fn": "transmitter_control_fallback",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/bios/.command_table2.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G409",
+  "fn": "rtw_fw_send_h2c_command",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/realtek/rtw88/.fw.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 25,
+   "callers": [
+    "rtw_fw_adaptivity",
+    "rtw_fw_beacon_filter_config",
+    "rtw_fw_bt_ignore_wlan_action",
+    "rtw_fw_bt_wifi_control",
+    "rtw_fw_coex_tdma_type"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G410",
+  "fn": "btintel_boot",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/bluetooth/.btintel.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "btintel_bootloader_setup",
+    "btintel_bootloader_setup_tlv"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G411",
+  "fn": "gb_sdio_mrq_work",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/greybus/.sdio.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G412",
+  "fn": "mlx5e_destroy_ttc_table",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlx5/core/.en_fs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G413",
+  "fn": "m88ds3103_get_i2c_adapter",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/media/dvb-frontends/.m88ds3103.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G414",
+  "fn": "netxen_nic_hw_write_wx_128M",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/qlogic/netxen/.netxen_nic_hw.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G415",
+  "fn": "mtk_nfc_exec_op",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.mtk_nand.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G416",
+  "fn": "dwc2_lowlevel_hw_disable",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/usb/dwc2/.platform.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G417",
+  "fn": "dal_irq_service_dce110_create",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/irq/dce110/.irq_service_dce110.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G418",
+  "fn": "kthread",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/block/aoe/.aoecmd.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G419",
+  "fn": "mlx5e_vport_context_update_vlans",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlx5/core/.en_fs.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 3,
+   "callers": [
+    "mlx5e_add_vlan_rule",
+    "mlx5e_destroy_vlan_table",
+    "mlx5e_vlan_rx_kill_vid"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G420",
+  "fn": "mt76x02_send_tx_status",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/mediatek/mt76/.mt76x02_mac.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 1,
+   "callers": [
+    "mt76x02_mac_poll_tx_status"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G421",
+  "fn": "rt2400pci_config",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ralink/rt2x00/.rt2400pci.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G422",
+  "fn": "iscsi_check_valuelist_for_support",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/iscsi/.iscsi_target_parameters.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "iscsi_check_acceptor_state",
+    "iscsi_check_proposer_state"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G423",
+  "fn": "core_alua_store_tg_pt_gp_info",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/target/.target_core_alua.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G424",
+  "fn": "scpi_device_get_power_state",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/firmware/.arm_scpi.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G425",
+  "fn": "goldfish_pipe_read",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/platform/goldfish/.goldfish_pipe.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G426",
+  "fn": "ath10k_wmi_tlv_op_pull_mgmt_rx_ev",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/ath/ath10k/.wmi-tlv.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G427",
+  "fn": "zinitix_input_close",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/input/touchscreen/.zinitix.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G428",
+  "fn": "nvkm_i2c_bit_xfer",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/nouveau/nvkm/subdev/i2c/.bit.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G429",
+  "fn": "eem_linkcmd_complete",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/usb/.cdc_eem.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G430",
+  "fn": "task_fn_power_on",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/staging/fieldbus/anybuss/.host.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G431",
+  "fn": "imx_drm_encoder_parse_of",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/imx/.imx-drm-core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G432",
+  "fn": "ebu_dma_rx_callback",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/nand/raw/.intel-nand-controller.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G433",
+  "fn": "nfp_net_rx_rings_prepare",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/netronome/nfp/.nfp_net_common.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 2,
+   "callers": [
+    "nfp_net_open_alloc_all",
+    "nfp_net_ring_reconfig"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G434",
+  "fn": "ipoib_cm_skb_reap",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/infiniband/ulp/ipoib/.ipoib_cm.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G435",
+  "fn": "aspeed_adc_clk_disable_unprepare",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "teardown",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/adc/.aspeed_adc.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G436",
+  "fn": "ads131e08_read_reg",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/adc/.ti-ads131e08.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 3,
+   "callers": [
+    "ads131e08_debugfs_reg_access",
+    "ads131e08_initial_config",
+    "ads131e08_set_data_rate"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G437",
+  "fn": "cp_tx_timeout",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/realtek/.8139cp.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G438",
+  "fn": "lpfc_sli4_pdev_reg_request",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/lpfc/.lpfc_attr.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "lpfc_board_mode_store"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G439",
+  "fn": "dcn10_hubp_pg_control",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "?",
+  "rule": "other-file",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/amd/display/dc/dcn10/.dcn10_hw_sequencer.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G440",
+  "fn": "mt76x02_mac_write_txwi",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/mediatek/mt76/.mt76x02_mac.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G441",
+  "fn": "devm_clk_match",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/clk/.clk.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G442",
+  "fn": "fxas21002c_data_rdy_trigger_set_state",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/iio/gyro/.fxas21002c_core.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G443",
+  "fn": "unittest_unflatten_overlay_base",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/of/.unittest.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G444",
+  "fn": "fb_console_init",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/video/fbdev/core/.fbcon.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G445",
+  "fn": "drm_atomic_helper_commit_cleanup_done",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/.drm_atomic_helper.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 1,
+   "callers": [
+    "commit_tail"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G446",
+  "fn": "iwl_mvm_scan_condition_iterator",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "0",
+  "rule": "sync-callback",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/wireless/intel/iwlwifi/mvm/.scan.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G447",
+  "fn": "resp_read_dt0",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/scsi/.scsi_debug.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G448",
+  "fn": "mlxsw_afa_block_append_qos_switch_prio",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mellanox/mlxsw/.core_acl_flex_actions.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G449",
+  "fn": "rproc_coredump_set_elf_info",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "exported-service",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/remoteproc/.remoteproc_coredump.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "external",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G450",
+  "fn": "adc_jack_handler",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "deferred",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/extcon/.extcon-adc-jack.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "adc_jack_probe"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G451",
+  "fn": "vsc7514_phylink_mac_link_up",
+  "pos": true,
+  "stratum": "C1",
+  "signals": [
+   "C1"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/mscc/.ocelot_net.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G452",
+  "fn": "glink_smem_tx_avail",
+  "pos": true,
+  "stratum": "C4only",
+  "signals": [
+   "C4"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/rpmsg/.qcom_glink_smem.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G453",
+  "fn": "__i915_vma_active",
+  "pos": true,
+  "stratum": "C3",
+  "signals": [
+   "C3"
+  ],
+  "label": "1",
+  "rule": "op-table",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/gpu/drm/i915/.i915_vma.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G454",
+  "fn": "ideapad_dytc_profile_exit",
+  "pos": false,
+  "stratum": "-",
+  "signals": [],
+  "label": "0",
+  "rule": "internal-helper",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/platform/x86/.ideapad-laptop.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 1,
+   "callers": [
+    "ideapad_acpi_add"
+   ],
+   "self_rec": 0
+  }
+ },
+ {
+  "id": "G455",
+  "fn": "bnxt_gro_func_5731x",
+  "pos": true,
+  "stratum": "C5",
+  "signals": [
+   "C5"
+  ],
+  "label": "0",
+  "rule": "internal-dispatch",
+  "bc": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/net/ethernet/broadcom/bnxt/.bnxt.o.bc",
+  "r": {
+   "defined": true,
+   "linkage": "internal",
+   "n_callers": 0,
+   "callers": [],
+   "self_rec": 0
+  }
+ }
+]

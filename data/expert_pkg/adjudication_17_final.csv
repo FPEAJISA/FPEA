@@ -1,0 +1,18 @@
+id,adjudicated_verdict,adjudicated_rule,adjudicated_evidence,adjudication_reason,revised
+G204,1,teardown,drivers/gpio/gpiolib-acpi.c,called on node deletion,
+G229,0,internal-dispatch,drivers/net/ethernet/broadcom/bnx2x/bnx2x_sp.c,"an indirect call from other units is possible, but since not every indirect call will be traced, it is executed from the module's internal dispatch and is not an entry point",
+G182,0,internal-dispatch,drivers/net/ethernet/cadence/macb_main.c,internal dispatch function called from a parent function,
+G183,0,internal-dispatch,drivers/mtd/nand/raw/mxc_nand.c,internal dispatch called from the mxc_nand_irq function,
+G315,0,internal-dispatch,drivers/md/dm-bufio.c:679;drivers/md/dm-bufio.c:577;drivers/md/dm-bufio.c:607;drivers/md/dm-bufio.c:615,re-adjudication: all b->end_io calls are inside dm-bufio.c. The addresses that go outside are bio_complete/dmio_complete (P4),Y
+G322,1,op-table,drivers/net/netconsole.c:580;fs/configfs/file.c:207,the netconsole_target_attr_remote_mac function pointer is registered as the .store callback through the CONFIGFS_ATTR macro,
+G318,0,internal-dispatch,drivers/scsi/bfa/bfa_fcs.c:311;drivers/scsi/bfa/bfa_fcs.c:869,this function is judged to be internal dispatch bound to the internal event routine of the driver's own private struct (struct bfa_fcs_fabric_s),
+G034,1,op-table,drivers/gpu/drm/i915/intel_uncore.c:1772;drivers/gpu/drm/i915/intel_uncore.h:340;drivers/gpu/drm/i915/gt/intel_gt.c:169,"re-adjudication: P3 applies. The macro (:1772) assigns the address to uncore->funcs, and mmio_write* of the same uncore->funcs object is called by other units (intel_gt.c etc.)",Y
+G195,0,internal-dispatch,drivers/media/platform/marvell-ccic/mcam-core.c,dma_setup is called only from an internal dispatch function,
+G136,1,deferred,drivers/scsi/lpfc/lpfc_sli.c:12911,"the code flow is deterministically consistent, hence the deferred verdict",Y(reason)
+G088,1,op-table,drivers/target/iscsi/iscsi_target_configfs.c,the function pointer is registered as the .show callback through the CONFIGFS_ATTR macro,
+G308,0,internal-dispatch,drivers/gpu/drm/i915/display/intel_backlight.c,the intel_pwm_disable_backlight function is called only from an internal dispatch function,
+G289,0,internal-dispatch,drivers/cpufreq/intel_pstate.c,internal dispatch whose address is assigned to the internal operation slot of a dedicated interface struct (.get_cpu_scaling) when the driver is initialized,
+G139,0,internal-dispatch,drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c:985,internal dispatch function with a hardware dependency,
+G317,1,op-table,drivers/scsi/mpt3sas/mpt3sas_base.c:8220;drivers/scsi/mpt3sas/mpt3sas_base.c:8267;drivers/scsi/mpt3sas/mpt3sas_scsih.c:3115,re-adjudication: P3 applies. The put_smid_* function pointers of the same ioc object are called from mpt3sas_scsih.c,Y
+G162,0,internal-dispatch,drivers/tty/n_gsm.c:2930,internal dispatch function called at an intermediate stage of the virtual network device allocation pipeline. An entry point should exist in a parent function.,
+G046,0,internal-dispatch,drivers/infiniband/core/sa_query.c:1655;drivers/infiniband/core/sa_query.c:910,"re-adjudication: the sa_query.callback call is at one place, sa_query.c:910. query->callback at line 1603 is the user callback (a different field) (P3/P4)",Y

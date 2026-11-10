@@ -1,0 +1,37 @@
+rows 455 bc missing 0 fn undefined 0
+
+== FPEA positives 255 (by final label) ==
+TP (label 1)                                  n= 218 caller=0  210  caller>0    8
+FP (label 0)                                  n=  37 caller=0   36  caller>0    1
+  TP C1                                       n=  74 caller=0   72  caller>0    2
+  FP C1                                       n=   6 caller=0    6  caller>0    0
+  TP C4only                                   n=  63 caller=0   60  caller>0    3
+  FP C4only                                   n=   7 caller=0    7  caller>0    0
+  TP C3                                       n=  50 caller=0   47  caller>0    3
+  FP C3                                       n=  10 caller=0    9  caller>0    1
+  TP C5                                       n=  31 caller=0   31  caller>0    0
+  FP C5                                       n=  14 caller=0   14  caller>0    0
+  FP rule=internal-dispatch                   n=  27 caller=0   27  caller>0    0
+  FP rule=sync-callback                       n=  10 caller=0    9  caller>0    1
+  TP rule=deferred                            n=  41 caller=0   39  caller>0    2
+  TP rule=irq                                 n=  18 caller=0   16  caller>0    2
+  TP rule=op-table                            n= 137 caller=0  133  caller>0    4
+  TP rule=probe-remove                        n=  15 caller=0   15  caller>0    0
+  TP rule=teardown                            n=   7 caller=0    7  caller>0    0
+
+== Negatives 200 ==
+neg label 0                                   n= 185 caller=0  105  caller>0   80
+neg label ? (other-file registration)         n=  15 caller=0   15  caller>0    0
+
+== TP with caller>0 (entry points lost by the filter), examples ==
+ G102 port100_tg_configure_hw                  C1     op-table     internal callers=1 ['port100_listen_mdaa']
+ G122 rockchip_usb2phy_linestate_irq           C3     irq          internal callers=1 ['rockchip_usb2phy_irq']
+ G246 dwc3_interrupt                           C3     irq          internal callers=1 ['dwc3_gadget_process_pending_events']
+ G283 xlgmac_unmap_desc_data                   C4only op-table     internal callers=2 ['xlgmac_free_ring', 'xlgmac_map_tx_skb']
+ G292 vrf_finish_output                        C3     deferred     internal callers=1 ['vrf_output']
+ G302 iop_adma_prep_dma_xor_val                C4only op-table     internal callers=1 ['iop_adma_xor_val_self_test']
+ G387 dm_atomic_destroy_state                  C1     op-table     internal callers=1 ['amdgpu_dm_atomic_check']
+ G450 adc_jack_handler                         C4only deferred     internal callers=1 ['adc_jack_probe']
+
+== FP with caller>0 (FP removed by the filter) ==
+ G247 iwl_mvm_mac_tsf_id_iter                  C3     sync-callback internal callers=1 ['iwl_mvm_mac_iface_iterator']

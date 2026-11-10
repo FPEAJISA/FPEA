@@ -1,0 +1,151 @@
+{
+ "agg": {
+  "units": 15522,
+  "defined": 242823,
+  "base": 4912,
+  "E_n": 129967,
+  "E_free": 12942,
+  "E_shared_v1": 41822,
+  "E_shared_v2": 29526,
+  "E_any_v1": 48258,
+  "E_any_v2": 38176,
+  "M_n": 125055,
+  "M_free": 12388,
+  "M_shared_v1": 40262,
+  "M_shared_v2": 28435,
+  "M_any_v1": 46447,
+  "M_any_v2": 36790
+ },
+ "cases": {
+  "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/devices/.docg3.o.bc": {
+   "unit": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/mtd/devices/.docg3.o.bc",
+   "defined": 57,
+   "E": {
+    "n": 24,
+    "free": 2,
+    "shared_v1": 10,
+    "shared_v2": 4,
+    "any_v1": 10,
+    "any_v2": 4,
+    "free_set": [
+     "docg3_probe",
+     "docg3_release"
+    ],
+    "s2_set": [
+     "cleanup_module",
+     "docg3_probe",
+     "docg3_release",
+     "init_module"
+    ]
+   },
+   "M": {
+    "n": 24,
+    "free": 2,
+    "shared_v1": 10,
+    "shared_v2": 4,
+    "any_v1": 10,
+    "any_v2": 4,
+    "free_set": [
+     "docg3_probe",
+     "docg3_release"
+    ],
+    "s2_set": [
+     "cleanup_module",
+     "docg3_probe",
+     "docg3_release",
+     "init_module"
+    ]
+   },
+   "base": 0
+  },
+  "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/char/.tlclk.o.bc": {
+   "unit": "/home/user/rerun/nosan/src14/linux-5.17.11/drivers/char/.tlclk.o.bc",
+   "defined": 28,
+   "E": {
+    "n": 28,
+    "free": 3,
+    "shared_v1": 28,
+    "shared_v2": 28,
+    "any_v1": 28,
+    "any_v2": 28,
+    "free_set": [
+     "cleanup_module",
+     "init_module",
+     "tlclk_release"
+    ],
+    "s2_set": [
+     "cleanup_module",
+     "init_module",
+     "show_alarms",
+     "show_current_ref",
+     "show_telclock_version",
+     "store_enable_clk3a_output",
+     "store_enable_clk3b_output",
+     "store_enable_clka0_output",
+     "store_enable_clka1_output",
+     "store_enable_clkb0_output",
+     "store_enable_clkb1_output",
+     "store_filter_select",
+     "store_hardware_switching",
+     "store_hardware_switching_mode",
+     "store_mode_select",
+     "store_received_ref_clk3a",
+     "store_received_ref_clk3b",
+     "store_refalign",
+     "store_reset",
+     "store_select_amcb1_transmit_clock",
+     "store_select_amcb2_transmit_clock",
+     "store_select_redundant_clock",
+     "store_select_ref_frequency",
+     "switchover_timeout",
+     "tlclk_interrupt",
+     "tlclk_open",
+     "tlclk_read",
+     "tlclk_release"
+    ]
+   },
+   "M": {
+    "n": 26,
+    "free": 3,
+    "shared_v1": 26,
+    "shared_v2": 26,
+    "any_v1": 26,
+    "any_v2": 26,
+    "free_set": [
+     "cleanup_module",
+     "init_module",
+     "tlclk_release"
+    ],
+    "s2_set": [
+     "cleanup_module",
+     "init_module",
+     "show_alarms",
+     "show_current_ref",
+     "show_telclock_version",
+     "store_enable_clk3a_output",
+     "store_enable_clk3b_output",
+     "store_enable_clka0_output",
+     "store_enable_clka1_output",
+     "store_enable_clkb0_output",
+     "store_enable_clkb1_output",
+     "store_filter_select",
+     "store_hardware_switching",
+     "store_hardware_switching_mode",
+     "store_mode_select",
+     "store_received_ref_clk3a",
+     "store_received_ref_clk3b",
+     "store_refalign",
+     "store_reset",
+     "store_select_amcb1_transmit_clock",
+     "store_select_amcb2_transmit_clock",
+     "store_select_redundant_clock",
+     "store_select_ref_frequency",
+     "switchover_timeout",
+     "tlclk_open",
+     "tlclk_release"
+    ]
+   },
+   "base": 2
+  }
+ }
+}

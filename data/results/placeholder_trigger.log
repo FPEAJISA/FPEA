@@ -1,0 +1,21 @@
+# {}* placeholder trigger experiment (2026-10-18, clang 14.0.7, src_rb tree .cmd flags + -Wno-error, drivers/spi/spidev.c)
+# Forced layout: `struct X *__fl __attribute__((used)) = 0;` after the last #include (pos_*: designated position). A global without an initializer is a tentative definition emitted at the end of the TU, hence ineffective.
+v519_asis.ll                     file_operations=complete     spidev_fops=named    vm_operations_struct=complete     dev_pagemap_ops=ABSENT
+v519_force_pgmap_ops.ll          file_operations=complete     spidev_fops=named    vm_operations_struct=complete     dev_pagemap_ops=complete
+v519_inc_memremap_only.ll        file_operations=complete     spidev_fops=named    vm_operations_struct=complete     dev_pagemap_ops=ABSENT
+v69_asis.ll                      file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_force_device.ll              file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_force_file.ll                file_operations=complete     spidev_fops=named    vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_force_kernel_param.ll        file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_force_mm.ll                  file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_force_module.ll              file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_force_page.ll                file_operations=complete     spidev_fops=named    vm_operations_struct=complete     dev_pagemap_ops=ABSENT
+v69_force_pgmap_ops.ll           file_operations=complete     spidev_fops=named    vm_operations_struct=complete     dev_pagemap_ops=complete
+v69_force_vma.ll                 file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=complete     dev_pagemap_ops=ABSENT
+v69_force_vmfault.ll             file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=complete     dev_pagemap_ops=ABSENT
+v69_pos_after_param.ll           file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_pos_after_sync.ll            file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_pos_after_sync_read.ll       file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_pos_after_sync_unlocked.ll   file_operations=ph[19]       spidev_fops=literal  vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+v69_pos_before_param.ll          file_operations=complete     spidev_fops=named    vm_operations_struct=ph[5, 9, 10] dev_pagemap_ops=ABSENT
+# 6.9 fs.h file_operations[19]=get_unmapped_area; mm.h vm_operations_struct[5,9,10]=fault/page_mkwrite/pfn_mkwrite; mm_types.h:781 mm_struct.get_unmapped_area same signature; memremap.h:90 dev_pagemap_ops.migrate_to_ram(vm_fault_t(*)(struct vm_fault*)); 6.9 mm.h:31 #include <linux/memremap.h> (absent in 5.19.17 mm.h); 5.19.17 mm_struct first member vm_area_struct *mmap, in 6.9 get_unmapped_area follows maple_tree mm_mt

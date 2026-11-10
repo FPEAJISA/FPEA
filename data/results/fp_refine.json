@@ -1,0 +1,181 @@
+{
+ "F": 138376,
+ "fp": 1092,
+ "bycat": {
+  "C3:iterator": 687,
+  "C3:normal": 344,
+  "C4:local-alloca": 16,
+  "C1:meta-global": 33,
+  "C3:llvm-intrinsic+C3:printk": 1,
+  "C4:other-operand": 11
+ },
+ "ex": {
+  "C3:iterator": [
+   [
+    "titsc_cmp_coord",
+    "drivers_input_touchscreen_ti_am335",
+    "call void @sort(ptr noundef nonnull %52, i64 noundef %88, i64 noundef 4, ptr noundef nonnull @titsc_"
+   ],
+   [
+    "dmi_sysfs_register_handle",
+    "drivers_firmware_dmi-sysfs.bc",
+    "%11 = call i32 @dmi_walk(ptr noundef nonnull @dmi_sysfs_register_handle, ptr noundef nonnull %2) #11"
+   ],
+   [
+    "find_dmi_entry_helper",
+    "drivers_firmware_dmi-sysfs.bc",
+    "%25 = call i32 @dmi_walk(ptr noundef nonnull @find_dmi_entry_helper, ptr noundef nonnull %14) #11"
+   ],
+   [
+    "opp_cmp_func",
+    "drivers_firmware_arm_scpi.bc",
+    "call void @sort(ptr noundef nonnull %36, i64 noundef %62, i64 noundef 8, ptr noundef nonnull @opp_cm"
+   ],
+   [
+    "get_lower_vlan_dev_tc",
+    "drivers_infiniband_core_rdma_cm.bc",
+    "%337 = call i32 @netdev_walk_all_lower_dev_rcu(ptr noundef nonnull %218, ptr noundef nonnull @get_lo"
+   ],
+   [
+    "usbport_trig_add_usb_dev_ports",
+    "drivers_usb_core_ledtrig-usbport.b",
+    "%18 = tail call i32 @usb_for_each_dev(ptr noundef nonnull %3, ptr noundef nonnull @usbport_trig_add_"
+   ]
+  ],
+  "C3:normal": [
+   [
+    "m5mols_sensor_power",
+    "drivers_media_i2c_m5mols_m5mols.bc",
+    "%143 = tail call i32 @m5mols_update_fw(ptr noundef %0, ptr noundef nonnull @m5mols_sensor_power) #12"
+   ],
+   [
+    "filter_by_name",
+    "drivers_infiniband_core_rdma_cm.bc",
+    "%4 = tail call ptr @cma_enum_devices_by_ibdev(ptr noundef nonnull @filter_by_name, ptr noundef %1) #"
+   ],
+   [
+    "DAC960_LP_mbox_init",
+    "drivers_scsi_myrs.bc",
+    "%35 = tail call fastcc zeroext i1 @myrs_enable_mmio_mbox(ptr noundef %1, ptr noundef nonnull @DAC960"
+   ],
+   [
+    "DAC960_BA_mbox_init",
+    "drivers_scsi_myrs.bc",
+    "%35 = tail call fastcc zeroext i1 @myrs_enable_mmio_mbox(ptr noundef %1, ptr noundef nonnull @DAC960"
+   ],
+   [
+    "DAC960_GEM_mbox_init",
+    "drivers_scsi_myrs.bc",
+    "%42 = tail call fastcc zeroext i1 @myrs_enable_mmio_mbox(ptr noundef %1, ptr noundef nonnull @DAC960"
+   ],
+   [
+    "rtl_write_byte_with_val32",
+    "drivers_net_wireless_realtek_rtlwi",
+    "tail call fastcc void @__rtl8821ae_phy_config_with_headerfile(ptr noundef %0, ptr noundef %8, i16 no"
+   ]
+  ],
+  "C4:local-alloca": [
+   [
+    "dmi_entry_raw_read_helper",
+    "drivers_firmware_dmi-sysfs.bc",
+    "store ptr @dmi_entry_raw_read_helper, ptr %18, align 8"
+   ],
+   [
+    "dmi_sel_raw_read_helper",
+    "drivers_firmware_dmi-sysfs.bc",
+    "store ptr @dmi_sel_raw_read_helper, ptr %20, align 8"
+   ],
+   [
+    "dmi_entry_attr_show_helper",
+    "drivers_firmware_dmi-sysfs.bc",
+    "store ptr @dmi_entry_attr_show_helper, ptr %16, align 8"
+   ],
+   [
+    "vfio_pci_is_device_in_set",
+    "drivers_vfio_pci_vfio-pci-core.bc",
+    "store ptr @vfio_pci_is_device_in_set, ptr %34, align 8"
+   ],
+   [
+    "v4l_print_default",
+    "drivers_media_v4l2-core_videodev.b",
+    "store ptr @v4l_print_default, ptr %11, align 8"
+   ],
+   [
+    "dvbsky_ci_ctrl",
+    "drivers_media_usb_dvb-usb-v2_dvb-u",
+    "store ptr @dvbsky_ci_ctrl, ptr %45, align 8"
+   ]
+  ],
+  "C1:meta-global": [
+   [
+    "vmw_so_build_asserts",
+    "drivers_gpu_drm_vmwgfx_vmwgfx.bc",
+    "@llvm.compiler.used = appending global [110 x ptr] [ptr @vmw_kms_init._entry, ptr @vmw_kms_init._ent"
+   ],
+   [
+    "pstate_enable",
+    "drivers_cpufreq_amd_pstate.bc",
+    "@__SCK__amd_pstate_enable = dso_local global %struct.static_call_key { ptr @pstate_enable, %union.an"
+   ],
+   [
+    "pstate_init_perf",
+    "drivers_cpufreq_amd_pstate.bc",
+    "@__SCK__amd_pstate_init_perf = dso_local global %struct.static_call_key { ptr @pstate_init_perf, %un"
+   ],
+   [
+    "pstate_update_perf",
+    "drivers_cpufreq_amd_pstate.bc",
+    "@__SCK__amd_pstate_update_perf = dso_local global %struct.static_call_key { ptr @pstate_update_perf,"
+   ],
+   [
+    "brcmf_update_pmklist",
+    "drivers_net_wireless_broadcom_brcm",
+    "@llvm.compiler.used = appending global [810 x ptr] [ptr @brcmf_ap_add_vif._entry, ptr @brcmf_ap_add_"
+   ],
+   [
+    "ssh_ptl_should_drop_ack_packet",
+    "drivers_platform_surface_aggregato",
+    "@_eil_addr_ssh_ptl_should_drop_ack_packet = internal global %struct.load_weight { i64 ptrtoint (ptr "
+   ]
+  ],
+  "C3:llvm-intrinsic+C3:printk": [
+   [
+    "do_overwritten",
+    "drivers_misc_lkdtm_lkdtm.bc",
+    "tail call void @llvm.memcpy.p0.p0.i64(ptr align 1 @do_overwritten, ptr align 1 @do_nothing, i64 sub "
+   ]
+  ],
+  "C4:other-operand": [
+   [
+    "fnic_fcpio_ack_handler",
+    "drivers_scsi_fnic_fnic.bc",
+    "store i64 ptrtoint (ptr @fnic_fcpio_ack_handler to i64), ptr %108, align 1"
+   ],
+   [
+    "fnic_fcpio_icmnd_cmpl_handler",
+    "drivers_scsi_fnic_fnic.bc",
+    "store i64 ptrtoint (ptr @fnic_fcpio_icmnd_cmpl_handler to i64), ptr %83, align 1"
+   ],
+   [
+    "fnic_fcpio_itmf_cmpl_handler",
+    "drivers_scsi_fnic_fnic.bc",
+    "store i64 ptrtoint (ptr @fnic_fcpio_itmf_cmpl_handler to i64), ptr %300, align 1"
+   ],
+   [
+    "fnic_cleanup_io",
+    "drivers_scsi_fnic_fnic.bc",
+    "store i64 ptrtoint (ptr @fnic_cleanup_io to i64), ptr %135, align 1"
+   ],
+   [
+    "dcn201_get_dcc_compression_cap",
+    "drivers_gpu_drm_amd_display_dc_dcn",
+    "store i64 ptrtoint (ptr @dcn201_get_dcc_compression_cap to i64), ptr %332, align 8"
+   ],
+   [
+    "dcn20_get_dcc_compression_cap",
+    "drivers_gpu_drm_amd_display_dc_dcn",
+    "store i64 ptrtoint (ptr @dcn20_get_dcc_compression_cap to i64), ptr %669, align 8"
+   ]
+  ]
+ }
+}

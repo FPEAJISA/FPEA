@@ -1,0 +1,456 @@
+﻿id,function,unit,hint,verdict,rule,evidence,remark
+G414,netxen_nic_hw_write_wx_128M,drivers/net/ethernet/qlogic/netxen/netxen_nic_hw.c,,1,op-table,drivers/net/ethernet/qlogic/netxen/netxen_nic_hw.c:1736;drivers/net/ethernet/qlogic/netxen/netxen_nic.h:1690,stored in adapter->crb_write and called indirectly from other unit via the NXWR32 macro
+G309,mtu3_qmu_flush,drivers/usb/mtu3/mtu3_qmu.c,,0,internal-helper,drivers/usb/mtu3/mtu3_gadget.c:50,only called directly by name from other file (mtu3_gadget.c)
+G171,rs_stay_in_table,drivers/net/wireless/intel/iwlwifi/dvm/rs.c,,0,internal-helper,drivers/net/wireless/intel/iwlwifi/dvm/rs.c:978,only called directly by name within the unit
+G215,debug_bandwidth_open,drivers/usb/host/ehci-hcd.c,included file definition: drivers/usb/host/ehci-dbg.c,1,op-table,drivers/usb/host/ehci-dbg.c:309;drivers/usb/host/ehci-dbg.c:1035,stored in .open of debugfs file_operations and registered via debugfs_create_file
+G263,i2c_bit_add_bus,drivers/i2c/algos/i2c-algo-bit.c,,0,exported-service,drivers/i2c/algos/i2c-algo-bit.c:685,EXPORT_SYMBOL; called directly by name by other modules
+G114,qedf_ll2_process_skb,drivers/scsi/qedf/qedf_main.c,,1,deferred,drivers/scsi/qedf/qedf_main.c:2655,registered as deferred work callback via INIT_WORK-family macro
+G442,fxas21002c_data_rdy_trigger_set_state,drivers/iio/gyro/fxas21002c_core.c,,1,op-table,drivers/iio/gyro/fxas21002c_core.c:789,stored in the .set_trigger_state function pointer field of a struct
+G078,program_sh_mem_settings,drivers/gpu/drm/amd/amdkfd/kfd_device_queue_manager.c,,0,internal-helper,drivers/gpu/drm/amd/amdkfd/kfd_device_queue_manager.c:123,only called directly by name within the unit
+G345,drm_atomic_helper_wait_for_flip_done,drivers/gpu/drm/drm_atomic_helper.c,,0,exported-service,drivers/gpu/drm/drm_atomic_helper.c:1576,EXPORT_SYMBOL; called directly by name by other modules
+G150,vnic_intr_free,drivers/net/ethernet/cisco/enic/vnic_intr.c,,0,internal-helper,drivers/net/ethernet/cisco/enic/enic_res.c:198,only called directly by name from other file (drivers/net/ethernet/cisco/enic/enic_res.c)
+G165,ath_rx_edma_cleanup,drivers/net/wireless/ath/ath9k/recv.c,,0,internal-helper,drivers/net/wireless/ath/ath9k/recv.c:252,only called directly by name within the unit
+G217,al_fic_irq_set_type,drivers/irqchip/irq-al-fic.c,,1,irq,drivers/irqchip/irq-al-fic.c:169,stored in the .irq_set_type handler of irq_chip
+G185,vmw_bo_unpin,drivers/gpu/drm/vmwgfx/vmwgfx_bo.c,,0,internal-helper,drivers/gpu/drm/vmwgfx/vmwgfx_bo.c:240,only called directly by name within the unit
+G002,drm_atomic_helper_wait_for_dependencies,drivers/gpu/drm/drm_atomic_helper.c,,0,exported-service,drivers/gpu/drm/drm_atomic_helper.c:2261,EXPORT_SYMBOL; called directly by name by other modules
+G229,bnx2x_empty_rx_mode_wait,drivers/net/ethernet/broadcom/bnx2x/bnx2x_sp.c,,1,op-table,drivers/net/ethernet/broadcom/bnx2x/bnx2x_sp.c:2585,stored in o->wait_comp and called indirectly from other unit
+G083,dt3155_init_board,drivers/media/pci/dt3155/dt3155.c,,0,internal-helper,drivers/media/pci/dt3155/dt3155.c:546,only called directly by name within the unit
+G041,myri10ge_unmap_tx_dma,drivers/net/ethernet/myricom/myri10ge/myri10ge.c,,0,internal-helper,drivers/net/ethernet/myricom/myri10ge/myri10ge.c:2836,only called directly by name within the unit
+G104,bcm203x_complete,drivers/bluetooth/bcm203x.c,,1,deferred,drivers/bluetooth/bcm203x.c:83,registered as deferred work/timer/URB completion callback
+G026,serial_omap_runtime_resume,drivers/tty/serial/omap-serial.c,,1,probe-remove,drivers/tty/serial/omap-serial.c:1836,registered as runtime_resume callback via the SET_RUNTIME_PM_OPS() macro
+G049,sas_phy_match,drivers/scsi/scsi_transport_sas.c,,1,op-table,drivers/scsi/scsi_transport_sas.c:1761,stored in the .match function pointer field of a struct
+G144,efx_siena_sriov_reset_vf_work,drivers/net/ethernet/sfc/siena_sriov.c,,1,deferred,drivers/net/ethernet/sfc/siena_sriov.c:1213,registered as deferred work callback via INIT_WORK-family macro
+G206,ahd_sg_setup,drivers/scsi/aic7xxx/aic79xx_core.c,,0,internal-helper,drivers/scsi/aic7xxx/aic79xx_core.c:8972,only called directly by name within the unit
+G392,ad7877_gpio3_store,drivers/input/touchscreen/ad7877.c,,1,op-table,drivers/input/touchscreen/ad7877.c:551,attached to a sysfs attribute via the DEVICE_ATTR macro
+G315,write_endio,drivers/md/dm-bufio.c,,1,deferred,drivers/md/dm-bufio.c:758,registered as BIO completion callback in submit_io()
+G231,txx9ndfmc_read_buf,drivers/mtd/nand/raw/txx9ndfmc.c,,1,op-table,drivers/mtd/nand/raw/txx9ndfmc.c:331,stored in the .read_buf function pointer field of a struct
+G303,ahd_read_seeprom,drivers/scsi/aic7xxx/aic79xx_core.c,,0,internal-helper,drivers/scsi/aic7xxx/aic79xx_proc.c:257,only called directly by name from other file (drivers/scsi/aic7xxx/aic79xx_proc.c)
+G448,mlxsw_afa_block_append_qos_switch_prio,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c,,0,exported-service,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c:1624,EXPORT_SYMBOL; called directly by name by other modules
+G027,pnp_range_reserved,drivers/pnp/resource.c,,0,exported-service,drivers/pnp/resource.c:702,EXPORT_SYMBOL; called directly by name by other modules
+G048,applesmc_init_smcreg,drivers/hwmon/applesmc.c,,0,internal-helper,drivers/hwmon/applesmc.c:647,only called directly by name within the unit
+G300,af9005_fe_release,drivers/media/usb/dvb-usb/af9005-fe.c,,1,op-table,drivers/media/usb/dvb-usb/af9005-fe.c:1461,stored in the .release function pointer field of a struct
+G077,lxt973_probe,drivers/net/phy/lxt.c,,1,probe-remove,drivers/net/phy/lxt.c:332,stored in .probe of the driver struct
+G128,if_usb_prog_firmware,drivers/net/wireless/marvell/libertas/if_usb.c,,1,deferred,drivers/net/wireless/marvell/libertas/if_usb.c:283,registered as firmware completion callback in request_firmware_nowait()
+G099,ath6kl_init_hw_restart,drivers/net/wireless/ath/ath6kl/init.c,,0,internal-helper,drivers/net/wireless/ath/ath6kl/recovery.c:30,only called directly by name from other file (drivers/net/wireless/ath/ath6kl/recovery.c)
+G270,con_close,drivers/tty/vt/vt.c,,1,op-table,drivers/tty/vt/vt.c:3554,stored in the .close function pointer field of a struct
+G306,_rtl92s_firmware_set_h2c_cmd,drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c,,0,internal-helper,drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c:591,only called directly by name within the unit
+G122,rockchip_usb2phy_linestate_irq,drivers/phy/rockchip/phy-rockchip-inno-usb2.c,,1,irq,drivers/phy/rockchip/phy-rockchip-inno-usb2.c:972,registered as interrupt handler via request_irq-family function
+G278,wacom_show_remote0_mode,drivers/hid/wacom_sys.c,,1,op-table,drivers/hid/wacom_sys.c:1865;drivers/hid/wacom_sys.c:1884;drivers/hid/wacom_sys.c:1902,"defined by the DEVICE_EKR_ATTR_GROUP(0) macro, stored in .show of kobj_attribute, then registered in sysfs"
+G357,dwc3_remove,drivers/usb/dwc3/core.c,,1,probe-remove,drivers/usb/dwc3/core.c:2066,stored in .remove of the driver struct
+G164,iw_conn_req_handler,drivers/infiniband/core/cma.c,,1,deferred,drivers/infiniband/core/cma.c:2500,registered as connection request handler (cm_handler) in iw_create_cm_id()
+G431,imx_drm_encoder_parse_of,drivers/gpu/drm/imx/imx-drm-core.c,,0,exported-service,drivers/gpu/drm/imx/imx-drm-core.c:142,EXPORT_SYMBOL; called directly by name by other modules
+G154,dcn10_dpp_pg_control,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:113,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G153,rpi_exp_gpio_probe,drivers/gpio/gpio-raspberrypi-exp.c,,1,probe-remove,drivers/gpio/gpio-raspberrypi-exp.c:248,stored in .probe of the driver struct
+G203,sev_irq_handler,drivers/crypto/ccp/sev-dev.c,,1,irq,drivers/crypto/ccp/sev-dev.c:1178,registered as interrupt handler in psp_set_sev_irq_handler()
+G436,ads131e08_read_reg,drivers/iio/adc/ti-ads131e08.c,,0,internal-helper,drivers/iio/adc/ti-ads131e08.c:263,only called directly by name within the unit
+G429,eem_linkcmd_complete,drivers/net/usb/cdc_eem.c,,1,deferred,drivers/net/usb/cdc_eem.c:57,registered as deferred work/timer/URB completion callback
+G076,mlx5e_add_l2_flow_rule,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c,,0,internal-helper,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c:550,only called directly by name within the unit
+G134,cmp_break_pp_connection,drivers/media/firewire/firedtv-avc.c,,0,internal-helper,drivers/media/firewire/firedtv-fe.c:43,only called directly by name from other file (drivers/media/firewire/firedtv-fe.c)
+G406,hiddev_ioctl_usage,drivers/hid/usbhid/hiddev.c,,0,internal-helper,drivers/hid/usbhid/hiddev.c:797,only called directly by name within the unit
+G294,pqi_irq_handler,drivers/scsi/smartpqi/smartpqi_init.c,,1,irq,drivers/scsi/smartpqi/smartpqi_init.c:3959,registered as interrupt handler via request_irq-family function
+G421,rt2400pci_config,drivers/net/wireless/ralink/rt2x00/rt2400pci.c,,1,op-table,drivers/net/wireless/ralink/rt2x00/rt2400pci.c:1755,stored in the .config function pointer field of a struct
+G423,core_alua_store_tg_pt_gp_info,drivers/target/target_core_alua.c,,0,internal-helper,drivers/target/target_core_alua.h:117,only called directly by name from other file (drivers/target/target_core_alua.h)
+G198,ath11k_qmi_assign_target_mem_chunk,drivers/net/wireless/ath/ath11k/qmi.c,,0,internal-helper,drivers/net/wireless/ath/ath11k/qmi.c:2779,only called directly by name within the unit
+G422,iscsi_check_valuelist_for_support,drivers/target/iscsi/iscsi_target_parameters.c,,0,internal-helper,drivers/target/iscsi/iscsi_target_parameters.c:1062,only called directly by name within the unit
+G142,rtw_fw_c2h_cmd_rx_irqsafe,drivers/net/wireless/realtek/rtw88/fw.c,,0,exported-service,drivers/net/wireless/realtek/rtw88/fw.c:295,EXPORT_SYMBOL; called directly by name by other modules
+G175,apci1032_interrupt,drivers/comedi/drivers/addi_apci_1032.c,,1,irq,drivers/comedi/drivers/addi_apci_1032.c:319,registered as interrupt handler via request_irq-family function
+G404,mlx4_ib_netdev_event,drivers/infiniband/hw/mlx4/main.c,,1,op-table,drivers/infiniband/hw/mlx4/main.c:2816,stored in the .notifier_call function pointer field of a struct
+G072,sxgbe_set_ctxt_rx_owner,drivers/net/ethernet/samsung/sxgbe/sxgbe_desc.c,,1,op-table,drivers/net/ethernet/samsung/sxgbe/sxgbe_desc.c:510,stored in the .set_rx_ctxt_owner function pointer field of a struct
+G368,get_led_named,drivers/leds/leds-ss4200.c,,0,internal-helper,drivers/leds/leds-ss4200.c:430,only called directly by name within the unit
+G204,acpi_gpio_chip_dh,drivers/gpio/gpiolib-acpi.c,,0,comparison,drivers/gpio/gpiolib-acpi.c:1302,"used only as an identification key for acpi_attach_data(), not called"
+G328,drm_get_color_range_name,drivers/gpu/drm/drm_color_mgmt.c,,0,internal-helper,drivers/gpu/drm/drm_color_mgmt.c:495,only called directly by name within the unit
+G093,ichx_gpio_get_direction,drivers/gpio/gpio-ich.c,,1,op-table,drivers/gpio/gpio-ich.c:273,stored in .get_direction of gpio_chip
+G019,internal_display_show,drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm_debugfs.c,,1,op-table,drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm_debugfs.c:2547,attached to a sysfs/configfs/debugfs attribute via the DEFINE_SHOW_ATTRIBUTE macro
+G236,ia_css_macc1_5_vmem_encode,drivers/staging/media/atomisp/pci/isp/kernels/macc/macc1_5/ia_css_macc1_5.host.c,,0,internal-helper,drivers/staging/media/atomisp/pci/isp/kernels/macc/macc1_5/ia_css_macc1_5.host.h:31,only called directly by name from other file (drivers/staging/media/atomisp/pci/isp/kernels/macc/macc1_5/ia_css_macc1_5.host.h)
+G329,cec_5v_gpio_irq_handler,drivers/media/cec/platform/cec-gpio/cec-gpio.c,,1,irq,drivers/media/cec/platform/cec-gpio/cec-gpio.c:240,registered as interrupt handler via request_irq-family function
+G127,ni6527_intr_cmdtest,drivers/comedi/drivers/ni_6527.c,,1,op-table,drivers/comedi/drivers/ni_6527.c:445,stored in .do_cmdtest of comedi_subdevice
+G124,csi2_try_format,drivers/media/platform/omap3isp/ispcsi2.c,,0,internal-helper,drivers/media/platform/omap3isp/ispcsi2.c:949,only called directly by name within the unit
+G100,pca9541_release_bus,drivers/i2c/muxes/i2c-mux-pca9541.c,,0,internal-helper,drivers/i2c/muxes/i2c-mux-pca9541.c:279,only called directly by name within the unit
+G192,vmw_shader_free,drivers/gpu/drm/vmwgfx/vmwgfx_shader.c,,1,teardown,drivers/gpu/drm/vmwgfx/vmwgfx_shader.c:759,registered as resource release destructor (res_free) in vmw_gb_shader_init()
+G383,bfa_fcs_rport_plogi_create,drivers/scsi/bfa/bfa_fcs_rport.c,,0,internal-helper,drivers/scsi/bfa/bfa_fcs_lport.c:511,only called directly by name from other file (drivers/scsi/bfa/bfa_fcs_lport.c)
+G354,omap3isp_csi2_cleanup,drivers/media/platform/omap3isp/ispcsi2.c,,0,internal-helper,drivers/media/platform/omap3isp/ispcsi2.c:1314,only called directly by name within the unit
+G071,rtw_txframes_pending,drivers/staging/rtl8723bs/core/rtw_xmit.c,,0,internal-helper,drivers/staging/r8188eu/os_dep/xmit_linux.c:138,only called directly by name from other file (drivers/staging/r8188eu/os_dep/xmit_linux.c)
+G045,on20_disconnect,drivers/block/paride/on20.c,,1,op-table,drivers/block/paride/on20.c:137,stored in the .disconnect function pointer field of a struct
+G409,rtw_fw_send_h2c_command,drivers/net/wireless/realtek/rtw88/fw.c,,0,internal-helper,drivers/net/wireless/realtek/rtw88/fw.c:368,only called directly by name within the unit
+G443,unittest_unflatten_overlay_base,drivers/of/unittest.c,,0,internal-helper,drivers/of/unittest.c:3053,only called directly by name within the unit
+G197,dwc2_unreserve_timer_fn,drivers/usb/dwc2/hcd_queue.c,,1,deferred,drivers/usb/dwc2/hcd_queue.c:1527,registered as timer callback in timer_setup()
+G152,spi_lp8841_rtc_set_cs,drivers/spi/spi-lp8841-rtc.c,,1,op-table,drivers/spi/spi-lp8841-rtc.c:200,stored in .set_cs of spi_controller
+G011,datai_run,drivers/scsi/pcmcia/aha152x_core.c,included file definition: drivers/scsi/aha152x.c,0,internal-dispatch,drivers/scsi/aha152x.c:612;drivers/scsi/aha152x.c:2369,stored in the internal state table states[] and called indirectly only within the unit
+G370,ypan_down,drivers/video/fbdev/core/fbcon.c,,0,internal-helper,drivers/video/fbdev/core/fbcon.c:188,only called directly by name within the unit
+G322,remote_mac_store,drivers/net/netconsole.c,,0,internal-helper,drivers/net/netconsole.c:546,internal function with no call and no address use anywhere in the source
+G163,idt_ntb_msg_outbits,drivers/ntb/hw/idt/ntb_hw_idt.c,,1,op-table,drivers/ntb/hw/idt/ntb_hw_idt.c:2264,stored in the .msg_outbits function pointer field of a struct
+G065,rtw8723d_shutdown,drivers/net/wireless/realtek/rtw88/rtw8723d.c,,1,probe-remove,drivers/net/wireless/realtek/rtw88/rtw8723d.c:1954,stored in .shutdown of the driver struct
+G178,ata_acpi_ap_notify_dock,drivers/ata/libata-acpi.c,,1,op-table,drivers/ata/libata-acpi.c:202,registered as hotplug notification callback in acpi_initialize_hp_context()
+G418,kthread,drivers/block/aoe/aoecmd.c,,1,deferred,drivers/block/aoe/aoecmd.c:1259,registered as kernel thread function in kthread_run()
+G325,nfp_net_reconfig_post,drivers/net/ethernet/netronome/nfp/nfp_net_common.c,,0,internal-helper,drivers/net/ethernet/netronome/nfp/nfp_net_common.c:207,only called directly by name within the unit
+G115,cxgbit_close_con_rpl,drivers/target/iscsi/cxgbit/cxgbit_cm.c,,1,deferred,drivers/target/iscsi/cxgbit/cxgbit_cm.c:1978,registered as receive backlog callback in cxgbit_skcb_rx_backlog_fn
+G135,end_clone_bio,drivers/md/dm-rq.c,,1,deferred,drivers/md/dm-rq.c:330,registered as bio->bi_end_io BIO completion callback
+G181,intel_connector_update_modes,drivers/gpu/drm/i915/display/intel_connector.c,,0,internal-helper,drivers/gpu/drm/i915/display/intel_connector.c:178,only called directly by name within the unit
+G334,cfm,drivers/net/fddi/skfp/cfm.c,,0,internal-helper,drivers/net/fddi/skfp/queue.c:79,only called directly by name from other file (queue.c)
+G432,ebu_dma_rx_callback,drivers/mtd/nand/raw/intel-nand-controller.c,,1,deferred,drivers/mtd/nand/raw/intel-nand-controller.c:306,registered as DMA completion callback
+G156,at91_adc_rl_interrupt,drivers/iio/adc/at91_adc.c,,1,irq,drivers/iio/adc/at91_adc.c:1082,registered as interrupt handler via request_irq-family function
+G168,ahd_abort_scbs,drivers/scsi/aic7xxx/aic79xx_core.c,,0,internal-helper,drivers/scsi/aic7xxx/aic79xx_core.c:232,only called directly by name within the unit
+G246,dwc3_interrupt,drivers/usb/dwc3/gadget.c,,1,irq,drivers/usb/dwc3/gadget.c:2727,registered as interrupt handler via request_irq-family function
+G195,mcam_ctlr_dma_contig,drivers/media/platform/marvell-ccic/mcam-core.c,,1,op-table,drivers/media/platform/marvell-ccic/mcam-core.c:1294,stored in cam->dma_setup and called indirectly
+G074,ath10k_wmi_event_scan,drivers/net/wireless/ath/ath10k/wmi.c,,0,internal-helper,drivers/net/wireless/ath/ath10k/wmi.c:5867,only called directly by name within the unit
+G374,amdgpu_gmc_get_pde_for_bo,drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c,,0,internal-helper,drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c:90,only called directly by name within the unit
+G413,m88ds3103_get_i2c_adapter,drivers/media/dvb-frontends/m88ds3103.c,,1,op-table,drivers/media/dvb-frontends/m88ds3103.c:1888,stored in pdata->get_i2c_adapter and called indirectly
+G241,devm_delayed_work_drop,drivers/extcon/extcon-palmas.c,header definition: include/linux/devm-helpers.h,1,teardown,include/linux/devm-helpers.h:51;drivers/extcon/extcon-palmas.c:241,registered as devm_add_action() release callback via devm_delayed_work_autocancel()
+G419,mlx5e_vport_context_update_vlans,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c,,0,internal-helper,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c:270,only called directly by name within the unit
+G023,qmp_cdev_get_cur_state,drivers/soc/qcom/qcom_aoss.c,,1,op-table,drivers/soc/qcom/qcom_aoss.c:357,stored in the .get_cur_state function pointer field of a struct
+G105,dcn10_disable_plane,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:55,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G247,iwl_mvm_mac_tsf_id_iter,drivers/net/wireless/intel/iwlwifi/mvm/mac-ctxt.c,,0,sync-callback,drivers/net/wireless/intel/iwlwifi/mvm/mac-ctxt.c:187,synchronous iteration callback of ieee80211_iterate_active_interfaces_atomic(); called only before return and not retained
+G412,mlx5e_destroy_ttc_table,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c,,0,internal-helper,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c:1325,only called directly by name within the unit
+G447,resp_read_dt0,drivers/scsi/scsi_debug.c,,0,internal-dispatch,drivers/scsi/scsi_debug.c:520;drivers/scsi/scsi_debug.c:5492,stored in the unit-internal array opcode_info_arr and called indirectly only internally
+G281,sxgbe_tx_ctxt_desc_close,drivers/net/ethernet/samsung/sxgbe/sxgbe_desc.c,,1,op-table,drivers/net/ethernet/samsung/sxgbe/sxgbe_desc.c:499,stored in the .close_tx_ctxt_desc function pointer field of a struct
+G391,con_start,drivers/tty/vt/vt.c,,1,op-table,drivers/tty/vt/vt.c:3564,stored in the .start function pointer field of a struct
+G341,amdgpu_gmc_ras_fini,drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c,,0,internal-helper,drivers/gpu/drm/amd/amdgpu/gmc_v9_0.c:1683,only called directly by name from other file (drivers/gpu/drm/amd/amdgpu/gmc_v9_0.c)
+G216,hwi_enable_intr,drivers/scsi/be2iscsi/be_main.c,,0,internal-helper,drivers/scsi/be2iscsi/be_main.c:5330,only called directly by name within the unit
+G123,atomisp_open,drivers/staging/media/atomisp/pci/atomisp_fops.c,,1,op-table,drivers/staging/media/atomisp/pci/atomisp_fops.c:1313,stored in the .open function pointer field of a struct
+G226,ioh_gpio_direction_input,drivers/gpio/gpio-ml-ioh.c,,1,op-table,drivers/gpio/gpio-ml-ioh.c:222,stored in .direction_input of gpio_chip
+G187,mhi_toggle_dev_wake_nop,drivers/bus/mhi/core/pm.c,,1,op-table,drivers/bus/mhi/core/pm.c:1067;drivers/bus/mhi/core/main.c:1132,stored in mhi_cntrl->wake_toggle and called indirectly from other unit (main.c)
+G417,dal_irq_service_dce110_create,drivers/gpu/drm/amd/display/dc/irq/dce110/irq_service_dce110.c,,0,internal-helper,drivers/gpu/drm/amd/display/dc/irq/dce110/irq_service_dce110.h:31,only called directly by name from other file (drivers/gpu/drm/amd/display/dc/irq/dce110/irq_service_dce110.h)
+G335,highlander_i2c_irq,drivers/i2c/busses/i2c-highlander.c,,1,irq,drivers/i2c/busses/i2c-highlander.c:386,registered as interrupt handler via request_irq-family function
+G061,pqi_raid_synchronous_complete,drivers/scsi/smartpqi/smartpqi_init.c,,0,internal-dispatch,drivers/scsi/smartpqi/smartpqi_init.c:4548;drivers/scsi/smartpqi/smartpqi_init.c:3419,stored in io_request->io_complete_callback and called indirectly only from the interrupt routine within the unit
+G085,dcn10_enable_stream_timing,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:101,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G014,max8973_dcdc_set_voltage_sel,drivers/regulator/max8973-regulator.c,,1,op-table,drivers/regulator/max8973-regulator.c:323,stored in the .set_voltage_sel function pointer field of a struct
+G265,debugfs_trace_show,drivers/staging/vc04_services/interface/vchiq_arm/vchiq_debugfs.c,,1,op-table,drivers/staging/vc04_services/interface/vchiq_arm/vchiq_debugfs.c:139,registered as debugfs show function in single_open()
+G373,lxfb_probe,drivers/video/fbdev/geode/lxfb_core.c,,1,probe-remove,drivers/video/fbdev/geode/lxfb_core.c:610,stored in .probe of the driver struct
+G286,whiteheat_port_remove,drivers/usb/serial/whiteheat.c,,1,op-table,drivers/usb/serial/whiteheat.c:120,stored in the .port_remove function pointer field of a struct
+G302,iop_adma_prep_dma_xor_val,drivers/dma/iop-adma.c,,1,op-table,drivers/dma/iop-adma.c:1329,stored in .device_prep_dma_xor_val of dma_device
+G359,xlgmac_config_rsf_mode,drivers/net/ethernet/synopsys/dwc-xlgmac-hw.c,,1,op-table,drivers/net/ethernet/synopsys/dwc-xlgmac-hw.c:3124,stored in hw_ops->config_rsf_mode
+G316,lirc_dev_init,drivers/media/rc/lirc_dev.c,,0,internal-helper,drivers/media/rc/rc-core-priv.h:330,only called directly by name from other file (drivers/media/rc/rc-core-priv.h)
+G160,ucsi_unregister_port_psy,drivers/usb/typec/ucsi/psy.c,,0,internal-helper,drivers/usb/typec/ucsi/ucsi.c:1265,only called directly by name from other file (drivers/usb/typec/ucsi/ucsi.c)
+G009,read_write,drivers/staging/rts5208/rtsx_scsi.c,,0,internal-helper,drivers/staging/rts5208/rtsx_scsi.c:2326,only called directly by name within the unit
+G230,mousedev_free,drivers/input/mousedev.c,,1,op-table,drivers/input/mousedev.c:896,stored in the .release function pointer field of a struct
+G090,drm_gtf2_2j,drivers/gpu/drm/drm_edid.c,,0,internal-helper,drivers/gpu/drm/drm_edid.c:2630,only called directly by name within the unit
+G251,core_alua_store_offline_bit,drivers/target/target_core_alua.c,,0,internal-helper,drivers/target/target_core_alua.h:139,only called directly by name from other file (drivers/target/target_core_alua.h)
+G245,dib0090_update_tuning_table_7090,drivers/media/dvb-frontends/dib0090.c,,0,exported-service,drivers/media/dvb-frontends/dib0090.c:2073,EXPORT_SYMBOL; called directly by name by other modules
+G057,tegra_nand_runtime_resume,drivers/mtd/nand/raw/tegra_nand.c,,1,probe-remove,drivers/mtd/nand/raw/tegra_nand.c:1264,registered as dev_pm_ops power management callback
+G106,dpu_hw_ctl_update_pending_flush_intf,drivers/gpu/drm/msm/disp/dpu1/dpu_hw_ctl.c,,1,op-table,drivers/gpu/drm/msm/disp/dpu1/dpu_hw_ctl.c:583,stored in .update_pending_flush_intf of dpu_hw_ctl_ops
+G190,i2c_dw_check_stopbit,drivers/i2c/busses/i2c-designware-master.c,,0,internal-helper,drivers/i2c/busses/i2c-designware-master.c:277,only called directly by name within the unit
+G232,msm_disp_state_print,drivers/gpu/drm/msm/disp/msm_disp_snapshot_util.c,,0,internal-helper,drivers/gpu/drm/msm/msm_debugfs.c:126,only called directly by name from other file (drivers/gpu/drm/msm/msm_debugfs.c)
+G193,spwr_battery_prop_technology,drivers/power/supply/surface_battery.c,,0,internal-helper,drivers/power/supply/surface_battery.c:572,only called directly by name within the unit
+G337,ath11k_core_fetch_regdb,drivers/net/wireless/ath/ath11k/core.c,,0,internal-helper,drivers/net/wireless/ath/ath11k/qmi.c:2223,only called directly by name from other file (drivers/net/wireless/ath/ath11k/qmi.c)
+G350,tegra_gpio_irq_release_resources,drivers/gpio/gpio-tegra.c,,1,op-table,drivers/gpio/gpio-tegra.c:706,stored in the .irq_release_resources function pointer field of a struct
+G364,nfp_abm_ctrl_read_q_stats,drivers/net/ethernet/netronome/nfp/abm/ctrl.c,,0,internal-helper,drivers/net/ethernet/netronome/nfp/abm/qdisc.c:56,only called directly by name from other file (drivers/net/ethernet/netronome/nfp/abm/qdisc.c)
+G218,rvu_switch_update_rules,drivers/net/ethernet/marvell/octeontx2/af/rvu_switch.c,,0,internal-helper,drivers/net/ethernet/marvell/octeontx2/af/rvu_switch.c:20,only called directly by name within the unit
+G240,amdgpu_sa_bo_new,drivers/gpu/drm/amd/amdgpu/amdgpu_sa.c,,0,internal-helper,drivers/gpu/drm/amd/amdgpu/amdgpu_object.h:358,only called directly by name from other file (drivers/gpu/drm/amd/amdgpu/amdgpu_object.h)
+G367,tvp7002_s_ctrl,drivers/media/i2c/tvp7002.c,,1,op-table,drivers/media/i2c/tvp7002.c:788,stored in .s_ctrl of v4l2_ctrl_ops
+G111,wacom_pl_irq,drivers/hid/wacom_wac.c,,0,internal-helper,drivers/hid/wacom_wac.c:3311,only called directly by name within the unit
+G088,lio_target_np_iser_show,drivers/target/iscsi/iscsi_target_configfs.c,,0,internal-helper,drivers/target/iscsi/iscsi_target_configfs.c:116,internal function with no call and no address use anywhere in the source
+G159,metadata_take_snap,drivers/md/dm-era-target.c,,0,sync-callback,drivers/md/dm-era-target.c:1673;drivers/md/dm-era-target.c:1370,"executed synchronously on the internal worker thread from in_worker0(), waits for completion before return, and not retained"
+G393,intc_irqpin_irq_enable,drivers/irqchip/irq-renesas-intc-irqpin.c,,1,irq,drivers/irqchip/irq-renesas-intc-irqpin.c:502,stored in the .irq_enable handler of irq_chip
+G339,innolux_panel_add,drivers/gpu/drm/panel/panel-innolux-p079zca.c,,0,internal-helper,drivers/gpu/drm/panel/panel-innolux-p079zca.c:495,only called directly by name within the unit
+G340,multi_config_check,drivers/tty/serial/8250/serial_cs.c,,0,sync-callback,drivers/tty/serial/8250/serial_cs.c:539,synchronous callback of pcmcia_loop_config(); called only before return and not retained
+G411,gb_sdio_mrq_work,drivers/staging/greybus/sdio.c,,1,deferred,drivers/staging/greybus/sdio.c:815,registered as deferred work callback via INIT_WORK-family macro
+G096,gpio_mockup_set_config,drivers/gpio/gpio-mockup.c,,1,op-table,drivers/gpio/gpio-mockup.c:431,stored in .set_config of gpio_chip
+G173,_rtl92e_watchdog_timer_cb,drivers/staging/rtl8192e/rtl8192e/rtl_core.c,,1,deferred,drivers/staging/rtl8192e/rtl8192e/rtl_core.c:1063,registered as timer callback in timer_setup()
+G169,r100_mc_stop,drivers/gpu/drm/radeon/r100.c,,0,internal-helper,drivers/gpu/drm/radeon/r100.c:2573,only called directly by name within the unit
+G141,gm107_therm_new,drivers/gpu/drm/nouveau/nvkm/subdev/therm/gm107.c,,?,other-file,drivers/gpu/drm/nouveau/nvkm/engine/device/base.c:1962,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G338,nfp_net_irqs_alloc,drivers/net/ethernet/netronome/nfp/nfp_net_common.c,,0,internal-helper,drivers/net/ethernet/netronome/nfp/nfp_net_common.c:391,only called directly by name within the unit
+G075,core_tpg_add_node_to_devs,drivers/target/target_core_tpg.c,,0,internal-helper,drivers/target/target_core_tpg.c:103,only called directly by name within the unit
+G444,fb_console_init,drivers/video/fbdev/core/fbcon.c,,0,internal-helper,drivers/video/fbdev/core/fbcon.c:954,only called directly by name within the unit
+G174,tse_set_rx_mode,drivers/net/ethernet/altera/altera_tse_main.c,,1,op-table,drivers/net/ethernet/altera/altera_tse_main.c:1311,stored in the .ndo_set_rx_mode function pointer field of a struct
+G194,rtl_8723e_c2h_command_handle,drivers/net/wireless/realtek/rtlwifi/rtl8723ae/hal_btc.c,,?,other-file,drivers/net/wireless/realtek/rtlwifi/rtl8723ae/sw.c:231,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G176,ath10k_ahb_halt_chip,drivers/net/wireless/ath/ath10k/ahb.c,,0,internal-helper,drivers/net/wireless/ath/ath10k/ahb.c:584,only called directly by name within the unit
+G200,beiscsi_disable_port,drivers/scsi/be2iscsi/be_main.c,,0,internal-helper,drivers/scsi/be2iscsi/be_main.c:5369,only called directly by name within the unit
+G388,drm_mm_scan_init_with_range,drivers/gpu/drm/drm_mm.c,,0,exported-service,drivers/gpu/drm/drm_mm.c:767,EXPORT_SYMBOL; called directly by name by other modules
+G381,qib_sdma_update_7220_tail,drivers/infiniband/hw/qib/qib_iba7220.c,,1,op-table,drivers/infiniband/hw/qib/qib_iba7220.c:4517,stored in dd->f_sdma_update_tail
+G157,adjust_display_pll_v3,drivers/gpu/drm/amd/display/dc/bios/command_table.c,,1,op-table,drivers/gpu/drm/amd/display/dc/bios/command_table.c:1505,stored in the .adjust_display_pll function pointer field of a struct
+G273,airspy_enum_freq_bands,drivers/media/usb/airspy/airspy.c,,1,op-table,drivers/media/usb/airspy/airspy.c:829,stored in the .vidioc_enum_freq_bands function pointer field of a struct
+G097,vmw_pm_freeze,drivers/gpu/drm/vmwgfx/vmwgfx_drv.c,,1,op-table,drivers/gpu/drm/vmwgfx/vmwgfx_drv.c:1546,stored in the .freeze function pointer field of a struct
+G030,max17040_stop_work,drivers/power/supply/max17040_battery.c,,1,teardown,drivers/power/supply/max17040_battery.c:506,registered as resource release callback via devm_add_action-family function
+G010,ntb_transport_register_client_dev,drivers/ntb/ntb_transport.c,,0,exported-service,drivers/ntb/ntb_transport.c:428,EXPORT_SYMBOL; called directly by name by other modules
+G356,mipid02_probe,drivers/media/i2c/st-mipid02.c,,1,probe-remove,drivers/media/i2c/st-mipid02.c:1070,stored in .probe_new of the driver struct
+G052,drm_reset_display_info,drivers/gpu/drm/drm_edid.c,,0,internal-helper,drivers/gpu/drm/drm_edid.c:5323,only called directly by name within the unit
+G296,mtu3_u3_ltssm_isr,drivers/usb/mtu3/mtu3_core.c,,0,internal-helper,drivers/usb/mtu3/mtu3_core.c:809,only called directly by name within the unit
+G425,goldfish_pipe_read,drivers/platform/goldfish/goldfish_pipe.c,,1,op-table,drivers/platform/goldfish/goldfish_pipe.c:782,stored in the .read function pointer field of a struct
+G307,create_mkey_callback,drivers/infiniband/hw/mlx5/mr.c,,1,deferred,drivers/infiniband/hw/mlx5/mr.c:125,registered as asynchronous command completion callback in mlx5_cmd_exec_cb()
+G103,setgain,drivers/media/usb/gspca/pac7311.c,,0,internal-helper,drivers/media/usb/gspca/pac7311.c:385,only called directly by name within the unit
+G047,rpr0521_drdy_irq_handler,drivers/iio/light/rpr0521.c,,1,irq,drivers/iio/light/rpr0521.c:996,registered as interrupt handler via request_irq-family function
+G036,pnp_add_dma_resource,drivers/pnp/resource.c,,0,internal-helper,drivers/pnp/base.h:166,only called directly by name from other file (drivers/pnp/base.h)
+G113,vhost_net_set_features,drivers/vhost/net.c,,0,internal-helper,drivers/vhost/net.c:1716,only called directly by name within the unit
+G331,lpfc_get_cfgparam,drivers/scsi/lpfc/lpfc_attr.c,,0,internal-helper,drivers/scsi/lpfc/lpfc_attr.c:7610,only called directly by name within the unit
+G172,fc_seq_start_next,drivers/scsi/libfc/fc_exch.c,,0,exported-service,drivers/scsi/libfc/fc_exch.c:587,EXPORT_SYMBOL; called directly by name by other modules
+G314,rt2400pci_start_queue,drivers/net/wireless/ralink/rt2x00/rt2400pci.c,,1,op-table,drivers/net/wireless/ralink/rt2x00/rt2400pci.c:1744,stored in the .start_queue function pointer field of a struct
+G136,lpfc_sli_abort_fcp_cmpl,drivers/scsi/lpfc/lpfc_sli.c,,1,deferred,drivers/scsi/lpfc/lpfc_sli.c:12911,registered as the abtsiocbq->iocb_cmpl IOCB completion callback
+G280,hip04_set_mac_address,drivers/net/ethernet/hisilicon/hip04_eth.c,,1,op-table,drivers/net/ethernet/hisilicon/hip04_eth.c:849,assigned to the struct's .ndo_set_mac_address function pointer field
+G223,vmw_bo_pin_in_vram_or_gmr,drivers/gpu/drm/vmwgfx/vmwgfx_bo.c,,0,internal-helper,drivers/gpu/drm/vmwgfx/vmwgfx_bo.c:106,only called directly by name within the unit
+G201,clk_alpha_pll_hwfsm_is_enabled,drivers/clk/qcom/clk-alpha-pll.c,,1,op-table,drivers/clk/qcom/clk-alpha-pll.c:957,assigned to the struct's .is_enabled function pointer field
+G209,bcm5201_suspend,drivers/net/sungem_phy.c,,1,probe-remove,drivers/net/sungem_phy.c:892,assigned to the driver struct's .suspend
+G177,vfio_group_unpin_pages,drivers/vfio/vfio.c,,0,exported-service,drivers/vfio/vfio.c:2039,EXPORT_SYMBOL; called directly by name by other modules
+G053,nhi_shutdown,drivers/thunderbolt/nhi.c,,0,internal-helper,drivers/thunderbolt/nhi.c:1263,only called directly by name within the unit
+G355,perf_service_work,drivers/ntb/test/ntb_perf.c,,1,deferred,drivers/ntb/test/ntb_perf.c:1457,registered as deferred work callback via INIT_WORK-family macro
+G196,qm_work_process,drivers/crypto/hisilicon/qm.c,,1,deferred,drivers/crypto/hisilicon/qm.c:5835,registered as deferred work callback via INIT_WORK-family macro
+G360,tusb_remove,drivers/usb/musb/tusb6010.c,,1,probe-remove,drivers/usb/musb/tusb6010.c:1273,stored in .remove of the driver struct
+G102,port100_tg_configure_hw,drivers/nfc/port100.c,,1,op-table,drivers/nfc/port100.c:1475,assigned to the struct's .tg_configure_hw function pointer field
+G186,get_vid,drivers/char/tpm/tpm_i2c_nuvoton.c,,0,internal-helper,drivers/char/tpm/tpm_i2c_nuvoton.c:534,only called directly by name within the unit
+G441,devm_clk_match,drivers/clk/clk.c,,0,sync-callback,drivers/clk/clk.c:4318,matching synchronous callback of devres_release(); called only before return and not retained
+G022,keyspan_setup,drivers/input/misc/keyspan_remote.c,,0,internal-helper,drivers/input/misc/keyspan_remote.c:481,only called directly by name within the unit
+G182,gem_init_rings,drivers/net/ethernet/cadence/macb_main.c,,1,op-table,drivers/net/ethernet/cadence/macb_main.c:3921,assigned to the struct's .mog_init_rings function pointer field
+G040,sh_eth_dev_init,drivers/net/ethernet/renesas/sh_eth.c,,0,internal-helper,drivers/net/ethernet/renesas/sh_eth.c:2358,only called directly by name within the unit
+G116,usnic_fwd_carrier_up,drivers/infiniband/hw/usnic/usnic_fwd.c,,0,internal-helper,drivers/infiniband/hw/usnic/usnic_ib_main.c:159,only called directly by name from other file (drivers/infiniband/hw/usnic/usnic_ib_main.c)
+G312,mf6x4_ai_insn_read,drivers/comedi/drivers/mf6x4.c,,1,op-table,drivers/comedi/drivers/mf6x4.c:231,assigned to comedi_subdevice's .insn_read
+G029,qed_roce_sp_modify_responder,drivers/net/ethernet/qlogic/qed/qed_roce.c,,0,internal-helper,drivers/net/ethernet/qlogic/qed/qed_roce.c:1004,only called directly by name within the unit
+G119,__cdns_host_init,drivers/usb/cdns3/host.c,,1,op-table,drivers/usb/cdns3/host.c:135,assigned to cdns_role_driver's .start
+G395,flakey_status,drivers/md/dm-flakey.c,,1,op-table,drivers/md/dm-flakey.c:495,assigned to the struct's .status function pointer field
+G032,airo_get_rts,drivers/net/wireless/cisco/airo.c,,1,op-table,drivers/net/wireless/cisco/airo.c:7605,assigned to the iw_handler handler table
+G098,gehc_achc_probe,drivers/misc/gehc-achc.c,,1,probe-remove,drivers/misc/gehc-achc.c:559,stored in .probe of the driver struct
+G430,task_fn_power_on,drivers/staging/fieldbus/anybuss/host.c,,0,sync-callback,drivers/staging/fieldbus/anybuss/host.c:539;drivers/staging/fieldbus/anybuss/host.c:542,synchronous callback passed to ab_task_create_get() and discarded after ab_task_enqueue_wait() waits for completion
+G267,rhashtable_lookup_fast,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c,header definition: include/linux/rhashtable.h,0,internal-helper,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c:350,only called directly by name within the unit
+G305,sh_msiof_spi_read_fifo_32,drivers/spi/spi-sh-msiof.c,,0,internal-dispatch,drivers/spi/spi-sh-msiof.c:1020,assigned to the local function pointer variable rx_fifo and called indirectly only within the unit
+G063,bfa_cb_rport_scn_online,drivers/scsi/bfa/bfa_fcs_rport.c,,0,internal-helper,drivers/scsi/bfa/bfa_svc.c:5013,only called directly by name from other file (drivers/scsi/bfa/bfa_svc.c)
+G310,r100_mm_rreg_slow,drivers/gpu/drm/radeon/r100.c,,0,internal-helper,drivers/gpu/drm/radeon/r100.c:4099,internal function with no call and no address use anywhere in the source
+G062,dcn31_link_encoder_set_dio_phy_mux,drivers/gpu/drm/amd/display/dc/dcn31/dcn31_dio_link_encoder.c,,1,op-table,drivers/gpu/drm/amd/display/dc/dcn31/dcn31_dio_link_encoder.c:287,assigned to link_encoder_funcs's .set_dio_phy_mux
+G220,core_alua_show_secondary_status,drivers/target/target_core_alua.c,,0,internal-helper,drivers/target/target_core_fabric_configfs.c:570,only called directly by name from other file (drivers/target/target_core_fabric_configfs.c)
+G446,iwl_mvm_scan_condition_iterator,drivers/net/wireless/intel/iwlwifi/mvm/scan.c,,0,sync-callback,drivers/net/wireless/intel/iwlwifi/mvm/scan.c:227,synchronous iteration callback of ieee80211_iterate_active_interfaces_atomic(); called only before return and not retained
+G424,scpi_device_get_power_state,drivers/firmware/arm_scpi.c,,1,op-table,drivers/firmware/arm_scpi.c:796,assigned to the struct's .device_get_power_state function pointer field
+G451,vsc7514_phylink_mac_link_up,drivers/net/ethernet/mscc/ocelot_net.c,,1,op-table,drivers/net/ethernet/mscc/ocelot_net.c:1581,assigned to the struct's .mac_link_up function pointer field
+G377,phy_axg_mipi_pcie_analog_power_off,drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c,,1,op-table,drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c:191,assigned to the struct's .power_off function pointer field
+G349,fc_seq_send,drivers/scsi/libfc/fc_exch.c,,0,exported-service,drivers/scsi/libfc/fc_exch.c:535,EXPORT_SYMBOL; called directly by name by other modules
+G130,r100_set_common_regs,drivers/gpu/drm/radeon/r100.c,,0,internal-helper,drivers/gpu/drm/radeon/r100.c:3882,only called directly by name within the unit
+G378,scmi_reg_is_enabled,drivers/regulator/scmi-regulator.c,,1,op-table,drivers/regulator/scmi-regulator.c:115,assigned to the struct's .is_enabled function pointer field
+G129,freecom_writedata,drivers/usb/storage/freecom.c,,0,internal-helper,drivers/usb/storage/freecom.c:401,only called directly by name within the unit
+G290,cx23885_sp2_ci_ctrl,drivers/media/pci/cx23885/cx23885-dvb.c,,1,op-table,drivers/media/pci/cx23885/cx23885-dvb.c:1156,assigned to the struct's .ci_control function pointer field
+G243,intel_attach_broadcast_rgb_property,drivers/gpu/drm/i915/display/intel_connector.c,,0,internal-helper,drivers/gpu/drm/i915/display/intel_sdvo.c:2728,only called directly by name from other file (drivers/gpu/drm/i915/display/intel_sdvo.c)
+G179,ines_hwtstamp,drivers/ptp/ptp_ines.c,,1,op-table,drivers/ptp/ptp_ines.c:718,assigned to the struct's .hwtstamp function pointer field
+G133,nouveau_drm_device_init,drivers/gpu/drm/nouveau/nouveau_drm.c,,0,internal-helper,drivers/gpu/drm/nouveau/nouveau_drm.c:791,only called directly by name within the unit
+G288,nand_sync,drivers/mtd/nand/raw/nand_base.c,,1,op-table,drivers/mtd/nand/raw/nand_base.c:6288,assigned to mtd_info's ._sync
+G449,rproc_coredump_set_elf_info,drivers/remoteproc/remoteproc_coredump.c,,0,exported-service,drivers/remoteproc/remoteproc_coredump.c:123,EXPORT_SYMBOL; called directly by name by other modules
+G068,ite_open,drivers/media/rc/ite-cir.c,,1,op-table,drivers/media/rc/ite-cir.c:1373,assigned to rc_dev's .open
+G107,felix_port_policer_add,drivers/net/dsa/ocelot/felix.c,,1,op-table,drivers/net/dsa/ocelot/felix.c:1682,assigned to the struct's .port_policer_add function pointer field
+G275,apple_dart_irq,drivers/iommu/apple-dart.c,,1,irq,drivers/iommu/apple-dart.c:893,registered as interrupt handler via request_irq-family function
+G293,sethvflip,drivers/media/usb/gspca/pac7311.c,,0,internal-helper,drivers/media/usb/gspca/pac7311.c:388,only called directly by name within the unit
+G080,gdm_mux_send,drivers/staging/gdm724x/gdm_mux.c,,1,op-table,drivers/staging/gdm724x/gdm_mux.c:532,assigned to tty_dev->send_func
+G394,bcm_sysport_wol_isr,drivers/net/ethernet/broadcom/bcmsysport.c,,1,irq,drivers/net/ethernet/broadcom/bcmsysport.c:2583,registered as interrupt handler via request_irq-family function
+G138,core_alua_show_tg_pt_gp_info,drivers/target/target_core_alua.c,,0,internal-helper,drivers/target/target_core_fabric_configfs.c:526,only called directly by name from other file (drivers/target/target_core_fabric_configfs.c)
+G379,com20020_probe,drivers/net/arcnet/com20020_cs.c,,1,probe-remove,drivers/net/arcnet/com20020_cs.c:316,stored in .probe of the driver struct
+G362,cxgbi_ppm_init,drivers/net/ethernet/chelsio/libcxgb/libcxgb_ppm.c,,0,exported-service,drivers/net/ethernet/chelsio/libcxgb/libcxgb_ppm.c:514,EXPORT_SYMBOL; called directly by name by other modules
+G025,free_rx_sc_rcu,drivers/net/macsec.c,,1,deferred,drivers/net/macsec.c:179,registered with call_rcu() as the RCU callback
+G268,dib8000_update_pll,drivers/media/dvb-frontends/dib8000.c,,1,op-table,drivers/media/dvb-frontends/dib8000.c:4516,assigned to dibx000_ops's .update_pll
+G266,dcn10_unblank_stream,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:51,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G292,vrf_finish_output,drivers/net/vrf.c,,1,deferred,drivers/net/vrf.c:922,registered with NF_HOOK_COND() as the netfilter okfn deferred callback
+G264,uvd_v5_0_ring_get_rptr,drivers/gpu/drm/amd/amdgpu/uvd_v5_0.c,,1,op-table,drivers/gpu/drm/amd/amdgpu/uvd_v5_0.c:881,assigned to the struct's .get_rptr function pointer field
+G435,aspeed_adc_clk_disable_unprepare,drivers/iio/adc/aspeed_adc.c,,1,teardown,drivers/iio/adc/aspeed_adc.c:593,registered with devm_add_action_or_reset() as the clock release callback
+G427,zinitix_input_close,drivers/input/touchscreen/zinitix.c,,1,op-table,drivers/input/touchscreen/zinitix.c:471,assigned to input_dev's .close
+G452,glink_smem_tx_avail,drivers/rpmsg/qcom_glink_smem.c,,1,op-table,drivers/rpmsg/qcom_glink_smem.c:272,assigned to the struct's .avail function pointer field
+G110,imx_mmdc_mask_handshake,drivers/clk/imx/clk.c,,0,internal-helper,drivers/clk/imx/clk-imx6sl.c:416,only called directly by name from other file (drivers/clk/imx/clk-imx6sl.c)
+G376,ccp_dmaengine_unregister,drivers/crypto/ccp/ccp-dmaengine.c,,0,internal-helper,drivers/crypto/ccp/ccp-dev-v5.c:1013,only called directly by name from other file (drivers/crypto/ccp/ccp-dev-v5.c)
+G161,dev_pagemap_percpu_release,tools/testing/nvdimm/test/iomap.c,,1,teardown,tools/testing/nvdimm/test/iomap.c:128,registered with percpu_ref_init() as the resource release callback
+G326,vega10_pp_tables_initialize,drivers/gpu/drm/amd/pm/powerplay/hwmgr/vega10_processpptables.c,,1,op-table,drivers/gpu/drm/amd/pm/powerplay/hwmgr/vega10_processpptables.c:1245,assigned to the struct's .pptable_init function pointer field
+G308,intel_pwm_disable_backlight,drivers/gpu/drm/i915/display/intel_backlight.c,,1,op-table,drivers/gpu/drm/i915/display/intel_backlight.c:1731,assigned to the struct's .disable function pointer field
+G257,dvb_usb_fe_init,drivers/media/usb/dvb-usb-v2/dvb_usb_core.c,,1,op-table,drivers/media/usb/dvb-usb-v2/dvb_usb_core.c:660,assigned to the struct's .init function pointer field
+G433,nfp_net_rx_rings_prepare,drivers/net/ethernet/netronome/nfp/nfp_net_common.c,,0,internal-helper,drivers/net/ethernet/netronome/nfp/nfp_net_common.c:3108,only called directly by name within the unit
+G089,rtw_init_hwxmits,drivers/staging/rtl8723bs/core/rtw_xmit.c,,0,internal-helper,drivers/staging/rtl8723bs/core/rtw_xmit.c:259,only called directly by name within the unit
+G143,external_encoder_control_v3,drivers/gpu/drm/amd/display/dc/bios/command_table2.c,,1,op-table,drivers/gpu/drm/amd/display/dc/bios/command_table2.c:745,"assigned to bp->cmd_tbl.external_encoder_control, set as a field of a function pointer table that is passed outside"
+G438,lpfc_sli4_pdev_reg_request,drivers/scsi/lpfc/lpfc_attr.c,,0,internal-helper,drivers/scsi/lpfc/lpfc_attr.c:1681,only called directly by name within the unit
+G210,iio_register_sw_trigger_type,drivers/iio/industrialio-sw-trigger.c,,0,exported-service,drivers/iio/industrialio-sw-trigger.c:66,EXPORT_SYMBOL; called directly by name by other modules
+G299,gen4_init_dev,drivers/ntb/hw/intel/ntb_hw_gen4.c,,0,internal-helper,drivers/ntb/hw/intel/ntb_hw_gen1.c:1883,only called directly by name from other file (drivers/ntb/hw/intel/ntb_hw_gen1.c)
+G285,mxm_wmi_supported,drivers/platform/x86/mxm-wmi.c,,0,exported-service,drivers/platform/x86/mxm-wmi.c:86,EXPORT_SYMBOL; called directly by name by other modules
+G317,_base_readl_aero,drivers/scsi/mpt3sas/mpt3sas_base.c,,0,internal-dispatch,drivers/scsi/mpt3sas/mpt3sas_base.c:8220;drivers/scsi/mpt3sas/mpt3sas_base.c:944,assigned to the ioc->base_readl function pointer and called indirectly only within the unit
+G162,gsm_mux_net_init,drivers/tty/n_gsm.c,,1,op-table,drivers/tty/n_gsm.c:2930,passed to alloc_netdev() as the netdev init function
+G167,setexposure,drivers/media/usb/gspca/zc3xx.c,,0,internal-helper,drivers/media/usb/gspca/zc3xx.c:6395,only called directly by name within the unit
+G202,ntb_transport_setup_qp_msi,drivers/ntb/ntb_transport.c,,0,internal-helper,drivers/ntb/ntb_transport.c:786,only called directly by name within the unit
+G397,channel_store,drivers/net/wireless/marvell/libertas/mesh.c,,1,op-table,drivers/net/wireless/marvell/libertas/mesh.c:780,attached to a sysfs/configfs attribute via the static DEVICE_ATTR_RW macro
+G289,hybrid_get_cpu_scaling,drivers/cpufreq/intel_pstate.c,,1,op-table,drivers/cpufreq/intel_pstate.c:1964,assigned to the struct's .get_cpu_scaling function pointer field
+G386,dcn10_set_cursor_attribute,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:74,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G420,mt76x02_send_tx_status,drivers/net/wireless/mediatek/mt76/mt76x02_mac.c,,0,internal-helper,drivers/net/wireless/mediatek/mt76/mt76x02_mac.c:898,only called directly by name within the unit
+G403,amd_powersave_bias_target,drivers/cpufreq/amd_freq_sensitivity.c,,1,op-table,drivers/cpufreq/amd_freq_sensitivity.c:136,registered as a handler with od_register_powersave_bias_handler()
+G139,brcmf_chip_sb_resetcore,drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c,,1,op-table,drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c:985,assigned to ci->resetcore and called indirectly from other unit
+G013,sunxi_mmc_hw_reset,drivers/mmc/host/sunxi-mmc.c,,1,op-table,drivers/mmc/host/sunxi-mmc.c:1119,assigned to the struct's .hw_reset function pointer field
+G188,qla2x00_timer,drivers/scsi/qla2xxx/qla_os.c,,1,deferred,drivers/scsi/qla2xxx/qla_os.c:353,registered as timer callback in timer_setup()
+G274,ath10k_wmi_tlv_swba_parse,drivers/net/wireless/ath/ath10k/wmi-tlv.c,,0,sync-callback,drivers/net/wireless/ath/ath10k/wmi-tlv.c:1176,TLV parsing synchronous callback of ath10k_wmi_tlv_iter(); called only before return and not retained
+G092,rsi_91x_init,drivers/net/wireless/rsi/rsi_91x_main.c,,0,exported-service,drivers/net/wireless/rsi/rsi_91x_main.c:390,EXPORT_SYMBOL; called directly by name by other modules
+G035,mtu3_qmu_exit,drivers/usb/mtu3/mtu3_qmu.c,,0,internal-helper,drivers/usb/mtu3/mtu3_core.c:647,only called directly by name from other file (drivers/usb/mtu3/mtu3_core.c)
+G205,pc87360_find,drivers/hwmon/pc87360.c,,0,internal-helper,drivers/hwmon/pc87360.c:1738,only called directly by name within the unit
+G351,pxa2xx_pmx_gpio_set_direction,drivers/pinctrl/pxa/pinctrl-pxa2xx.c,,1,op-table,drivers/pinctrl/pxa/pinctrl-pxa2xx.c:181,assigned to the struct's .gpio_set_direction function pointer field
+G361,dcn10_prepare_bandwidth,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:59,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G125,ssusb_gadget_ip_sleep_check,drivers/usb/mtu3/mtu3_core.c,,0,internal-helper,drivers/usb/mtu3/mtu3_plat.c:55,only called directly by name from other file (drivers/usb/mtu3/mtu3_plat.c)
+G259,vega20_validate_power_level_request,drivers/gpu/drm/amd/pm/powerplay/hwmgr/vega20_powertune.c,,0,internal-helper,drivers/gpu/drm/amd/pm/powerplay/hwmgr/vega20_powertune.h:28,only called directly by name from other file (drivers/gpu/drm/amd/pm/powerplay/hwmgr/vega20_powertune.h)
+G327,uas_zap_pending,drivers/usb/storage/uas.c,,0,internal-helper,drivers/usb/storage/uas.c:793,only called directly by name within the unit
+G145,rtw_xmit,drivers/staging/rtl8723bs/core/rtw_xmit.c,,0,internal-helper,drivers/staging/r8188eu/os_dep/xmit_linux.c:189,only called directly by name from other file (drivers/staging/r8188eu/os_dep/xmit_linux.c)
+G137,setlightfreq,drivers/media/usb/gspca/zc3xx.c,,0,internal-helper,drivers/media/usb/gspca/zc3xx.c:6398,only called directly by name within the unit
+G016,loop_set_carrier_report,drivers/media/rc/rc-loopback.c,,1,op-table,drivers/media/rc/rc-loopback.c:237,assigned to rc_dev's .s_carrier_report
+G221,r100_pll_errata_after_index,drivers/gpu/drm/radeon/r100.c,,0,internal-helper,drivers/gpu/drm/radeon/r100.c:2893,only called directly by name within the unit
+G372,dcn10_enable_power_gating_plane,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:112,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G214,core_alua_set_lba_map,drivers/target/target_core_alua.c,,0,internal-helper,drivers/target/target_core_alua.h:97,only called directly by name from other file (drivers/target/target_core_alua.h)
+G007,netif_tx_disable,drivers/net/ethernet/renesas/sh_eth.c,header definition: include/linux/netdevice.h,0,internal-helper,drivers/net/ethernet/renesas/sh_eth.c:2329,only called directly by name within the unit
+G371,apc_agent_timeout,drivers/scsi/isci/port_config.c,,1,deferred,drivers/scsi/isci/port_config.c:756,registered with sci_init_timer() as the timer callback
+G081,fbcon_get_requirement,drivers/video/fbdev/core/fbcon.c,,0,internal-helper,drivers/video/fbdev/core/fbmem.c:947,only called directly by name from other file (drivers/video/fbdev/core/fbmem.c)
+G439,dcn10_hubp_pg_control,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_hw_sequencer.c,,?,other-file,drivers/gpu/drm/amd/display/dc/dcn10/dcn10_init.c:114,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G400,v4l_stub_g_audio,drivers/media/v4l2-core/v4l2-ioctl.c,,0,internal-dispatch,drivers/media/v4l2-core/v4l2-ioctl.c:2785;drivers/media/v4l2-core/v4l2-ioctl.c:2979,stored in the unit-internal array v4l2_ioctls and called indirectly only internally
+G382,picolcd_cir_close,drivers/hid/hid-picolcd_cir.c,,1,op-table,drivers/hid/hid-picolcd_cir.c:107,assigned to rc_dev's .close
+G225,t3b_intr,drivers/net/ethernet/chelsio/cxgb3/sge.c,,1,irq,drivers/net/ethernet/chelsio/cxgb3/sge.c:2852;drivers/net/ethernet/chelsio/cxgb3/cxgb3_main.c:1134,returned from t3_intr_handler() and registered as the interrupt handler with request_irq() in other unit (cxgb3_main.c)
+G410,btintel_boot,drivers/bluetooth/btintel.c,,0,internal-helper,drivers/bluetooth/btintel.c:1998,only called directly by name within the unit
+G234,usbdux_pwm_write,drivers/comedi/drivers/usbdux.c,,1,op-table,drivers/comedi/drivers/usbdux.c:1664,assigned to comedi_subdevice's .insn_write
+G004,vidioc_enum_input,drivers/media/pci/cx23885/cx23885-video.c,,1,op-table,drivers/media/pci/cx23885/cx23885-video.c:1184,assigned to the struct's .vidioc_enum_input function pointer field
+G396,iio_ev_value_show,drivers/iio/industrialio-event.c,,1,op-table,drivers/iio/industrialio-event.c:383,assigned to the .show handler of the iio attribute
+G008,mlx5e_destroy_vlan_table,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c,,0,internal-helper,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c:1321,only called directly by name within the unit
+G353,i915_gem_object_pin_to_display_plane,drivers/gpu/drm/i915/gem/i915_gem_domain.c,,0,internal-helper,drivers/gpu/drm/i915/display/intel_overlay.c:768,only called directly by name from other file (drivers/gpu/drm/i915/display/intel_overlay.c)
+G070,sdma_map_rcu_callback,drivers/infiniband/hw/hfi1/sdma.c,,1,deferred,drivers/infiniband/hw/hfi1/sdma.c:1237,registered with call_rcu() as the RCU callback
+G227,ssusb_gadget_suspend,drivers/usb/mtu3/mtu3_core.c,,0,internal-helper,drivers/usb/mtu3/mtu3_plat.c:481,only called directly by name from other file (drivers/usb/mtu3/mtu3_plat.c)
+G324,reset_one_mii_phy,drivers/net/sungem_phy.c,,0,internal-helper,drivers/net/sungem_phy.c:208,only called directly by name within the unit
+G320,aspeed_gpio_change_cmd_source,drivers/gpio/gpio-aspeed.c,,0,internal-helper,drivers/gpio/gpio-aspeed.c:353,only called directly by name within the unit
+G244,rsi_91x_deinit,drivers/net/wireless/rsi/rsi_91x_main.c,,0,exported-service,drivers/net/wireless/rsi/rsi_91x_main.c:426,EXPORT_SYMBOL; called directly by name by other modules
+G146,mcp4725_write_raw,drivers/iio/dac/mcp4725.c,,1,op-table,drivers/iio/dac/mcp4725.c:356,assigned to the struct's .write_raw function pointer field
+G208,s626_ai_inttrig,drivers/comedi/drivers/s626.c,,1,op-table,drivers/comedi/drivers/s626.c:1780,assigned to comedi_async's .inttrig
+G043,e1000_clean_rx_irq,drivers/net/ethernet/intel/e1000e/netdev.c,,0,internal-dispatch,drivers/net/ethernet/intel/e1000e/netdev.c:3215;drivers/net/ethernet/intel/e1000e/netdev.c:2682,assigned to the adapter->clean_rx function pointer and called indirectly only within the unit
+G260,avc_remote_ctrl_work,drivers/media/firewire/firedtv-avc.c,,?,other-file,drivers/media/firewire/firedtv-fw.c:271,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G283,xlgmac_unmap_desc_data,drivers/net/ethernet/synopsys/dwc-xlgmac-desc.c,,1,op-table,drivers/net/ethernet/synopsys/dwc-xlgmac-desc.c:641,assigned to desc_ops->unmap_desc_data
+G046,ib_sa_mcmember_rec_callback,drivers/infiniband/core/sa_query.c,,1,deferred,drivers/infiniband/core/sa_query.c:1655,registered in sa_query.callback as the asynchronous response completion callback
+G453,__i915_vma_active,drivers/gpu/drm/i915/i915_vma.c,,1,op-table,drivers/gpu/drm/i915/i915_vma.c:118,registered with i915_active_init() as the active callback
+G390,alloc_wrb_handle,drivers/scsi/be2iscsi/be_main.c,,0,internal-helper,drivers/scsi/be2iscsi/be_main.c:978,only called directly by name within the unit
+G408,transmitter_control_fallback,drivers/gpu/drm/amd/display/dc/bios/command_table2.c,,1,op-table,drivers/gpu/drm/amd/display/dc/bios/command_table2.c:243,assigned to the struct's .transmitter_control function pointer field
+G416,dwc2_lowlevel_hw_disable,drivers/usb/dwc2/platform.c,,0,internal-helper,drivers/usb/dwc2/platform.c:205,only called directly by name within the unit
+G149,hyperv_reg_block_invalidate,drivers/pci/controller/pci-hyperv-intf.c,,0,exported-service,drivers/pci/controller/pci-hyperv-intf.c:52,EXPORT_SYMBOL; called directly by name by other modules
+G028,dr_ste_v1_build_flex_parser_0_init,drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v1.c,,1,op-table,drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v1.c:2075,assigned to the struct's .build_flex_parser_0_init function pointer field
+G184,restart_offloadq,drivers/net/ethernet/chelsio/cxgb3/sge.c,,1,deferred,drivers/net/ethernet/chelsio/cxgb3/sge.c:3092,registered as deferred work callback via INIT_WORK-family macro
+G233,btintel_bootup,drivers/bluetooth/btintel.c,,0,exported-service,drivers/bluetooth/btintel.c:2634,EXPORT_SYMBOL; called directly by name by other modules
+G276,iproc_gpio_direction_output,drivers/pinctrl/bcm/pinctrl-iproc-gpio.c,,1,op-table,drivers/pinctrl/bcm/pinctrl-iproc-gpio.c:842,assigned to gpio_chip's .direction_output
+G258,xpc_process_connect,drivers/misc/sgi-xp/xpc_channel.c,,0,internal-helper,drivers/misc/sgi-xp/xpc_channel.c:27,only called directly by name within the unit
+G344,vsc73xx_gpio_get_direction,drivers/net/dsa/vitesse-vsc73xx-core.c,,1,op-table,drivers/net/dsa/vitesse-vsc73xx-core.c:1130,assigned to the struct's .get_direction function pointer field
+G250,dm_wq_work,drivers/md/dm.c,,1,deferred,drivers/md/dm.c:1713,registered as deferred work callback via INIT_WORK-family macro
+G212,g4x_post_disable_dp,drivers/gpu/drm/i915/display/g4x_dp.c,,1,op-table,drivers/gpu/drm/i915/display/g4x_dp.c:1356,assigned to intel_encoder's .post_disable
+G333,read_phy_register,drivers/staging/rts5208/rtsx_scsi.c,,0,internal-helper,drivers/staging/rts5208/rtsx_scsi.c:2351,only called directly by name within the unit
+G282,asus_acpi_add,drivers/platform/x86/asus-laptop.c,,1,op-table,drivers/platform/x86/asus-laptop.c:1934,assigned to the struct's .add function pointer field
+G399,dmi_entry_raw_read_helper,drivers/firmware/dmi-sysfs.c,,0,internal-dispatch,drivers/firmware/dmi-sysfs.c:548,called indirectly only within the unit as an internal callback of find_dmi_entry()
+G252,wacom_update_led,drivers/hid/wacom_wac.c,,0,internal-helper,drivers/hid/wacom_wac.c:2150,only called directly by name within the unit
+G166,ath10k_mac_op_set_coverage_class,drivers/net/wireless/ath/ath10k/mac.c,,1,op-table,drivers/net/wireless/ath/ath10k/mac.c:9359,assigned to the struct's .set_coverage_class function pointer field
+G384,dln2_adc_triggered_buffer_predisable,drivers/iio/adc/dln2-adc.c,,1,op-table,drivers/iio/adc/dln2-adc.c:587,assigned to the struct's .predisable function pointer field
+G222,ntb_transport_link_query,drivers/ntb/ntb_transport.c,,0,exported-service,drivers/ntb/ntb_transport.c:2366,EXPORT_SYMBOL; called directly by name by other modules
+G347,ath5k_hw_disable_pspoll,drivers/net/wireless/ath/ath5k/caps.c,,0,internal-helper,drivers/net/wireless/ath/ath5k/pcu.c:422,only called directly by name from other file (drivers/net/wireless/ath/ath5k/pcu.c)
+G318,bfa_fcs_fabric_sm_cleanup,drivers/scsi/bfa/bfa_fcs.c,,1,op-table,drivers/scsi/bfa/bfa_fcs.c:311;drivers/scsi/bfa/bfa_fcs_lport.c:1093,assigned to the state machine via bfa_sm_set_state() and called indirectly from other unit
+G242,ath6kl_upload_firmware,drivers/net/wireless/ath/ath6kl/init.c,,0,internal-helper,drivers/net/wireless/ath/ath6kl/init.c:1548,only called directly by name within the unit
+G343,ath10k_wmi_event_update_stats,drivers/net/wireless/ath/ath10k/wmi.c,,0,internal-helper,drivers/net/wireless/ath/ath10k/wmi.c:5881,only called directly by name within the unit
+G191,qm_irq,drivers/crypto/hisilicon/qm.c,,1,irq,drivers/crypto/hisilicon/qm.c:5385,registered as interrupt handler via request_irq-family function
+G437,cp_tx_timeout,drivers/net/ethernet/realtek/8139cp.c,,1,op-table,drivers/net/ethernet/realtek/8139cp.c:1876,assigned to the struct's .ndo_tx_timeout function pointer field
+G415,mtk_nfc_exec_op,drivers/mtd/nand/raw/mtk_nand.c,,1,op-table,drivers/mtd/nand/raw/mtk_nand.c:1363,assigned to the struct's .exec_op function pointer field
+G005,get_data,drivers/gpu/drm/gma500/intel_i2c.c,,1,op-table,drivers/gpu/drm/gma500/intel_i2c.c:122,assigned to the struct's .getsda function pointer field
+G207,dpu_hw_lm_setup_border_color,drivers/gpu/drm/msm/disp/dpu1/dpu_hw_lm.c,,1,op-table,drivers/gpu/drm/msm/disp/dpu1/dpu_hw_lm.c:212,assigned to dpu_hw_lm_ops's .setup_border_color
+G012,cmd_handler_pipe_control,drivers/gpu/drm/i915/gvt/cmd_parser.c,,0,internal-dispatch,drivers/gpu/drm/i915/gvt/cmd_parser.c:2524;drivers/gpu/drm/i915/gvt/cmd_parser.c:2755,stored in the unit-internal array cmd_info and called indirectly only internally
+G407,vc4_hdmi_connector_get_modes,drivers/gpu/drm/vc4/vc4_hdmi.c,,1,op-table,drivers/gpu/drm/vc4/vc4_hdmi.c:348,assigned to the struct's .get_modes function pointer field
+G213,ipr_reset_alert,drivers/scsi/ipr.c,,0,internal-dispatch,drivers/scsi/ipr.c:8525;drivers/scsi/ipr.c:9248,assigned to the ipr_cmd->job_step function pointer and called indirectly only within the unit
+G039,gv100_fb_init_page,drivers/gpu/drm/nouveau/nvkm/subdev/fb/gv100.c,,1,op-table,drivers/gpu/drm/nouveau/nvkm/subdev/fb/gv100.c:36,assigned to nvkm_fb_func's .init_page
+G298,pm_runtime_work,drivers/base/power/runtime.c,,1,deferred,drivers/base/power/runtime.c:1684,registered as deferred work callback via INIT_WORK-family macro
+G261,vidioc_try_fmt,drivers/media/platform/s5p-jpeg/jpeg-core.c,,0,internal-helper,drivers/media/platform/s5p-jpeg/jpeg-core.c:1529,only called directly by name within the unit
+G319,ecm_notify_complete,drivers/usb/gadget/function/f_ecm.c,,1,deferred,drivers/usb/gadget/function/f_ecm.c:777,registered as the USB request completion callback (complete)
+G054,es58x_fd_handle_urb_cmd,drivers/net/can/usb/etas_es58x/es58x_fd.c,,1,op-table,drivers/net/can/usb/etas_es58x/es58x_fd.c:557,assigned to the struct's .handle_urb_cmd function pointer field
+G131,geneve_dev_create_fb,drivers/net/geneve.c,,0,exported-service,drivers/net/geneve.c:1866,EXPORT_SYMBOL; called directly by name by other modules
+G313,acpi_db_bus_walk,drivers/acpi/acpica/dbnames.c,,0,sync-callback,drivers/acpi/acpica/dbnames.c:1030,synchronous traversal callback of acpi_walk_namespace(); called only before return and not retained
+G426,ath10k_wmi_tlv_op_pull_mgmt_rx_ev,drivers/net/wireless/ath/ath10k/wmi-tlv.c,,1,op-table,drivers/net/wireless/ath/ath10k/wmi-tlv.c:4517,assigned to the struct's .pull_mgmt_rx function pointer field
+G091,devm_iio_device_unreg,drivers/iio/industrialio-core.c,,1,teardown,drivers/iio/industrialio-core.c:2020,registered as resource release callback via devm_add_action-family function
+G239,core_alua_allocate_lu_gp,drivers/target/target_core_alua.c,,0,internal-helper,drivers/target/target_core_configfs.c:2735,only called directly by name from other file (drivers/target/target_core_configfs.c)
+G059,gr_ep0_testmode_complete,drivers/usb/gadget/udc/gr_udc.c,,1,deferred,drivers/usb/gadget/udc/gr_udc.c:921,registered with gr_ep0_respond() as the USB request completion callback (complete)
+G304,mpt3sas_init_warpdrive_properties,drivers/scsi/mpt3sas/mpt3sas_warpdrive.c,,0,internal-helper,drivers/scsi/mpt3sas/mpt3sas_warpdrive.c:109,only called directly by name within the unit
+G301,usbhs_sys_function_ctrl,drivers/usb/renesas_usbhs/common.c,,0,internal-helper,drivers/usb/renesas_usbhs/mod_gadget.c:860,only called directly by name from other file (drivers/usb/renesas_usbhs/mod_gadget.c)
+G228,savage3D_waitfifo,drivers/video/fbdev/savage/savagefb_driver.c,,1,op-table,drivers/video/fbdev/savage/savagefb_driver.c:2120;drivers/video/fbdev/savage/savagefb_accel.c:58,assigned to par->SavageWaitFifo and called indirectly from other unit (savagefb_accel.c)
+G034,fwtable_reg_write_fw_domains,drivers/gpu/drm/i915/intel_uncore.c,,0,internal-helper,drivers/gpu/drm/i915/intel_uncore.c:1731,internal function with no call and no address use anywhere in the source
+G038,hfa384x_read_regs,drivers/net/wireless/intersil/hostap/hostap_cs.c,included file definition: drivers/net/wireless/intersil/hostap/hostap_hw.c,1,op-table,drivers/net/wireless/intersil/hostap/hostap_hw.c:3102;drivers/net/wireless/intersil/hostap/hostap_main.c:776,assigned to local->func->read_regs and called indirectly from other unit (hostap_main.c)
+G037,bcma_sprom_get,drivers/bcma/sprom.c,,0,internal-helper,drivers/bcma/main.c:415,Only called directly by name from other file (drivers/bcma/main.c)
+G277,lpfc_cmpl_els_logo_acc,drivers/scsi/lpfc/lpfc_els.c,,1,deferred,drivers/scsi/lpfc/lpfc_els.c:5525,Registered as the elsiocb->iocb_cmpl IOCB completion callback
+G073,wl1251_enable_line_irq,drivers/net/wireless/ti/wl1251/sdio.c,,1,op-table,drivers/net/wireless/ti/wl1251/sdio.c:251,Assigned to the .enable_irq function pointer field of a struct
+G155,vlv_hdmi_post_disable,drivers/gpu/drm/i915/display/g4x_hdmi.c,,1,op-table,drivers/gpu/drm/i915/display/g4x_hdmi.c:578,assigned to intel_encoder's .post_disable
+G369,cfm_init,drivers/net/fddi/skfp/cfm.c,,0,internal-helper,drivers/net/fddi/skfp/smtinit.c:101,Only called directly by name from other file (drivers/net/fddi/skfp/smtinit.c)
+G118,as73211_read_raw,drivers/iio/light/as73211.c,,1,op-table,drivers/iio/light/as73211.c:630,Assigned to the .read_raw function pointer field of a struct
+G330,mlx5e_enable_cvlan_filter,drivers/net/ethernet/mellanox/mlx5/core/en_fs.c,,0,internal-helper,drivers/net/ethernet/mellanox/mlx5/core/en_main.c:3630,Only called directly by name from other file (drivers/net/ethernet/mellanox/mlx5/core/en_main.c)
+G253,zd1211b_al2230_init_hw,drivers/net/wireless/zydas/zd1211rw/zd_rf_al2230.c,,1,op-table,drivers/net/wireless/zydas/zd1211rw/zd_rf_al2230.c:420,Assigned to .init_hw of zd_rf
+G055,st_scsi_execute_end,drivers/scsi/st.c,,1,deferred,drivers/scsi/st.c:584,Registered with blk_execute_rq_nowait() as a completion callback
+G271,wacom_setup_intuos,drivers/hid/wacom_wac.c,,0,internal-helper,drivers/hid/wacom_wac.c:3728,only called directly by name within the unit
+G018,send_tasklet,drivers/media/radio/wl128x/fmdrv_common.c,,1,deferred,drivers/media/radio/wl128x/fmdrv_common.c:1542,Registered as a tasklet callback
+G238,__nfp_abm_ctrl_set_q_lvl,drivers/net/ethernet/netronome/nfp/abm/ctrl.c,,0,internal-helper,drivers/net/ethernet/netronome/nfp/abm/ctrl.c:105,only called directly by name within the unit
+G058,marvell_nfc_hw_ecc_bch_write_page_raw,drivers/mtd/nand/raw/marvell_nand.c,,1,op-table,drivers/mtd/nand/raw/marvell_nand.c:2274,Assigned to .write_page_raw of nand_ecc_ctrl
+G067,type_show,drivers/soundwire/sysfs_slave_dpn.c,,1,op-table,drivers/soundwire/sysfs_slave_dpn.c:44;drivers/soundwire/sysfs_slave_dpn.c:101;drivers/soundwire/sysfs_slave_dpn.c:277,"Defined via the sdw_dpn_attr(type) macro, assigned to .show of device_attribute, then registered with sysfs"
+G024,brcmu_d11n_decchspec,drivers/net/wireless/broadcom/brcm80211/brcmutil/d11.c,,1,op-table,drivers/net/wireless/broadcom/brcm80211/brcmutil/d11.c:241;drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c:2999,Assigned to d11inf->decchspec and called indirectly from other unit (brcmfmac)
+G284,xgbe_phy_cur_mode,drivers/net/ethernet/amd/xgbe/xgbe-phy-v2.c,,1,op-table,drivers/net/ethernet/amd/xgbe/xgbe-phy-v2.c:3443,Assigned to .cur_mode of xgbe_phy_impl
+G079,btintel_read_boot_params,drivers/bluetooth/btintel.c,,0,exported-service,drivers/bluetooth/btintel.c:902,EXPORT_SYMBOL; called directly by name by other modules
+G385,adu_disconnect,drivers/usb/misc/adutux.c,,1,op-table,drivers/usb/misc/adutux.c:788,stored in the .disconnect function pointer field of a struct
+G291,core_alua_store_secondary_write_metadata,drivers/target/target_core_alua.c,,0,internal-helper,drivers/target/target_core_alua.h:146,only called directly by name from other file (drivers/target/target_core_alua.h)
+G095,mdio_mux_read,drivers/net/mdio/mdio-mux.c,,1,op-table,drivers/net/mdio/mdio-mux.c:174,Assigned to .read of mii_bus
+G248,beiscsi_free_mem,drivers/scsi/be2iscsi/be_main.c,,0,internal-helper,drivers/scsi/be2iscsi/be_main.c:5612,only called directly by name within the unit
+G151,ibx_set_infoframes,drivers/gpu/drm/i915/display/intel_hdmi.c,,1,op-table,drivers/gpu/drm/i915/display/intel_hdmi.c:2874;drivers/gpu/drm/i915/display/intel_ddi.c:2650,Assigned to dig_port->set_infoframes and called indirectly from other unit (intel_ddi.c)
+G158,i2c_dw_init_slave,drivers/i2c/busses/i2c-designware-slave.c,,1,op-table,drivers/i2c/busses/i2c-designware-slave.c:251,Assigned to .init of dw_i2c_dev and called indirectly
+G398,mtu3_set_speed,drivers/usb/mtu3/mtu3_core.c,,0,internal-helper,drivers/usb/mtu3/mtu3_core.c:362,only called directly by name within the unit
+G297,fake_rw_store,drivers/scsi/scsi_debug.c,,1,op-table,drivers/scsi/scsi_debug.c:6082,Wired to a sysfs/configfs/debugfs attribute via the static DRIVER_ATTR_RW macro
+G170,ghes_irq_func,drivers/acpi/apei/ghes.c,,1,irq,drivers/acpi/apei/ghes.c:1343,registered as interrupt handler via request_irq-family function
+G358,stv0367ter_filt_coeff_init,drivers/media/dvb-frontends/stv0367.c,,0,internal-helper,drivers/media/dvb-frontends/stv0367.c:556,only called directly by name within the unit
+G272,rx_poll,drivers/net/ethernet/dlink/sundance.c,,1,deferred,drivers/net/ethernet/dlink/sundance.c:544,Registered as a tasklet callback
+G434,ipoib_cm_skb_reap,drivers/infiniband/ulp/ipoib/ipoib_cm.c,,1,deferred,drivers/infiniband/ulp/ipoib/ipoib_cm.c:1597,registered as deferred work callback via INIT_WORK-family macro
+G348,dr_ste_v1_set_byte_mask,drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v1.c,,1,op-table,drivers/net/ethernet/mellanox/mlx5/core/steering/dr_ste_v1.c:2089,Assigned to the .set_byte_mask function pointer field of a struct
+G180,wil_debugfs_ulong_set,drivers/net/wireless/ath/wil6210/debugfs.c,,1,op-table,drivers/net/wireless/ath/wil6210/debugfs.c:442,Wired to debugfs file_operations via the DEFINE_DEBUGFS_ATTRIBUTE macro
+G311,wakeup_sta_to_xmit,drivers/staging/rtl8723bs/core/rtw_xmit.c,,0,internal-helper,drivers/staging/r8188eu/core/rtw_xmit.c:1937,Only called directly by name from other file (drivers/staging/r8188eu/core/rtw_xmit.c)
+G366,ath11k_qmi_wlanfw_m3_info_send,drivers/net/wireless/ath/ath11k/qmi.c,,0,internal-helper,drivers/net/wireless/ath/ath11k/qmi.c:2742,only called directly by name within the unit
+G428,nvkm_i2c_bit_xfer,drivers/gpu/drm/nouveau/nvkm/subdev/i2c/bit.c,,?,other-file,drivers/gpu/drm/nouveau/nvkm/subdev/i2c/busgf119.c:79,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G440,mt76x02_mac_write_txwi,drivers/net/wireless/mediatek/mt76/mt76x02_mac.c,,0,exported-service,drivers/net/wireless/mediatek/mt76/mt76x02_mac.c:437,EXPORT_SYMBOL; called directly by name by other modules
+G087,altera_ci_start_feed_1,drivers/media/pci/cx23885/altera-ci.c,,1,op-table,drivers/media/pci/cx23885/altera-ci.c:681,Assigned to .start_feed of dmx_demux
+G255,ccp_free_chan_resources,drivers/crypto/ccp/ccp-dmaengine.c,,1,op-table,drivers/crypto/ccp/ccp-dmaengine.c:737,Assigned to .device_free_chan_resources of dma_device
+G211,imx2_wdt_isr,drivers/watchdog/imx2_wdt.c,,1,irq,drivers/watchdog/imx2_wdt.c:296,registered as interrupt handler via request_irq-family function
+G021,radeon_i2c_init,drivers/gpu/drm/radeon/radeon_i2c.c,,0,internal-helper,drivers/gpu/drm/radeon/radeon_display.c:1607,Only called directly by name from other file (drivers/gpu/drm/radeon/radeon_display.c)
+G405,vsc8584_config_ts_intr,drivers/net/phy/mscc/mscc_ptp.c,,0,internal-helper,drivers/net/phy/mscc/mscc_main.c:2134,Only called directly by name from other file (drivers/net/phy/mscc/mscc_main.c)
+G051,copy_overflow,drivers/hid/usbhid/hiddev.c,header definition: include/linux/thread_info.h,0,internal-helper,include/linux/thread_info.h:223,Only called directly by name via the check_copy_size() inline macro
+G108,mdio_mux_iproc_switch_fn,drivers/net/mdio/mdio-mux-bcm-iproc.c,,1,op-table,drivers/net/mdio/mdio-mux-bcm-iproc.c:239,Registered with mdio_mux_init() as the bus switch callback
+G336,mlxsw_afa_block_activity_get,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c,,0,exported-service,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c:522,EXPORT_SYMBOL; called directly by name by other modules
+G126,local_lock_release,drivers/net/ethernet/netronome/nfp/flower/main.c,header definition: include/linux/local_lock_internal.h,0,internal-helper,include/linux/local_lock_internal.h:85,Header-defined inline function; only called directly via a macro inside the unit
+G352,fbcon_fb_unregistered,drivers/video/fbdev/core/fbcon.c,,0,internal-helper,drivers/video/fbdev/core/fbmem.c:1750,only called directly by name from other file (drivers/video/fbdev/core/fbmem.c)
+G323,power_supply_match_device_node,drivers/power/supply/power_supply_core.c,,0,sync-callback,drivers/power/supply/power_supply_core.c:513,Synchronous match callback of class_find_device(); only called before return and not retained
+G001,init_pci_device_addresses,drivers/scsi/pm8001/pm80xx_hwi.c,,0,internal-helper,drivers/scsi/pm8001/pm80xx_hwi.c:1454,only called directly by name within the unit
+G455,bnxt_gro_func_5731x,drivers/net/ethernet/broadcom/bnxt/bnxt.c,,0,internal-dispatch,drivers/net/ethernet/broadcom/bnxt/bnxt.c:13448;drivers/net/ethernet/broadcom/bnxt/bnxt.c:1521,Assigned to the bp->gro_func function pointer and only called indirectly inside the unit
+G450,adc_jack_handler,drivers/extcon/extcon-adc-jack.c,,1,deferred,drivers/extcon/extcon-adc-jack.c:134,Registered with INIT_DEFERRABLE_WORK() as a deferred work callback
+G020,xpc_timeout_partition_disengage,drivers/misc/sgi-xp/xpc_main.c,,1,deferred,drivers/misc/sgi-xp/xpc_main.c:930,registered as deferred work/timer/URB completion callback
+G402,ucan_write_bulk_callback,drivers/net/can/usb/ucan.c,,1,deferred,drivers/net/can/usb/ucan.c:1096,registered as deferred work/timer/URB completion callback
+G183,check_int_v1_v2,drivers/mtd/nand/raw/mxc_nand.c,,1,op-table,drivers/mtd/nand/raw/mxc_nand.c:1469,Assigned to the .check_int function pointer field of a struct
+G082,mwifiex_check_auto_tdls,drivers/net/wireless/marvell/mwifiex/tdls.c,,1,deferred,drivers/net/wireless/marvell/mwifiex/tdls.c:1480,registered as timer callback in timer_setup()
+G117,dt3k_ai_cmdtest,drivers/comedi/drivers/dt3000.c,,1,op-table,drivers/comedi/drivers/dt3000.c:660,stored in .do_cmdtest of comedi_subdevice
+G249,mthca_array_clear,drivers/infiniband/hw/mthca/mthca_allocator.c,,0,internal-helper,drivers/infiniband/hw/mthca/mthca_srq.c:354,Only called directly by name from other file (drivers/infiniband/hw/mthca/mthca_srq.c)
+G199,btintel_configure_setup,drivers/bluetooth/btintel.c,,0,exported-service,drivers/bluetooth/btintel.c:2622,EXPORT_SYMBOL; called directly by name by other modules
+G064,denali_indexed_write,drivers/mtd/nand/raw/denali.c,,0,internal-dispatch,drivers/mtd/nand/raw/denali.c:1320;drivers/mtd/nand/raw/denali.c:561,Assigned to the denali->host_write function pointer and only called indirectly inside the unit
+G140,execlists_submission_tasklet,drivers/gpu/drm/i915/gt/intel_execlists_submission.c,,1,deferred,drivers/gpu/drm/i915/gt/intel_execlists_submission.c:3436,Registered as a tasklet callback
+G094,scmi_iio_sensor_update_cb,drivers/iio/common/scmi_sensors/scmi_iio.c,,1,op-table,drivers/iio/common/scmi_sensors/scmi_iio.c:587,stored in the .notifier_call function pointer field of a struct
+G033,vsc85xx_ts_write_csr,drivers/net/phy/mscc/mscc_ptp.c,,0,internal-helper,drivers/net/phy/mscc/mscc_ptp.c:195,only called directly by name within the unit
+G224,trace_mtu3_zlp_exp_gpd,drivers/usb/mtu3/mtu3_qmu.c,,0,internal-helper,drivers/usb/mtu3/mtu3_qmu.c:441,only called directly by name within the unit
+G365,sprd_eic_request,drivers/gpio/gpio-eic-sprd.c,,1,op-table,drivers/gpio/gpio-eic-sprd.c:615,Assigned to the .request function pointer field of a struct
+G050,usbhsc_power_ctrl,drivers/usb/renesas_usbhs/common.c,,0,internal-helper,drivers/usb/renesas_usbhs/common.c:477,only called directly by name within the unit
+G342,ath11k_core_firmware_request,drivers/net/wireless/ath/ath11k/core.c,,0,internal-helper,drivers/net/wireless/ath/ath11k/core.c:683,only called directly by name within the unit
+G015,amplc_pci236_pci_probe,drivers/comedi/drivers/amplc_pci236.c,,1,probe-remove,drivers/comedi/drivers/amplc_pci236.c:135,stored in .probe of the driver struct
+G031,bdw_primary_disable_flip_done,drivers/gpu/drm/i915/display/i9xx_plane.c,,1,op-table,drivers/gpu/drm/i915/display/i9xx_plane.c:895;drivers/gpu/drm/i915/display/intel_display.c:1391,Assigned to plane->disable_flip_done and called indirectly from other unit (intel_display.c)
+G235,nfp_abm_ctrl_read_q_xstats,drivers/net/ethernet/netronome/nfp/abm/ctrl.c,,0,internal-helper,drivers/net/ethernet/netronome/nfp/abm/qdisc.c:62,only called directly by name from other file (drivers/net/ethernet/netronome/nfp/abm/qdisc.c)
+G332,mlxsw_afa_block_append_qos_dsfield,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c,,0,exported-service,drivers/net/ethernet/mellanox/mlxsw/core_acl_flex_actions.c:1586,EXPORT_SYMBOL; called directly by name by other modules
+G375,felix_lag_leave,drivers/net/dsa/ocelot/felix.c,,1,op-table,drivers/net/dsa/ocelot/felix.c:1670,Assigned to the .port_lag_leave function pointer field of a struct
+G086,spi_imx_buf_tx_swap,drivers/spi/spi-imx.c,,0,internal-dispatch,drivers/spi/spi-imx.c:1232;drivers/spi/spi-imx.c:1118,Assigned to the spi_imx->tx function pointer and only called indirectly inside the unit
+G066,imx_obtain_fixed_clk_hw,drivers/clk/imx/clk.c,,0,exported-service,drivers/clk/imx/clk.c:121,EXPORT_SYMBOL; called directly by name by other modules
+G109,marvell_nfc_hw_ecc_hmg_read_oob_raw,drivers/mtd/nand/raw/marvell_nand.c,,1,op-table,drivers/mtd/nand/raw/marvell_nand.c:2261,Assigned to .read_oob_raw of nand_ecc_ctrl
+G069,exynos_adc_ts_open,drivers/iio/adc/exynos_adc.c,,1,op-table,drivers/iio/adc/exynos_adc.c:770,Assigned to .open of input_dev
+G256,irdma_null_ws_reset,drivers/infiniband/hw/irdma/ctrl.c,,1,op-table,drivers/infiniband/hw/irdma/ctrl.c:1883;drivers/infiniband/hw/irdma/cm.c:3251,Assigned to vsi->dev->ws_reset and called indirectly from other unit (cm.c)
+G084,si1145_trigger_handler,drivers/iio/light/si1145.c,,1,deferred,drivers/iio/light/si1145.c:1324,Registered with devm_iio_triggered_buffer_setup() as the trigger handler (pollfunc)
+G044,ath9k_cancel_hw_scan,drivers/net/wireless/ath/ath9k/main.c,,1,op-table,drivers/net/wireless/ath/ath9k/main.c:2739,Assigned to the .cancel_hw_scan function pointer field of a struct
+G003,ath9k_eeprom_request_cb,drivers/net/wireless/ath/ath9k/init.c,,1,deferred,drivers/net/wireless/ath/ath9k/init.c:549,registered as firmware completion callback in request_firmware_nowait()
+G112,ahd_suspend,drivers/scsi/aic7xxx/aic79xx_core.c,,0,internal-helper,drivers/scsi/aic7xxx/aic79xx_osm_pci.c:83,Only called directly by name from other file (drivers/scsi/aic7xxx/aic79xx_osm_pci.c)
+G189,ntb_transport_max_size,drivers/ntb/ntb_transport.c,,0,exported-service,drivers/ntb/ntb_transport.c:2414,EXPORT_SYMBOL; called directly by name by other modules
+G219,rvt_alloc_pd,drivers/infiniband/sw/rdmavt/pd.c,,?,other-file,drivers/infiniband/sw/rdmavt/vt.c:331,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G295,vsc85xx_link_change_notify,drivers/net/phy/mscc/mscc_ptp.c,,?,other-file,drivers/net/phy/mscc/mscc_main.c:2659,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G237,dwc2_driver_remove,drivers/usb/dwc2/platform.c,,1,probe-remove,drivers/usb/dwc2/platform.c:758,stored in .remove of the driver struct
+G132,gs_close,drivers/usb/gadget/function/u_serial.c,,1,op-table,drivers/usb/gadget/function/u_serial.c:848,stored in the .close function pointer field of a struct
+G380,ap_handle_timer,drivers/net/wireless/intersil/hostap/hostap_ap.c,,1,deferred,drivers/net/wireless/intersil/hostap/hostap_ap.c:1134,registered as timer callback in timer_setup()
+G454,ideapad_dytc_profile_exit,drivers/platform/x86/ideapad-laptop.c,,0,internal-helper,drivers/platform/x86/ideapad-laptop.c:1666,only called directly by name within the unit
+G060,adl_pci7x3x_do_insn_bits,drivers/comedi/drivers/adl_pci7x3x.c,,1,op-table,drivers/comedi/drivers/adl_pci7x3x.c:437,Assigned to .insn_bits of comedi_subdevice
+G121,panfrost_job_fini,drivers/gpu/drm/panfrost/panfrost_job.c,,0,internal-helper,drivers/gpu/drm/panfrost/panfrost_device.c:262,Only called directly by name from other file (drivers/gpu/drm/panfrost/panfrost_device.c)
+G006,core_tpg_set_initiator_node_queue_depth,drivers/target/target_core_tpg.c,,0,exported-service,drivers/target/target_core_tpg.c:410,EXPORT_SYMBOL; called directly by name by other modules
+G056,s3c24xx_serial_put_poll_char,drivers/tty/serial/samsung_tty.c,,1,op-table,drivers/tty/serial/samsung_tty.c:1756,Assigned to the .poll_put_char function pointer field of a struct
+G017,spi_imx_dma_rx_callback,drivers/spi/spi-imx.c,,1,deferred,drivers/spi/spi-imx.c:1393,Registered as the DMA completion callback (desc_rx->callback)
+G389,vz89x_i2c_xfer,drivers/iio/chemical/vz89x.c,,0,internal-dispatch,drivers/iio/chemical/vz89x.c:365;drivers/iio/chemical/vz89x.c:228,Assigned to the data->xfer function pointer and only called indirectly inside the unit
+G387,dm_atomic_destroy_state,drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c,,1,op-table,drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c:3812,Assigned to the .atomic_destroy_state function pointer field of a struct
+G279,virtio_rpmsg_announce_destroy,drivers/rpmsg/virtio_rpmsg_bus.c,,1,op-table,drivers/rpmsg/virtio_rpmsg_bus.c:373,Assigned to the .announce_destroy function pointer field of a struct
+G363,ali15x3_probe,drivers/i2c/busses/i2c-ali15x3.c,,1,probe-remove,drivers/i2c/busses/i2c-ali15x3.c:499,stored in .probe of the driver struct
+G445,drm_atomic_helper_commit_cleanup_done,drivers/gpu/drm/drm_atomic_helper.c,,0,exported-service,drivers/gpu/drm/drm_atomic_helper.c:2389,EXPORT_SYMBOL; called directly by name by other modules
+G321,s_sync0,drivers/gpu/drm/i915/i915_request.c,included file definition: drivers/gpu/drm/i915/selftests/i915_request.c,0,internal-dispatch,drivers/gpu/drm/i915/selftests/i915_request.c:2646;drivers/gpu/drm/i915/selftests/i915_request.c:2720,Stored in the function-local function pointer array func[] and only called indirectly internally
+G269,sh_msiof_spi_write_fifo_8,drivers/spi/spi-sh-msiof.c,,0,internal-dispatch,drivers/spi/spi-sh-msiof.c:986,Assigned to the local function pointer variable tx_fifo and only called indirectly inside the unit
+G120,r100_pll_rreg,drivers/gpu/drm/radeon/r100.c,,?,other-file,drivers/gpu/drm/radeon/radeon_asic.c:103,"address not used in the verdict unit, other .c file takes the address and registers/uses it"
+G287,map_seg_store,drivers/auxdisplay/ht16k33.c,,1,op-table,drivers/auxdisplay/ht16k33.c:162,attached to a sysfs attribute via the DEVICE_ATTR macro
+G401,dvb_dvr_do_ioctl,drivers/media/dvb-core/dmxdev.c,,0,sync-callback,drivers/media/dvb-core/dmxdev.c:1328,"Passed to dvb_usercopy(), called synchronously before return, and not retained"
+G101,read_file_queues,drivers/net/wireless/ath/ath9k/debug.c,,1,op-table,drivers/net/wireless/ath/ath9k/debug.c:1442,Registered with debugfs_create_devm_seqfile() as the seq_file read function
+G262,vfio_info_cap_add,drivers/vfio/vfio.c,,0,exported-service,drivers/vfio/vfio.c:1771,EXPORT_SYMBOL; called directly by name by other modules
+G148,dib0090_get_wbd_target,drivers/media/dvb-frontends/dib0090.c,,0,exported-service,drivers/media/dvb-frontends/dib0090.c:1365,EXPORT_SYMBOL; called directly by name by other modules
+G147,acpi_get_parent,drivers/acpi/acpica/nsxfobj.c,,0,exported-service,drivers/acpi/acpica/nsxfobj.c:129,ACPI_EXPORT_SYMBOL; called directly by name by other modules
+G346,ep93xx_irq,drivers/net/ethernet/cirrus/ep93xx_eth.c,,1,irq,drivers/net/ethernet/cirrus/ep93xx_eth.c:652,registered as interrupt handler via request_irq-family function
+G042,bfa_fcs_lport_fdmi_sm_disabled,drivers/scsi/bfa/bfa_fcs_lport.c,,0,internal-dispatch,drivers/scsi/bfa/bfa_fcs_lport.c:2807;drivers/scsi/bfa/bfa_fcs_lport.c:2825,Assigned to the fdmi state machine and only called indirectly inside the unit
+G254,adv7511_get_edid,drivers/gpu/drm/bridge/adv7511/adv7511_drv.c,,0,internal-helper,drivers/gpu/drm/bridge/adv7511/adv7511_drv.c:643,only called directly by name within the unit

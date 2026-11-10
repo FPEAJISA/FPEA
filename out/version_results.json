@@ -1,0 +1,88 @@
+{
+ "5.17.11": {
+  "units": 15522,
+  "fpea_json_missing": 0,
+  "FPEA": 129967,
+  "defined": 242823,
+  "uafx_files": 15522,
+  "uafx_nonempty": 2919,
+  "baseline": 5899,
+  "inter": 4912,
+  "wl_minus_fpea": 987,
+  "miss_rate": 96.22,
+  "baseline_kinds": {
+   "INT_HANDLER_T": 2506,
+   "MY_IOCTL": 489,
+   "IOCTL_CAND": 1388,
+   "READ_HDR": 984,
+   "WRITE_HDR": 891,
+   "NETDEVIOCTL": 1
+  }
+ },
+ "5.19.17": {
+  "units": 15913,
+  "fpea_json_missing": 0,
+  "FPEA": 133213,
+  "defined": 249502,
+  "uafx_files": 15913,
+  "uafx_nonempty": 2964,
+  "baseline": 6011,
+  "inter": 4983,
+  "wl_minus_fpea": 1028,
+  "miss_rate": 96.26,
+  "baseline_kinds": {
+   "INT_HANDLER_T": 2552,
+   "MY_IOCTL": 505,
+   "IOCTL_CAND": 1415,
+   "READ_HDR": 990,
+   "WRITE_HDR": 911,
+   "NETDEVIOCTL": 1
+  }
+ },
+ "6.9": {
+  "units": 17579,
+  "fpea_json_missing": 0,
+  "FPEA": 146481,
+  "defined": 276117,
+  "uafx_files": 17579,
+  "uafx_nonempty": 2991,
+  "baseline": 5527,
+  "inter": 4416,
+  "wl_minus_fpea": 1111,
+  "miss_rate": 96.99,
+  "baseline_kinds": {
+   "READ_HDR": 609,
+   "WRITE_HDR": 560,
+   "INT_HANDLER_T": 2736,
+   "IOCTL_CAND": 1469,
+   "MY_IOCTL": 345,
+   "NETDEVIOCTL": 1
+  }
+ },
+ "7.1.4": {
+  "units": 19649,
+  "fpea_json_missing": 0,
+  "FPEA": 163919,
+  "defined": 301306,
+  "uafx_files": 19649,
+  "uafx_nonempty": 0,
+  "baseline": 0,
+  "inter": 0,
+  "wl_minus_fpea": 0,
+  "miss_rate": 100.0,
+  "baseline_kinds": {}
+ },
+ "7.1.4-norand": {
+  "units": 19649,
+  "fpea_json_missing": 0,
+  "FPEA": 163919,
+  "defined": 301291,
+  "uafx_files": 0,
+  "uafx_nonempty": 0,
+  "baseline": 0,
+  "inter": 0,
+  "wl_minus_fpea": 0,
+  "miss_rate": 100.0,
+  "baseline_kinds": {}
+ }
+}

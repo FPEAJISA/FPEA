@@ -1,0 +1,252 @@
+Reviewer guideline v2.1 — English translation of the Korean guideline handed to the two reviewers (the verdict CSVs were translated with the same vocabulary).
+================================================================================
+  Guideline for Entry-Point Verdicts on Kernel Driver Functions (independent expert review)  v2.1 draft
+================================================================================
+
+0. Purpose
+--------------------------------------------------------------------------------
+  For each function in the given list, decide whether it is an "entry point",
+  based on evidence confirmed in the source code. The verdicts are used as reference data (reference set).
+
+  - Functions judged : the 455 functions in the review file (ID order is random)
+  - Kernel           : Linux 5.17.11 (kernel.org original, no patches)
+  - Build            : x86_64, allmodconfig, sanitizers (KASAN/UBSAN/KCSAN/KCOV) off
+                       drivers/ only. See build/.config for the configuration
+
+
+1. Provided material (use only this material)
+--------------------------------------------------------------------------------
+  source/linux-5.17.11/   full kernel source (.c / .h)
+  build/.config           configuration used for the build
+  build/cmd/              Kbuild command files per unit of judgement (.<name>.o.cmd)
+                          - the actual compile flags and the list of headers the unit included
+  review_A.csv            verdict record file (reviewer A only)
+  review_B.csv            verdict record file (reviewer B only)
+                          - the two files contain the same 455 functions in a different order.
+                            Use only the one file assigned to you.
+  audit.txt               this guideline
+  pledge.txt              pledge
+
+
+2. Unit of judgement
+--------------------------------------------------------------------------------
+  (U1) The unit of judgement is the compiled result (.o) of the single .c file
+       named in the "unit" (unit) column of the review file. Code in the headers
+       this file #includes, and in other .c files it pulls in via #include, is part of the unit.
+  (U2) All code outside the unit (including other .c files in the same directory
+       or the same module) is "external".
+  (U3) Even when the function definition is in a header or in another .c file pulled
+       in via #include, the verdict is made relative to the .c in the "unit" column.
+       For such items the defining file is shown in the "hint" (reference) column of the review file.
+         e.g.) header definition:        include/linux/xxx.h
+               included-file definition: drivers/.../yyy.c
+  (U4) Code not compiled under the build configuration (code excluded by
+       #if/#ifdef/IS_ENABLED, files specific to non-x86 architectures) is not used as evidence.
+       If in doubt, check build/.config and build/cmd/.
+
+
+3. Definition of entry point
+--------------------------------------------------------------------------------
+  Entry point = a function whose address can be obtained and indirectly called
+                by code outside the unit of judgement.
+
+  There is a single question to answer:
+    "Is the address of this function placed where code outside the unit can call it?"
+
+  Answer the question using the following principles.
+
+  (P1) The path by which the address leaves the unit does not matter.
+       Global struct initialisation, assignment to a struct field at run time, passing
+       as a function argument, a return value, and passing through a conditional expression (ternary etc.) are all the same.
+       Only follow the path and see whether external code can eventually
+       call that address.
+
+  (P2) When passed to an external registration function, check whether it "retains" the address.
+       - stores it for use after returning (called later on events / deferred execution) -> 1
+       - calls it only before returning and does not retain it                           -> 0
+       Even if the external function runs the callback in another execution context (another CPU, thread, etc.),
+       it is 0 if it waits for that execution to finish before returning and does not retain the address afterwards.
+       Check the body of the registration function directly (drivers/base, kernel, lib, net, etc.).
+
+  (P3) When stored in a struct (function-pointer table), check whether external code
+       calls the function pointers of that struct.
+       - The judgement is based on the "object (instance)" this function was assigned to,
+         not on the struct "type". The fact that external code calls a different object
+         of the same type is not evidence.
+       - The object is passed outside and external code calls the function pointers
+         of that object
+         -> functions assigned to that object are 1. Whether the very field this
+            function was assigned to is actually called is not examined.
+       - All code that calls the function pointers of that object is inside the unit
+         -> 0 (dispatch internal to the unit)
+
+  (P4) The entry point is the function "whose address reached the outside" itself.
+       A lower-level function that an externally registered function calls again inside
+       the unit (directly or through a function pointer internal to the unit) is not an
+       entry point unless its own address reaches the outside.
+
+  (P5) The following facts are not used as evidence for the verdict.
+       - function name (e.g. *_handler, *_callback, *_complete, synchronous, etc.)
+       - asynchronous/deferred execution, time of execution, whether the caller waits for completion
+       - the fact that it is eventually executed as a result of an external event (interrupt, network reception, etc.)
+       Judge only by where the address is placed and who calls through that address.
+
+  (E2) init/exit routines called by the module loader are entry points (1).
+       (Not expected to appear in this list; if found, 1 / init-exit)
+
+
+4. Verdict values
+--------------------------------------------------------------------------------
+  1  : Per the principles of Section 3, code inside the unit confirms that the address
+       is placed where external code can call it.
+  0  : Inside the unit, the address of this function does not leave the unit.
+       (only called directly / only indirectly called within the unit / callback not retained /
+        address used only for comparison or identification / no call or address use anywhere in the source)
+  ?  : Use only in the following two cases.
+       (a) Inside the unit the address of this function is not used at all, and the code
+           that takes the address and registers/stores it is in another .c file.
+           (the escape of the address is not visible from the unit alone)
+           -> do not record as 0.
+       (b) No evidence was found, or the evidence conflicts. Write the reason in the note column.
+
+  Note: - A function that is only called directly by name from outside the unit (e.g. an
+          EXPORTed service function) is 0, since its address is not used. It does not fall under (a).
+        - If the address is used even once inside the unit (including assignment,
+          initialisation, argument, return) it is not (a). Even if the registration code is
+          in another .c, judge 1 or 0 per Section 3 P1–P4.
+        - If there is only a definition and no call or address use anywhere in the source,
+          record 0 / internal-helper.
+
+
+5. Rule (record exactly one of the values below)
+--------------------------------------------------------------------------------
+  Verdict 1 : record the type of the external location the address finally reached.
+              If more than one applies, record only one by the following priority:
+              init-exit > probe-remove > irq > teardown > deferred > op-table
+    op-table      function-pointer struct called by a framework or another unit
+                  (file_operations, net_device_ops, sysfs/debugfs attributes,
+                   driver ops structs called by another .c, etc.)
+    irq           interrupt handler registration (request_irq family)
+    probe-remove  driver probe / remove / shutdown / suspend / resume
+    teardown      resource-release callback registration (devm_add_action family etc.)
+    deferred      deferred-execution callback registration (workqueue, timer, tasklet, URB/DMA
+                  completion callbacks, RCU callbacks, callbacks retained and later called by another unit, etc.)
+    init-exit     module init / exit
+
+  Verdict 0 :
+    internal-helper      (internal helper) only called directly by name inside (or outside) the unit,
+                  or no call or address use anywhere in the source
+    exported-service  (exported service) EXPORT_SYMBOL'ed and called directly by name from other modules
+                  (if EXPORTed, use this value regardless of whether it is also
+                   called directly inside the unit)
+    sync-callback      (synchronous callback) passed to an external function but only called before it returns and not retained
+                  (including the case where it runs in another execution context but
+                   completion is awaited before returning)
+    internal-dispatch  (internal dispatch) stored in a struct/variable inside the unit and only indirectly called within the unit
+    comparison          (comparison) address used only for comparison (==, !=) or as an identification key.
+                  Includes the case where it is passed to an external function that does not
+                  call through it but uses it only as a key/identifier
+
+  Verdict ? :
+    other-file        (other file) Section 4 ?(a)
+    undecidable          Section 4 ?(b)
+
+
+6. Procedure (recommended)
+--------------------------------------------------------------------------------
+  1. Find the function definition in the "unit" .c. If the definition is in a header,
+     confirm via the header list in build/cmd/ that the header is part of the unit.
+  2. Find every place inside the unit where the function name is used.
+     - Any use other than a call "name(" (assignment, initialisation, argument, return) is an address use.
+     - If the name is not visible, check whether a macro generates the name.
+       (e.g. DEVICE_ATTR_RO(x) refers to x_show. See the examples in Section 9)
+  3. If there is an address use, follow the address to the end (Section 3 P1–P4).
+  4. If there is no address use, check across the whole source whether it is only
+     called directly (0) or whether another .c takes its address (?(a)).
+     [Required] Before deciding 0 or ?(a), search for the function name across the
+     entire scope below. Also check cases where only part of the name is used as a macro argument.
+       drivers/ include/ kernel/ lib/ net/ fs/ sound/
+  5. Record the result and the evidence locations.
+
+  Search example:
+    cd source/linux-5.17.11
+    grep -rnw "function_name" drivers/ include/ kernel/ lib/ net/ fs/ sound/ \
+         --include=*.c --include=*.h
+
+
+7. How to record (review_A.csv / review_B.csv)
+--------------------------------------------------------------------------------
+  Columns: id, function, unit, hint (reference), verdict, rule, evidence (evidence location), remark (note)
+      (id, function, unit, hint are pre-filled)
+
+  verdict      one of 1 / 0 / ?
+  rule  one of the values in Section 5 (no other wording allowed)
+  evidence  the source location that decided the verdict. "path:line" format; separate multiple locations with ;
+            (paths are relative to source/linux-5.17.11)
+            1 : where the address is placed + where it is called/retained externally
+            0 : where the address is used (or the direct call site) + the internal call site
+            ? : where the address is used in another .c, or the location relevant to the reason for being undecidable
+  remark      short explanation if needed. If a comma (,) is used, wrap the cell in double quotes.
+
+  Save the CSV as UTF-8. Do not modify the id, function, unit, hint columns.
+
+
+8. Independence and tool use
+--------------------------------------------------------------------------------
+  Allowed    : text editors, grep/ripgrep, cscope/ctags, IDE source navigation
+               (go to definition, find references)
+  Prohibited : - any AI-based tool (conversational AI such as ChatGPT, code assistants such as Copilot,
+                 IDE built-in AI, browser AI extensions, search-engine AI summaries)
+               - scripts that compute verdict values automatically
+               - information sources other than the provided material (web search, other kernel
+                 versions, mailing lists, git history, source-browsing websites)
+               - consulting other reviewers, sharing verdicts or progress
+
+  Questions  : only written questions about interpreting the guideline are accepted. Answers are
+               limited to guideline interpretation, not the verdict for a specific function,
+               and are shared identically with all reviewers.
+
+  After completing the verdicts, sign the attached pledge.
+
+
+9. Examples (none of these functions is in the list to be judged)
+--------------------------------------------------------------------------------
+  [1] gl520_probe          drivers/hwmon/gl520sm.c:857
+      :898 assigned to .probe_new of i2c_driver                -> 1 / probe-remove
+  [1] tlclk_interrupt      drivers/char/tlclk.c:879
+      :223 passed as argument to request_irq                   -> 1 / irq
+  [1] docg3_release        drivers/mtd/devices/docg3.c:2036
+      :2066 assigned to .remove of platform_driver             -> 1 / probe-remove
+  [1] cpu0_vid_show        drivers/hwmon/gl520sm.c:189
+      :195 DEVICE_ATTR_RO(cpu0_vid) connects cpu0_vid_show to a sysfs attribute
+      (because the name is generated inside the macro, searching for
+       "cpu0_vid_show" does not find the use site)             -> 1 / op-table
+  [0] gl520_update_device  drivers/hwmon/gl520sm.c:109
+      :192 etc.; only called directly by name in the same file -> 0 / internal-helper
+  [0] dvb_register_device  drivers/media/dvb-core/dvbdev.c:446
+      :546 EXPORT_SYMBOL; other modules call it directly by name -> 0 / exported-service
+  [0] titsc_cmp_coord      drivers/input/touchscreen/ti_am335x_tsc.c:220
+      :263 comparison function for sort(); sort calls it only before returning -> 0 / sync-callback
+  [?] drm_ioctl            drivers/gpu/drm/drm_ioctl.c:805
+      the address is not used in this unit (:903 EXPORT only).
+      The file_operations of each DRM driver (other .c) use the address -> ? / other-file
+
+  Schematic examples of principles P1–P4 (not real functions):
+
+    /* a.c */
+    static void f(void);
+    static void g(void);
+    static void (*pick(int x))(void) { return x ? f : g; }   /* P1: return */
+    void setup(struct dev *d) { d->ops->cb = pick(d->id); }  /* if b.c calls
+         d->ops, then f and g are both 1 (P1, P3) */
+
+    /* a.c */
+    static void sub(struct req *r);
+    static irqreturn_t top(int irq, void *p) {   /* registered via request_irq -> 1 */
+            struct req *r = p;
+            r->done(r);                          /* r->done = sub is assigned in a.c,
+                                                    and it is called only inside a.c
+                                                    -> sub is 0 (P4) */
+            return IRQ_HANDLED;
+    }
+================================================================================

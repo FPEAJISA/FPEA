@@ -1,0 +1,35 @@
+{
+ "FPEA": 139678,
+ "defined": 249121,
+ "baseline": 5674,
+ "I": 5250,
+ "WmF": 424,
+ "miss": 0.9624135511676857,
+ "wl_kind": {
+  "INT_HANDLER_T": 2498,
+  "WRITE_HDR": 859,
+  "MY_IOCTL": 462,
+  "READ_HDR": 975,
+  "IOCTL_CAND": 879,
+  "NETDEVIOCTL": 1
+ },
+ "wl_miss": {
+  "IOCTL_CAND|external": 314,
+  "IOCTL_CAND|other": 25,
+  "IOCTL_CAND|defined": 27,
+  "INT_HANDLER_T|external": 58
+ },
+ "AT": 143632,
+ "onlyF": 12602,
+ "onlyAT": 16556,
+ "both": 127076,
+ "sig": {
+  "C1": 98963,
+  "C3": 9364,
+  "C4": 17705,
+  "C2": 12703,
+  "C5": 1501
+ },
+ "c4solo": 17372,
+ "c3sync": 1052
+}

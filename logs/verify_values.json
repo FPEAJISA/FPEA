@@ -1,0 +1,884 @@
+{
+ "5.1/5.4 version table|5.17.11 units": 15522,
+ "5.1/5.4 version table|5.17.11 defined functions": 242823,
+ "5.1/5.4 version table|5.17.11 FPEA": 129967,
+ "5.1/5.4 version table|5.17.11 rf json missing": 0,
+ "5.1/5.4 version table|5.17.11 UAFX": 5899,
+ "5.1/5.4 version table|5.17.11 FPEA∩UAFX": 4912,
+ "5.1/5.4 version table|5.17.11 miss rate": 96.22,
+ "5.1/5.4 version table|5.19.17 units": 15913,
+ "5.1/5.4 version table|5.19.17 defined functions": 249502,
+ "5.1/5.4 version table|5.19.17 FPEA": 133213,
+ "5.1/5.4 version table|5.19.17 rf json missing": 0,
+ "5.1/5.4 version table|5.19.17 UAFX": 6011,
+ "5.1/5.4 version table|5.19.17 FPEA∩UAFX": 4983,
+ "5.1/5.4 version table|5.19.17 miss rate": 96.26,
+ "5.1/5.4 version table|6.9 units": 17579,
+ "5.1/5.4 version table|6.9 defined functions": 276117,
+ "5.1/5.4 version table|6.9 FPEA": 146481,
+ "5.1/5.4 version table|6.9 rf json missing": 0,
+ "5.1/5.4 version table|6.9 UAFX": 5527,
+ "5.1/5.4 version table|6.9 FPEA∩UAFX": 4416,
+ "5.1/5.4 version table|6.9 miss rate": 96.99,
+ "5.1/5.4 version table|7.1.4 units": 19649,
+ "5.1/5.4 version table|7.1.4 defined functions": 301306,
+ "5.1/5.4 version table|7.1.4 FPEA": 163919,
+ "5.1/5.4 version table|7.1.4 rf json missing": 0,
+ "5.1/5.4 version table|7.1.4-norand units": 19649,
+ "5.1/5.4 version table|7.1.4-norand defined functions": 301291,
+ "5.1/5.4 version table|7.1.4-norand FPEA": 163919,
+ "5.1/5.4 version table|7.1.4-norand rf json missing": 0,
+ "version_results.json|5.17.11 FPEA stored=recomputed": 129967,
+ "version_results.json|5.19.17 FPEA stored=recomputed": 133213,
+ "version_results.json|6.9 FPEA stored=recomputed": 146481,
+ "version_results.json|7.1.4 FPEA stored=recomputed": 163919,
+ "version_results.json|7.1.4-norand FPEA stored=recomputed": 163919,
+ "5.1 input consistency|units whose rf_5.17.11 vs u_fpea sets differ": 0,
+ "Table 7 UAFX kinds|READ_HDR 5.17/5.19/6.9": [
+  984,
+  990,
+  609
+ ],
+ "Table 7 UAFX kinds|WRITE_HDR 5.17/5.19/6.9": [
+  891,
+  911,
+  560
+ ],
+ "Table 7 UAFX kinds|MY_IOCTL 5.17/5.19/6.9": [
+  489,
+  505,
+  345
+ ],
+ "Table 7 UAFX kinds|IOCTL_CAND 5.17/5.19/6.9": [
+  1388,
+  1415,
+  1469
+ ],
+ "Table 7 UAFX kinds|INT_HANDLER_T 5.17/5.19/6.9": [
+  2506,
+  2552,
+  2736
+ ],
+ "Table 7 UAFX kinds|NETDEVIOCTL 5.17/5.19/6.9": [
+  1,
+  1,
+  1
+ ],
+ "Table 7 UAFX kinds|READ_HDR 5.19→6.9 %": -38,
+ "Table 7 UAFX kinds|WRITE_HDR 5.19→6.9 %": -39,
+ "Table 7 UAFX kinds|MY_IOCTL 5.19→6.9 %": -32,
+ "Table 7 UAFX kinds|IOCTL_CAND 5.19→6.9 %": 4,
+ "Table 7 UAFX kinds|INT_HANDLER_T 5.19→6.9 %": 7,
+ "Abstract (1)|READ/WRITE/IOCTL decrease rate (5.19→6.9)": [
+  -38,
+  -39,
+  -32
+ ],
+ "5.3 WL∖FPEA|5.17.11 WL∖FPEA": 987,
+ "Ch. 4|7.1.4 RANDSTRUCT vs norand FPEA identical": true,
+ "5.4(2) RANDSTRUCT control|common units": 19649,
+ "5.4(2) RANDSTRUCT control|units whose entry-point sets differ": 0,
+ "Table 2 stratum population|C1": 90831,
+ "strata_pop.json|C1": 90831,
+ "Table 2 stratum population|C4only": 16329,
+ "strata_pop.json|C4only": 16329,
+ "Table 2 stratum population|C3": 8874,
+ "strata_pop.json|C3": 8874,
+ "Table 2 stratum population|C5": 1331,
+ "strata_pop.json|C5": 1331,
+ "Table 2 stratum population|C2 only": 12602,
+ "Table 2 stratum population|nF": 129967,
+ "Table 2 stratum population|defined functions": 242823,
+ "Table 2 share %|C1": 69.9,
+ "Table 2 share %|C2": 9.7,
+ "Table 2 share %|C3": 6.8,
+ "Table 2 share %|C4only": 12.6,
+ "Table 2 share %|C5": 1.0,
+ "Table 2 weight W|C1": 0.6989,
+ "Table 2 weight W|C4only": 0.1256,
+ "Table 2 weight W|C3": 0.0683,
+ "Table 2 weight W|C5": 0.0102,
+ "Table 2 weight W|C2": 0.097,
+ "Table 2 auxiliary|C1∩C4": 161,
+ "Table 2 auxiliary|C3 only": 8798,
+ "5.10|FPEA/defined functions %": 53.5,
+ "Ch. 1|C2-only 12,602 have 0 in UAFX": 0,
+ "Table 3|reference set n": 455,
+ "Table 3|rA/rB ids identical": true,
+ "Table 3|positives": 255,
+ "Table 3|negatives": 200,
+ "Table 3|positive stratum composition": {
+  "C3": 60,
+  "C1": 80,
+  "C4only": 70,
+  "C5": 45
+ },
+ "Table 3|answer key vs current FPEA output mismatches (signals; same-named units pass if either matches)": 0,
+ "Table 3|answer-key (function, module) pairs spanning two units": [
+  "G128"
+ ],
+ "Table 3|final label distribution": {
+  "0": 222,
+  "1": 218,
+  "?": 15
+ },
+ "Table 3|1↔0 conflicts": 17,
+ "Table 3|adjudication outcome 1/0": {
+  "1": 6,
+  "0": 11
+ },
+ "Table 3|adjudication file ids = conflict ids": true,
+ "5.2|changes after discussion (revised column)": 5,
+ "5.2|verdicts changed vs first reply (4) + reason-only replacement (1) = 5": [
+  4,
+  5
+ ],
+ "5.2|TP before correction (first reply)": 218,
+ "Table 3|agreement rate": 0.963,
+ "Table 3|κ": 0.93,
+ "Table 4|TP": 218,
+ "Table 4|FP": 37,
+ "Table 4|C1 TP/FP": [
+  74,
+  6
+ ],
+ "Table 4|C1 precision": 0.925,
+ "Table 4|C1 CI": [
+  0.846,
+  0.965
+ ],
+ "Table 4|C4only TP/FP": [
+  63,
+  7
+ ],
+ "Table 4|C4only precision": 0.9,
+ "Table 4|C4only CI": [
+  0.808,
+  0.951
+ ],
+ "Table 4|C3 TP/FP": [
+  50,
+  10
+ ],
+ "Table 4|C3 precision": 0.833,
+ "Table 4|C3 CI": [
+  0.72,
+  0.907
+ ],
+ "Table 4|C5 TP/FP": [
+  31,
+  14
+ ],
+ "Table 4|C5 precision": 0.689,
+ "Table 4|C5 CI": [
+  0.543,
+  0.805
+ ],
+ "Table 4|simple precision": 0.855,
+ "Table 4|simple precision CI": [
+  0.806,
+  0.893
+ ],
+ "Table 4|weighted precision (W_true)": 0.92,
+ "Table 4|weighted SE": 0.021,
+ "Table 4|weighted CI": [
+  0.879,
+  0.962
+ ],
+ "5.2|negatives confirmed FN": 0,
+ "5.2|negatives ?": 15,
+ "5.2|negative population": 112856,
+ "5.2|TP_pop": 119629,
+ "5.2|FN_pop": 8464,
+ "5.2|recall (corrected formula)": 0.934,
+ "5.2|recall CI": [
+  0.898,
+  0.958
+ ],
+ "5.2|recall (direct sum, footnote alternative)": 0.936,
+ "5.2 alternative|rule-of-three recall lower bound": 0.986,
+ "5.2 alternative|?=0 recall CI": [
+  0.983,
+  1.0
+ ],
+ "5.2 ?15|all 15 have A=B=? and rule other-file": true,
+ "5.2 ?15|no ? in positive sample": 0,
+ "Table 5|FP types": {
+  "internal-dispatch": 27,
+  "internal-dispatch/sync-callback": 3,
+  "sync-callback": 7
+ },
+ "Table 5|internal-dispatch per stratum": {
+  "C1": 6,
+  "C5": 13,
+  "C4only": 6,
+  "C3": 2
+ },
+ "Table 5|sync-callback per stratum": {
+  "C3": 7
+ },
+ "Table 5|mixed per stratum": {
+  "C4only": 1,
+  "C3": 1,
+  "C5": 1
+ },
+ "Table 5|FP per-stratum total": {
+  "C1": 6,
+  "C5": 14,
+  "C4only": 7,
+  "C3": 10
+ },
+ "Table 5/D3|G162 final rule (adjudicated)": "internal-dispatch",
+ "Table 5/D3|G162 B rule": "sync-callback",
+ "fp_types.json|fp_ids = recomputed": [
+  "G011",
+  "G012",
+  "G042",
+  "G043",
+  "G046",
+  "G061",
+  "G064",
+  "G086",
+  "G139",
+  "G159",
+  "G162",
+  "G182",
+  "G183",
+  "G195",
+  "G213",
+  "G229",
+  "G247",
+  "G269",
+  "G274",
+  "G289",
+  "G305",
+  "G308",
+  "G313",
+  "G315",
+  "G318",
+  "G321",
+  "G323",
+  "G340",
+  "G389",
+  "G399",
+  "G400",
+  "G401",
+  "G430",
+  "G441",
+  "G446",
+  "G447",
+  "G455"
+ ],
+ "Table 3|A rule distribution": {
+  "internal-helper": 153,
+  "exported-service": 35,
+  "deferred": 43,
+  "op-table": 142,
+  "internal-dispatch": 17,
+  "probe-remove": 15,
+  "teardown": 6,
+  "irq": 18,
+  "other-file": 15,
+  "sync-callback": 10,
+  "comparison": 1
+ },
+ "Table 3|B rule distribution": {
+  "internal-helper": 150,
+  "exported-service": 35,
+  "deferred": 47,
+  "op-table": 129,
+  "internal-dispatch": 30,
+  "probe-remove": 17,
+  "teardown": 8,
+  "irq": 16,
+  "other-file": 15,
+  "sync-callback": 8
+ },
+ "Table 3|TP rules": {
+  "deferred": 40,
+  "op-table": 125,
+  "probe-remove": 13,
+  "teardown": 7,
+  "irq": 15,
+  "mixed": 18
+ },
+ "Appendix D sample reproduction|positives 255 (seed 517) reproduced": true,
+ "Appendix D sample reproduction|gt_sample_unit.json negatives = answer-key negatives": true,
+ "5.9(a)|link_layer_q15 id = ? 15": [
+  "G085",
+  "G105",
+  "G120",
+  "G141",
+  "G154",
+  "G194",
+  "G219",
+  "G260",
+  "G266",
+  "G295",
+  "G361",
+  "G372",
+  "G386",
+  "G428",
+  "G439"
+ ],
+ "5.9(a)|identified 15/15 in the link layer, C1 13 / C4 2": {
+  "C1": 13,
+  "C4": 2
+ },
+ "Appendix H|dcn10_init.c registration count": 8,
+ "Table 12|units 14/16": [
+  15522,
+  15452
+ ],
+ "Table 12|common units": 15451,
+ "Table 12|FPEA common typed/opaque": [
+  128571,
+  128541
+ ],
+ "Table 12|differing units / symmetric difference": [
+  8,
+  30
+ ],
+ "Table 12|functions only in opaque": 0,
+ "Table 12|FPEA total opaque": 128544,
+ "Table 12|opaque simple hit rate": [
+  43.81,
+  3879,
+  8855
+ ],
+ "Table 11 simple hit rate|5.17.11": [
+  8807,
+  3862,
+  43.85
+ ],
+ "Table 11 semantic file agreement|5.17.11": [
+  8807,
+  3862
+ ],
+ "Table 11 simple hit rate formula|5.17.11": 43.85,
+ "Table 11 simple hit rate|5.19.17": [
+  8964,
+  3944,
+  44.0
+ ],
+ "Table 11 semantic file agreement|5.19.17": [
+  8964,
+  3944
+ ],
+ "Table 11 simple hit rate formula|5.19.17": 44.0,
+ "Table 11 simple hit rate|6.9": [
+  5914,
+  2455,
+  41.51
+ ],
+ "Table 11 semantic file agreement|6.9": [
+  5914,
+  2455
+ ],
+ "Table 11 simple hit rate formula|6.9": 41.51,
+ "Table 11 simple hit rate|7.1.4-norand": [
+  11136,
+  5919,
+  53.15
+ ],
+ "Table 11 semantic file agreement|7.1.4-norand": [
+  11136,
+  5919
+ ],
+ "Table 11 simple hit rate formula|7.1.4-norand": 53.15,
+ "Table 11 simple hit rate|7.1.4": [
+  11136,
+  6127,
+  55.02
+ ],
+ "Table 11 semantic file agreement|7.1.4": [
+  11136,
+  6127
+ ],
+ "Table 11 simple hit rate formula|7.1.4": 55.02,
+ "Table 11 semantic hit rate|5.17.11": [
+  7060,
+  7060,
+  3290,
+  46.6,
+  0,
+  0
+ ],
+ "Table 11 semantic hit rate formula|5.17.11": 46.6,
+ "Table 11 semantic hit rate|5.19.17": [
+  7183,
+  7147,
+  3341,
+  46.51,
+  23,
+  4
+ ],
+ "Table 11 semantic hit rate formula|5.19.17": 46.51,
+ "Table 11 semantic hit rate|6.9": [
+  4055,
+  2922,
+  1724,
+  42.52,
+  93,
+  100
+ ],
+ "Table 11 semantic hit rate formula|6.9": 42.52,
+ "Table 11 semantic hit rate|7.1.4-norand": [
+  9185,
+  3163,
+  532,
+  5.79,
+  4732,
+  3748
+ ],
+ "Table 11 semantic hit rate formula|7.1.4-norand": 5.79,
+ "Table 11|6.9 index-shifted slots": 1133,
+ "Table 9 named/literal|5.17.11 file_operations/LITERAL": [
+  2102,
+  12
+ ],
+ "Table 9 named/literal|5.17.11 platform/pci/device_attribute/net_device_ops": [
+  2852,
+  710,
+  4699,
+  386
+ ],
+ "Table 9 named/literal|5.19.17 file_operations/LITERAL": [
+  2140,
+  12
+ ],
+ "Table 9 named/literal|5.19.17 platform/pci/device_attribute/net_device_ops": [
+  2973,
+  713,
+  4781,
+  391
+ ],
+ "Table 9 named/literal|6.9 file_operations/LITERAL": [
+  1102,
+  1347
+ ],
+ "Table 9 named/literal|6.9 platform/pci/device_attribute/net_device_ops": [
+  3464,
+  717,
+  5176,
+  381
+ ],
+ "Table 9|6.9 literal share %": 55,
+ "Table 9|5.17.11 LLVM16 named": 2114,
+ "Table 9|7.1.4 norand named / strict literal pattern": [
+  2800,
+  21
+ ],
+ "Table 9|7.1.4 RANDSTRUCT named / strict literal pattern": [
+  2800,
+  21
+ ],
+ "Table 9 placeholder units|5.17.11": [
+  28,
+  15522
+ ],
+ "Table 9 placeholder units|5.19.17": [
+  28,
+  15913
+ ],
+ "Table 9 placeholder units|6.9": [
+  11451,
+  17579
+ ],
+ "Table 8 kind_drift|READ_HDR": [
+  369,
+  10,
+  356,
+  3,
+  0,
+  0
+ ],
+ "Table 8 kind_drift sum|READ_HDR": 369,
+ "Table 8 kind_drift|WRITE_HDR": [
+  356,
+  22,
+  331,
+  3,
+  0,
+  0
+ ],
+ "Table 8 kind_drift sum|WRITE_HDR": 356,
+ "Table 8 kind_drift|MY_IOCTL": [
+  150,
+  8,
+  138,
+  3,
+  0,
+  1
+ ],
+ "Table 8 kind_drift sum|MY_IOCTL": 150,
+ "Table 8 kind_drift|INT_HANDLER_T": [
+  38,
+  29,
+  5,
+  0,
+  0,
+  4
+ ],
+ "Table 8 kind_drift sum|INT_HANDLER_T": 38,
+ "Table 10/①③|struct count / handler name count": [
+  20,
+  17
+ ],
+ "Table 10/①③|tracked 59 / moved 23": [
+  59,
+  23
+ ],
+ "Table 10/①③|moved share %": 39,
+ "5.4(3) footnote|moved within the three versions 5.17·5.19·6.9 / direct 5.17 vs 7.1 comparison": [
+  19,
+  15
+ ],
+ "5.4(3) footnote|5.17 vs 6.9 direct comparison (reference)": 17,
+ "Table 10 index|file_operations.llseek": [
+  1,
+  1,
+  1,
+  2
+ ],
+ "Table 10 index|file_operations.read": [
+  2,
+  2,
+  2,
+  3
+ ],
+ "Table 10 index|file_operations.write": [
+  3,
+  3,
+  3,
+  4
+ ],
+ "Table 10 index|file_operations.unlocked_ioctl": [
+  10,
+  10,
+  9,
+  10
+ ],
+ "Table 10 index|file_operations.compat_ioctl": [
+  11,
+  11,
+  10,
+  11
+ ],
+ "Table 10 index|file_operations.mmap": [
+  12,
+  12,
+  11,
+  12
+ ],
+ "Table 10 index|file_operations.open": [
+  14,
+  14,
+  13,
+  13
+ ],
+ "Table 10 index|file_operations.release": [
+  16,
+  16,
+  15,
+  15
+ ],
+ "Table 10 index|pci_driver.probe": [
+  3,
+  3,
+  2,
+  2
+ ],
+ "Table 10 index|pci_driver.remove": [
+  4,
+  4,
+  3,
+  3
+ ],
+ "Table 10 index|pci_driver.suspend": [
+  5,
+  5,
+  4,
+  4
+ ],
+ "Table 10 index|pci_driver.resume": [
+  6,
+  6,
+  5,
+  5
+ ],
+ "Table 10 index|net_device_ops.ndo_validate_addr": [
+  10,
+  10,
+  10,
+  11
+ ],
+ "Table 10 index|block_device_operations.rw_page": [
+  3,
+  4,
+  null,
+  null
+ ],
+ "Table 10 index|platform_driver.probe": [
+  0,
+  0,
+  0,
+  0
+ ],
+ "Table 10 index|platform_driver.remove": [
+  1,
+  1,
+  1,
+  1
+ ],
+ "Table 10 index|device_driver.probe": [
+  8,
+  8,
+  8,
+  8
+ ],
+ "Table 10 index|net_device_ops.ndo_open": [
+  2,
+  2,
+  2,
+  2
+ ],
+ "Table 10 index|6.9 rule 10 = compat_ioctl": "compat_ioctl",
+ "Table 10 index|7.1 rule 2/3 = llseek/read": [
+  "llseek",
+  "read"
+ ],
+ "Table 10 index|7.1 ndo rule 10 = ndo_set_mac_address": "ndo_set_mac_address",
+ "Ch. 1/Table 10|bitcode struct field counts: 25 of 33 changed": [
+  33,
+  25
+ ],
+ "Ch. 1/Table 1|kernel_sts entries/structs": [
+  88,
+  51
+ ],
+ "5.9(b)|entry points/defined/miss rate": [
+  139678,
+  249121,
+  96.24
+ ],
+ "5.9(c)|framework-optable/lifecycle/user-triggered/interrupt": [
+  58130,
+  12717,
+  16451,
+  2439
+ ],
+ "Ch. 1|configfs_attribute / clk_ops (link-layer behavior top)": [
+  1075,
+  1031
+ ],
+ "5.9(c)|address-taken 144,294 (atfinal.json)": 144294,
+ "5.9(c)|AT only 16,556 (analyze3.json)": 16556,
+ "5.9(c) caution|AT / F of analyze3.json vs AT / F of atfinal.json": [
+  143632,
+  139678,
+  144294,
+  139236
+ ],
+ "5.9|.mod 6,865 = linked 6,853 + failed 12; builtin 1,925": [
+  6853,
+  12,
+  1925
+ ],
+ "5.9|link-layer FPEA output count (fpea_out, modules+builtin)": 8778,
+ "5.3 caution|analyze3 wl_miss (link-layer WmF 424) IOCTL_CAND|external / INT_HANDLER_T|external": [
+  314,
+  58
+ ],
+ "Ch. 4|allmodconfig modules (llvm14)": 8519,
+ "Ch. 4|drivers .o / wllvm .bc": [
+  16849,
+  15521
+ ],
+ "Ch. 4|units.txt = drivers 15,520 + scripts 1 + tools 1": [
+  15520,
+  2
+ ],
+ "Ch. 4|.o without bc": 1328,
+ "Ch. 4|composite link objects / no C source": [
+  1275,
+  53
+ ],
+ "Ch. 4|objects with a matching .c but no bc": 0,
+ "Table 15|sequential/parallel s": [
+  179.9,
+  16.4
+ ],
+ "Table 15|ms per unit": 11.6,
+ "Table 15|UAFX 5.17.11 14-way parallel s": 37,
+ "Table 15|speed-up vs UAFX": 2.3,
+ "Ch. 1 entry surface|syscall/ioctl uapi/all/fops/ops/init/exit/irq": [
+  362,
+  1914,
+  2229,
+  1734,
+  3831,
+  2053,
+  2462,
+  3488
+ ],
+ "3.4 filter|400 modules 8,429 / 96.0% / over 332 / missed 4": [
+  400,
+  8429,
+  96.0,
+  332,
+  4
+ ],
+ "3.3/5.10|C3 synchronous-callback over-estimate 1,092": 1092,
+ "Table 13|FPEA total n/free/v1/v2/any1/any2": [
+  129967,
+  12942,
+  41822,
+  29526,
+  48258,
+  38176
+ ],
+ "Table 13|missed n/free/v1/v2/any1/any2": [
+  125055,
+  12388,
+  40262,
+  28435,
+  46447,
+  36790
+ ],
+ "Table 13|share %": [
+  29.4,
+  37.1,
+  29.4,
+  37.1,
+  15.7,
+  19.9
+ ],
+ "Table 13|M_n = FPEA − intersection": 125055,
+ "Table 16 subsystem|watchdog": 90.4,
+ "subsystem_ratio.json|watchdog": [
+  1199,
+  1084
+ ],
+ "Table 16 subsystem|hwmon": 88.0,
+ "subsystem_ratio.json|hwmon": [
+  3445,
+  3031
+ ],
+ "Table 16 subsystem|rtc": 87.9,
+ "subsystem_ratio.json|rtc": [
+  1801,
+  1583
+ ],
+ "Table 16 subsystem|gpio": 85.3,
+ "subsystem_ratio.json|gpio": [
+  1910,
+  1630
+ ],
+ "Table 16 subsystem|iio": 80.6,
+ "subsystem_ratio.json|iio": [
+  4843,
+  3902
+ ],
+ "Table 16 subsystem|input": 77.0,
+ "subsystem_ratio.json|input": [
+  3720,
+  2866
+ ],
+ "Table 16 subsystem|hid": 73.5,
+ "subsystem_ratio.json|hid": [
+  1956,
+  1438
+ ],
+ "Table 16 subsystem|tty": 71.6,
+ "subsystem_ratio.json|tty": [
+  2977,
+  2133
+ ],
+ "Table 16 subsystem|media": 63.6,
+ "subsystem_ratio.json|media": [
+  19955,
+  12686
+ ],
+ "Table 16 subsystem|usb": 54.5,
+ "subsystem_ratio.json|usb": [
+  9260,
+  5048
+ ],
+ "Table 16 subsystem|scsi": 45.0,
+ "subsystem_ratio.json|scsi": [
+  12935,
+  5823
+ ],
+ "Table 16 subsystem|gpu": 45.0,
+ "subsystem_ratio.json|gpu": [
+  31383,
+  14123
+ ],
+ "Table 16 subsystem|net": 44.2,
+ "subsystem_ratio.json|net": [
+  58112,
+  25666
+ ],
+ "Table 16 subsystem|md": 42.5,
+ "subsystem_ratio.json|md": [
+  2884,
+  1226
+ ],
+ "Table 16 subsystem|staging": 34.7,
+ "subsystem_ratio.json|staging": [
+  9008,
+  3126
+ ],
+ "Table 16 subsystem|acpi": 34.2,
+ "subsystem_ratio.json|acpi": [
+  2184,
+  748
+ ],
+ "Table 16 subsystem|infiniband": 28.6,
+ "subsystem_ratio.json|infiniband": [
+  7854,
+  2244
+ ],
+ "TCA pilot|rows": 455,
+ "TCA pilot|callers 0 among TP 218 / callers 0 among FP 37 / callers 0 among negatives labelled 0 (185) / callers 0 among ? 15": [
+  210,
+  36,
+  105,
+  15
+ ],
+ "5.4 placeholder|placeholder_trigger.log exists": true,
+ "5.3 heavy|unit-layer WL∖FPEA 987 breakdown (kind|class: n)": {
+  "IOCTL_CAND|external_declared": 547,
+  "IOCTL_CAND|defined_not_FPEA": 289,
+  "INT_HANDLER_T|external_declared": 151
+ },
+ "Table 2 auxiliary heavy|C3-only used only by iterator-type APIs": 677,
+ "Table 2 auxiliary|iterator share %": 0.52,
+ "5.7.3 ath12k|6.9 mac unit FPEA / C1 in @ath12k_ops": [
+  45,
+  34
+ ],
+ "5.7.3 ath12k|7.1.4 ath12k .o.bc / mac unit C1 / ath12k_mac_op_* defined": [
+  48,
+  0,
+  40
+ ],
+ "Table 14 tlclk|cleanup_module C2 / tlclk_interrupt C3": [
+  true,
+  true
+ ],
+ "Table 14 tlclk|UAFX (unit): tlclk_interrupt INT_HANDLER_T, tlclk_read READ_HDR, cleanup_module missed": [
+  true,
+  true,
+  false
+ ],
+ "Table 14 docg3|docg3_release C1 / UAFX 0": [
+  true,
+  ""
+ ],
+ "Table 14 tlclk|unit defined functions 28 = entry points 28": [
+  28,
+  28
+ ]
+}

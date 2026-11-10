@@ -1,0 +1,166 @@
+{
+ "nF": 139236,
+ "cls": {
+  "framework-optable": 58130,
+  "network-stack": 6794,
+  "lifecycle": 12717,
+  "unlabeled": 20678,
+  "lifecycle/bus": 14050,
+  "api-registration": 5442,
+  "user-triggered": 16451,
+  "interrupt": 2439,
+  "completion": 604,
+  "deferred": 1222,
+  "notifier": 234,
+  "teardown": 475
+ },
+ "top": {
+  "framework-optable": {
+   "struct.configfs_attribute": 1075,
+   "struct.dvb_frontend_ops": 1070,
+   "struct.clk_ops": 1031,
+   "struct.iio_info": 912,
+   "struct.amd_ip_funcs": 793,
+   "struct.uart_ops": 736,
+   "struct.v4l2_subdev_pad_ops": 700,
+   "struct.rtc_class_ops": 630,
+   "struct.ib_device_ops": 628,
+   "struct.regulator_ops": 614,
+   "struct.vb2_ops": 610,
+   "struct.ata_port_operations": 593,
+   "struct.usb_serial_driver": 513,
+   "struct.scsi_host_template": 509,
+   "struct.irq_chip": 504
+  },
+  "network-stack": {
+   "struct.net_device_ops": 2875,
+   "struct.ethtool_ops": 2051,
+   "struct.ieee80211_ops": 907,
+   "struct.cfg80211_ops": 319,
+   "struct.dcbnl_rtnl_ops": 228,
+   "struct.dsa_switch_ops": 190,
+   "struct.rtnl_link_ops": 115,
+   "struct.phylink_mac_ops": 49,
+   "struct.xfrmdev_ops": 27,
+   "struct.header_ops": 14,
+   "struct.ieee80211_ops#const": 10,
+   "struct.rtnl_link_ops#12": 2,
+   "struct.rtnl_link_ops#8": 2,
+   "struct.rtnl_link_ops#13": 2,
+   "struct.rtnl_link_ops#10": 2
+  },
+  "lifecycle": {
+   "init/exit": 12717
+  },
+  "unlabeled": {
+   "anon/array": 12292,
+   "?": 8019,
+   "global-var": 143
+  },
+  "lifecycle/bus": {
+   "struct.platform_driver": 4501,
+   "struct.dev_pm_ops": 3174,
+   "struct.i2c_driver": 1575,
+   "struct.pci_driver": 1419,
+   "struct.usb_driver": 707,
+   "struct.spi_driver": 565,
+   "struct.phy_driver": 490,
+   "struct.hid_driver": 356,
+   "struct.of_device_id": 336,
+   "struct.bus_type": 285,
+   "struct.pcmcia_driver": 138,
+   "struct.serio_driver": 118,
+   "struct.device_type": 95,
+   "struct.device_driver": 67,
+   "struct.virtio_driver": 67
+  },
+  "api-registration": {
+   "single_open": 609,
+   "simple_attr_open": 241,
+   "netif_napi_add": 213,
+   "lock_release": 118,
+   "__devres_alloc_node": 113,
+   "device_for_each_child": 106,
+   "devres_release": 81,
+   "__cpuhp_setup_state": 80,
+   "ieee80211_iterate_active_interfaces_atomic": 77,
+   "__platform_driver_probe": 74,
+   "devm_iio_triggered_buffer_setup_ext": 64,
+   "comedi_timeout": 62,
+   "new_mmio_info": 59,
+   "sort": 57,
+   "bus_for_each_dev": 51
+  },
+  "user-triggered": {
+   "struct.device_attribute": 7578,
+   "struct.file_operations": 3720,
+   "struct.v4l2_ioctl_ops": 1934,
+   "struct.fb_ops": 530,
+   "struct.tty_operations": 394,
+   "struct.bin_attribute": 332,
+   "struct.seq_operations": 273,
+   "struct.v4l2_file_operations": 269,
+   "struct.drm_ioctl_desc": 262,
+   "struct.kobj_attribute": 209,
+   "struct.driver_attribute": 143,
+   "struct.kernel_param_ops": 137,
+   "struct.block_device_operations": 129,
+   "struct.snd_pcm_ops": 114,
+   "struct.vm_operations_struct": 112
+  },
+  "interrupt": {
+   "devm_request_threaded_irq": 1281,
+   "request_threaded_irq": 1004,
+   "irq_set_chained_handler_and_data": 56,
+   "devm_request_any_context_irq": 18,
+   "pcmcia_request_irq": 17,
+   "pci_request_irq": 8,
+   "bind_evtchn_to_irqhandler": 7,
+   "da9052_request_irq": 6,
+   "bind_interdomain_evtchn_to_irqhandler_lateeoi": 6,
+   "request_any_context_irq": 6,
+   "bind_evtchn_to_irqhandler_lateeoi": 5,
+   "msix_request_irq": 5,
+   "hpsa_request_irqs": 4,
+   "arizona_request_irq": 3,
+   "__request_percpu_irq": 3
+  },
+  "completion": {
+   "struct.urb#28": 373,
+   "struct.dma_async_tx_descriptor#6": 113,
+   "struct.bio#10": 58,
+   "struct.usb_request#7": 52,
+   "struct.dma_async_tx_descriptor#7": 6,
+   "struct.request#32": 2
+  },
+  "deferred": {
+   "init_timer_key": 657,
+   "tasklet_setup": 191,
+   "kthread_create_on_node": 168,
+   "struct.work_struct": 65,
+   "tasklet_init": 56,
+   "call_rcu": 37,
+   "struct.timer_list": 17,
+   "struct.delayed_work#const": 11,
+   "struct.work_struct#const": 9,
+   "struct.work_struct#2": 6,
+   "struct.irq_work#const": 2,
+   "struct.hrtimer#const": 2,
+   "kthread_create_on_cpu": 1
+  },
+  "notifier": {
+   "struct.notifier_block": 231,
+   "register_fib_notifier": 3
+  },
+  "teardown": {
+   "devm_add_action": 475
+  }
+ },
+ "atx": {
+  "select/phi": 1304,
+  "call-other": 80,
+  "icmp + select/phi": 19,
+  "icmp": 5
+ },
+ "nATX": 1408
+}

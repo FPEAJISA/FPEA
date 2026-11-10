@@ -1,0 +1,16 @@
+{
+ "designated": 11136,
+ "has_fn": 5919,
+ "with_header": 9185,
+ "index_moved": 6022,
+ "wrong_field_fn": 4732,
+ "intended_missed": 3748,
+ "index_same": 3163,
+ "semantic_hit": 532,
+ "no_header": 1951,
+ "units": 19649,
+ "version": "7.1.4-norand",
+ "header_col": "7.1",
+ "rate_has_fn": 53.15,
+ "rate_semantic_within_header": 5.79
+}

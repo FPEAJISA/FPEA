@@ -1,0 +1,523 @@
+{
+ "fp_ids": [
+  "G011",
+  "G012",
+  "G042",
+  "G043",
+  "G046",
+  "G061",
+  "G064",
+  "G086",
+  "G139",
+  "G159",
+  "G162",
+  "G182",
+  "G183",
+  "G195",
+  "G213",
+  "G229",
+  "G247",
+  "G269",
+  "G274",
+  "G289",
+  "G305",
+  "G308",
+  "G313",
+  "G315",
+  "G318",
+  "G321",
+  "G323",
+  "G340",
+  "G389",
+  "G399",
+  "G400",
+  "G401",
+  "G430",
+  "G441",
+  "G446",
+  "G447",
+  "G455"
+ ],
+ "fp_by_stratum": {
+  "C1": 6,
+  "C5": 14,
+  "C4only": 7,
+  "C3": 10
+ },
+ "fp_by_rule": {
+  "internal-dispatch": 27,
+  "sync-callback/internal-dispatch": 3,
+  "sync-callback": 7
+ },
+ "fp_rule_x_stratum": {
+  "internal-dispatch": {
+   "C1": 6,
+   "C5": 13,
+   "C4only": 6,
+   "C3": 2
+  },
+  "sync-callback/internal-dispatch": {
+   "C4only": 1,
+   "C3": 1,
+   "C5": 1
+  },
+  "sync-callback": {
+   "C3": 7
+  }
+ },
+ "A_rules": {
+  "internal-helper": 153,
+  "exported-service": 35,
+  "deferred": 43,
+  "op-table": 142,
+  "internal-dispatch": 17,
+  "probe-remove": 15,
+  "teardown": 6,
+  "irq": 18,
+  "other-file": 15,
+  "sync-callback": 10,
+  "comparison": 1
+ },
+ "B_rules": {
+  "internal-helper": 150,
+  "exported-service": 35,
+  "deferred": 47,
+  "op-table": 129,
+  "internal-dispatch": 30,
+  "probe-remove": 17,
+  "teardown": 8,
+  "irq": 16,
+  "other-file": 15,
+  "sync-callback": 8
+ },
+ "tp_rules": {
+  "deferred": 40,
+  "op-table": 125,
+  "probe-remove": 13,
+  "teardown": 7,
+  "irq": 15,
+  "probe-remove/op-table": 2,
+  "deferred/irq": 1,
+  "op-table/deferred": 7,
+  "op-table/probe-remove": 4,
+  "irq/deferred": 1,
+  "irq/op-table": 2,
+  "op-table/teardown": 1
+ },
+ "neg_rules": {
+  "internal-helper": 150,
+  "exported-service": 35,
+  "other-file": 15
+ },
+ "fp_detail": [
+  {
+   "id": "G011",
+   "fn": "datai_run",
+   "module": "aha152x_core",
+   "stratum": "C1",
+   "signals": [
+    "C1"
+   ],
+   "rule": "internal-dispatch",
+   "note": "Only called from the states table of the included aha152x.c"
+  },
+  {
+   "id": "G012",
+   "fn": "cmd_handler_pipe_control",
+   "module": "cmd_parser",
+   "stratum": "C1",
+   "signals": [
+    "C1"
+   ],
+   "rule": "internal-dispatch",
+   "note": "The command handling table is only called within cmd_parser.c"
+  },
+  {
+   "id": "G042",
+   "fn": "bfa_fcs_lport_fdmi_sm_disabled",
+   "module": "bfa_fcs_lport",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "fdmi state functions are only called indirectly in this unit"
+  },
+  {
+   "id": "G043",
+   "fn": "e1000_clean_rx_irq",
+   "module": "netdev",
+   "stratum": "C4only",
+   "signals": [
+    "C4"
+   ],
+   "rule": "internal-dispatch",
+   "note": "The clean_rx pointer call is confined to netdev.c"
+  },
+  {
+   "id": "G046",
+   "fn": "ib_sa_mcmember_rec_callback",
+   "module": "sa_query",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "re-adjudication: the sa_query.callback call is at one place, sa_query.c:910. query->callback at line 1603 is the user callback (a different field) (P3/P4)"
+  },
+  {
+   "id": "G061",
+   "fn": "pqi_raid_synchronous_complete",
+   "module": "smartpqi_init",
+   "stratum": "C4only",
+   "signals": [
+    "C4"
+   ],
+   "rule": "internal-dispatch",
+   "note": "io_complete_callback calls are confined to smartpqi_init.c"
+  },
+  {
+   "id": "G064",
+   "fn": "denali_indexed_write",
+   "module": "denali",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "host_write pointer calls are confined to denali.c"
+  },
+  {
+   "id": "G086",
+   "fn": "spi_imx_buf_tx_swap",
+   "module": "spi-imx",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "The tx pointer call is confined to spi-imx.c"
+  },
+  {
+   "id": "G139",
+   "fn": "brcmf_chip_sb_resetcore",
+   "module": "chip",
+   "stratum": "C4only",
+   "signals": [
+    "C4"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "internal dispatch function with a hardware dependency"
+  },
+  {
+   "id": "G159",
+   "fn": "metadata_take_snap",
+   "module": "dm-era-target",
+   "stratum": "C4only",
+   "signals": [
+    "C4"
+   ],
+   "rule": "sync-callback/internal-dispatch",
+   "note": "both the store to rpc.fn0 and its call are inside dm-era-target.c"
+  },
+  {
+   "id": "G162",
+   "fn": "gsm_mux_net_init",
+   "module": "n_gsm",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "internal dispatch function called at an intermediate stage of the virtual network device allocation pipeline. An entry point should exist in a parent function."
+  },
+  {
+   "id": "G182",
+   "fn": "gem_init_rings",
+   "module": "macb_main",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "internal dispatch function called from a parent function"
+  },
+  {
+   "id": "G183",
+   "fn": "check_int_v1_v2",
+   "module": "mxc_nand",
+   "stratum": "C1",
+   "signals": [
+    "C1"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "internal dispatch called from the mxc_nand_irq function"
+  },
+  {
+   "id": "G195",
+   "fn": "mcam_ctlr_dma_contig",
+   "module": "mcam-core",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "dma_setup is called only from an internal dispatch function"
+  },
+  {
+   "id": "G213",
+   "fn": "ipr_reset_alert",
+   "module": "ipr",
+   "stratum": "C5",
+   "signals": [
+    "C4",
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "job_step calls are confined to ipr.c"
+  },
+  {
+   "id": "G229",
+   "fn": "bnx2x_empty_rx_mode_wait",
+   "module": "bnx2x_sp",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "an indirect call from other units is possible, but since not every indirect call will be traced, it is executed from the module's internal dispatch and is not an entry point"
+  },
+  {
+   "id": "G247",
+   "fn": "iwl_mvm_mac_tsf_id_iter",
+   "module": "mac-ctxt",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback",
+   "note": "the iteration function calls it before returning and does not retain the address"
+  },
+  {
+   "id": "G269",
+   "fn": "sh_msiof_spi_write_fifo_8",
+   "module": "spi-sh-msiof",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "both the store to tx_fifo and its call are inside spi-sh-msiof.c"
+  },
+  {
+   "id": "G274",
+   "fn": "ath10k_wmi_tlv_swba_parse",
+   "module": "wmi-tlv",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback/internal-dispatch",
+   "note": "the TLV iteration function that receives the address is also in the same verdict unit"
+  },
+  {
+   "id": "G289",
+   "fn": "hybrid_get_cpu_scaling",
+   "module": "intel_pstate",
+   "stratum": "C4only",
+   "signals": [
+    "C4"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "internal dispatch whose address is assigned to the internal operation slot of a dedicated interface struct (.get_cpu_scaling) when the driver is initialized"
+  },
+  {
+   "id": "G305",
+   "fn": "sh_msiof_spi_read_fifo_32",
+   "module": "spi-sh-msiof",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "both the store to rx_fifo and its call are inside spi-sh-msiof.c"
+  },
+  {
+   "id": "G308",
+   "fn": "intel_pwm_disable_backlight",
+   "module": "intel_backlight",
+   "stratum": "C1",
+   "signals": [
+    "C1"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "the intel_pwm_disable_backlight function is called only from an internal dispatch function"
+  },
+  {
+   "id": "G313",
+   "fn": "acpi_db_bus_walk",
+   "module": "dbnames",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback",
+   "note": "Called during the ACPI namespace walk and the address is not retained"
+  },
+  {
+   "id": "G315",
+   "fn": "write_endio",
+   "module": "dm-bufio",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "re-adjudication: all b->end_io calls are inside dm-bufio.c. The addresses that go outside are bio_complete/dmio_complete (P4)"
+  },
+  {
+   "id": "G318",
+   "fn": "bfa_fcs_fabric_sm_cleanup",
+   "module": "bfa_fcs",
+   "stratum": "C4only",
+   "signals": [
+    "C4"
+   ],
+   "rule": "internal-dispatch(adjudicated)",
+   "note": "this function is judged to be internal dispatch bound to the internal event routine of the driver's own private struct (struct bfa_fcs_fabric_s)"
+  },
+  {
+   "id": "G321",
+   "fn": "s_sync0",
+   "module": "i915_request",
+   "stratum": "C5",
+   "signals": [
+    "C1",
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "CONFIG_DRM_I915_SELFTEST=y; called only from the func array in the included file"
+  },
+  {
+   "id": "G323",
+   "fn": "power_supply_match_device_node",
+   "module": "power_supply_core",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback",
+   "note": "class_find_device calls it during the search and does not retain the address"
+  },
+  {
+   "id": "G340",
+   "fn": "multi_config_check",
+   "module": "serial_cs",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback",
+   "note": "called during the config iteration of pcmcia_loop_config"
+  },
+  {
+   "id": "G389",
+   "fn": "vz89x_i2c_xfer",
+   "module": "vz89x",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "xfer pointer calls are confined to vz89x.c"
+  },
+  {
+   "id": "G399",
+   "fn": "dmi_entry_raw_read_helper",
+   "module": "dmi-sysfs",
+   "stratum": "C4only",
+   "signals": [
+    "C4"
+   ],
+   "rule": "internal-dispatch",
+   "note": "the DMI iteration wrapper calls callback inside this unit"
+  },
+  {
+   "id": "G400",
+   "fn": "v4l_stub_g_audio",
+   "module": "v4l2-ioctl",
+   "stratum": "C1",
+   "signals": [
+    "C1"
+   ],
+   "rule": "internal-dispatch",
+   "note": "The IOCTL_INFO table is only called from this unit's ioctl dispatcher"
+  },
+  {
+   "id": "G401",
+   "fn": "dvb_dvr_do_ioctl",
+   "module": "dmxdev",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback",
+   "note": "dvb_usercopy calls func before returning"
+  },
+  {
+   "id": "G430",
+   "fn": "task_fn_power_on",
+   "module": "host",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "sync-callback/internal-dispatch",
+   "note": "Waits for the work, but the task_fn indirect call itself is inside this unit"
+  },
+  {
+   "id": "G441",
+   "fn": "devm_clk_match",
+   "module": "clk",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback",
+   "note": "match is called during the devres lookup and the address is not retained"
+  },
+  {
+   "id": "G446",
+   "fn": "iwl_mvm_scan_condition_iterator",
+   "module": "scan",
+   "stratum": "C3",
+   "signals": [
+    "C3"
+   ],
+   "rule": "sync-callback",
+   "note": "called during interface iteration and the address is not retained"
+  },
+  {
+   "id": "G447",
+   "fn": "resp_read_dt0",
+   "module": "scsi_debug",
+   "stratum": "C1",
+   "signals": [
+    "C1"
+   ],
+   "rule": "internal-dispatch",
+   "note": "SCSI response table is called only inside scsi_debug.c"
+  },
+  {
+   "id": "G455",
+   "fn": "bnxt_gro_func_5731x",
+   "module": "bnxt",
+   "stratum": "C5",
+   "signals": [
+    "C5"
+   ],
+   "rule": "internal-dispatch",
+   "note": "gro_func is only called within bnxt.c"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+5.17: observed 35/69
+5.19: observed 35/69
+6.9: observed 34/69
+7.1: observed 33/69
+
+=== Observed in all 4 versions: 33 ===
+Field count changed: 25 (76%)
+struct                                 5.17   5.19    6.9    7.1  delta
+  ieee80211_ops                         113    113    125    129    +16
+  ethtool_ops                            71     71     73     86    +15
+  ib_device_ops                         131    129    131    145    +14
+  net_device_ops                         84     86     92     94    +10
+  file_operations                        32     33     33     34     +2
+  hid_driver                             21     21     21     23     +2
+  iio_info                               18     18     19     20     +2
+  proto_ops                              28     28     28     30     +2
+  tty_buffer                              7      7      9      9     +2
+  usb_gadget_ops                         15     15     17     17     +2
+  bin_attribute                           7      7      8      8     +1
+  block_device_operations                17     19     18     18     +1
+  device_driver                          19     19     19     20     +1
+  platform_driver                         8      9     10      9     +1
+  tty_ldisc_ops                          17     17     18     18     +1
+  tty_operations                         36     36     36     37     +1
+  uart_ops                               26     27     27     27     +1
+  usb_driver                             14     14     14     15     +1
+  pci_driver                             16     17     16     16     +0
+  cdrom_device_info                      21     21     21     20     -1
+  cdrom_device_ops                       15     14     14     14     -1
+  i2c_driver                             13     13     12     12     -1
+  fb_ops                                 23     23     23     21     -2
+  v4l2_ioctl_ops                        122    122    122    120     -2
+  drm_driver                             41     41     27     26    -15
+
+Unchanged: 8
+  dev_pm_ops                             23
+  iio_chan_spec_ext_info                  5
+  seq_operations                          4
+  snd_ac97_bus_ops                        6
+  spi_driver                              5
+  v4l2_file_operations                   10
+  video_device                           27
+  watchdog_ops                           10

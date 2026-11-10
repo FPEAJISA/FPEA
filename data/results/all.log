@@ -1,0 +1,14 @@
+[09/21 15:02:21] [llvm14] source prepared, clang: Ubuntu clang version 14.0.0-1ubuntu1.1
+[09/21 15:02:36] [llvm14] config OK: modules 8519, sanitizers all off
+[09/21 15:02:36] [llvm14] build start
+[09/21 15:36:55] [llvm14] build done: .o 16849, .bc(wllvm) 15521
+[09/21 15:38:27] [llvm14] collected 15521
+[09/21 15:38:29] [llvm14] gate: duplicate paths=0 llvm-link=0 KASAN wrappers=0 asan/ubsan symbols=0 (all must be 0)
+[09/21 15:38:29] [llvm14] done
+[09/21 15:38:38] [llvm16] source prepared, clang: clang version 16.0.6 (https://github.com/llvm/llvm-project.git 7cbf1a2591520c2491aa35339f227775f4d3adf6)
+[09/21 15:38:50] [llvm16] config OK: modules 8518, sanitizers all off
+[09/21 15:38:50] [llvm16] build start
+[09/21 16:11:35] [llvm16] build done: .o 16748, .bc(wllvm) 15452
+[09/21 16:13:08] [llvm16] collected 15452
+[09/21 16:13:08] [llvm16] gate: duplicate paths=0 llvm-link=0 KASAN wrappers=0 asan/ubsan symbols=0 (all must be 0)
+[09/21 16:13:08] [llvm16] done

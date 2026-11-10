@@ -1,0 +1,13 @@
+FAIL drivers/dma/sh/shdma.mod
+FAIL drivers/dma/dw-edma/dw-edma.mod
+MISS 1 drivers/misc/lkdtm/lkdtm.mod
+FAIL drivers/media/rc/img-ir/img-ir.mod
+FAIL drivers/staging/wfx/wfx.mod
+FAIL drivers/staging/media/atomisp/atomisp.mod
+FAIL drivers/video/fbdev/aty/atyfb.mod
+FAIL drivers/video/fbdev/aty/radeonfb.mod
+FAIL drivers/video/fbdev/intelfb/intelfb.mod
+FAIL drivers/video/fbdev/nvidia/nvidiafb.mod
+FAIL drivers/net/wireless/intel/iwlwifi/iwlwifi.mod
+FAIL drivers/net/ethernet/chelsio/cxgb/cxgb.mod
+FAIL drivers/bluetooth/hci_uart.mod
