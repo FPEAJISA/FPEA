@@ -1,7 +1,7 @@
 a8f67ca7050f93571d98eb9d1169289d  data/archives/fpea_out.tar.gz
 f32e8c22fd202c6f03b2b8027e56301d  data/archives/link.tar.gz
 72c4b64e9135502e31a5d23cc79de38f  data/archives/MANIFEST_data.md5.gz
-44931c2e12b609047f4091f382507888  data/archives/SHA256SUMS
+50385d8090cf3c78e2c0ad8b6b72f17f  data/archives/review_package.tar.gz
 10f1142c70624718d351f60c7164816c  data/epi/filter_validate.json
 3f5291c14c1e8a66a55f2e7d2030883f  data/epi/filter_validate.log
 679bfff31997b88223d6a0e5ea919d77  data/epi/handler_offset.json
@@ -91,7 +91,7 @@ b14310634bf12d23f044a6da5064fc20  figures/fig6_subsystem_ratio.svg
 8168fc22915efaa766bf806ed2bacb62  figures/fig7_precision_strata.pdf
 2384f7da861825489b8726c709d195aa  figures/fig7_precision_strata.png
 02de6e353aea164328dc2c21898e2743  figures/fig7_precision_strata.svg
-f46f026b9d4cd0088bd4b2aa650ae0b8  .gitignore
+d130888e30a8ef63af653e9176fcdaca  .gitignore
 e3beafad44867c50481411642f31ef26  LICENSE
 78ac7580a089f17e4eadf4e58d4724b8  logs/verify_report.md
 e1257ee0cf416343640c1eae10ca3787  logs/verify_values.json
@@ -104,11 +104,11 @@ bdab744bfdc03e87875a301c1ef5624b  out/randstruct_vs_norand_714.json
 5863a05d2fc3a11b74232b2b3fab74d3  out/subsystem_ratio.json
 59189b69faa46cafaa3db2f2656bb815  out/typed_vs_opaque.json
 b034b9fc99de6be868ae0cf8996348e7  out/version_results.json
-0fe567f6a1b46867ee9f5356d845b970  README.md
+66707418ea140b8525674754913a859d  README.md
 ac0001febc987968b86f331ea7a2f35a  run_all.sh
 3ec92b8235f1c5991c67119ce0929fbd  scripts/build_kernel.sh
 ee4e3deaa20024c798cc22eedbc68282  scripts/derive_results.py
-e76d8626b4636c9aa6318d34528bef68  scripts/fetch_data.sh
+072e666229726cf7bd230b5fdaa513f8  scripts/fetch_data.sh
 9bdee0d7627491d651bc61cffef85162  scripts/orig/epi_regfn/filter_validate.py
 b913a252e009a0604a023237460bd30a  scripts/orig/epi_regfn/handler_offset.py
 98cf1c1d9b21889e1ab30d78ecc91c82  scripts/orig/epi_regfn/intro_stats.py
@@ -141,7 +141,7 @@ b01d1b16854e993aaaf0b7bb6d8b7a1e  scripts/orig/nosan/build_linked.sh
 483f1329898f24291b9daa3d17d5d0d8  scripts/orig/scratchpad/semantic_hit.py
 3c07ca78d7b8ec7c49d9ec965503c1ae  scripts/setup.py
 17e2773481e28b5f170a249ca9cec753  scripts/verify_numbers.py
-1de777ccebfe40ce3169638a19ad3bf7  THIRD_PARTY.md
+a1068edf216bd59b8bccd66b58c763f3  THIRD_PARTY.md
 8eb81d363ddd4178d030e874bdfb53d3  tool/build.sh
 01212923a42b9a3b1e7966feb6c36c0c  tool/fpea.cpp
 4ce0abce5a7755cea3acf73d05273e32  tool/uafx/entry_point_handler_orig

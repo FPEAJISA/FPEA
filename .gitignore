@@ -1,8 +1,6 @@
 # extracted from data/archives/*.tar.gz by scripts/fetch_data.sh
 data/fpea_out/
 data/link/
-# release asset (209 MB), see scripts/fetch_data.sh --zip
-data/expert_pkg/entrypoint_review_v2.1.zip
 # built by ./run_all.sh build-tools
 tool/fpea14
 tool/fpea16

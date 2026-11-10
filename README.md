@@ -14,7 +14,7 @@ scripts/fetch_data.sh          # unpack data/archives/*.tar.gz into data/fpea_ou
 head -40 out/derive_report.md logs/verify_report.md
 ```
 
-Requirements: Linux with bash and python3 (standard library only; tested on 3.10), 0.7 GB RAM, about 1 GB disk (44 MB checkout + 590 MB of extracted data), no root, no network beyond `git clone`. Takes about one minute.
+Requirements: Linux with bash and python3 (standard library only; tested on 3.10), 0.7 GB RAM, about 1 GB disk (49 MB checkout + 590 MB of extracted data), no root, no network beyond `git clone`. Takes about one minute.
 
 Expected result on a fresh clone: every derived file `SAME` in `out/derive_report.md`, and `OK 274 / MISMATCH 0 / INFO 8` at the end of `logs/verify_report.md`. The eight `INFO` rows are not failures: reference values printed for the text (abstract reduction rates, recall bounds, a footnote, the two-file AT/F note, the pilot row count) and two checks that are skipped when the measurement server's files are absent (the 5.17.11 source tree for the link-object/C-source count, and the first-run FPEA output `/tmp/u_fpea` for the input-consistency check); on the measurement server both are real comparisons and the result is `OK 276 / INFO 6`. This was confirmed by copying the tracked files into an empty directory with an empty `$HOME` and running the two commands above; apart from those two optional inputs the scripts open nothing outside the checkout.
 
@@ -65,7 +65,7 @@ Network access needed only by `setup.py`: cdn.kernel.org (kernel tarballs), apt.
 | `run_all.sh`, `env.sh` | stage driver and all path/toolchain variables |
 | `tool/fpea.cpp`, `tool/build.sh` | the FPEA tool (LLVM 14 typed-IR and LLVM 16 opaque-pointer builds); `tool/uafx/` is the UAFX EntryPointIdentifier baseline |
 | `scripts/` | `setup.py` (machine preparation), `build_kernel.sh` (wllvm kernel builds), `derive_results.py`, `verify_numbers.py`, `fetch_data.sh`; `scripts/orig/` are the original measurement scripts as `run_all.sh` runs them, reformatted for readability (functions, constants, docstrings; comments and console messages in English) with their logic, regexes, outputs and output order unchanged |
-| `data/archives/` | `fpea_out.tar.gz` (per-unit FPEA / UAFX outputs for 5.17.11, 5.19.17, 6.9, 7.1.4, 7.1.4-norand and the clang 16 run; 172,433 files) and `link.tar.gz` (link-layer outputs; 59,040 files), with an md5 manifest (`MANIFEST_data.md5.gz`) |
+| `data/archives/` | `fpea_out.tar.gz` (per-unit FPEA / UAFX outputs for 5.17.11, 5.19.17, 6.9, 7.1.4, 7.1.4-norand and the clang 16 run; 172,433 files) and `link.tar.gz` (link-layer outputs; 59,040 files), with an md5 manifest (`MANIFEST_data.md5.gz`); `review_package.tar.gz` (the expert review package, see below) |
 | `data/expert_pkg/` | reviewer guideline `audit.txt` (v2.1), independent verdicts `rA.csv`, `rB.csv`, the 17 adjudicated conflicts (`adjudication_17*.csv`), ID maps (`unit_map_internal.json`, `adjudication_17_key_internal.json`); see `docs/data_dictionary.md` |
 | `data/gt/`, `data/epi/`, `data/results/` | answer key and sample, UAFX whitelist / header offsets / filter validation, every result file quoted in the paper |
 | `data/randstruct_7.1.4/` | the RANDSTRUCT seed of the 7.1.4 build (needed to reproduce the exact function counts) |
@@ -79,7 +79,7 @@ The expert verdicts (human input, stored), the 200-unit negative sample (depends
 
 ## Expert review package
 
-`entrypoint_review_v2.1.zip` (209 MB: Linux 5.17.11 `drivers/` sources, Kbuild `.cmd` files, the blinded review CSVs and `audit.txt`) is published as a GitHub release asset and is not needed by any script. `scripts/fetch_data.sh --zip` downloads and checks it (`data/archives/SHA256SUMS`).
+`data/archives/review_package.tar.gz` (5 MB) is the package handed to the two expert reviewers, `entrypoint_review_v2.1`: the reviewer guideline `audit.txt`, the blank verdict sheets `review_A.csv` / `review_B.csv` (the same 455 rows as `rA.csv` / `rB.csv` with the verdict columns empty), the blank independence pledge `pledge.txt`, and `build/` (the Kbuild `.cmd` files of the 353 sampled units and the `.config` of the 5.17.11 build). The package also contained 53,413 unmodified Linux 5.17.11 source files; they are not stored here because the same tarball is downloaded by `setup.py`, and `SOURCE_MANIFEST.txt` inside the archive lists every file with its md5 so the package can be rebuilt exactly. No script reads this archive.
 
 ## Language of the files
 
