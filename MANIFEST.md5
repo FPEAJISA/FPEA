@@ -92,7 +92,7 @@ b14310634bf12d23f044a6da5064fc20  figures/fig6_subsystem_ratio.svg
 2384f7da861825489b8726c709d195aa  figures/fig7_precision_strata.png
 02de6e353aea164328dc2c21898e2743  figures/fig7_precision_strata.svg
 f46f026b9d4cd0088bd4b2aa650ae0b8  .gitignore
-f02f183dade212783e0ae234ee6d9aea  LICENSE
+e3beafad44867c50481411642f31ef26  LICENSE
 78ac7580a089f17e4eadf4e58d4724b8  logs/verify_report.md
 e1257ee0cf416343640c1eae10ca3787  logs/verify_values.json
 90ec8f95e848f574751b15773e721ee0  out/derive_report.md
