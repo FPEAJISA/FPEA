@@ -58,3 +58,22 @@ In derived files the suffix `(adjudicated)` marks a rule taken from the adjudica
 - `scripts/verify_numbers.py` checks the rule distributions of Table 3 and Table 5 against these labels.
 
 `data/results/decomp.json` (link-layer decomposition by `scripts/orig/nosan/decomp.py`) uses the category keys `with C1`, `C2 (no C1)`, `C3/C5r (no C1/C2)`, `C4 only`.
+
+## Files of the 2026-11-09 audit (`data/results/`, written by `scripts/orig/audit_v23/`)
+
+| file | produced by | content |
+|---|---|---|
+| `popN.json` | `popN.py` (bitcode) | per 5.17.11 unit `[define_all, define_clean, N_all, N_clean, json_defined]`: `define`d functions in the bitcode, after the Section 3.4 name filter, and both minus the FPEA entry points; `totals` = 242,823 / 236,515 / 112,856 / 106,548. The paper's negative population is `N_clean` |
+| `recon_pool2.json` | `recon_pool2.py` (bitcode) | the stage-1 negative sample (500 units, seed 913) and its pool: `pool_total` 3,071, `zero_units` 122, `max_unit` 100, `M` (unit → pool size), `pool` (unit → sorted non-entry-point names), `sample_in_pool` 200 |
+| `boot2_results.json` | `boot2.py` | for `N_prefilter` (112,856, sensitivity) and `N_clean` (106,548, paper): ratio-estimator FN and recall, expansion-estimator `FN_S` / `FN_ht` / `recall_ht`, Wilson interval mapped to recall, unit-bootstrap intervals (`boot_recall`, `boot_recall_negonly`, `boot_recall_ht`; B = 10,000, seeds 517/518), design effect `deff`; plus `TPhat`, `prec_ex` (C2 excluded), `prec_in`, `fn_by_unit`, `dcn10_expected` |
+| `at_only.json` | `at_only.py` (link-layer bitcode) | the 16,556 address-taken-only (file, function) pairs: `tags` (`export_addressable_only` 16,266, `select_phi_ret(+)` 205, `call_arg(+)` 80, `icmp_only` 4, `export+icmp+bitcastcall` 1) and `rows` = `[file, function, {use category: count}, up to 4 IR use lines]` |
+| `at_only_sample50.json` | `at_only.py` | 50 rows drawn from `rows` with seed 2026 (information check only) |
+| `at80_src.json` | 2026-11-09 session | the 80 `call_arg(+)` cases: `[file, function, [source files], [notes]]` |
+| `at_only_unit_judgment.json` | author verdict | the 80 cases judged at the unit boundary (the paper's ground-truth boundary): `label1_other_module` (15, list), `label1_other_unit_same_module` (36, grouped by the storing unit and slot), `label0_sync_callback` (29, grouped), `totals`, `module_boundary_reference` |
+| `at_only_judgment.json` | author verdict | the same 80 cases judged at the kernel-module boundary (15 entry points, 65 not; reference only), the rule-based verdicts of the other 16,476, the 50-item random check |
+| `wl_only.json` | `wl_only.py` (bitcode) | the 987 UAFX-only (unit, function) pairs with their UAFX kind and IR class (`declared` 698 = external symbol reported in a client unit; `defined` 289), `ext_top` (most redundantly reported names), summary counts |
+| `defmap_5.17.11.tsv.gz` | `defmap.sh` (llvm-nm) | symbol → defining unit for every 5.17.11 unit (T/t/W/w symbols; 299,071 lines) |
+| `wl_ext.json` | `wl_ext.py` | decomposition of the 987 pairs (Supplementary Table S3): external names 359 → 355 defined in `drivers/` (9 identified by FPEA in the defining unit, 4 `__SCT__tp_func_*` static-call trampolines, 342 registered in another unit → 304 recovered at the link layer, 38 inter-module) + 4 defined outside `drivers/`; defined-in-unit 289 → 25 tracepoint by-products + 264 ioctl handlers (224 recovered, 40 remain); lists of the names in each residual class |
+| `typed_mode_cmp.json` | `typed_cmp_unit.py` | fpea14 vs fpea16 on the same LLVM 14 bitcode (`data/fpea_out/rf14_5.17.11` vs `rf_5.17.11`): 129,967 = 129,967, 0 differing units, 0 label differences |
+
+Correction recorded here: the first decomposition of the 698 external pairs (2026-11-09, used in manuscript v2.2/v2.3) read a symbol map whose parallel writers had interleaved 1,440 lines; it reported 355 external names / 348 in `drivers/` / 7 outside / 339 missed / 301 recovered. The clean map gives 359 / 355 / 4 / 346 (of which 4 are static-call trampolines) / 304. The 289 defined-in-unit figures (25 / 264 / 224 / 40) and the inter-module residual (38 + 40 = 78) are unchanged.

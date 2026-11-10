@@ -1,0 +1,162 @@
+{
+ "basis": "Author verdict (2026-11-09). Boundary = unit (Supplementary S8 / the ground-truth definition of Section 3.1). The 80 cases are the AT-only category 'argument of a call through a function pointer' (Table S2). Lists hold function names; group keys name the storing unit and the struct slot. label1_other_module: stored and called by another kernel module; label1_other_unit_same_module: stored and called by another unit of the same module; label0_sync_callback: used only during the call (P2).",
+ "label1_other_module": {
+  "n": 15,
+  "list": [
+   "gdm_tty_recv_complete",
+   "gdm_tty_send_complete",
+   "ipoctal_irq_handler",
+   "mmc_spi_detect_irq",
+   "mt7615_poll_rx",
+   "mt7921_poll_rx",
+   "mtk_rpmsg_ipi_handler",
+   "on_netinfo",
+   "pause_state_change_complete",
+   "qede_simd_fp_handler",
+   "qedf_simd_int_handler",
+   "qedi_iscsi_event_cb",
+   "qedi_simd_int_handler",
+   "resume_state_change_complete",
+   "xpnet_send_completed"
+  ]
+ },
+ "label1_other_unit_same_module": {
+  "libfc -> fc_exch.c (ep->resp) / fc_disc.c (disc_callback)": {
+   "n": 16,
+   "list": [
+    "fc_lport_logo_resp",
+    "fc_lport_flogi_resp",
+    "fc_disc_gpn_ft_resp",
+    "fc_disc_gpn_id_resp",
+    "fc_lport_disc_callback",
+    "fc_lport_ns_resp",
+    "fc_lport_ms_resp",
+    "fc_lport_scr_resp",
+    "fc_rport_plogi_resp",
+    "fc_rport_rtv_resp",
+    "fc_rport_logo_resp",
+    "fc_rport_flogi_resp",
+    "fc_rport_adisc_resp",
+    "fc_fcp_recv",
+    "fc_fcp_rec_resp",
+    "fc_tm_done"
+   ]
+  },
+  "efct -> efct_driver.c / efct_hw.c (mailbox ctx)": {
+   "n": 10,
+   "list": [
+    "efc_nport_alloc_read_sparm64_cb",
+    "efc_nport_alloc_init_vpi_cb",
+    "efc_nport_free_unreg_vpi_cb",
+    "efc_nport_attach_reg_vpi_cb",
+    "efc_domain_alloc_init_vfi_cb",
+    "efc_domain_alloc_read_sparm64_cb",
+    "efc_domain_attach_reg_vfi_cb",
+    "efc_domain_free_unreg_vfi_cb",
+    "efc_cmd_node_attach_cb",
+    "efc_cmd_node_free_cb"
+   ]
+  },
+  "dvb-core -> dvb_demux.c (feed->cb)": {
+   "n": 4,
+   "list": [
+    "dvb_dmxdev_section_callback",
+    "dvb_dmxdev_ts_callback",
+    "dvb_net_sec_callback",
+    "dvb_net_ts_callback"
+   ]
+  },
+  "i915 -> intel_engine_cs.c / intel_gt_irq.c (engine->irq_handler)": {
+   "n": 3,
+   "list": [
+    "execlists_irq_handler",
+    "irq_handler",
+    "cs_irq_handler"
+   ]
+  },
+  "gdmulte -> gdm_usb.c (t->callback, udev->rx_cb)": {
+   "n": 2,
+   "list": [
+    "rx_complete",
+    "tx_complete"
+   ]
+  },
+  "dm-snapshot -> dm-snap-persistent.c (ps->callbacks)": {
+   "n": 1,
+   "list": [
+    "pending_complete"
+   ]
+  }
+ },
+ "label0_sync_callback": {
+  "dm iterate_devices (sync)": {
+   "n": 22,
+   "list": [
+    "device_not_zone_append_capable",
+    "__dm_pr_register",
+    "device_not_dax_capable",
+    "device_is_rq_stackable",
+    "device_intersect_crypto_capabilities",
+    "dm_keyslot_evict_callback",
+    "count_device",
+    "dm_set_device_limits",
+    "device_area_is_invalid",
+    "device_not_zoned_model",
+    "device_not_matches_zone_sectors",
+    "device_not_nowait_capable",
+    "device_not_discard_capable",
+    "device_not_secure_erase_capable",
+    "device_flush_capable",
+    "device_not_dax_synchronous_capable",
+    "device_dax_write_cache_enabled",
+    "device_is_rotational",
+    "device_not_write_same_capable",
+    "device_not_write_zeroes_capable",
+    "device_requires_stable_pages",
+    "device_is_not_random"
+   ]
+  },
+  "hns poll_one (sync)": {
+   "n": 2,
+   "list": [
+    "hns_nic_drop_rx_fetch",
+    "__lb_other_process"
+   ]
+  },
+  "nvme_tcp read_sock (sync)": {
+   "n": 1,
+   "list": [
+    "nvme_tcp_recv_skb"
+   ]
+  },
+  "xen-pciback publish (sync)": {
+   "n": 2,
+   "list": [
+    "xen_pcibk_publish_pci_root",
+    "xen_pcibk_publish_pci_dev"
+   ]
+  },
+  "i915 insert_pte (sync)": {
+   "n": 1,
+   "list": [
+    "insert_pte"
+   ]
+  },
+  "dm-snapshot read_metadata (sync)": {
+   "n": 1,
+   "list": [
+    "dm_add_exception"
+   ]
+  }
+ },
+ "totals": {
+  "label1": 51,
+  "label1_other_module": 15,
+  "label1_other_unit": 36,
+  "label0": 29
+ },
+ "module_boundary_reference": {
+  "label1": 15,
+  "label0": 65
+ }
+}

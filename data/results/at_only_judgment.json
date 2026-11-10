@@ -1,0 +1,79 @@
+{
+ "basis": "Author verdict (2026-11-09). The 16,556 link-layer (kernel-module granularity) AT-only pairs. Boundary = kernel module (the analysis unit of the link layer); reviewer guideline audit v2.1, P1-P5. Reference only: the paper reports the unit-boundary verdict (at_only_unit_judgment.json); at the kernel-module boundary the 36 other-unit callbacks become intra-module calls and 15 entry points remain (Sections 3.7 and 5.10).",
+ "rule_based": {
+  "export_addressable_only": {
+   "n": 16266,
+   "label": 0,
+   "rule": "references only the EXPORT_SYMBOL by-product globals (__UNIQUE_ID_*addressable_*) -> callable by name only -> exported-service (0)"
+  },
+  "select_phi_ret_only": {
+   "n": 205,
+   "label": 0,
+   "rule": "phi/select result is called indirectly at once or only compared (no sink reached) -> internal-dispatch / immediate call (0)"
+  },
+  "icmp_only": {
+   "n": 4,
+   "label": 0,
+   "rule": "comparison (0)"
+  },
+  "export+icmp": {
+   "n": 1,
+   "label": 0,
+   "rule": "comparison + EXPORT by-product (0)"
+  }
+ },
+ "call_arg_via_indirect_call": {
+  "n": 80,
+  "note": "The callback address is passed as an argument of an indirect call (ops->fn(..., cb, ...)). FPEA C3 counts only the arguments of direct calls, so these are missed by design.",
+  "label1_entries": {
+   "n": 15,
+   "list": [
+    "ipoctal_irq_handler (ipack bus ops request_irq -> irq)",
+    "mmc_spi_detect_irq (pdata->init -> irq)",
+    "xpnet_send_completed (stored as notify by xpc.ko)",
+    "qede_simd_fp_handler (stored by qed.ko, qed irq)",
+    "qedf_simd_int_handler (qed.ko)",
+    "qedi_simd_int_handler (qed.ko)",
+    "qedi_iscsi_event_cb (qed.ko)",
+    "mtk_rpmsg_ipi_handler (stored by mtk_scp register_ipi)",
+    "gdm_tty_recv_complete (stored in gdmulte.ko URB ctx)",
+    "gdm_tty_send_complete (gdmulte.ko)",
+    "on_netinfo (stored in most_usb.ko mdev->on_netinfo)",
+    "pause_state_change_complete (stored by the visor driver)",
+    "resume_state_change_complete (stored by the visor driver)",
+    "mt7615_poll_rx (mt76.ko queue_ops->init -> netif_napi_add)",
+    "mt7921_poll_rx (mt76.ko)"
+   ]
+  },
+  "label0": {
+   "n": 65,
+   "groups": {
+    "dm-mod iterate_devices sync callback": 22,
+    "dm-snapshot store->type cb / read_metadata (pending_complete inside the module, dm_add_exception sync)": 2,
+    "dvb-core demux allocate_feed cb (inside the module)": 4,
+    "hns poll_one sync callback": 2,
+    "nvme_tcp read_sock sync callback": 1,
+    "efct mailbox cb (stored and called inside the module)": 10,
+    "libfc exch_seq_send resp (stored and called inside the module)": 16,
+    "xen-pciback publish sync callback": 2,
+    "i915 insert_pte sync callback": 1,
+    "i915 engine irq_handler (stored via inline asm xchg; called inside i915.ko -> 0 at the module boundary, 1 at the unit boundary)": 3,
+    "gdmulte rx/tx_complete (inside the module)": 2
+   }
+  }
+ },
+ "random50": {
+  "seed": 2026,
+  "composition": {
+   "export_addressable_only": 49,
+   "select_phi_ret_only": 1
+  },
+  "entries": 0
+ },
+ "summary": {
+  "AT_only": 16556,
+  "author_judged_entries": 15,
+  "rate": 0.0009,
+  "design_gap": "C3 does not count the arguments of indirect calls; C4 does not see the inline-asm xchg store of i915"
+ }
+}

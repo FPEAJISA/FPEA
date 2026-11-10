@@ -179,24 +179,44 @@
   0.806,
   0.893
  ],
- "Table 4|weighted precision (W_true)": 0.92,
- "Table 4|weighted SE": 0.021,
- "Table 4|weighted CI": [
-  0.879,
-  0.962
+ "Table 4|weighted precision excl. C2 (measured, headline)": 0.912,
+ "Table 4|weighted SE excl. C2 (n-1)": 0.0238,
+ "Table 4|weighted CI excl. C2": [
+  0.865,
+  0.959
  ],
+ "Table 4|weighted precision incl. C2 (W_true)": 0.92,
+ "Table 4|weighted SE incl. C2 (n-1)": 0.0215,
+ "Table 4|weighted CI incl. C2": [
+  0.878,
+  0.963
+ ],
+ "5.2|over-approximation rate 1 - precision incl. C2 (%)": 8.0,
  "5.2|negatives confirmed FN": 0,
  "5.2|negatives ?": 15,
- "5.2|negative population": 112856,
- "5.2|TP_pop": 119629,
- "5.2|FN_pop": 8464,
- "5.2|recall (corrected formula)": 0.934,
- "5.2|recall CI": [
-  0.898,
-  0.958
+ "5.1|defined functions after the 3.4 filter": 236515,
+ "5.1|defined functions before the filter (llvm-dis = fpea json)": [
+  242823,
+  242823
  ],
- "5.2|recall (direct sum, footnote alternative)": 0.936,
- "5.2 alternative|rule-of-three recall lower bound": 0.986,
+ "Appendix D / S11|filter removes (header inline copies)": 6308,
+ "5.2|negative population |N| (post-filter)": 106548,
+ "5.2||N| = popN N_clean": 106548,
+ "5.10|pre-filter negative population (sensitivity)": 112856,
+ "5.2|TP_pop": 119629,
+ "5.2|FN_pop (ratio estimator)": 7991,
+ "5.2|recall (ratio estimator, primary)": 0.937,
+ "5.2|recall Wilson CI (SRS assumption)": [
+  0.903,
+  0.961
+ ],
+ "5.10|pre-filter FN / recall (sensitivity)": [
+  8464,
+  0.934
+ ],
+ "5.10|pre-filter FN inflation %": 6,
+ "5.2 alternative|recall (direct sum of sample counts)": 0.936,
+ "5.2 alternative|rule-of-three recall lower bound": 0.987,
  "5.2 alternative|?=0 recall CI": [
   0.983,
   1.0
@@ -302,6 +322,11 @@
   "irq": 15,
   "mixed": 18
  },
+ "Appendix D / S11|duplicate-name drop never triggered (quota 255 = final 255)": [
+  255,
+  255
+ ],
+ "Appendix D / S11|positives with a same-name entry point in another unit": 11,
  "Appendix D sample reproduction|positives 255 (seed 517) reproduced": true,
  "Appendix D sample reproduction|gt_sample_unit.json negatives = answer-key negatives": true,
  "5.9(a)|link_layer_q15 id = ? 15": [
@@ -672,11 +697,10 @@
   1075,
   1031
  ],
- "5.9(c)|address-taken 144,294 (atfinal.json)": 144294,
- "5.9(c)|AT only 16,556 (analyze3.json)": 16556,
- "5.9(c) caution|AT / F of analyze3.json vs AT / F of atfinal.json": [
-  143632,
-  139678,
+ "3.7 / Table S2|address-taken 143,632 (analyze3.json; the pair quoted in the text)": 143632,
+ "3.7 / Table S2|AT only 16,556 (analyze3.json)": 16556,
+ "3.7|FPEA = AT - AT-only + C2-only (139,678)": 139678,
+ "3.7 caution|AT / F of atfinal.json (different file set)": [
   144294,
   139236
  ],
@@ -848,18 +872,170 @@
   15
  ],
  "5.4 placeholder|placeholder_trigger.log exists": true,
- "5.3 heavy|unit-layer WL∖FPEA 987 breakdown (kind|class: n)": {
+ "5.2 / S11|stage-1 units / pool / zero units / max unit": [
+  500,
+  3071,
+  122,
+  100
+ ],
+ "5.2 / S11|pool = sum of per-unit sizes": 3071,
+ "5.2 / S11|all 200 negatives are members of the pool": 200,
+ "S11|median pool size per unit": 2,
+ "5.2|conditional inclusion probability 200/|pool(S)|": 0.065,
+ "5.2|unconditional inclusion probability (approx.)": 0.0021,
+ "5.2|pool density of the selected units vs population (per unit)": [
+  6.1,
+  6.9
+ ],
+ "5.2|expansion estimator FN_S = |pool|/200 * 15": 230,
+ "5.2|expansion estimator FN_HT = 15,522/500 * FN_S": 7150,
+ "5.2|recall (expansion estimator, sensitivity)": 0.944,
+ "5.2|recall (ratio estimator) from boot2": 0.937,
+ "5.2 / S5|unit bootstrap 95% (ratio estimator)": [
+  0.873,
+  0.984
+ ],
+ "S5|unit bootstrap 95% (TP fixed, negatives only)": [
+  0.874,
+  0.985
+ ],
+ "5.2 / S5|unit bootstrap 95% (expansion estimator)": [
+  0.874,
+  0.987
+ ],
+ "5.2 / S5|design effect d": 4.34,
+ "5.2|dcn10_hw_sequencer.c pool 59 / expected sample 3.8 / observed 8": [
+  59,
+  3.8,
+  8
+ ],
+ "5.2|FN 15 = 8 in one unit + 7 in 7 other units": [
+  8,
+  7
+ ],
+ "S11|TP_hat / precision excl. / incl. C2 (boot2)": [
+  119629,
+  0.912,
+  0.92
+ ],
+ "Appendix H / S15|FN estimate range from Wilson 4.6-12.0% of |N|": [
+  4900.0,
+  12800.0
+ ],
+ "Table S2|AT-only pairs": 16556,
+ "Table S2|EXPORT by-product globals only": 16266,
+ "Table S2|phi/select/ret result used immediately": 205,
+ "Table S2|icmp comparison only (4 + 1)": 5,
+ "Table S2|argument of a call through a function pointer": 80,
+ "Table S2|rule verdicts 16,476 + author verdicts 80 = 16,556": 16556,
+ "3.7 / Table S2|unit-boundary author verdict: entry points 51 = 15 + 36, sync 29": [
+  51,
+  15,
+  36,
+  29
+ ],
+ "3.7 / Table S2|judgment lists: other module / other unit / sync = 15 / 36 / 29, sum 80": [
+  15,
+  36,
+  29,
+  80
+ ],
+ "3.7|other-unit groups: libfc 16, efct 10, dvb-core 4, i915 3, gdmulte 2, dm-snapshot 1": [
+  16,
+  10,
+  4,
+  3,
+  2,
+  1
+ ],
+ "3.7|sync groups: dm iterate_devices 22 + 7 others": [
+  22,
+  7
+ ],
+ "3.7 / 5.10|kernel-module-boundary author verdict: entry points 15": 15,
+ "Table S2|the 80 call_arg functions = at80_src.json = the judged functions": [
+  80,
+  true,
+  true
+ ],
+ "Table S2|random 50 of the AT-only pairs (seed 2026): tags": {
+  "export_addressable_only": 48,
+  "select_phi_ret(+)": 2
+ },
+ "Table S3|UAFX pairs / unique / in FPEA / WL-only": [
+  5899,
+  5118,
+  4912,
+  987
+ ],
+ "Table S3|WL-only: IOCTL_CAND declared / defined, INT_HANDLER_T declared": [
+  547,
+  289,
+  151
+ ],
+ "Table S3|external pairs 698, most redundant ata_scsi_ioctl 91 units": [
+  698,
+  91
+ ],
+ "Table S3|external unique names / defined in drivers / outside drivers": [
+  359,
+  355,
+  4
+ ],
+ "Table S3|outside drivers/: compat_ptr_ioctl etc.": [
+  "blkdev_compat_ptr_ioctl",
+  "compat_ptr_ioctl",
+  "hpet_rtc_interrupt",
+  "snd_pcm_lib_ioctl"
+ ],
+ "Table S3|FPEA identifies in the defining unit": 9,
+ "Table S3|not identified in the defining unit: static-call trampolines / registered in another unit": [
+  4,
+  342
+ ],
+ "Table S3 / S6|other-unit registered: link layer recovers / inter-module": [
+  304,
+  38
+ ],
+ "Table S3|defined-in-unit 289 = tracepoint by-products 25 + real ioctl handlers 264": [
+  25,
+  264
+ ],
+ "Table S3 / S6|real ioctl handlers: link layer recovers / remain": [
+  224,
+  40
+ ],
+ "5.3 / S6|shared handlers total / link recovered / inter-module": [
+  606,
+  528,
+  78
+ ],
+ "5.3|whitelist-side errors: tracepoint 25 + static-call 4 + outside drivers 4": 33,
+ "5.10|inter-module examples remain unrecovered": true,
+ "Table 12 / 5.5 axis 1|fpea14 = fpea16 on the LLVM 14 bitcode": [
+  129967,
+  129967
+ ],
+ "Table 12 / 5.5 axis 1|differing units / only14 / only16 / label diff / defined diff": [
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "Table 12 / 5.5 axis 1|units compared": 15522,
+ "Table S3 heavy|unit-layer WL∖FPEA 987 breakdown (kind|class: n)": {
   "IOCTL_CAND|external_declared": 547,
-  "IOCTL_CAND|defined_not_FPEA": 289,
-  "INT_HANDLER_T|external_declared": 151
+  "INT_HANDLER_T|external_declared": 151,
+  "IOCTL_CAND|defined_not_FPEA": 289
  },
  "Table 2 auxiliary heavy|C3-only used only by iterator-type APIs": 677,
  "Table 2 auxiliary|iterator share %": 0.52,
- "5.7.3 ath12k|6.9 mac unit FPEA / C1 in @ath12k_ops": [
+ "5.10 ath12k|6.9 mac unit FPEA / C1 in @ath12k_ops": [
   45,
   34
  ],
- "5.7.3 ath12k|7.1.4 ath12k .o.bc / mac unit C1 / ath12k_mac_op_* defined": [
+ "5.10 ath12k|7.1.4 ath12k .o.bc / mac unit C1 / ath12k_mac_op_* defined": [
   48,
   0,
   40

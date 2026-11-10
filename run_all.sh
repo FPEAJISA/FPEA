@@ -9,10 +9,12 @@
 #   analyses       3 : hit rate, semantic hit rate, named/literal, placeholder, kind_drift, UAF subset, link-layer decomposition, behaviour classification, header offset, placeholder experiment
 #   sample         4a: reference-set sampling (for reference only; the original sample is preserved)
 #   pilots         5 : top-caller pilot
+#   audit          A : 2026-11-09 audit scripts that need bitcode (scripts/orig/audit_v23: popN, recon_pool2,
+#                      defmap, wl_only, at_only) → out/, compared with data/results; allowed in both modes
 #   figures        6 : figures
 #   derive         D : regenerate derived results + compare with stored copies; in rerun also the metric scripts (final_calc_expert, review_check)
 #   verify[-heavy] V : compare paper numbers
-#   all              : 0 → V
+#   all              : 0 → A → V
 #
 # Layout of this file: environment + helpers, one function per stage (in stage order), and the
 # stage dispatcher at the bottom. Every `say` line is appended to logs/run_all.log; the message
@@ -137,6 +139,14 @@ run_fpea(){
     say "   $V UAFX $(( $(date +%s)-S0 ))s"
   done
   echo ALLDONE >> $VM
+
+  say "   fpea14 (typed pointers kept) on the 5.17.11 units → rf14_5.17.11 (Section 5.5 first axis, Table 12 row 1)"
+  OF14=$FPEA_OUT/rf14_5.17.11
+  rm -rf $OF14
+  mkdir -p $OF14
+  xargs -P $FPEA_NPROC -I{} \
+    sh -c 'f="{}"; n=$(echo "$f"|tr / _); env -i PATH='"$FPEA_LLVM14"':/usr/bin:/bin '"$R"'/tool/fpea14 "$f" "'$OF14'/$n.json" --unit >/dev/null 2>&1; exit 0' < $FPEA_OUT/list_5.17.11.txt
+  say "   fpea14 unit outputs $(ls $OF14 | wc -l)"
 
   say "   performance: 5.17.11 sequential / 14-parallel wall-clock → $FIN/fpea_timing.txt"
   OUTT=$FPEA_WORK/timing_tmp
@@ -342,6 +352,35 @@ pilots(){
   )
 }
 
+# --- stage A: the bitcode-dependent part of the 2026-11-09 audit (Supplementary S2, S3, S5, S11) ---
+# The bitcode-free part (boot2, wl_ext, typed_cmp_unit) runs inside derive. Reads only the bitcode
+# trees and the stored unit outputs, writes to $FPEA_OUTDIR, so it is allowed in artifact mode too.
+audit(){
+  A=$OR/audit_v23
+  say "A) audit scripts (bitcode needed): popN, recon_pool2, defmap, wl_only, at_only → $FPEA_OUTDIR, compared with $FPEA_RESULTS"
+  [ -x "$FPEA_DIS16" ] && [ -f "$(head -1 $FPEA_UNITS)" ] || { say "   bitcode tree or llvm-dis missing ($FPEA_DIS16, $(head -1 $FPEA_UNITS)) — skipped; the stored copies in data/results are used by verify"; return 0; }
+  export FPEA_AUDIT_OUT=$FPEA_OUTDIR
+  (cd $A && python3 popN.py && python3 recon_pool2.py && bash defmap.sh $FPEA_UNITS $FPEA_OUTDIR/defmap_5.17.11.tsv.gz \
+      && python3 wl_only.py && python3 at_only.py) > $L/audit.log 2>&1 \
+    || { say "   warning: an audit script failed — $L/audit.log"; return 1; }
+  python3 - "$FPEA_OUTDIR" "$FPEA_RESULTS" <<'PY' | tee -a $L/run_all.log
+import gzip, json, sys
+O, R = sys.argv[1:3]
+def j(p): return json.load(open(p))
+print('- popN.json totals:', 'SAME' if j(f'{O}/popN.json')['totals'] == j(f'{R}/popN.json')['totals'] else 'DIFF')
+a, b = j(f'{O}/recon_pool2.json'), j(f'{R}/recon_pool2.json')
+print('- recon_pool2.json (pool lists):', 'SAME' if a['pool'] == b['pool'] else 'DIFF')
+a, b = j(f'{O}/wl_only.json'), j(f'{R}/wl_only.json')
+print('- wl_only.json (rows):', 'SAME' if a['rows'] == b['rows'] else 'DIFF')
+a, b = j(f'{O}/at_only.json'), j(f'{R}/at_only.json')
+same = a['tags'] == b['tags'] and {(r[0], r[1], tuple(sorted(r[2].items()))) for r in a['rows']} == {(r[0], r[1], tuple(sorted(r[2].items()))) for r in b['rows']}
+print('- at_only.json (pairs and categories):', 'SAME' if same else 'DIFF')
+da = set(gzip.open(f'{O}/defmap_5.17.11.tsv.gz', 'rt').read().split('\n'))
+db = set(gzip.open(f'{R}/defmap_5.17.11.tsv.gz', 'rt').read().split('\n'))
+print('- defmap_5.17.11.tsv.gz:', 'SAME' if da == db else 'DIFF')
+PY
+}
+
 # --- stage 6: figures (needs the json files that derive copies into $FIN) ---
 figures(){
   need_rerun
@@ -410,8 +449,9 @@ case $stage in
   analyses) analyses;;
   sample) sample;;
   pilots) pilots;;
+  audit) audit;;
   figures) figures;;
-  all) build_kernels; build_tools; run_fpea; analyses; pilots; derive; figures; verify_heavy;;
+  all) build_kernels; build_tools; run_fpea; analyses; pilots; audit; derive; figures; verify_heavy;;
   *) echo "unknown stage $stage"; exit 1;;
 esac
 say "done: $stage"

@@ -496,18 +496,29 @@ def check_precision(ref, pop):
         chk('Table 4', f'{s} precision', p, r3(pp))
         chk('Table 4', f'{s} CI', (lo, hi), (r3(wl[0]), r3(wl[1])))
         num += W[s] * pp
-        var += W[s] ** 2 * pp * (1 - pp) / nn
-    wp = num + W['C2'] * 1.0
+        # stratified variance with the unbiased stratum variance p(1-p)/(n-1) (v2.1+ of the paper;
+        # the 10/23 draft used /n: SE 0.021, CI (0.879, 0.962))
+        var += W[s] ** 2 * pp * (1 - pp) / (nn - 1)
+    wp = num + W['C2'] * 1.0          # including C2 (precision 1 assumed)
     se = math.sqrt(var)
+    w4 = sum(W[s] for s in exp_by)    # weight mass of the four sampled strata
+    wp_ex = num / w4                   # four strata renormalised = headline "measured" value
+    se_ex = se / w4
     chk('Table 4', 'simple precision', 0.855, r3(TP / (TP + FP)))
     chk('Table 4', 'simple precision CI', (0.806, 0.893),
         tuple(r3(x) for x in wilson(TP, TP + FP)))
-    chk('Table 4', 'weighted precision (W_true)', 0.920, r3(wp),
+    chk('Table 4', 'weighted precision excl. C2 (measured, headline)', 0.912, r3(wp_ex),
+        note=f'exact value {wp_ex:.5f}; four strata, W renormalised by {w4:.4f}')
+    chk('Table 4', 'weighted SE excl. C2 (n-1)', 0.0238, round(se_ex, 4))
+    chk('Table 4', 'weighted CI excl. C2', (0.865, 0.959),
+        (r3(wp_ex - 1.96 * se_ex), r3(wp_ex + 1.96 * se_ex)))
+    chk('Table 4', 'weighted precision incl. C2 (W_true)', 0.920, r3(wp),
         note=f'exact value {wp:.5f}; with 3-digit rounded weights (0.699/0.128/0.068/0.010/0.098) '
-             'it is 0.9206→0.921. The text uses 0.920 (W_true) throughout')
-    chk('Table 4', 'weighted SE', 0.021, r3(se))
-    chk('Table 4', 'weighted CI', (0.879, 0.962), (r3(wp - 1.96 * se), r3(wp + 1.96 * se)))
-    ref.TP, ref.FP, ref.wp = TP, FP, wp
+             'it is 0.9206→0.921. The text uses 0.920 (W_true) for population estimates')
+    chk('Table 4', 'weighted SE incl. C2 (n-1)', 0.0215, round(se, 4))
+    chk('Table 4', 'weighted CI incl. C2', (0.878, 0.963), (r3(wp - 1.96 * se), r3(wp + 1.96 * se)))
+    chk('5.2', 'over-approximation rate 1 - precision incl. C2 (%)', 8.0, round((1 - wp) * 100, 1))
+    ref.TP, ref.FP, ref.wp, ref.wp_ex = TP, FP, wp, wp_ex
 
 
 def check_recall(ref, pop):
@@ -518,18 +529,34 @@ def check_recall(ref, pop):
     nq = sum(final[i] == '?' for i in neg)
     chk('5.2', 'negatives confirmed FN', 0, n1)
     chk('5.2', 'negatives ?', 15, nq)
-    neg_pop = totdef - nF
+    # |N| = defined functions after the Section 3.4 filter (popN.json, llvm-dis define minus the
+    # name filter) minus the FPEA entry points. The pre-filter value totdef - nF = 112,856 is the
+    # sensitivity figure of Section 5.10 (recall 0.934).
+    neg_pop_pre = totdef - nF
+    popn = json.load(open(f'{FIN}/popN.json'))['totals']
+    chk('5.1', 'defined functions after the 3.4 filter', 236515, popn['define_clean'])
+    chk('5.1', 'defined functions before the filter (llvm-dis = fpea json)', (242823, 242823),
+        (popn['define_all'], popn['json_defined']))
+    chk('Appendix D / S11', 'filter removes (header inline copies)', 6308,
+        popn['define_all'] - popn['define_clean'])
+    neg_pop = popn['define_clean'] - nF
+    chk('5.2', 'negative population |N| (post-filter)', 106548, neg_pop)
+    chk('5.2', '|N| = popN N_clean', popn['N_clean'], neg_pop)
+    chk('5.10', 'pre-filter negative population (sensitivity)', 112856, neg_pop_pre)
     TP_pop = nF * wp
     FN_pop = neg_pop * nq / 200
-    chk('5.2', 'negative population', 112856, neg_pop)
     chk('5.2', 'TP_pop', 119629, round(TP_pop))
-    chk('5.2', 'FN_pop', 8464, round(FN_pop))
+    chk('5.2', 'FN_pop (ratio estimator)', 7991, round(FN_pop))
     rec = TP_pop / (TP_pop + FN_pop)
     lo, hi = wilson(nq, 200)
-    chk('5.2', 'recall (corrected formula)', 0.934, r3(rec))
-    chk('5.2', 'recall CI', (0.898, 0.958),
+    chk('5.2', 'recall (ratio estimator, primary)', 0.937, r3(rec))
+    chk('5.2', 'recall Wilson CI (SRS assumption)', (0.903, 0.961),
         (r3(TP_pop / (TP_pop + hi * neg_pop)), r3(TP_pop / (TP_pop + lo * neg_pop))))
-    chk('5.2', 'recall (direct sum, footnote alternative)', 0.936, r3(TP / (TP + n1 + nq)))
+    FN_pre = neg_pop_pre * nq / 200
+    chk('5.10', 'pre-filter FN / recall (sensitivity)', (8464, 0.934),
+        (round(FN_pre), r3(TP_pop / (TP_pop + FN_pre))))
+    chk('5.10', 'pre-filter FN inflation %', 6, round((FN_pre / FN_pop - 1) * 100))
+    info('5.2 alternative', 'recall (direct sum of sample counts)', r3(TP / (TP + n1 + nq)))
     info('5.2 alternative', 'rule-of-three recall lower bound',
          r3(TP_pop / (TP_pop + 3 / 200 * neg_pop)))
     info('5.2 alternative', '?=0 recall CI',
@@ -648,6 +675,11 @@ def check_sample_reproduction(VR, ref):
             continue
         seen.add(fn)
         posU.append((fn, mod))
+    chk('Appendix D / S11', 'duplicate-name drop never triggered (quota 255 = final 255)',
+        (255, 255), (len(samp), len(posU)))
+    namecount = Counter(fn for fn, mod, sig in posall)
+    chk('Appendix D / S11', 'positives with a same-name entry point in another unit', 11,
+        sum(1 for fn, mod in posU if namecount[fn] > 1))
     gt_pos = {(ans[i]['fn'], ans[i]['module']) for i in pos}
     unit_order = "stored original list" if unit_list == UNITS_ORIG else "current list"
     fn_order = "stored original output" if os.path.isdir(RF_ORIG) else "current output"
@@ -902,13 +934,14 @@ def check_link_layer_stats():
     chk('Ch. 1', 'configfs_attribute / clk_ops (link-layer behavior top)', (1075, 1031),
         (bh['top']['framework-optable']['struct.configfs_attribute'],
          bh['top']['framework-optable']['struct.clk_ops']))
-    chk('5.9(c)', 'address-taken 144,294 (atfinal.json)', 144294, af['AT'])
-    chk('5.9(c)', 'AT only 16,556 (analyze3.json)', 16556, a3['onlyAT'])
-    info('5.9(c) caution', 'AT / F of analyze3.json vs AT / F of atfinal.json',
-         (a3['AT'], a3['FPEA'], af['AT'], af['F']),
-         'the two files analyse different sets (whether substitute units for FAIL modules are '
-         'included; run time), so AT is 143,632 vs 144,294. The text must cite the pair from one '
-         'file only')
+    chk('3.7 / Table S2', 'address-taken 143,632 (analyze3.json; the pair quoted in the text)',
+        143632, a3['AT'])
+    chk('3.7 / Table S2', 'AT only 16,556 (analyze3.json)', 16556, a3['onlyAT'])
+    chk('3.7', 'FPEA = AT - AT-only + C2-only (139,678)', a3['FPEA'],
+        a3['AT'] - a3['onlyAT'] + 12602)
+    info('3.7 caution', 'AT / F of atfinal.json (different file set)', (af['AT'], af['F']),
+         'atfinal.json analyses a different set (substitute units for FAIL modules; run time): '
+         'AT 144,294. The text cites analyze3.json (143,632 / 139,678 / 16,556) only')
     if os.path.isdir(LINKBC):
         nmod = len(glob.glob(f'{LINKBC}/modules/*.bc'))
         nbi = len(glob.glob(f'{LINKBC}/builtin/*.bc'))
@@ -1057,6 +1090,167 @@ def check_tca_pilot():
         os.path.exists(f'{FIN}/placeholder_trigger.log'))
 
 
+# ---------------------------------------------------------------- 9b. v2.3 audit (2026-11-09)
+def check_audit_v23(ref, pop):
+    """Supplementary S5/S11 (negative pool, expansion estimator, bootstrap), Table S2 (AT-only
+    tagging and the 80 author-judged cases), Table S3 (whitelist-only decomposition), Table 12
+    row 1 (fpea14 = fpea16 on the same bitcode). Reads the result files written by
+    scripts/orig/audit_v23/ (data/results; regenerated into out/ by derive)."""
+    def res(name):
+        for d in (os.environ.get('FPEA_OUTDIR', ''), FIN):
+            if d and os.path.exists(f'{d}/{name}'):
+                return json.load(open(f'{d}/{name}'))
+        raise FileNotFoundError(name)
+
+    # --- negative pool (recon_pool2) and the two FN estimators / bootstrap (boot2)
+    rp = res('recon_pool2.json')
+    chk('5.2 / S11', 'stage-1 units / pool / zero units / max unit', (500, 3071, 122, 100),
+        (rp['units'], rp['pool_total'], rp['zero_units'], rp['max_unit']))
+    chk('5.2 / S11', 'pool = sum of per-unit sizes', rp['pool_total'],
+        sum(len(v) for v in rp['pool'].values()))
+    chk('5.2 / S11', 'all 200 negatives are members of the pool', 200, rp['sample_in_pool'])
+    sizes = sorted(rp['M'].values())
+    chk('S11', 'median pool size per unit', 2, sizes[len(sizes) // 2])
+    chk('5.2', 'conditional inclusion probability 200/|pool(S)|', 0.065,
+        round(200 / rp['pool_total'], 3))
+    chk('5.2', 'unconditional inclusion probability (approx.)', 0.0021,
+        round(500 / 15522 * 200 / rp['pool_total'], 4),
+        note='500/15,522 x 200/3,071 (the text says approximately 0.0021)')
+    chk('5.2', 'pool density of the selected units vs population (per unit)', (6.1, 6.9),
+        (round(rp['pool_total'] / 500, 1), round(106548 / 15522, 1)))
+    b = res('boot2_results.json')['N_clean']
+    chk('5.2', 'expansion estimator FN_S = |pool|/200 * 15', 230, round(b['FN_S']))
+    chk('5.2', 'expansion estimator FN_HT = 15,522/500 * FN_S', 7150, round(b['FN_ht']))
+    chk('5.2', 'recall (expansion estimator, sensitivity)', 0.944, r3(b['recall_ht']))
+    chk('5.2', 'recall (ratio estimator) from boot2', 0.937, r3(b['recall_ratio']))
+    chk('5.2 / S5', 'unit bootstrap 95% (ratio estimator)', (0.873, 0.984),
+        tuple(r3(x) for x in b['boot_recall']))
+    chk('S5', 'unit bootstrap 95% (TP fixed, negatives only)', (0.874, 0.985),
+        tuple(r3(x) for x in b['boot_recall_negonly']))
+    chk('5.2 / S5', 'unit bootstrap 95% (expansion estimator)', (0.874, 0.987),
+        tuple(r3(x) for x in b['boot_recall_ht']))
+    chk('5.2 / S5', 'design effect d', 4.34, round(b['deff'], 2))
+    bb = res('boot2_results.json')
+    chk('5.2', 'dcn10_hw_sequencer.c pool 59 / expected sample 3.8 / observed 8', (59, 3.8, 8),
+        (len([v for k, v in rp['pool'].items() if k.endswith('/.dcn10_hw_sequencer.o.bc')][0]),
+         round(bb['dcn10_expected'], 1), bb['fn_by_unit'].get('.dcn10_hw_sequencer.o.bc')))
+    chk('5.2', 'FN 15 = 8 in one unit + 7 in 7 other units', (8, 7),
+        (max(bb['fn_by_unit'].values()), sum(1 for v in bb['fn_by_unit'].values() if v == 1)))
+    chk('S11', 'TP_hat / precision excl. / incl. C2 (boot2)', (119629, 0.912, 0.920),
+        (round(bb['TPhat']), r3(bb['prec_ex']), r3(bb['prec_in'])))
+    chk('Appendix H / S15', 'FN estimate range from Wilson 4.6-12.0% of |N|', (4900, 12800),
+        tuple(round(x * 106548 / 100, -2) for x in (4.6, 12.0)),
+        note='the text rounds to about 4,900 - 12,800')
+
+    # --- AT-only tagging (Table S2) and the 80 author-judged cases
+    at = res('at_only.json')
+    chk('Table S2', 'AT-only pairs', 16556, at['n'])
+    t = at['tags']
+    chk('Table S2', 'EXPORT by-product globals only', 16266, t.get('export_addressable_only', 0))
+    chk('Table S2', 'phi/select/ret result used immediately', 205, t.get('select_phi_ret(+)', 0))
+    chk('Table S2', 'icmp comparison only (4 + 1)', 5,
+        t.get('icmp_only', 0) + t.get('export+icmp+bitcastcall', 0))
+    chk('Table S2', 'argument of a call through a function pointer', 80, t.get('call_arg(+)', 0))
+    chk('Table S2', 'rule verdicts 16,476 + author verdicts 80 = 16,556', 16556,
+        t.get('export_addressable_only', 0) + t.get('select_phi_ret(+)', 0)
+        + t.get('icmp_only', 0) + t.get('export+icmp+bitcastcall', 0) + t.get('call_arg(+)', 0))
+    uj = json.load(open(f'{FIN}/at_only_unit_judgment.json'))
+    tot = uj['totals']
+    chk('3.7 / Table S2', 'unit-boundary author verdict: entry points 51 = 15 + 36, sync 29',
+        (51, 15, 36, 29),
+        (tot['label1'], tot['label1_other_module'], tot['label1_other_unit'], tot['label0']))
+    n_om = len(uj['label1_other_module']['list'])
+    n_ou = sum(len(g['list']) for g in uj['label1_other_unit_same_module'].values())
+    n_sc = sum(len(g['list']) for g in uj['label0_sync_callback'].values())
+    chk('3.7 / Table S2', 'judgment lists: other module / other unit / sync = 15 / 36 / 29, sum 80',
+        (15, 36, 29, 80), (n_om, n_ou, n_sc, n_om + n_ou + n_sc))
+    chk('3.7', 'other-unit groups: libfc 16, efct 10, dvb-core 4, i915 3, gdmulte 2, dm-snapshot 1',
+        [16, 10, 4, 3, 2, 1],
+        sorted((len(g['list']) for g in uj['label1_other_unit_same_module'].values()),
+               reverse=True))
+    chk('3.7', 'sync groups: dm iterate_devices 22 + 7 others', (22, 7),
+        (max(len(g['list']) for g in uj['label0_sync_callback'].values()),
+         n_sc - max(len(g['list']) for g in uj['label0_sync_callback'].values())))
+    judged = set(uj['label1_other_module']['list'])
+    for g in list(uj['label1_other_unit_same_module'].values()) + list(uj['label0_sync_callback'].values()):
+        judged |= set(g['list'])
+    mj = json.load(open(f'{FIN}/at_only_judgment.json'))
+    chk('3.7 / 5.10', 'kernel-module-boundary author verdict: entry points 15', 15,
+        mj['summary']['author_judged_entries'])
+    src = json.load(open(f'{FIN}/at80_src.json'))
+    call80 = {r[1] for r in at['rows'] if _at_tag(r[2]) == 'call_arg(+)'}
+    chk('Table S2', 'the 80 call_arg functions = at80_src.json = the judged functions',
+        (80, True, True), (len(src), call80 == {x[1] for x in src}, call80 == judged))
+    s50 = res('at_only_sample50.json') if os.path.exists(f'{FIN}/at_only_sample50.json') else None
+    if s50:
+        info('Table S2', 'random 50 of the AT-only pairs (seed 2026): tags',
+             dict(Counter(_at_tag(r[2]) for r in s50)),
+             'the 2026-11-09 draw was 49 EXPORT by-products + 1 phi/select (no information)')
+
+    # --- whitelist-only decomposition (Table S3)
+    w = res('wl_only.json')
+    chk('Table S3', 'UAFX pairs / unique / in FPEA / WL-only', (5899, 5118, 4912, 987),
+        (w['W_pairs'], w['W_unique'], w['inter'], w['wl_only']))
+    chk('Table S3', 'WL-only: IOCTL_CAND declared / defined, INT_HANDLER_T declared',
+        (547, 289, 151),
+        (w['decomp'].get('IOCTL_CAND|declared', 0), w['decomp'].get('IOCTL_CAND|defined', 0),
+         w['decomp'].get('INT_HANDLER_T|declared', 0)))
+    chk('Table S3', 'external pairs 698, most redundant ata_scsi_ioctl 91 units', (698, 91),
+        (w['ext_pairs'], dict(map(tuple, w['ext_top'])).get('ata_scsi_ioctl')))
+    x = res('wl_ext.json')
+    chk('Table S3', 'external unique names / defined in drivers / outside drivers', (359, 355, 4),
+        (x['ext_unique'], x['ext_in_drivers'], len(x['ext_outside_drivers'])))
+    chk('Table S3', 'outside drivers/: compat_ptr_ioctl etc.',
+        ['blkdev_compat_ptr_ioctl', 'compat_ptr_ioctl', 'hpet_rtc_interrupt', 'snd_pcm_lib_ioctl'],
+        x['ext_outside_drivers'])
+    chk('Table S3', 'FPEA identifies in the defining unit', 9, len(x['ext_fpea_hit_own_unit']))
+    chk('Table S3', 'not identified in the defining unit: static-call trampolines / registered '
+        'in another unit', (4, 342), (len(x['ext_static_call_trampolines']),
+                                       x['ext_other_unit_registered']))
+    chk('Table S3 / S6', 'other-unit registered: link layer recovers / inter-module', (304, 38),
+        (x['ext_link_recovered'], len(x['ext_link_unrecovered'])))
+    chk('Table S3', 'defined-in-unit 289 = tracepoint by-products 25 + real ioctl handlers 264',
+        (25, 264), (len(x['defined_trace_artifacts']), x['defined_real']))
+    chk('Table S3 / S6', 'real ioctl handlers: link layer recovers / remain', (224, 40),
+        (x['defined_link_recovered'], len(x['defined_link_unrecovered'])))
+    chk('5.3 / S6', 'shared handlers total / link recovered / inter-module', (606, 528, 78),
+        (x['shared_handlers_total'], x['shared_link_recovered'], x['shared_link_unrecovered']))
+    chk('5.3', 'whitelist-side errors: tracepoint 25 + static-call 4 + outside drivers 4', 33,
+        len(x['defined_trace_artifacts']) + len(x['ext_static_call_trampolines'])
+        + len(x['ext_outside_drivers']))
+    chk('5.10', 'inter-module examples remain unrecovered', True,
+        {'drm_ioctl', 'ata_scsi_ioctl', 'dvb_generic_ioctl'} <= set(x['ext_link_unrecovered'])
+        and 'scsi_ioctl' in set(x['defined_link_unrecovered']) | set(x['ext_link_unrecovered']))
+
+    # --- fpea14 = fpea16 on the same bitcode (Table 12 row 1, Section 5.5 first axis)
+    tm = res('typed_mode_cmp.json')
+    chk('Table 12 / 5.5 axis 1', 'fpea14 = fpea16 on the LLVM 14 bitcode', (129967, 129967),
+        (tm['fpea14'], tm['fpea16']))
+    chk('Table 12 / 5.5 axis 1', 'differing units / only14 / only16 / label diff / defined diff',
+        (0, 0, 0, 0, 0), (tm['diff_units'], tm['only14'], tm['only16'], tm['sigdiff'],
+                          tm['defdiff']))
+    chk('Table 12 / 5.5 axis 1', 'units compared', 15522, 15522 - tm.get('missing', 0))
+
+
+def _at_tag(c):
+    """Tag of one AT-only row (same rules as scripts/orig/audit_v23/at_only.py)."""
+    ks = set(c)
+    if ks == {'export_addressable'}:
+        return 'export_addressable_only'
+    if ks <= {'export_addressable', 'ksymtab', 'llvm_used', 'global_ptrtoint'}:
+        return 'export_artifacts_only'
+    if ks == {'icmp'}:
+        return 'icmp_only'
+    if ks <= {'export_addressable', 'ksymtab', 'llvm_used', 'global_ptrtoint', 'icmp',
+              'bitcast_direct_call'}:
+        return 'export+icmp+bitcastcall'
+    for k, t in (('global_init_other', 'global_init_other(+)'), ('store', 'store(+)'),
+                 ('call_arg', 'call_arg(+)'), ('select_phi_ret', 'select_phi_ret(+)')):
+        if k in ks:
+            return t
+    return 'other'
+
+
 # ---------------------------------------------------------------- 10. heavy: IR re-interpretation
 # The pool workers must be module-level functions (they are pickled by name).
 def classify_wl_unit(item):
@@ -1107,9 +1301,10 @@ def heavy_wl_breakdown(VR):
         for res in ex.map(classify_wl_unit, list(todo.items()), chunksize=4):
             for f, fn, c in res:
                 C[(kindof[(f, fn)], c)] += 1
-    info('5.3 heavy', 'unit-layer WL∖FPEA 987 breakdown (kind|class: n)',
-         {f'{k}|{c}': n for (k, c), n in sorted(C.items(), key=lambda x: -x[1])},
-         'the parenthesised numbers in text 5.3 must be replaced with this table')
+    chk('Table S3 heavy', 'unit-layer WL∖FPEA 987 breakdown (kind|class: n)',
+        {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289,
+         'INT_HANDLER_T|external_declared': 151},
+        {f'{k}|{c}': n for (k, c), n in C.items()})
 
 
 def heavy_iterator_only(pop):
@@ -1135,7 +1330,7 @@ def heavy_ath12k(VR):
         ll = dis14(mac69[0])
         m = re.search(r'^@ath12k_ops = [^\n]*', ll, re.M)
         ops = set(re.findall(r'@([\w.$]+)', m.group(0))) if m else set()
-        chk('5.7.3 ath12k', '6.9 mac unit FPEA / C1 in @ath12k_ops', (45, 34),
+        chk('5.10 ath12k', '6.9 mac unit FPEA / C1 in @ath12k_ops', (45, 34),
             (len(d['entries']),
              sum(1 for fn, s in d['entries'].items() if 'C1' in s and fn in ops)))
     per_unit71 = VR['7.1.4-norand']['per_unit']
@@ -1144,7 +1339,7 @@ def heavy_ath12k(VR):
     if mac71:
         d = per_unit71[mac71[0]]
         ll = dis16(mac71[0])
-        chk('5.7.3 ath12k', '7.1.4 ath12k .o.bc / mac unit C1 / ath12k_mac_op_* defined',
+        chk('5.10 ath12k', '7.1.4 ath12k .o.bc / mac unit C1 / ath12k_mac_op_* defined',
             (48, 0, 40),
             (n71, sum(1 for fn, s in d['entries'].items() if 'C1' in s),
              len(re.findall(r'^define[^@]*@ath12k_mac_op_\w+\(', ll, re.M))))
@@ -1248,6 +1443,7 @@ def main():
     check_uaf_subset()
     check_subsystem_ratios(VR)
     check_tca_pilot()
+    check_audit_v23(ref, pop)
     if args.heavy:
         heavy_wl_breakdown(VR)
         heavy_iterator_only(pop)

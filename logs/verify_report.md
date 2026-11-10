@@ -1,6 +1,6 @@
 # Numeric verification report (verify_numbers.py)
 
-- checks 284: OK 284, MISMATCH 0, INFO 7
+- checks 345: OK 345, MISMATCH 0, INFO 8
 
 ## All checks
 
@@ -114,18 +114,29 @@
 | OK | Table 4 | C5 CI | (0.543, 0.805) | (0.543, 0.805) |  |
 | OK | Table 4 | simple precision | 0.855 | 0.855 |  |
 | OK | Table 4 | simple precision CI | (0.806, 0.893) | (0.806, 0.893) |  |
-| OK | Table 4 | weighted precision (W_true) | 0.92 | 0.92 | exact value 0.92045; with 3-digit rounded weights (0.699/0.128/0.068/0.010/0.098) it is 0.9206→0.921. The text uses 0.920 (W_true) throughout |
-| OK | Table 4 | weighted SE | 0.021 | 0.021 |  |
-| OK | Table 4 | weighted CI | (0.879, 0.962) | (0.879, 0.962) |  |
+| OK | Table 4 | weighted precision excl. C2 (measured, headline) | 0.912 | 0.912 | exact value 0.91191; four strata, W renormalised by 0.9030 |
+| OK | Table 4 | weighted SE excl. C2 (n-1) | 0.0238 | 0.0238 |  |
+| OK | Table 4 | weighted CI excl. C2 | (0.865, 0.959) | (0.865, 0.959) |  |
+| OK | Table 4 | weighted precision incl. C2 (W_true) | 0.92 | 0.92 | exact value 0.92045; with 3-digit rounded weights (0.699/0.128/0.068/0.010/0.098) it is 0.9206→0.921. The text uses 0.920 (W_true) for population estimates |
+| OK | Table 4 | weighted SE incl. C2 (n-1) | 0.0215 | 0.0215 |  |
+| OK | Table 4 | weighted CI incl. C2 | (0.878, 0.963) | (0.878, 0.963) |  |
+| OK | 5.2 | over-approximation rate 1 - precision incl. C2 (%) | 8.0 | 8.0 |  |
 | OK | 5.2 | negatives confirmed FN | 0 | 0 |  |
 | OK | 5.2 | negatives ? | 15 | 15 |  |
-| OK | 5.2 | negative population | 112856 | 112856 |  |
+| OK | 5.1 | defined functions after the 3.4 filter | 236515 | 236515 |  |
+| OK | 5.1 | defined functions before the filter (llvm-dis = fpea json) | (242823, 242823) | (242823, 242823) |  |
+| OK | Appendix D / S11 | filter removes (header inline copies) | 6308 | 6308 |  |
+| OK | 5.2 | negative population |N| (post-filter) | 106548 | 106548 |  |
+| OK | 5.2 | |N| = popN N_clean | 106548 | 106548 |  |
+| OK | 5.10 | pre-filter negative population (sensitivity) | 112856 | 112856 |  |
 | OK | 5.2 | TP_pop | 119629 | 119629 |  |
-| OK | 5.2 | FN_pop | 8464 | 8464 |  |
-| OK | 5.2 | recall (corrected formula) | 0.934 | 0.934 |  |
-| OK | 5.2 | recall CI | (0.898, 0.958) | (0.898, 0.958) |  |
-| OK | 5.2 | recall (direct sum, footnote alternative) | 0.936 | 0.936 |  |
-| INFO | 5.2 alternative | rule-of-three recall lower bound |  | 0.986 |  |
+| OK | 5.2 | FN_pop (ratio estimator) | 7991 | 7991 |  |
+| OK | 5.2 | recall (ratio estimator, primary) | 0.937 | 0.937 |  |
+| OK | 5.2 | recall Wilson CI (SRS assumption) | (0.903, 0.961) | (0.903, 0.961) |  |
+| OK | 5.10 | pre-filter FN / recall (sensitivity) | (8464, 0.934) | (8464, 0.934) |  |
+| OK | 5.10 | pre-filter FN inflation % | 6 | 6 |  |
+| INFO | 5.2 alternative | recall (direct sum of sample counts) |  | 0.936 |  |
+| INFO | 5.2 alternative | rule-of-three recall lower bound |  | 0.987 |  |
 | INFO | 5.2 alternative | ?=0 recall CI |  | (0.983, 1.0) |  |
 | OK | 5.2 ?15 | all 15 have A=B=? and rule other-file | True | True |  |
 | OK | 5.2 ?15 | no ? in positive sample | 0 | 0 |  |
@@ -140,6 +151,8 @@
 | OK | Table 3 | A rule distribution | {'internal-helper': 153, 'exported-service': 35, 'deferred': 43, 'op-table': 142, 'internal-dispatch': 17, 'probe-remove': 15, 'teardown': 6, 'irq': 18, 'other-file': 15, 'sync-callback': 10, 'comparison': 1} | {'internal-helper': 153, 'exported-service': 35, 'deferred': 43, 'op-table': 142, 'internal-dispatch': 17, 'probe-remove': 15, 'teardown': 6, 'irq': 18, 'other-file': 15, 'sync-callback': 10, 'comparison': 1} |  |
 | OK | Table 3 | B rule distribution | {'internal-helper': 150, 'exported-service': 35, 'deferred': 47, 'op-table': 129, 'internal-dispatch': 30, 'probe-remove': 17, 'teardown': 8, 'irq': 16, 'other-file': 15, 'sync-callback': 8} | {'internal-helper': 150, 'exported-service': 35, 'deferred': 47, 'op-table': 129, 'internal-dispatch': 30, 'probe-remove': 17, 'teardown': 8, 'irq': 16, 'other-file': 15, 'sync-callback': 8} |  |
 | OK | Table 3 | TP rules | {'op-table': 125, 'deferred': 40, 'irq': 15, 'probe-remove': 13, 'teardown': 7, 'mixed': 18} | {'deferred': 40, 'op-table': 125, 'probe-remove': 13, 'teardown': 7, 'irq': 15, 'mixed': 18} |  |
+| OK | Appendix D / S11 | duplicate-name drop never triggered (quota 255 = final 255) | (255, 255) | (255, 255) |  |
+| OK | Appendix D / S11 | positives with a same-name entry point in another unit | 11 | 11 |  |
 | OK | Appendix D sample reproduction | positives 255 (seed 517) reproduced | True | True | unit order = stored original list, function order = stored original output; the 200 negatives depend on Pool order (imap_unordered) and cannot be reproduced from the seed alone → kept in gt_sample_unit.json |
 | OK | Appendix D sample reproduction | gt_sample_unit.json negatives = answer-key negatives | True | True |  |
 | OK | 5.9(a) | link_layer_q15 id = ? 15 | ['G085', 'G105', 'G120', 'G141', 'G154', 'G194', 'G219', 'G260', 'G266', 'G295', 'G361', 'G372', 'G386', 'G428', 'G439'] | ['G085', 'G105', 'G120', 'G141', 'G154', 'G194', 'G219', 'G260', 'G266', 'G295', 'G361', 'G372', 'G386', 'G428', 'G439'] |  |
@@ -228,9 +241,10 @@
 | OK | 5.9(b) | entry points/defined/miss rate | (139678, 249121, 96.24) | (139678, 249121, 96.24) |  |
 | OK | 5.9(c) | framework-optable/lifecycle/user-triggered/interrupt | (58130, 12717, 16451, 2439) | (58130, 12717, 16451, 2439) |  |
 | OK | Ch. 1 | configfs_attribute / clk_ops (link-layer behavior top) | (1075, 1031) | (1075, 1031) |  |
-| OK | 5.9(c) | address-taken 144,294 (atfinal.json) | 144294 | 144294 |  |
-| OK | 5.9(c) | AT only 16,556 (analyze3.json) | 16556 | 16556 |  |
-| INFO | 5.9(c) caution | AT / F of analyze3.json vs AT / F of atfinal.json |  | (143632, 139678, 144294, 139236) | the two files analyse different sets (whether substitute units for FAIL modules are included; run time), so AT is 143,632 vs 144,294. The text must cite the pair from one file only |
+| OK | 3.7 / Table S2 | address-taken 143,632 (analyze3.json; the pair quoted in the text) | 143632 | 143632 |  |
+| OK | 3.7 / Table S2 | AT only 16,556 (analyze3.json) | 16556 | 16556 |  |
+| OK | 3.7 | FPEA = AT - AT-only + C2-only (139,678) | 139678 | 139678 |  |
+| INFO | 3.7 caution | AT / F of atfinal.json (different file set) |  | (144294, 139236) | atfinal.json analyses a different set (substitute units for FAIL modules; run time): AT 144,294. The text cites analyze3.json (143,632 / 139,678 / 16,556) only |
 | OK | 5.9 | .mod 6,865 = linked 6,853 + failed 12; builtin 1,925 | (6853, 12, 1925) | (6853, 12, 1925) | the "6,865 modules" in skeleton 5.9 is the .mod count; bitcode is 6,853 |
 | OK | 5.9 | link-layer FPEA output count (fpea_out, modules+builtin) | 8778 | 8778 | the earlier 8,790 is .mod 6,865+1,925; actual analysed files 6,853+1,925=8,778 (+substitute units for failed modules) |
 | OK | 5.3 caution | analyze3 wl_miss (link-layer WmF 424) IOCTL_CAND|external / INT_HANDLER_T|external | (314, 58) | (314, 58) | text 5.3 uses the unit-layer 987 together with this link-layer breakdown, mixing layers → recompute the unit-layer breakdown with --heavy |
@@ -288,11 +302,59 @@
 | INFO | TCA pilot | rows |  | 455 |  |
 | OK | TCA pilot | callers 0 among TP 218 / callers 0 among FP 37 / callers 0 among negatives labelled 0 (185) / callers 0 among ? 15 | (210, 36, 105, 15) | (210, 36, 105, 15) | final/tca_pilot.log; direct caller count r |
 | OK | 5.4 placeholder | placeholder_trigger.log exists | True | True |  |
-| INFO | 5.3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) |  | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | the parenthesised numbers in text 5.3 must be replaced with this table |
+| OK | 5.2 / S11 | stage-1 units / pool / zero units / max unit | (500, 3071, 122, 100) | (500, 3071, 122, 100) |  |
+| OK | 5.2 / S11 | pool = sum of per-unit sizes | 3071 | 3071 |  |
+| OK | 5.2 / S11 | all 200 negatives are members of the pool | 200 | 200 |  |
+| OK | S11 | median pool size per unit | 2 | 2 |  |
+| OK | 5.2 | conditional inclusion probability 200/|pool(S)| | 0.065 | 0.065 |  |
+| OK | 5.2 | unconditional inclusion probability (approx.) | 0.0021 | 0.0021 | 500/15,522 x 200/3,071 (the text says approximately 0.0021) |
+| OK | 5.2 | pool density of the selected units vs population (per unit) | (6.1, 6.9) | (6.1, 6.9) |  |
+| OK | 5.2 | expansion estimator FN_S = |pool|/200 * 15 | 230 | 230 |  |
+| OK | 5.2 | expansion estimator FN_HT = 15,522/500 * FN_S | 7150 | 7150 |  |
+| OK | 5.2 | recall (expansion estimator, sensitivity) | 0.944 | 0.944 |  |
+| OK | 5.2 | recall (ratio estimator) from boot2 | 0.937 | 0.937 |  |
+| OK | 5.2 / S5 | unit bootstrap 95% (ratio estimator) | (0.873, 0.984) | (0.873, 0.984) |  |
+| OK | S5 | unit bootstrap 95% (TP fixed, negatives only) | (0.874, 0.985) | (0.874, 0.985) |  |
+| OK | 5.2 / S5 | unit bootstrap 95% (expansion estimator) | (0.874, 0.987) | (0.874, 0.987) |  |
+| OK | 5.2 / S5 | design effect d | 4.34 | 4.34 |  |
+| OK | 5.2 | dcn10_hw_sequencer.c pool 59 / expected sample 3.8 / observed 8 | (59, 3.8, 8) | (59, 3.8, 8) |  |
+| OK | 5.2 | FN 15 = 8 in one unit + 7 in 7 other units | (8, 7) | (8, 7) |  |
+| OK | S11 | TP_hat / precision excl. / incl. C2 (boot2) | (119629, 0.912, 0.92) | (119629, 0.912, 0.92) |  |
+| OK | Appendix H / S15 | FN estimate range from Wilson 4.6-12.0% of |N| | (4900, 12800) | (4900.0, 12800.0) | the text rounds to about 4,900 - 12,800 |
+| OK | Table S2 | AT-only pairs | 16556 | 16556 |  |
+| OK | Table S2 | EXPORT by-product globals only | 16266 | 16266 |  |
+| OK | Table S2 | phi/select/ret result used immediately | 205 | 205 |  |
+| OK | Table S2 | icmp comparison only (4 + 1) | 5 | 5 |  |
+| OK | Table S2 | argument of a call through a function pointer | 80 | 80 |  |
+| OK | Table S2 | rule verdicts 16,476 + author verdicts 80 = 16,556 | 16556 | 16556 |  |
+| OK | 3.7 / Table S2 | unit-boundary author verdict: entry points 51 = 15 + 36, sync 29 | (51, 15, 36, 29) | (51, 15, 36, 29) |  |
+| OK | 3.7 / Table S2 | judgment lists: other module / other unit / sync = 15 / 36 / 29, sum 80 | (15, 36, 29, 80) | (15, 36, 29, 80) |  |
+| OK | 3.7 | other-unit groups: libfc 16, efct 10, dvb-core 4, i915 3, gdmulte 2, dm-snapshot 1 | [16, 10, 4, 3, 2, 1] | [16, 10, 4, 3, 2, 1] |  |
+| OK | 3.7 | sync groups: dm iterate_devices 22 + 7 others | (22, 7) | (22, 7) |  |
+| OK | 3.7 / 5.10 | kernel-module-boundary author verdict: entry points 15 | 15 | 15 |  |
+| OK | Table S2 | the 80 call_arg functions = at80_src.json = the judged functions | (80, True, True) | (80, True, True) |  |
+| INFO | Table S2 | random 50 of the AT-only pairs (seed 2026): tags |  | {'export_addressable_only': 48, 'select_phi_ret(+)': 2} | the 2026-11-09 draw was 49 EXPORT by-products + 1 phi/select (no information) |
+| OK | Table S3 | UAFX pairs / unique / in FPEA / WL-only | (5899, 5118, 4912, 987) | (5899, 5118, 4912, 987) |  |
+| OK | Table S3 | WL-only: IOCTL_CAND declared / defined, INT_HANDLER_T declared | (547, 289, 151) | (547, 289, 151) |  |
+| OK | Table S3 | external pairs 698, most redundant ata_scsi_ioctl 91 units | (698, 91) | (698, 91) |  |
+| OK | Table S3 | external unique names / defined in drivers / outside drivers | (359, 355, 4) | (359, 355, 4) |  |
+| OK | Table S3 | outside drivers/: compat_ptr_ioctl etc. | ['blkdev_compat_ptr_ioctl', 'compat_ptr_ioctl', 'hpet_rtc_interrupt', 'snd_pcm_lib_ioctl'] | ['blkdev_compat_ptr_ioctl', 'compat_ptr_ioctl', 'hpet_rtc_interrupt', 'snd_pcm_lib_ioctl'] |  |
+| OK | Table S3 | FPEA identifies in the defining unit | 9 | 9 |  |
+| OK | Table S3 | not identified in the defining unit: static-call trampolines / registered in another unit | (4, 342) | (4, 342) |  |
+| OK | Table S3 / S6 | other-unit registered: link layer recovers / inter-module | (304, 38) | (304, 38) |  |
+| OK | Table S3 | defined-in-unit 289 = tracepoint by-products 25 + real ioctl handlers 264 | (25, 264) | (25, 264) |  |
+| OK | Table S3 / S6 | real ioctl handlers: link layer recovers / remain | (224, 40) | (224, 40) |  |
+| OK | 5.3 / S6 | shared handlers total / link recovered / inter-module | (606, 528, 78) | (606, 528, 78) |  |
+| OK | 5.3 | whitelist-side errors: tracepoint 25 + static-call 4 + outside drivers 4 | 33 | 33 |  |
+| OK | 5.10 | inter-module examples remain unrecovered | True | True |  |
+| OK | Table 12 / 5.5 axis 1 | fpea14 = fpea16 on the LLVM 14 bitcode | (129967, 129967) | (129967, 129967) |  |
+| OK | Table 12 / 5.5 axis 1 | differing units / only14 / only16 / label diff / defined diff | (0, 0, 0, 0, 0) | (0, 0, 0, 0, 0) |  |
+| OK | Table 12 / 5.5 axis 1 | units compared | 15522 | 15522 |  |
+| OK | Table S3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | {'IOCTL_CAND|external_declared': 547, 'INT_HANDLER_T|external_declared': 151, 'IOCTL_CAND|defined_not_FPEA': 289} |  |
 | OK | Table 2 auxiliary heavy | C3-only used only by iterator-type APIs | 677 | 677 | definition: every call taking the address as an argument matches ITER (fp_audit.py regex); the earlier 726 is not reproducible |
 | OK | Table 2 auxiliary | iterator share % | 0.52 | 0.52 |  |
-| OK | 5.7.3 ath12k | 6.9 mac unit FPEA / C1 in @ath12k_ops | (45, 34) | (45, 34) |  |
-| OK | 5.7.3 ath12k | 7.1.4 ath12k .o.bc / mac unit C1 / ath12k_mac_op_* defined | (48, 0, 40) | (48, 0, 40) |  |
+| OK | 5.10 ath12k | 6.9 mac unit FPEA / C1 in @ath12k_ops | (45, 34) | (45, 34) |  |
+| OK | 5.10 ath12k | 7.1.4 ath12k .o.bc / mac unit C1 / ath12k_mac_op_* defined | (48, 0, 40) | (48, 0, 40) |  |
 | OK | Table 14 tlclk | cleanup_module C2 / tlclk_interrupt C3 | (True, True) | (True, True) |  |
 | OK | Table 14 tlclk | UAFX (unit): tlclk_interrupt INT_HANDLER_T, tlclk_read READ_HDR, cleanup_module missed | (True, True, False) | (True, True, False) | the earlier miss result is from the KASAN build output |
 | OK | Table 14 docg3 | docg3_release C1 / UAFX 0 | (True, '') | (True, '') |  |

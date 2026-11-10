@@ -1,0 +1,507 @@
+[
+ [
+  "drivers_gpu_drm_drm_kms_helper.bc",
+  "drm_helper_crtc_in_use",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_drm_helper_crtc_in_use857 = internal global ptr @drm_helper_crtc_in_use, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_net_wireless_intel_iwlwifi_mei_iwlmei.bc",
+  "iwl_mei_rx_filter_ipv4",
+  {
+   "select_phi_ret": 1
+  },
+  [
+   "%84 = phi ptr [ @iwl_mei_rx_filter_ipv6, %81 ], [ @iwl_mei_rx_filter_arp, %80 ], [ @iwl_mei_rx_filter_ipv4, %77 ]"
+  ]
+ ],
+ [
+  "drivers_xen_grant-table.o.bc",
+  "gnttab_unmap_refs",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_gnttab_unmap_refs1180 = internal global ptr @gnttab_unmap_refs, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_gpu_drm_drm.bc",
+  "drm_get_connector_type_name",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_drm_get_connector_type_name843 = internal global ptr @drm_get_connector_type_name, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_media_v4l2-core_v4l2-mem2mem.bc",
+  "v4l2_m2m_buf_queue",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_v4l2_m2m_buf_queue904 = internal global ptr @v4l2_m2m_buf_queue, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_scsi_scsi_mod.bc",
+  "scsi_print_result",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_scsi_print_result820 = internal global ptr @scsi_print_result, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_video_fbdev_matrox_matroxfb_g450.bc",
+  "matroxfb_g450_shutdown",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_matroxfb_g450_shutdown849 = internal global ptr @matroxfb_g450_shutdown, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_staging_greybus_gb-audio-apbridgea.bc",
+  "gb_audio_apbridgea_stop_tx",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_gb_audio_apbridgea_stop_tx724 = internal global ptr @gb_audio_apbridgea_stop_tx, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_mfd_retu-mfd.bc",
+  "retu_read",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_retu_read808 = internal global ptr @retu_read, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  ".iwl-trans.o.bc",
+  "iwl_trans_send_cmd",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_iwl_trans_send_cmd943 = internal global ptr @iwl_trans_send_cmd, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_extcon_devres.o.bc",
+  "devm_extcon_register_notifier",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_devm_extcon_register_notifier613 = internal global ptr @devm_extcon_register_notifier, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_gpu_drm_drm_kms_helper.bc",
+  "__128b132b_channel_eq_delay_us",
+  {
+   "select_phi_ret": 4
+  },
+  [
+   "%18 = phi ptr [ @__128b132b_channel_eq_delay_us, %12 ], [ @__8b10b_clock_recovery_delay_us, %8 ]",
+   "%40 = phi ptr [ @__128b132b_channel_eq_delay_us, %25 ], [ %18, %16 ]",
+   "%9 = select i1 %3, ptr @__128b132b_channel_eq_delay_us, ptr @__8b10b_channel_eq_delay_us",
+   "%22 = phi ptr [ %9, %8 ], [ @__128b132b_channel_eq_delay_us, %7 ]"
+  ]
+ ],
+ [
+  "drivers_net_ethernet_mellanox_mlxsw_mlxsw_core.bc",
+  "mlxsw_core_ptp_transmitted",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_mlxsw_core_ptp_transmitted979 = internal global ptr @mlxsw_core_ptp_transmitted, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_gpu_drm_drm.bc",
+  "drm_client_modeset_check",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_drm_client_modeset_check865 = internal global ptr @drm_client_modeset_check, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_target_iscsi_iscsi_target_mod.bc",
+  "iscsit_setup_scsi_cmd",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_iscsit_setup_scsi_cmd1117 = internal global ptr @iscsit_setup_scsi_cmd, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_acpi_property.o.bc",
+  "is_acpi_data_node",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_is_acpi_data_node625 = internal global ptr @is_acpi_data_node, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_video_fbdev_core_sysfillrect.bc",
+  "sys_fillrect",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_sys_fillrect834 = internal global ptr @sys_fillrect, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_net_wireless_ath_ath9k_ath9k_hw.bc",
+  "ath9k_hw_wow_wakeup",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_ath9k_hw_wow_wakeup908 = internal global ptr @ath9k_hw_wow_wakeup, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_media_pci_saa7134_saa7134.bc",
+  "saa_dsp_writel",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_saa_dsp_writel993 = internal global ptr @saa_dsp_writel, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_pwm_pwm-lpss.bc",
+  "pwm_lpss_probe",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_pwm_lpss_probe591 = internal global ptr @pwm_lpss_probe, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_mmc_core_mmc_core.bc",
+  "mmc_gpio_get_ro",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_mmc_gpio_get_ro765 = internal global ptr @mmc_gpio_get_ro, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_ntb_ntb.bc",
+  "__ntb_register_client",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable___ntb_register_client721 = internal global ptr @__ntb_register_client, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_of_base.o.bc",
+  "of_remove_property",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_of_remove_property723 = internal global ptr @of_remove_property, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_pci_quirks.o.bc",
+  "quirk_disable_msi",
+  {
+   "export_addressable": 3
+  },
+  [
+   "@__UNIQUE_ID___addressable_quirk_disable_msi1169 = internal global ptr @quirk_disable_msi, section \".discard.addressable\", align 8",
+   "@__UNIQUE_ID___addressable_quirk_disable_msi1170 = internal global ptr @quirk_disable_msi, section \".discard.addressable\", align 8",
+   "@__UNIQUE_ID___addressable_quirk_disable_msi1171 = internal global ptr @quirk_disable_msi, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_dma_acpi-dma.o.bc",
+  "acpi_dma_controller_register",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_acpi_dma_controller_register749 = internal global ptr @acpi_dma_controller_register, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_net_wireless_realtek_rtlwifi_rtlwifi.bc",
+  "rtl_is_special_data",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_rtl_is_special_data1106 = internal global ptr @rtl_is_special_data, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_gpio_gpio-cs5535.bc",
+  "cs5535_gpio_isset",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_cs5535_gpio_isset661 = internal global ptr @cs5535_gpio_isset, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_net_ethernet_stmicro_stmmac_stmmac.bc",
+  "stmmac_dvr_remove",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_stmmac_dvr_remove1401 = internal global ptr @stmmac_dvr_remove, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_net_ethernet_mellanox_mlxsw_mlxsw_core.bc",
+  "mlxsw_core_skb_transmit",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_mlxsw_core_skb_transmit978 = internal global ptr @mlxsw_core_skb_transmit, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_tty_serial_8250_8250_base.bc",
+  "serial8250_do_shutdown",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_serial8250_do_shutdown736 = internal global ptr @serial8250_do_shutdown, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_hwspinlock_hwspinlock_core.o.bc",
+  "devm_hwspin_lock_free",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_devm_hwspin_lock_free643 = internal global ptr @devm_hwspin_lock_free, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_net_wireless_ath_ath11k_ath11k.bc",
+  "ath11k_core_alloc",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_ath11k_core_alloc1004 = internal global ptr @ath11k_core_alloc, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_base_devres.o.bc",
+  "devm_kvasprintf",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_devm_kvasprintf673 = internal global ptr @devm_kvasprintf, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_pci_msi_msi.o.bc",
+  "pci_disable_msi",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_pci_disable_msi758 = internal global ptr @pci_disable_msi, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_pci_bus.o.bc",
+  "pci_add_resource_offset",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_pci_add_resource_offset744 = internal global ptr @pci_add_resource_offset, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_tty_tty_ioctl.o.bc",
+  "tty_get_char_size",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_tty_get_char_size739 = internal global ptr @tty_get_char_size, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_scsi_scsi_transport_fc.bc",
+  "fc_remove_host",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_fc_remove_host866 = internal global ptr @fc_remove_host, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_gpio_gpiolib-acpi.o.bc",
+  "acpi_dev_remove_driver_gpios",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_acpi_dev_remove_driver_gpios697 = internal global ptr @acpi_dev_remove_driver_gpios, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_rapidio_rapidio.bc",
+  "rio_release_outb_dbell",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_rio_release_outb_dbell732 = internal global ptr @rio_release_outb_dbell, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_vme_vme.o.bc",
+  "vme_free_consistent",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_vme_free_consistent819 = internal global ptr @vme_free_consistent, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_gpu_drm_drm_kms_helper.bc",
+  "drm_dp_read_mst_cap",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_drm_dp_read_mst_cap906 = internal global ptr @drm_dp_read_mst_cap, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_scsi_ufs_tc-dwc-g210.bc",
+  "tc_dwc_g210_config_40_bit",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_tc_dwc_g210_config_40_bit854 = internal global ptr @tc_dwc_g210_config_40_bit, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_video_fbdev_matrox_matroxfb_misc.bc",
+  "matroxfb_var2my",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_matroxfb_var2my846 = internal global ptr @matroxfb_var2my, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_rapidio_rapidio.bc",
+  "rio_mport_chk_dev_access",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_rio_mport_chk_dev_access749 = internal global ptr @rio_mport_chk_dev_access, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_mtd_mtd_blkdevs.bc",
+  "deregister_mtd_blktrans",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_deregister_mtd_blktrans798 = internal global ptr @deregister_mtd_blktrans, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_scsi_scsi_mod.bc",
+  "scsi_host_busy_iter",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_scsi_host_busy_iter809 = internal global ptr @scsi_host_busy_iter, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_usb_typec_typec.bc",
+  "__typec_altmode_register_driver",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable___typec_altmode_register_driver592 = internal global ptr @__typec_altmode_register_driver, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_base_driver.o.bc",
+  "driver_unregister",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_driver_unregister619 = internal global ptr @driver_unregister, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_media_v4l2-core_v4l2-mem2mem.bc",
+  "v4l2_m2m_release",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_v4l2_m2m_release899 = internal global ptr @v4l2_m2m_release, section \".discard.addressable\", align 8"
+  ]
+ ],
+ [
+  "drivers_gpu_ipu-v3_imx-ipu-v3.bc",
+  "ipu_cpmem_set_uv_offset",
+  {
+   "export_addressable": 1
+  },
+  [
+   "@__UNIQUE_ID___addressable_ipu_cpmem_set_uv_offset846 = internal global ptr @ipu_cpmem_set_uv_offset, section \".discard.addressable\", align 8"
+  ]
+ ]
+]
