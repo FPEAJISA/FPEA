@@ -129,7 +129,7 @@ ac2763f85a5ea968b994c080368b5b46  out/wl_ext.json
 35c2c65f9a56c86ca76e1449fbc8d393  scripts/orig/audit_v23/at_only.py
 d91a95518425c3ce4e3eea3fba00ed9f  scripts/orig/audit_v23/boot2.py
 d1d44f0390ef12b361e424ae1df18f97  scripts/orig/audit_v23/common.py
-7c39113da69c86b10780badaf95df1dd  scripts/orig/audit_v23/defmap.sh
+eae028a865eea2b8a0012d03340701b6  scripts/orig/audit_v23/defmap.sh
 b30fe57470fa1b42e2941888e880bff7  scripts/orig/audit_v23/popN.py
 8ed228ee5b27aa6a1cc48477e5c9e84a  scripts/orig/audit_v23/recon_pool2.py
 ab7481a06d999314425ec28f2cc2a5f7  scripts/orig/audit_v23/resid68.py

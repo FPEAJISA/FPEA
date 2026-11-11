@@ -10,6 +10,8 @@ LIST=$1; OUT=$2
 NM=${FPEA_LLVM14:-/usr/lib/llvm-14/bin}/llvm-nm
 T=$(mktemp -d)
 xargs -P "${FPEA_NPROC:-14}" -I{} sh -c 'u="{}"; '"$NM"' --defined-only "$u" 2>/dev/null | awk -v u="$u" "BEGIN {sub(/.*\\/linux-5\\.17\\.11\\//, \"\", u)} \$2 ~ /^[TtWw]$/ {print \$3\"\t\"u}" > "'$T'/$(echo "$u" | tr / _).tsv"' < "$LIST"
-cat "$T"/*.tsv | sort | gzip -9 > "$OUT"
+# concatenated through find/xargs: with 15,522 per-unit files the glob exceeds ARG_MAX ("Argument
+# list too long", 0 symbols) on a machine whose work root is a long path (2026-11-11 VM)
+find "$T" -name '*.tsv' -print0 | xargs -0 cat | sort | gzip -9 > "$OUT"
 rm -rf "$T"
 echo "defmap: $(zcat "$OUT" | wc -l) symbols -> $OUT"
