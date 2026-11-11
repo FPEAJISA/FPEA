@@ -12,10 +12,15 @@ import json
 from multiprocessing import Pool
 from collections import Counter, defaultdict
 
-DIS = os.path.expanduser('~/llvm/build/bin/llvm-dis')
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+DIS = f'{HOME_ROOT}/llvm/build/bin/llvm-dis'
 # Linked module layer (output of build_linked.sh 14) and the matching kernel source tree.
-LINKED_DIR = os.path.expanduser('~/linux_bc/linked-nosan14-5.17.11')
-SRC = os.path.expanduser('~/rerun/nosan/src14/linux-5.17.11')
+LINKED_DIR = f'{HOME_ROOT}/linux_bc/linked-nosan14-5.17.11'
+SRC = f'{HOME_ROOT}/rerun/nosan/src14/linux-5.17.11'
 
 # Compiler/instrumentation artefacts that are never counted as defined functions.
 CONTAM = re.compile(

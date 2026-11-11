@@ -1,13 +1,19 @@
 """Final computation from the expert round (rA/rB, audit v2.1) + the adjudicator's result
 (adjudication_17_final.csv): Cohen's kappa, TP/FP, simple and stratum-weighted precision,
 recall bounds on the 455-item reference set.
-Run with cwd = $FIN (~/fpea_gt/final) by run_all.sh derive: `python3 final_calc_expert.py`.
+Run with cwd = $FIN ($FPEA_HOME/fpea_gt/final) by run_all.sh derive: `python3 final_calc_expert.py`.
 Prints the result JSON and writes it to final_result_expert.json in the cwd."""
+import os
 import csv
 import json
 from collections import Counter, defaultdict
 
-ANSWER_PATH = '/home/user/rerun/fpea_pass/gt_answer_unit.json'
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+ANSWER_PATH = f'{HOME_ROOT}/rerun/fpea_pass/gt_answer_unit.json'
 RA_PATH = '../expert_pkg/rA.csv'
 RB_PATH = '../expert_pkg/rB.csv'
 ADJ_PATH = '../expert_pkg/adjudication_17_final.csv'

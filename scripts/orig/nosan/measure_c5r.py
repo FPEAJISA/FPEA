@@ -14,12 +14,17 @@ import random
 from multiprocessing import Pool
 from collections import Counter
 
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
 # Baseline tool (original UAFX entry-point handler) and the LLVM 14 disassembler.
-TOOL = os.path.expanduser('~/rerun/uafx_orig/entry_point_handler_orig')
-DIS = os.path.expanduser('~/llvm/build/bin/llvm-dis')
+TOOL = f'{HOME_ROOT}/rerun/uafx_orig/entry_point_handler_orig'
+DIS = f'{HOME_ROOT}/llvm/build/bin/llvm-dis'
 # Linked module layer (output of build_linked.sh 14) and the matching kernel source tree.
-LINKED_DIR = os.path.expanduser('~/linux_bc/linked-nosan14-5.17.11')
-SRC_DIR = os.path.expanduser('~/rerun/nosan/src14/linux-5.17.11')
+LINKED_DIR = f'{HOME_ROOT}/linux_bc/linked-nosan14-5.17.11'
+SRC_DIR = f'{HOME_ROOT}/rerun/nosan/src14/linux-5.17.11'
 
 # Compiler/instrumentation artefacts that are never counted as defined functions.
 CONTAM = re.compile(
@@ -139,7 +144,7 @@ def job(path):
         c, dec, sig, ctx = analyze(path)
     except Exception:
         return None
-    out = '/tmp/c5_' + os.path.basename(path) + '.txt'
+    out = f'{TMP_ROOT}/c5_' + os.path.basename(path) + '.txt'
     subprocess.run(['timeout', '600', TOOL, path, out], capture_output=True)
     W = {}
     if os.path.exists(out):

@@ -2,7 +2,7 @@
 member in %struct.file_operations / %struct.vm_operations_struct of drivers/spi/spidev.c.
 
 Recompiles variants of spidev.c (as is, with one forced struct layout, with the forced layout
-at successive positions) in the restored 5.19.17 and 6.9 trees (/home/user/rerun/nosan/src_rb)
+at successive positions) in the restored 5.19.17 and 6.9 trees ($FPEA_HOME/rerun/nosan/src_rb)
 with the exact kbuild command line and reports the placeholder member indices per variant.
 Variant sources and .ll files are written next to this script.  Invoked as
 `python3 placeholder_trigger.py > placeholder_trigger.log`.
@@ -11,10 +11,15 @@ import os
 import re
 import subprocess
 
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
 SP = os.path.dirname(os.path.abspath(__file__))
-CLANG = '/home/user/llvm-14.0.7/bin/clang-14'
-T69 = '/home/user/rerun/nosan/src_rb/linux-6.9'
-T519 = '/home/user/rerun/nosan/src_rb/linux-5.19.17'
+CLANG = f'{HOME_ROOT}/llvm-14.0.7/bin/clang-14'
+T69 = f'{HOME_ROOT}/rerun/nosan/src_rb/linux-6.9'
+T519 = f'{HOME_ROOT}/rerun/nosan/src_rb/linux-5.19.17'
 # forced-layout variants are inserted after this include line
 INC = r'^#include <linux/uaccess.h>'
 FOPS = '%struct.file_operations'

@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 # Build the linked module layer: llvm-link the wllvm units (.name.o.bc) listed in each .mod
 # Usage: build_linked.sh <toolchain: 14|16>
-#   input : $HOME/rerun/nosan/src<TC>/linux-5.17.11 (wllvm build with per-unit .bc)
-#   output: $HOME/linux_bc/linked-nosan<TC>-5.17.11/{modules,builtin}/*.bc, link_report.txt
-#   log   : $HOME/rerun/nosan/linked_<TC>.log (the say lines), .linked_<TC> stamp on completion
+#   input : $FPEA_HOME/rerun/nosan/src<TC>/linux-5.17.11 (wllvm build with per-unit .bc)
+#   output: $FPEA_HOME/linux_bc/linked-nosan<TC>-5.17.11/{modules,builtin}/*.bc, link_report.txt
+#   log   : $FPEA_HOME/rerun/nosan/linked_<TC>.log (the say lines), .linked_<TC> stamp on completion
 set -u
 TC=$1
 V=5.17.11
-SRC=$HOME/rerun/nosan/src$TC/linux-$V
-OUT=$HOME/linux_bc/linked-nosan$TC-$V
-LOG=$HOME/rerun/nosan/linked_$TC.log
+# root of the original measurement layout (env.sh FPEA_HOME; the home directory on the measurement server)
+H=${FPEA_HOME:-$HOME}
+SRC=$H/rerun/nosan/src$TC/linux-$V
+OUT=$H/linux_bc/linked-nosan$TC-$V
+LOG=$H/rerun/nosan/linked_$TC.log
 if [ "$TC" = 14 ]; then
   LINK=/usr/bin/llvm-link-14
   DIS=/usr/bin/llvm-dis-14
 else
-  LINK=$HOME/llvm/build/bin/llvm-link
-  DIS=$HOME/llvm/build/bin/llvm-dis
+  LINK=$H/llvm/build/bin/llvm-link
+  DIS=$H/llvm/build/bin/llvm-dis
 fi
 
 # say MSG...: timestamped progress line to stdout and the log
@@ -100,4 +102,4 @@ export -f link_one
 link_modules
 copy_builtin
 gate
-touch $HOME/rerun/nosan/.linked_$TC
+touch $H/rerun/nosan/.linked_$TC

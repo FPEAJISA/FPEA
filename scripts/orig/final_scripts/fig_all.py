@@ -1,8 +1,10 @@
 """Batch generation of the paper figures: fig1 overview, fig3 literal/placeholder, fig4 offset
 heatmap, fig5 UAFX per-kind trend, fig6 subsystem share, fig7 per-stratum precision.
 
-Inputs: ~/epi_regfn/handler_offset.json and version_results / subsystem_ratio /
-final_result_expert / strata_pop .json in /home/user/fpea_gt/final.
+Inputs: $FPEA_HOME/epi_regfn/handler_offset.json and version_results / subsystem_ratio /
+metrics .json in $FPEA_HOME/fpea_gt/final (metrics.json is written by derive_results.py and
+copied there by run_all.sh derive; fig7 draws its per-stratum and weighted precisions).
+fig4 is sized for one column of the two-column manuscript (3.3 in wide), the others for two.
 Output: figures/<name>.{pdf,png,svg} (DejaVu font, compressed) + figures/ascii/<name>.pdf
 (core fonts, uncompressed, pure ASCII, for text upload to Drive).
 Invoked as `python3 fig_all.py` (pdf/png/svg) and `python3 fig_all.py ascii` (ascii pdf).
@@ -12,13 +14,18 @@ import math
 import os
 import sys
 import matplotlib
+
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch  # noqa: E402
 
-F = '/home/user/fpea_gt/final'
+F = f'{HOME_ROOT}/fpea_gt/final'
 OUT = f'{F}/figures'
-HANDLER_OFFSET_JSON = os.path.expanduser('~/epi_regfn/handler_offset.json')
+HANDLER_OFFSET_JSON = f'{HOME_ROOT}/epi_regfn/handler_offset.json'
 ASCII = len(sys.argv) > 1 and sys.argv[1] == 'ascii'
 VERS = ['5.17.11', '5.19.17', '6.9', '7.1.4']
 HEADER_VERS = ['5.17', '5.19', '6.9', '7.1']
@@ -160,7 +167,8 @@ def fig4_offset_drift():
     rows = OFFSET_ROWS
     hv = HEADER_VERS
     M = [[(H[s][v].index(f) if f in H[s][v] else None) for v in hv] for s, f in rows]
-    fig, ax = plt.subplots(figsize=(4.6, 5.2))
+    # one column of the two-column manuscript: 3.3 in including the row labels (~1.5 in)
+    fig, ax = plt.subplots(figsize=(1.75, 4.3))
     base = [r[0] for r in M]
     for i, r in enumerate(M):
         for j, v in enumerate(r):
@@ -174,19 +182,21 @@ def fig4_offset_drift():
                 col = '#fed7d7'
                 t = f'{v}'
             ax.add_patch(plt.Rectangle((j, len(M)-1-i), 1, 1, fc=col, ec='white'))
-            ax.text(j+0.5, len(M)-1-i+0.5, t, ha='center', va='center', fontsize=8,
+            ax.text(j+0.5, len(M)-1-i+0.5, t, ha='center', va='center', fontsize=7,
                     color='#1a202c')
     ax.set_xlim(0, 4)
     ax.set_ylim(0, len(M))
     ax.set_xticks([k+0.5 for k in range(4)])
-    ax.set_xticklabels(['5.17', '5.19', '6.9', '7.1'])
+    ax.set_xticklabels(['5.17', '5.19', '6.9', '7.1'], fontsize=7)
     ax.set_yticks([len(M)-1-i+0.5 for i in range(len(M))])
-    ax.set_yticklabels([f'{s}.{f}' for s, f in rows], fontsize=7.5)
+    ax.set_yticklabels([f'{s}.{f}' for s, f in rows], fontsize=6.5)
     ax.tick_params(length=0)
     for sp in ax.spines.values():
         sp.set_visible(False)
+    # title starts above the row labels (x in axes fraction), three short lines
     ax.set_title('Field index of op-table handlers (source headers)\n'
-                 'green = unchanged vs 5.17, red = moved, gray = removed', fontsize=8.5, loc='left')
+                 'green = unchanged vs 5.17, red = moved,\ngray = removed',
+                 fontsize=7, loc='left', x=-0.88)
     save(fig, 'fig4_offset_drift')
 
 
@@ -243,23 +253,27 @@ def wilson(k, n, z=1.96):
 
 
 def fig7_precision_strata():
-    fr = json.load(open(f'{F}/final_result_expert.json'))
-    W = json.load(open(f'{F}/strata_pop.json'))['W_true']
+    """Per-stratum precision (Wilson CI) and the paper's overall values, all from metrics.json
+    (derive_results.py): the headline weighted precision excl. C2 (Table 4, 0.912; four strata,
+    W_true renormalised), the C2-included estimate (0.920) and the simple precision (0.855).
+    Until v3.1 the dashed line was wprec_all of final_calc_expert.py (0.921: C2 included and
+    3-digit rounded weights), which matched neither Table 4 nor the text."""
+    m = json.load(open(f'{F}/metrics.json'))
     order = STRATA
     fig, ax = plt.subplots(figsize=(4.6, 2.6))
     for i, s in enumerate(order):
-        tp, fp = fr['byst'][s]
-        n = tp+fp
-        p = tp/n
-        lo, hi = wilson(tp, n)
+        b = m['byst'][s]
+        n, p = b['n'], b['TP'] / b['n']
+        lo, hi = b['ci']
         ax.errorbar(i, p, yerr=[[p-lo], [hi-p]], fmt='o', color='#2b6cb0', capsize=3)
-        ax.text(i, hi+0.025, f'{p:.3f}\nn={n}, w={W[s]:.3f}', ha='center', fontsize=6.8)
-    ax.axhline(fr['wprec_all'], color='#c53030', ls='--', lw=1)
-    ax.text(-0.45, fr['wprec_all']+0.012, f'weighted {fr["wprec_all"]:.3f}', ha='left',
-            fontsize=7.5, color='#c53030')
-    ax.axhline(fr['prec_simple'], color='#718096', ls=':', lw=1)
-    ax.text(-0.45, fr['prec_simple']-0.045, f'simple {fr["prec_simple"]:.3f}', ha='left',
-            fontsize=7.5, color='#718096')
+        ax.text(i, hi+0.025, f'{p:.3f}\nn={n}, w={b["W"]:.3f}', ha='center', fontsize=6.8)
+    wp_ex, wp_in, sp = m['wprec_excl_c2'], m['wprec_true'], m['prec_simple']
+    ax.axhline(wp_ex, color='#c53030', ls='--', lw=1.1,
+               label=f'weighted precision, excl. C2 (headline): {wp_ex:.3f}')
+    ax.axhline(wp_in, color='#805ad5', ls=(0, (1.5, 1.5)), lw=0.9,
+               label=f'weighted precision, incl. C2 (= 1.0): {wp_in:.3f}')
+    ax.axhline(sp, color='#718096', ls=':', lw=1, label=f'simple precision: {sp:.3f}')
+    ax.legend(loc='lower left', frameon=False, fontsize=6.8)
     ax.set_xticks(range(4))
     ax.set_xticklabels(['C1 (global init)', 'C4 only (store)', 'C3 (call arg)',
                         'C5 (select/phi/ret)'], fontsize=7.5)

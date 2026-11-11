@@ -4,7 +4,7 @@
 # on the env.sh paths.
 #   build_kernel.sh <5.17.11|5.19.17|6.9|7.1.4> <14|16> [norand|dbg] [--config-only]
 #   dbg (5.17.11/14 only): allmodconfig as is (KASAN/UBSAN/KCOV on) + KCFLAGS=-g debug build.
-#   Recipe of the measurement server's $HOME/kernel/linux-5.17.11 (2026-08-13; the only .config
+#   Recipe of the measurement server's ~/kernel/linux-5.17.11 (2026-08-13; the only .config
 #   differences are sanitizer-dependent options), which filter_validate.py (3.4 contamination-filter
 #   validation) reads for DISubprogram. No collection and no sanitizer gate; after the build the
 #   link at that path is pointed to this tree.
@@ -48,8 +48,8 @@ parse_args(){
 
 # set_paths: CP (clang folder), DIS16, SRC (build tree), OUT (bitcode folder), LBL, LOG
 set_paths(){
-  NOSAN=$HOME/rerun/nosan
-  mkdir -p $NOSAN $HOME/linux_bc
+  NOSAN=$FPEA_HOME/rerun/nosan
+  mkdir -p $NOSAN $FPEA_HOME/linux_bc
   case $TC in
     14) CP=$FPEA_LLVM14;;
     16) CP=$FPEA_LLVM16;;
@@ -60,18 +60,18 @@ set_paths(){
   esac
   DIS16=$FPEA_DIS16
   if [ "$TAG" = dbg ]; then
-    SRC=$HOME/rerun/dbg/src$TC/linux-$V
+    SRC=$FPEA_HOME/rerun/dbg/src$TC/linux-$V
     OUT=""
     LBL="dbg$TC"
     LOG=$NOSAN/build_dbg$TC.log
   elif [ "$V" = 5.17.11 ]; then
-    SRC=$HOME/rerun/nosan/src$TC/linux-$V
-    OUT=$HOME/linux_bc/clean-nosan$TC-$V
+    SRC=$FPEA_HOME/rerun/nosan/src$TC/linux-$V
+    OUT=$FPEA_HOME/linux_bc/clean-nosan$TC-$V
     LBL="llvm$TC"
     LOG=$NOSAN/build_$TC.log
   else
     SRC=$FPEA_SRC_RB/linux-$V${TAG:+-$TAG}
-    OUT=$HOME/linux_bc/nosan-rb-$V${TAG:+-$TAG}
+    OUT=$FPEA_HOME/linux_bc/nosan-rb-$V${TAG:+-$TAG}
     LBL="rb-$V${TAG:+-$TAG}"
     LOG=$NOSAN/rebuild_$V${TAG:+_$TAG}.log
   fi
@@ -189,13 +189,13 @@ dbg_gate(){
   [ "$D" -ge 18 ] || { say "no debug info ABORT"; exit 1; }
 }
 
-# dbg: point $HOME/kernel/linux-5.17.11 (read by filter_validate.py and handler_offset.py) to SRC,
+# dbg: point $FPEA_HOME/kernel/linux-5.17.11 (read by filter_validate.py and handler_offset.py) to SRC,
 # unless it is a real directory (the original tree of the measurement server)
 link_debug_tree(){
-  LK=$HOME/kernel/linux-5.17.11
+  LK=$FPEA_HOME/kernel/linux-5.17.11
   if [ -L $LK ] || [ ! -e $LK ]; then
     rm -f $LK
-    mkdir -p $HOME/kernel
+    mkdir -p $FPEA_HOME/kernel
     ln -s $SRC $LK
     say "$LK → $SRC (path read by filter_validate.py and handler_offset.py)"
   else
@@ -250,11 +250,11 @@ show_spidev_fops(){
 
 # 6) 5.17.11/14: list of .o without bc (Ch. 4) — .o files with no matching .name.o.bc
 list_missing_bc(){
-  mkdir -p $HOME/fpea_gt/final
+  mkdir -p $FPEA_HOME/fpea_gt/final
   find drivers -name '*.o' | while read -r o; do
     [ -f "$(dirname $o)/.$(basename $o).bc" ] || echo "$o"
-  done > $HOME/fpea_gt/final/missing_bc_objects.txt
-  say ".o without bc $(wc -l < $HOME/fpea_gt/final/missing_bc_objects.txt) → fpea_gt/final/missing_bc_objects.txt"
+  done > $FPEA_HOME/fpea_gt/final/missing_bc_objects.txt
+  say ".o without bc $(wc -l < $FPEA_HOME/fpea_gt/final/missing_bc_objects.txt) → fpea_gt/final/missing_bc_objects.txt"
 }
 
 # ---------------------------------------------------------------- main flow

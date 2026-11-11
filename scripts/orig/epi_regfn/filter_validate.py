@@ -4,7 +4,7 @@
 Compares the naming-rule classification of compiler-generated symbols against a
 debug-info (DISubprogram) based classification and measures the agreement of the
 two methods on the debug build (5.17.11, KCFLAGS=-g).  Input: a random sample of
-.bc modules under ~/kernel/linux-5.17.11/drivers.  Output: a report on stdout and
+.bc modules under $FPEA_HOME/kernel/linux-5.17.11/drivers.  Output: a report on stdout and
 filter_validate.json in the cwd.  Invoked as `python3 filter_validate.py`.
 """
 import json
@@ -14,8 +14,13 @@ import re
 import subprocess
 from collections import Counter
 
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
 DIS = '/usr/bin/llvm-dis-14'
-KERNEL_DRIVERS = os.path.expanduser('~/kernel/linux-5.17.11/drivers')
+KERNEL_DRIVERS = f'{HOME_ROOT}/kernel/linux-5.17.11/drivers'
 N_MODULES = 400
 SEED = 42
 MAX_EXAMPLES = 12       # examples kept per disagreement class

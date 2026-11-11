@@ -11,11 +11,16 @@ import json
 import os
 import re
 
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
 SRC = {
-    '5.17': os.path.expanduser('~/kernel/linux-5.17.11'),
-    '5.19': os.path.expanduser('~/kbuild/src/linux-5.19.17'),
-    '6.9': os.path.expanduser('~/kbuild/src/linux-6.9'),
-    '7.1': os.path.expanduser('~/linux-7.1.4'),
+    '5.17': f'{HOME_ROOT}/kernel/linux-5.17.11',
+    '5.19': f'{HOME_ROOT}/kbuild/src/linux-5.19.17',
+    '6.9': f'{HOME_ROOT}/kbuild/src/linux-6.9',
+    '7.1': f'{HOME_ROOT}/linux-7.1.4',
 }
 VERSIONS = ('5.17', '5.19', '6.9', '7.1')
 

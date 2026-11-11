@@ -2,13 +2,13 @@
 """(b) UAF-related subset, recomputed at the unit layer (5.17.11 LLVM14 nosan).
 
 Applies the classification logic of scale_uaf2.py (not included in the public artifact) to the
-original FPEA/UAFX outputs, per unit listed in /tmp/units.txt:
+original FPEA/UAFX outputs, per unit listed in $FPEA_TMP/units.txt:
   missed = FPEA entry points - UAFX original-binary entry points (per unit)
   free_reachable: a free call in the function body or in a 1-hop callee
   shared_v1: global access / shared_v2: globals accessed by 2 or more entry points (strict)
-Inputs: /tmp/u_fpea/<unit>.json (FPEA entries), <scratch>/rw_5.17.11/<unit>.txt (UAFX entries),
+Inputs: $FPEA_TMP/u_fpea/<unit>.json (FPEA entries), <scratch>/rw_5.17.11/<unit>.txt (UAFX entries),
 the unit .bc files (llvm-dis).  Output: a summary on stdout and
-/home/user/fpea_gt/final/uaf_subset_unit.json.  Invoked as `python3 uaf_subset_unit.py [filter]`
+$FPEA_HOME/fpea_gt/final/uaf_subset_unit.json.  Invoked as `python3 uaf_subset_unit.py [filter]`
 (an optional substring restricts the units).
 """
 import json
@@ -19,12 +19,17 @@ import sys
 from collections import defaultdict
 from multiprocessing import Pool
 
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
 DIS = '/usr/bin/llvm-dis-14'
-SP = '/tmp/claude-1000/-home-user-fpea-gt/beb7f00d-7da4-4363-8809-fde4eb5531af/scratchpad'
-FPEA_DIR = '/tmp/u_fpea'
+SP = os.environ.get('FPEA_WORK') or f'{TMP_ROOT}/scratchpad'
+FPEA_DIR = f'{TMP_ROOT}/u_fpea'
 UAFX_DIR = SP + '/rw_5.17.11'
-UNITS_FILE = '/tmp/units.txt'
-OUT_JSON = '/home/user/fpea_gt/final/uaf_subset_unit.json'
+UNITS_FILE = f'{TMP_ROOT}/units.txt'
+OUT_JSON = f'{HOME_ROOT}/fpea_gt/final/uaf_subset_unit.json'
 POOL_SIZE = 14
 CHUNKSIZE = 8
 SET_LIMIT = 80          # name sets are stored only for entry sets smaller than this

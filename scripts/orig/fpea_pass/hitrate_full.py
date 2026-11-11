@@ -3,7 +3,7 @@
 For every global initializer of a rule struct, counts the rule-designated fields
 (`designated`) and how many of them hold a function (`hit`).
 Invoked as `python3 hitrate_full.py <version> <bc tree>`; prints one summary line and
-writes /home/user/rerun/nosan/hitfull_<version>.json.
+writes $FPEA_HOME/rerun/nosan/hitfull_<version>.json.
 """
 import json
 import os
@@ -13,11 +13,16 @@ import sys
 from collections import defaultdict
 from multiprocessing import Pool
 
-DIS = os.path.expanduser('~/llvm/build/bin/llvm-dis')
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+DIS = f'{HOME_ROOT}/llvm/build/bin/llvm-dis'
 DIS_TIMEOUT = 120
 POOL_SIZE = 14
 CHUNKSIZE = 20
-RULES_JSON = os.path.expanduser('~/epi_regfn/uafx_kernel_sts.json')
+RULES_JSON = f'{HOME_ROOT}/epi_regfn/uafx_kernel_sts.json'
 # global initializer of a named struct: `@name = ... %struct.X { fields } , align`
 INIT_RE = re.compile(r'^@[\w.$]+\s*=[^\n]*?%(struct\.[\w.]+)\s*\{(.*)\}\s*,?\s*align', re.M)
 FN_REF_RE = re.compile(r'@[\w.$]+')
@@ -87,7 +92,7 @@ def main():
           f" function-valued {hit}, hit rate {hit/designated*100:.2f}%")
     summary = dict(version=version, designated=designated, hit=hit,
                    rate=round(hit/designated*100, 2))
-    with open(f'/home/user/rerun/nosan/hitfull_{version}.json', 'w') as out:
+    with open(f'{HOME_ROOT}/rerun/nosan/hitfull_{version}.json', 'w') as out:
         json.dump(summary, out)
 
 

@@ -3,7 +3,7 @@ emits %struct.file_operations / %struct.vm_operations_struct as opaque, complete
 `{}` placeholder member.
 
 For K = 1..N the first K includes of spidev.c plus a probe declaring both structs are compiled
-in the restored 6.9 and 5.19.17 trees (/home/user/rerun/nosan/src_rb) with the exact kbuild
+in the restored 6.9 and 5.19.17 trees ($FPEA_HOME/rerun/nosan/src_rb) with the exact kbuild
 command line.  Probe sources and .ll files are written next to this script.  Invoked as
 `python3 placeholder_trigger_hdr.py > placeholder_trigger_hdr.log`.
 """
@@ -11,15 +11,20 @@ import os
 import re
 import subprocess
 
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
 SP = os.path.dirname(os.path.abspath(__file__))
-CLANG = '/home/user/llvm-14.0.7/bin/clang-14'
+CLANG = f'{HOME_ROOT}/llvm-14.0.7/bin/clang-14'
 PROBE = ('struct file_operations; struct vm_operations_struct;\n'
          'const struct file_operations *__p1 __attribute__((used));\n'
          'const struct vm_operations_struct *__p2 __attribute__((used));\n')
 INCLUDE_SCAN_LINES = 40     # includes are collected from the first lines of spidev.c
 TREES = [
-    ('/home/user/rerun/nosan/src_rb/linux-6.9', '69'),
-    ('/home/user/rerun/nosan/src_rb/linux-5.19.17', '519'),
+    (f'{HOME_ROOT}/rerun/nosan/src_rb/linux-6.9', '69'),
+    (f'{HOME_ROOT}/rerun/nosan/src_rb/linux-5.19.17', '519'),
 ]
 
 

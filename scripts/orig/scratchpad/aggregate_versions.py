@@ -1,21 +1,26 @@
 """Per-version aggregation of FPEA vs UAFX baseline results (5.17.11 ... 7.1.4-norand).
 
-For each version reads the unit list (/tmp/units.txt for 5.17.11, else <SP>/list_<V>.txt),
+For each version reads the unit list ($FPEA_TMP/units.txt for 5.17.11, else <SP>/list_<V>.txt),
 the FPEA JSON in <SP>/rf_<V>/ and the baseline text in <SP>/rw_<V>/.  Prints one line per
-version and writes /home/user/fpea_gt/final/version_results.json.
+version and writes $FPEA_HOME/fpea_gt/final/version_results.json.
 Invoked as `python3 aggregate_versions.py` from the scratchpad folder.
 """
 import json
 import os
 
-SP = '/tmp/claude-1000/-home-user-fpea-gt/beb7f00d-7da4-4363-8809-fde4eb5531af/scratchpad'
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+SP = os.environ.get('FPEA_WORK') or f'{TMP_ROOT}/scratchpad'
 VERSIONS = ('5.17.11', '5.19.17', '6.9', '7.1.4', '7.1.4-norand')
-OUT_JSON = '/home/user/fpea_gt/final/version_results.json'
+OUT_JSON = f'{HOME_ROOT}/fpea_gt/final/version_results.json'
 
 
 def unit_list(version):
     """Unit paths of one version (empty lines skipped)."""
-    list_path = '/tmp/units.txt' if version == '5.17.11' else f'{SP}/list_{version}.txt'
+    list_path = f'{TMP_ROOT}/units.txt' if version == '5.17.11' else f'{SP}/list_{version}.txt'
     return [line.strip() for line in open(list_path) if line.strip()]
 
 

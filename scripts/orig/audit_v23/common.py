@@ -9,7 +9,7 @@ import os
 import re
 
 E = os.environ.get
-HOME = os.path.expanduser('~')
+HOME = E('FPEA_HOME') or os.path.expanduser('~')   # root of the original layout (env.sh)
 REPRO = E('FPEA_REPRO', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 OUTD = E('FPEA_OUT', f'{REPRO}/data/fpea_out')
 UNITS = E('FPEA_UNITS', f'{OUTD}/list_5.17.11.txt')          # 5.17.11 clang14 unit list

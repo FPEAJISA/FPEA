@@ -13,6 +13,7 @@ import math
 import os
 import random
 import re
+import sys
 import subprocess
 from collections import Counter, defaultdict
 from concurrent.futures import ProcessPoolExecutor
@@ -29,9 +30,11 @@ def parse_args():
 
 # ---------------------------------------------------------------- paths (overridden by env.sh)
 E = os.environ.get
-HOME = os.path.expanduser('~')
-SP = E('FPEA_SCRATCH', '/tmp/claude-1000/-home-user-fpea-gt/'
-                       'beb7f00d-7da4-4363-8809-fde4eb5531af/scratchpad')
+# roots of the original measurement layout (env.sh: FPEA_HOME, FPEA_TMP; on the measurement
+# server they were the home directory and /tmp)
+HOME = E('FPEA_HOME') or os.path.expanduser('~')
+TMP = E('FPEA_TMP', '/tmp')
+SP = E('FPEA_SCRATCH') or E('FPEA_WORK') or f'{TMP}/scratchpad'
 FIN = E('FPEA_RESULTS') or E('FPEA_FINAL', f'{HOME}/fpea_gt/final')
 EXP = ((E('FPEA_DATA') + '/expert_pkg') if E('FPEA_DATA')
        else E('FPEA_EXPERT', f'{HOME}/fpea_gt/expert_pkg'))
@@ -40,9 +43,9 @@ PASSD = ((E('FPEA_DATA') + '/gt') if E('FPEA_DATA')
 NOSAN = E('FPEA_RESULTS') or E('FPEA_NOSAN', f'{HOME}/rerun/nosan')
 EPI = ((E('FPEA_DATA') + '/epi') if E('FPEA_DATA')
        else E('FPEA_EPI', f'{HOME}/epi_regfn'))
-UNITS = E('FPEA_UNITS', '/tmp/units.txt')
-UFPEA = E('FPEA_UFPEA', '/tmp/u_fpea')
-LINKOUT = E('FPEA_LINKOUT', '/tmp/fpea_out')
+UNITS = E('FPEA_UNITS', f'{TMP}/units.txt')
+UFPEA = E('FPEA_UFPEA', f'{TMP}/u_fpea')
+LINKOUT = E('FPEA_LINKOUT', f'{TMP}/fpea_out')
 LINKREP = (E('FPEA_RESULTS') + '/link_report_nosan14.txt') if E('FPEA_RESULTS') else None
 LINKBC = E('FPEA_LINKBC', f'{HOME}/linux_bc/linked-nosan14-5.17.11')
 DIS14 = E('FPEA_DIS14', '/usr/bin/llvm-dis-14')
@@ -274,7 +277,7 @@ def check_version_table():
 
 
 def check_first_measurement(VR):
-    """5.1: rf_5.17.11 == /tmp/u_fpea (first measurement) identical per unit."""
+    """5.1: rf_5.17.11 == $FPEA_TMP/u_fpea (first measurement) identical per unit."""
     item = 'units whose rf_5.17.11 vs u_fpea sets differ'
     if os.path.isdir(UFPEA):
         diff_units = 0
@@ -1381,7 +1384,8 @@ def jsonable(v):
 
 
 def write_report(out_path, json_path):
-    """Write the markdown report / json values and print the summary to stdout."""
+    """Write the markdown report / json values and print the summary to stdout.
+    Returns the number of MISMATCH rows (the process exit status is 1 when it is not 0)."""
     ok = sum(r[4] == 'OK' for r in rows)
     bad = [r for r in rows if r[4] == 'MISMATCH']
     n_info = sum(r[4] == 'INFO' for r in rows)
@@ -1411,6 +1415,7 @@ def write_report(out_path, json_path):
     for s, i, e, a, st, n in rows:
         if st == 'INFO':
             print(f'  INFO [{s}] {i}: {a}  {n}')
+    return len(bad)
 
 
 def main():
@@ -1449,8 +1454,10 @@ def main():
         heavy_iterator_only(pop)
         heavy_ath12k(VR)
         heavy_case_studies(VR)
-    write_report(args.out, args.json)
+    return write_report(args.out, args.json)
 
 
 if __name__ == '__main__':
-    main()
+    # exit status 1 on any MISMATCH, so that run_all.sh and CI see the failure (INFO rows do
+    # not count); an exception in a check propagates as a traceback (exit status 1 as well)
+    sys.exit(1 if main() else 0)

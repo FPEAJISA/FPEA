@@ -5,7 +5,7 @@ all (same as hitrate_full), (b) still point to the field the rule intended (5.17
 (c) hold a function but a different field, (d) miss the intended handler because it sits at a
 different index.  Invoked as `python3 semantic_hit.py <version> <bc tree> <header column>`
 (header column 5.17/5.19/6.9/7.1 or 'rand'); prints one JSON line and writes
-/home/user/fpea_gt/final/semantic_hit_<version>.json.
+$FPEA_HOME/fpea_gt/final/semantic_hit_<version>.json.
 """
 import json
 import os
@@ -15,12 +15,17 @@ import sys
 from collections import defaultdict
 from multiprocessing import Pool
 
-DIS = os.path.expanduser('~/llvm/build/bin/llvm-dis')
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+DIS = f'{HOME_ROOT}/llvm/build/bin/llvm-dis'
 DIS_TIMEOUT = 120
 POOL_SIZE = 14
 CHUNKSIZE = 20
-RULES_JSON = os.path.expanduser('~/epi_regfn/uafx_kernel_sts.json')
-HEADER_JSON = os.path.expanduser('~/epi_regfn/handler_offset.json')
+RULES_JSON = f'{HOME_ROOT}/epi_regfn/uafx_kernel_sts.json'
+HEADER_JSON = f'{HOME_ROOT}/epi_regfn/handler_offset.json'
 # global initializer of a named struct: `@name = ... %struct.X { fields } , align`
 INIT_RE = re.compile(r'^@[\w.$]+\s*=[^\n]*?%(struct\.[\w.]+)\s*\{(.*)\}\s*,?\s*align', re.M)
 FN_REF_RE = re.compile(r'@[\w.$]+')
@@ -114,7 +119,7 @@ def main():
     if d.get('with_header'):
         d['rate_semantic_within_header'] = round(d['semantic_hit'] / d['with_header'] * 100, 2)
     print(json.dumps(d, ensure_ascii=False))
-    with open(f'/home/user/fpea_gt/final/semantic_hit_{VERSION}.json', 'w') as out:
+    with open(f'{HOME_ROOT}/fpea_gt/final/semantic_hit_{VERSION}.json', 'w') as out:
         json.dump(d, out, indent=1, ensure_ascii=False)
 
 

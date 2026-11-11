@@ -1,22 +1,26 @@
 #!/usr/bin/env bash
 # Typed-IR comparison: run the LLVM14 (typed pointer) FPEA tool over the linked nosan14
 # tree and compare its entry-point sets with the LLVM16 (opaque pointer) results in
-# /tmp/fpea_out.  Prints a two-line summary plus up to 5 differing files.
-O=~/linux_bc/linked-nosan14-5.17.11
-mkdir -p /tmp/fpea14_out
+# $FPEA_TMP/fpea_out.  Prints a two-line summary plus up to 5 differing files.
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+H=${FPEA_HOME:-$HOME}
+T=${FPEA_TMP:-/tmp}
+O=$H/linux_bc/linked-nosan14-5.17.11
+mkdir -p $T/fpea14_out
 
-# Run fpea14 on every unit in parallel (the sh -c template is kept verbatim).
+# Run fpea14 on every unit in parallel (the sh -c template is kept verbatim apart from the roots).
 find $O/modules $O/builtin -name '*.bc' \
-  | xargs -P 14 -I{} sh -c 'f="{}"; ~/rerun/fpea_pass/fpea14 "$f" "/tmp/fpea14_out/$(echo $f | tr / _).json" 2>/dev/null'
+  | xargs -P 14 -I{} sh -c 'f="{}"; '"$H"'/rerun/fpea_pass/fpea14 "$f" "'"$T"'/fpea14_out/$(echo $f | tr / _).json" 2>/dev/null'
 
 # Compare the typed (fpea14) and opaque (fpea16) entry-point sets per unit.
-python3 - << 'PY'
+T="$T" python3 - << 'PY'
 import glob
 import json
 import os
 
-TYPED_GLOB = '/tmp/fpea14_out/*.json'
-OPAQUE_DIR = '/tmp/fpea_out/'
+TYPED_GLOB = os.environ['T'] + '/fpea14_out/*.json'
+OPAQUE_DIR = os.environ['T'] + '/fpea_out/'
 
 
 def entry_sets(path):

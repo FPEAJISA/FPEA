@@ -2,7 +2,11 @@
 # Per unit, whether the %struct.file_operations named type contains a {}* placeholder
 # (typed IR, clang14).  Output: $SP/ph_<version>.txt (`<unit> PLACEHOLDER|CLEAN` per unit),
 # per-version counts in $SP/placeholder_scan.log.
-SP=/tmp/claude-1000/-home-user-fpea-gt/beb7f00d-7da4-4363-8809-fde4eb5531af/scratchpad
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+H=${FPEA_HOME:-$HOME}
+T=${FPEA_TMP:-/tmp}
+SP=${FPEA_WORK:-$T/scratchpad}
 
 # Patterns over the textual IR, spliced into the per-unit sh -c template below, which must
 # stay byte-identical to the original one-liner (patterns verbatim, inner quotes escaped).
@@ -15,7 +19,7 @@ UNIT_CMD="/usr/bin/llvm-dis-14 -o - \"{}\" 2>/dev/null | grep -E \"$TYPE_LINE\" 
 
 for V in 5.17.11 5.19.17 6.9; do
   if [ "$V" = "5.17.11" ]; then
-    L=/tmp/units.txt
+    L=$T/units.txt
   else
     L=$SP/list_$V.txt
   fi

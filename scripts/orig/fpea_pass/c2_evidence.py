@@ -1,7 +1,7 @@
 """Pure unit-layer comparison of FPEA with the UAFX baseline, focused on C2 (module lifecycle).
 
-Reads /tmp/units.txt (unit list), /tmp/u_fpea/<unit>.json (FPEA output) and
-/tmp/u_wl/<unit>.txt (UAFX baseline).  Prints the summary to stdout and writes
+Reads $FPEA_TMP/units.txt (unit list), $FPEA_TMP/u_fpea/<unit>.json (FPEA output) and
+$FPEA_TMP/u_wl/<unit>.txt (UAFX baseline).  Prints the summary to stdout and writes
 c2_evidence.json.  Invoked as `python3 c2_evidence.py` from the fpea_pass folder.
 """
 import json
@@ -9,9 +9,14 @@ import os
 from collections import Counter
 from multiprocessing import Pool
 
-UNITS_FILE = '/tmp/units.txt'
-FPEA_OUT_DIR = '/tmp/u_fpea/'
-WL_OUT_DIR = '/tmp/u_wl/'
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+UNITS_FILE = f'{TMP_ROOT}/units.txt'
+FPEA_OUT_DIR = f'{TMP_ROOT}/u_fpea/'
+WL_OUT_DIR = f'{TMP_ROOT}/u_wl/'
 OUT_JSON = 'c2_evidence.json'
 POOL_SIZE = 14
 CHUNKSIZE = 8

@@ -1,7 +1,7 @@
 """Link-layer aggregation of FPEA entry points (analyze3).
 
-Reads /tmp/allfiles.txt (linked .bc units), /tmp/fpea_out/<unit>.json (FPEA output),
-/tmp/wl_out/<unit>.txt (UAFX baseline) and, through llvm-dis, the IR of every unit.
+Reads $FPEA_TMP/allfiles.txt (linked .bc units), $FPEA_TMP/fpea_out/<unit>.json (FPEA output),
+$FPEA_TMP/wl_out/<unit>.txt (UAFX baseline) and, through llvm-dis, the IR of every unit.
 Prints report sections 1-2 to stdout (stored as data/results/analyze3.log) and writes
 analyze3.json (read by derive/verify).  Invoked as `python3 analyze3.py > analyze3.log`.
 """
@@ -12,11 +12,16 @@ import subprocess
 from collections import Counter, defaultdict
 from multiprocessing import Pool
 
-ALLFILES = '/tmp/allfiles.txt'
-FPEA_OUT_DIR = '/tmp/fpea_out/'
-WL_OUT_DIR = '/tmp/wl_out/'
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+ALLFILES = f'{TMP_ROOT}/allfiles.txt'
+FPEA_OUT_DIR = f'{TMP_ROOT}/fpea_out/'
+WL_OUT_DIR = f'{TMP_ROOT}/wl_out/'
 OUT_JSON = 'analyze3.json'
-DIS = os.path.expanduser('~/llvm/build/bin/llvm-dis')
+DIS = f'{HOME_ROOT}/llvm/build/bin/llvm-dis'
 DIS_TIMEOUT = 900
 POOL_SIZE = 14
 CHUNKSIZE = 6

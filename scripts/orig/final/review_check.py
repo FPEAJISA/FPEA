@@ -1,6 +1,6 @@
 """Reference set re-check: answer-key consistency against the unit FPEA outputs, corrected
 stratum weights (strata_pop.json), Wilson confidence intervals, population-corrected recall.
-Run with cwd = $FIN (~/fpea_gt/final) by run_all.sh derive, after derive_results.py copied
+Run with cwd = $FIN ($FPEA_HOME/fpea_gt/final) by run_all.sh derive, after derive_results.py copied
 strata_pop.json there: `python3 review_check.py`. Prints the tables and writes
 review_check.json into the cwd."""
 import csv
@@ -9,9 +9,14 @@ import math
 import os
 from collections import defaultdict
 
-ANSWER_PATH = '/home/user/rerun/fpea_pass/gt_answer_unit.json'
-UNITS_PATH = '/tmp/units.txt'          # unit list (setup.py links it to list_5.17.11.txt)
-UNIT_FPEA_DIR = '/tmp/u_fpea/'         # per-unit FPEA json (setup.py links it to rf_5.17.11)
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+ANSWER_PATH = f'{HOME_ROOT}/rerun/fpea_pass/gt_answer_unit.json'
+UNITS_PATH = f'{TMP_ROOT}/units.txt'          # unit list (setup.py links it to list_5.17.11.txt)
+UNIT_FPEA_DIR = f'{TMP_ROOT}/u_fpea/'         # per-unit FPEA json (setup.py links it to rf_5.17.11)
 STRATA_POP_PATH = 'strata_pop.json'
 RA_PATH = '../expert_pkg/rA.csv'
 RB_PATH = '../expert_pkg/rB.csv'

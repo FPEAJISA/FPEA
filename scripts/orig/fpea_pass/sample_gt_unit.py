@@ -3,7 +3,7 @@
 Positives: FPEA entry points stratified by signal (C2-only excluded), seed 517.
 Negatives: defined functions FPEA did not report, from a shuffled subset of units
 (seeds 913 and 31).  Rows are shuffled with seed 9.
-Reads /tmp/units.txt and /tmp/u_fpea/<unit>.json; writes gt_review_unit.csv (blinded),
+Reads $FPEA_TMP/units.txt and $FPEA_TMP/u_fpea/<unit>.json; writes gt_review_unit.csv (blinded),
 gt_answer_unit.json (answer key) and gt_sample_unit.json.  Invoked as `python3 sample_gt_unit.py`.
 """
 import csv
@@ -15,9 +15,14 @@ import subprocess
 from collections import defaultdict
 from multiprocessing import Pool
 
-UNITS_FILE = '/tmp/units.txt'
-FPEA_OUT_DIR = '/tmp/u_fpea/'
-DIS = os.path.expanduser('~/llvm/build/bin/llvm-dis')
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+UNITS_FILE = f'{TMP_ROOT}/units.txt'
+FPEA_OUT_DIR = f'{TMP_ROOT}/u_fpea/'
+DIS = f'{HOME_ROOT}/llvm/build/bin/llvm-dis'
 DIS_TIMEOUT = 300
 POOL_SIZE = 14
 CHUNKSIZE = 6

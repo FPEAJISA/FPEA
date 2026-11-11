@@ -17,8 +17,8 @@ import subprocess
 import sys
 from collections import Counter, defaultdict
 
-# ---- paths (env.sh variables, defaults = the measurement server layout)
-R = os.environ.get('FPEA_REPRO', os.path.expanduser('~/fpea_gt/repro'))
+# ---- paths (env.sh variables; default = this checkout)
+R = os.environ.get('FPEA_REPRO', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUTD = os.environ.get('FPEA_OUT', f'{R}/data/fpea_out')
 LINKOUT = os.environ.get('FPEA_LINKOUT', f'{R}/data/link/fpea_out')
 DATA = os.environ.get('FPEA_DATA', f'{R}/data')
@@ -470,6 +470,7 @@ def write_summary(report, metrics, TP, FP):
     with open(f'{O}/derive_report.md', 'w') as out:
         out.write('\n'.join(lines) + '\n')
     print('\n'.join(lines))
+    return [k for k, v in report if v != 'SAME']
 
 
 def main():
@@ -485,8 +486,13 @@ def main():
     derive_fp_types(report, ref)
     derive_link_layer_q15(report, ref)
     derive_audit(report)
-    write_summary(report, metrics, TP, FP)
+    return write_summary(report, metrics, TP, FP)
 
 
 if __name__ == '__main__':
-    main()
+    # exit status 1 when any derived file is not SAME (DIFF, NO STORED or a failed audit
+    # script), so that run_all.sh and CI see the failure
+    bad = main()
+    if bad:
+        print(f'derive_results: {len(bad)} file(s) not SAME: {", ".join(bad)}', file=sys.stderr)
+    sys.exit(1 if bad else 0)

@@ -2,7 +2,7 @@
 """Re-measurement of the introduction statistics, with explicit measurement
 definitions so they are reproducible.
 
-Each statistic is one grep over the 5.17.11 kernel source tree (~/kernel/linux-5.17.11).
+Each statistic is one grep over the 5.17.11 kernel source tree ($FPEA_HOME/kernel/linux-5.17.11).
 Output: the counts as JSON on stdout and in intro_stats.json in the cwd.
 Invoked as `python3 intro_stats.py`.
 """
@@ -10,7 +10,12 @@ import json
 import os
 import subprocess
 
-S = os.path.expanduser('~/kernel/linux-5.17.11')
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+S = f'{HOME_ROOT}/kernel/linux-5.17.11'
 
 
 def sh(cmd):

@@ -10,7 +10,7 @@ in the 6.9 IR:
   D) at the rule index of a rule-struct initializer (another cause on the tool side)
   E) only in an initializer of a struct not covered by a rule
 Reads <SP>/rw_5.19.17, <SP>/rw_6.9, <SP>/list_6.9.txt and the 6.9 IR; prints the tallies and
-writes /home/user/fpea_gt/final/kind_drift_519_69.json.  Invoked as `python3 kind_drift.py`.
+writes $FPEA_HOME/fpea_gt/final/kind_drift_519_69.json.  Invoked as `python3 kind_drift.py`.
 """
 import json
 import os
@@ -19,14 +19,19 @@ import subprocess
 from collections import Counter, defaultdict
 from multiprocessing import Pool
 
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
 DIS = '/usr/bin/llvm-dis-14'
 DIS_TIMEOUT = 300
 POOL_SIZE = 14
 CHUNKSIZE = 4
-SP = '/tmp/claude-1000/-home-user-fpea-gt/beb7f00d-7da4-4363-8809-fde4eb5531af/scratchpad'
-T = {'5.19.17': '/home/user/linux_bc/nosan-rb-5.19.17', '6.9': '/home/user/linux_bc/nosan-rb-6.9'}
-RULES_JSON = '/home/user/epi_regfn/uafx_kernel_sts.json'
-OUT_JSON = '/home/user/fpea_gt/final/kind_drift_519_69.json'
+SP = os.environ.get('FPEA_WORK') or f'{TMP_ROOT}/scratchpad'
+T = {'5.19.17': f'{HOME_ROOT}/linux_bc/nosan-rb-5.19.17', '6.9': f'{HOME_ROOT}/linux_bc/nosan-rb-6.9'}
+RULES_JSON = f'{HOME_ROOT}/epi_regfn/uafx_kernel_sts.json'
+OUT_JSON = f'{HOME_ROOT}/fpea_gt/final/kind_drift_519_69.json'
 MAX_EXAMPLES = 5
 DEFINE_RE = re.compile(r'^define[^@]*@([\w.$]+)\(', re.M)
 # global initializer of a named struct: `@name = ... %struct.X { fields } , align|section`

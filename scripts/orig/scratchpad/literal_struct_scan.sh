@@ -3,7 +3,11 @@
 # or literal structs ({ ...) (rule structs such as file_operations).
 # Output: $SP/lit_<version>.txt (one `<unit> <count> <struct|LITERAL_FOPS>` line per tally),
 # progress in $SP/literal_struct_scan.log.
-SP=/tmp/claude-1000/-home-user-fpea-gt/beb7f00d-7da4-4363-8809-fde4eb5531af/scratchpad
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+H=${FPEA_HOME:-$HOME}
+T=${FPEA_TMP:-/tmp}
+SP=${FPEA_WORK:-$T/scratchpad}
 
 # Regexes over the textual IR (clang14, typed pointers).  They are spliced into the per-unit
 # sh -c template below, which must stay byte-identical to the original one-liner: the
@@ -19,7 +23,7 @@ UNIT_CMD="/usr/bin/llvm-dis-14 -o - \"{}\" 2>/dev/null | grep -E \"$GREP_INIT\" 
 
 for V in 5.17.11 5.19.17 6.9; do
   if [ "$V" = "5.17.11" ]; then
-    L=/tmp/units.txt
+    L=$T/units.txt
   else
     L=$SP/list_$V.txt
   fi

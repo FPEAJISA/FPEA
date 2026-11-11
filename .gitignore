@@ -4,8 +4,9 @@ data/link/
 # built by ./run_all.sh build-tools
 tool/fpea14
 tool/fpea16
-# local overrides
+# local overrides and the full-reproduction layout (setup.py layout, build trees, toolchains)
 env.local.sh
+work/
 __pycache__/
 *.pyc
 logs/run_all.log

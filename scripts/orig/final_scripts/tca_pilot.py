@@ -11,10 +11,15 @@ import subprocess
 from collections import Counter, defaultdict
 from concurrent.futures import ProcessPoolExecutor
 
-DIS = '/home/user/llvm-14.0.7/bin/llvm-dis'
-SRC = '/home/user/rerun/nosan/src14/linux-5.17.11/'
-E = '/home/user/fpea_gt/expert_pkg/'
-ANSWER_PATH = '/home/user/rerun/fpea_pass/gt_answer_unit.json'
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+DIS = f'{HOME_ROOT}/llvm-14.0.7/bin/llvm-dis'
+SRC = f'{HOME_ROOT}/rerun/nosan/src14/linux-5.17.11/'
+E = f'{HOME_ROOT}/fpea_gt/expert_pkg/'
+ANSWER_PATH = f'{HOME_ROOT}/rerun/fpea_pass/gt_answer_unit.json'
 N_WORKERS = 14
 DIS_TIMEOUT = 600
 # `define <attrs> @name(` line of the textual IR: group 1 = linkage/attributes, group 2 = name

@@ -2,8 +2,8 @@
 """Cross-version layout drift of kernel op-table structs (tool-independent, a kernel-side fact).
 
 For each of four kernel versions the field count of every target struct is read from the
-LLVM type definitions of the first drivers/ modules that define it (~/linux_bc/linux-<ver>-full).
-Inputs: ~/epi_regfn/uafx_kernel_sts.json (UAFX rule structs) and the .bc trees.
+LLVM type definitions of the first drivers/ modules that define it ($FPEA_HOME/linux_bc/linux-<ver>-full).
+Inputs: $FPEA_HOME/epi_regfn/uafx_kernel_sts.json (UAFX rule structs) and the .bc trees.
 Output: a report on stdout and struct_drift_full.json in the cwd.
 Invoked as `python3 struct_drift_full.py`.
 """
@@ -12,8 +12,13 @@ import os
 import re
 import subprocess
 
-DIS = os.path.expanduser('~/llvm/build/bin/llvm-dis')
-KS = json.load(open(os.path.expanduser('~/epi_regfn/uafx_kernel_sts.json')))
+# roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
+# measurement server they were the home directory, /tmp and the session scratchpad)
+HOME_ROOT = os.environ.get('FPEA_HOME') or os.path.expanduser('~')
+TMP_ROOT = os.environ.get('FPEA_TMP', '/tmp')
+
+DIS = f'{HOME_ROOT}/llvm/build/bin/llvm-dis'
+KS = json.load(open(f'{HOME_ROOT}/epi_regfn/uafx_kernel_sts.json'))
 # UAFX rule structs plus well-known op tables
 TARGETS = sorted({st for st, _, _ in KS} | {
     'struct.ieee80211_ops', 'struct.ethtool_ops', 'struct.dev_pm_ops',
@@ -59,7 +64,7 @@ def scan(ver, cap=250):
 
     At most `cap` modules per subsystem are disassembled; scanning stops as soon as
     every target has been observed."""
-    root = os.path.expanduser(f'~/linux_bc/linux-{ver}-full/drivers')
+    root = f'{HOME_ROOT}/linux_bc/linux-{ver}-full/drivers'
     sizes = {}
     for sub in SUBDIRS:
         d = os.path.join(root, sub)
