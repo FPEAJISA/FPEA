@@ -353,7 +353,7 @@
 | OK | Table 12 / 5.5 axis 1 | fpea14 = fpea16 on the LLVM 14 bitcode | (129967, 129967) | (129967, 129967) |  |
 | OK | Table 12 / 5.5 axis 1 | differing units / only14 / only16 / label diff / defined diff | (0, 0, 0, 0, 0) | (0, 0, 0, 0, 0) |  |
 | OK | Table 12 / 5.5 axis 1 | units compared | 15522 | 15522 |  |
-| OK | Table S3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | {'INT_HANDLER_T|external_declared': 151, 'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289} |  |
+| OK | Table S3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | {'IOCTL_CAND|defined_not_FPEA': 289, 'IOCTL_CAND|external_declared': 547, 'INT_HANDLER_T|external_declared': 151} |  |
 | OK | Table 2 auxiliary heavy | C3-only used only by iterator-type APIs | 677 | 677 | definition: every call taking the address as an argument matches ITER (fp_audit.py regex); the earlier 726 is not reproducible |
 | OK | Table 2 auxiliary | iterator share % | 0.52 | 0.52 |  |
 | OK | 5.10 ath12k | 6.9 mac unit FPEA / C1 in @ath12k_ops | (45, 34) | (45, 34) |  |

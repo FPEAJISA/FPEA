@@ -1163,7 +1163,8 @@ def check_audit_v23(ref, pop):
     chk('Table S2', 'rule verdicts 16,476 + author verdicts 80 = 16,556', 16556,
         t.get('export_addressable_only', 0) + t.get('select_phi_ret(+)', 0)
         + t.get('icmp_only', 0) + t.get('export+icmp+bitcastcall', 0) + t.get('call_arg(+)', 0))
-    uj = json.load(open(f'{FIN}/at_only_unit_judgment.json'))
+    # the three author-verdict files are stored results (data/results), never produced by a re-run
+    uj = audit_result('at_only_unit_judgment.json')
     tot = uj['totals']
     chk('3.7 / Table S2', 'unit-boundary author verdict: entry points 51 = 15 + 36, sync 29',
         (51, 15, 36, 29),
@@ -1183,14 +1184,17 @@ def check_audit_v23(ref, pop):
     judged = set(uj['label1_other_module']['list'])
     for g in list(uj['label1_other_unit_same_module'].values()) + list(uj['label0_sync_callback'].values()):
         judged |= set(g['list'])
-    mj = json.load(open(f'{FIN}/at_only_judgment.json'))
+    mj = audit_result('at_only_judgment.json')
     chk('3.7 / 5.10', 'kernel-module-boundary author verdict: entry points 15', 15,
         mj['summary']['author_judged_entries'])
-    src = json.load(open(f'{FIN}/at80_src.json'))
+    src = audit_result('at80_src.json')
     call80 = {r[1] for r in at['rows'] if _at_tag(r[2]) == 'call_arg(+)'}
     chk('Table S2', 'the 80 call_arg functions = at80_src.json = the judged functions',
         (80, True, True), (len(src), call80 == {x[1] for x in src}, call80 == judged))
-    s50 = res('at_only_sample50.json') if os.path.exists(f'{FIN}/at_only_sample50.json') else None
+    try:
+        s50 = res('at_only_sample50.json')
+    except FileNotFoundError:
+        s50 = None
     if s50:
         info('Table S2', 'random 50 of the AT-only pairs (seed 2026): tags',
              dict(Counter(_at_tag(r[2]) for r in s50)),
