@@ -78,9 +78,9 @@ d9fa12ed0c4c63f2401e704d9484ee93  data/results/semantic_hit_7.1.4-norand.json
 f351b1aa928ec1fe51cad56298741452  data/results/uaf_subset_unit.json
 266104a40b4e43a767352c5901536173  data/results/version_measure.log
 b034b9fc99de6be868ae0cf8996348e7  data/results/version_results.json
-eeec5f09fecf015afec3812529380218  data/results/wl_ext.json
+ac2763f85a5ea968b994c080368b5b46  data/results/wl_ext.json
 948ddf30e2833ac2e5f944c6e1e36008  data/results/wl_only.json
-0534b5d9405b403ed65f0c4c9a8eda9b  docs/data_dictionary.md
+63592dc8688121efc38eae9521839c29  docs/data_dictionary.md
 274d0caa7d656f9f49ea05025ae9674a  env.sh
 0d56ccd048b2b75d8a95c277d35f462d  figures/fig1_overview.pdf
 04522a02a8e7670391733d472feb2dcc  figures/fig1_overview.png
@@ -105,8 +105,8 @@ b14310634bf12d23f044a6da5064fc20  figures/fig6_subsystem_ratio.svg
 e0c8b816930a5b3d8b8d191059c7d56b  figures/fig7_precision_strata.svg
 1261640adceee62d4a5b513fb756dd86  .gitignore
 e3beafad44867c50481411642f31ef26  LICENSE
-58b863afa136153394f6e623c454b0c1  logs/verify_report.md
-a7337cd01fd5d39baf58c326b484db69  logs/verify_values.json
+a9e235a2ef71ff97febfe1f8f6733eb1  logs/verify_report.md
+b298febb399fbfe138c13c7ec7d876ea  logs/verify_values.json
 8d99703dbc4ecd5d5c6f9c4985c5917a  out/boot2_results.json
 51f338e66e519927ea4643c20f9e30b6  out/derive_report.md
 838315b4790a4bbf915d36f8bf2656a2  out/fp_types.json
@@ -118,7 +118,7 @@ bdab744bfdc03e87875a301c1ef5624b  out/randstruct_vs_norand_714.json
 893e0ac49457f7d14ba560e8a9a3af9c  out/typed_mode_cmp.json
 59189b69faa46cafaa3db2f2656bb815  out/typed_vs_opaque.json
 b034b9fc99de6be868ae0cf8996348e7  out/version_results.json
-eeec5f09fecf015afec3812529380218  out/wl_ext.json
+ac2763f85a5ea968b994c080368b5b46  out/wl_ext.json
 51901829c84431eff141ce786598013d  README.md
 295ce8c5ae5edb8dbba916dafc2211a1  run_all.sh
 15850cf8caca0a3bec9b660d16583f89  scripts/build_kernel.sh
@@ -131,7 +131,7 @@ f74ec014ef9e01f3854c0786dc18d8c3  scripts/orig/audit_v23/defmap.sh
 b30fe57470fa1b42e2941888e880bff7  scripts/orig/audit_v23/popN.py
 d86df0e2c3302999047a164a832003d0  scripts/orig/audit_v23/recon_pool2.py
 4bf11575a19e2aa62d33395908b5a9d8  scripts/orig/audit_v23/typed_cmp_unit.py
-2b3ece5ba24d1f8b3349226e798e2470  scripts/orig/audit_v23/wl_ext.py
+ccf5a1abfe41f9a2f55530333940128f  scripts/orig/audit_v23/wl_ext.py
 33e6c0899d35f993341d4f2b9a7e5a66  scripts/orig/audit_v23/wl_only.py
 3e8f7a6be8c0e8070da8b59a6e434206  scripts/orig/epi_regfn/filter_validate.py
 6e42cbe7027eb025bd0368e22324b162  scripts/orig/epi_regfn/handler_offset.py
@@ -164,7 +164,7 @@ abfabccb384710aa8a04c126485fa2ad  scripts/orig/scratchpad/kind_drift.py
 35ac7496c218a5589737846fbf2d1d9d  scripts/orig/scratchpad/semantic_hit_all.sh
 ae1e4e6490f21560bfaec4ee3f3a1549  scripts/orig/scratchpad/semantic_hit.py
 7baa009abb352dce6e1a9a3d49f401ad  scripts/setup.py
-0f5ce859a60b64be2e2eaf1f04e372fa  scripts/verify_numbers.py
+ea39951d3687530c7a8289f265f8a72f  scripts/verify_numbers.py
 a1068edf216bd59b8bccd66b58c763f3  THIRD_PARTY.md
 37d6ad38cc3d01d36d1672acfc4f315c  tool/build.sh
 01212923a42b9a3b1e7966feb6c36c0c  tool/fpea.cpp

@@ -8,6 +8,9 @@ FPEA output:
   trampolines (__SCT__tp_func_*, tracepoint by-products reported by signature) vs real handlers;
   real handlers recovered at the link layer or not (inter-module registration / direct call only).
   289 defined pairs -> tracepoint by-products (25) vs real ioctl handlers (264); link recovered.
+  The two rows overlap (a handler defined in its unit is also declared in client units):
+  shared handlers by name = |ext_other_unit_registered ∪ defined_real| (372; rows 342 + 264 = 606
+  count 234 names twice), link recovered 304 (rows 304 + 224 = 528), remaining 68 (rows 38 + 40 = 78).
 Output wl_ext.json."""
 import collections
 import gzip
@@ -66,7 +69,14 @@ def main():
         defined_link_unrecovered=sorted(real_def - link),
         shared_handlers_total=len(real_ext) + len(real_def),
         shared_link_recovered=len(real_ext & link) + len(real_def & link),
-        shared_link_unrecovered=len(real_ext - link) + len(real_def - link))
+        shared_link_unrecovered=len(real_ext - link) + len(real_def - link),
+        # The two rows count the same function twice when a handler defined in its unit is
+        # also reported as an external symbol in client units: merge by name.
+        row_overlap_names=sorted(real_ext & real_def),
+        shared_unique_total=len(real_ext | real_def),
+        shared_unique_link_recovered=len((real_ext | real_def) & link),
+        shared_unique_link_unrecovered=len((real_ext | real_def) - link),
+        wl_only_unique_functions=len(ext | dfn))
     print(json.dumps({k: (v if not isinstance(v, list) else len(v)) for k, v in out.items()},
                      indent=1))
     json.dump(out, open(outpath('wl_ext.json'), 'w'), indent=1)

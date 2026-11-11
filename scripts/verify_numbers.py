@@ -1216,8 +1216,13 @@ def check_audit_v23(ref, pop):
         (25, 264), (len(x['defined_trace_artifacts']), x['defined_real']))
     chk('Table S3 / S6', 'real ioctl handlers: link layer recovers / remain', (224, 40),
         (x['defined_link_recovered'], len(x['defined_link_unrecovered'])))
-    chk('5.3 / S6', 'shared handlers total / link recovered / inter-module', (606, 528, 78),
-        (x['shared_handlers_total'], x['shared_link_recovered'], x['shared_link_unrecovered']))
+    chk('5.3 / S6', 'shared handlers: row sums (342+264 / 304+224 / 38+40), by name '
+        '(total / link recovered / remaining), names in both rows, unique functions of the 987',
+        (606, 528, 78, 372, 304, 68, 234, 414),
+        (x['shared_handlers_total'], x['shared_link_recovered'], x['shared_link_unrecovered'],
+         x['shared_unique_total'], x['shared_unique_link_recovered'],
+         x['shared_unique_link_unrecovered'], len(x['row_overlap_names']),
+         x['wl_only_unique_functions']))
     chk('5.3', 'whitelist-side errors: tracepoint 25 + static-call 4 + outside drivers 4', 33,
         len(x['defined_trace_artifacts']) + len(x['ext_static_call_trampolines'])
         + len(x['ext_outside_drivers']))
