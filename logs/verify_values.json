@@ -993,7 +993,7 @@
   4,
   342
  ],
- "Table S3 / S6|other-unit registered: link layer recovers / inter-module": [
+ "Table S3 / S6|other-unit registered: link layer recovers / not recovered": [
   304,
   38
  ],
@@ -1016,7 +1016,25 @@
   414
  ],
  "5.3|whitelist-side errors: tracepoint 25 + static-call 4 + outside drivers 4": 33,
- "5.10|inter-module examples remain unrecovered": true,
+ "5.10|inter-module examples (drm_ioctl, ata_scsi_ioctl, dvb_generic_ioctl) are among the 68 not recovered": true,
+ "5.3 / 5.10 / S6|unrecovered 68: inter-module / unlinked module / direct-call only / other": [
+  68,
+  29,
+  9,
+  30,
+  0
+ ],
+ "5.10 / S6|examples: drm_ioctl, ata_scsi_ioctl, dvb_generic_ioctl inter-module; scsi_ioctl, cdrom_ioctl direct-call only": [
+  "inter_module",
+  "inter_module",
+  "inter_module",
+  "direct_call_only",
+  "direct_call_only"
+ ],
+ "S6|drm_ioctl / ata_scsi_ioctl: files of other modules taking the address": [
+  54,
+  91
+ ],
  "Table 12 / 5.5 axis 1|fpea14 = fpea16 on the LLVM 14 bitcode": [
   129967,
   129967

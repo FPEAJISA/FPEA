@@ -6,13 +6,13 @@ non-entry-point functions: llvm-dis `define` minus the Section 3.4 filter minus 
 points. Output recon_pool2.json = {pool_total, zero_units, max_unit, M: {unit: size},
 pool: {unit: [function names]}, sample_in_pool}. The paper quotes pool 3,071 over 500 units
 (122 with 0, max 100). The earlier recon_pool.py keyed units by basename and collided on 10
-duplicate names ("490 valid units / pool 3,021"); this version keys by full path. Needs the
-bitcode tree (heavy)."""
+duplicate names ("490 valid units / pool 3,021"); this version keys by the unit path relative to
+the source tree (drivers/…; absolute until 2026-11-11). Needs the bitcode tree (heavy)."""
 import json
 import subprocess
 from multiprocessing import Pool
 
-from common import (CONTAM, DEFINE_RE, DIS16, GT, NPROC, module_name, outpath, rf_json,
+from common import (CONTAM, DEFINE_RE, DIS16, GT, NPROC, module_name, outpath, relunit, rf_json,
                     selected_units)
 
 
@@ -28,14 +28,14 @@ def main():
     res = {}
     with Pool(NPROC) as p:
         for f, lst in p.imap_unordered(neg, sel, chunksize=6):
-            res[f] = lst
+            res[relunit(f)] = lst
     M = {f: len(l) for f, l in res.items()}
     print('units', len(M), 'pool', sum(M.values()), 'zero',
           sum(1 for v in M.values() if v == 0), 'max', max(M.values()))
     de = {f: json.load(open(rf_json(f)))['defined'] - len(json.load(open(rf_json(f)))['entries'])
           for f in sel}
     print('sum defined-entries', sum(de.values()), 'units differ',
-          sum(1 for f in sel if de[f] != M[f]))
+          sum(1 for f in sel if de[f] != M[relunit(f)]))
     d = json.load(open(GT))
     poolset = {(fn, module_name(f)) for f, l in res.items() for fn in l}
     inpool = sum(1 for fn, m in d['neg'] if (fn, m) in poolset)

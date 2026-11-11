@@ -101,7 +101,9 @@ if [ "$FPEA_MODE" = rerun ]; then
   export FPEA_NOSAN_DIR="${FPEA_NOSAN_DIR:-$FPEA_HOME/rerun/nosan}"
   export FPEA_PASS_DIR="${FPEA_PASS_DIR:-$FPEA_HOME/rerun/fpea_pass}"
   export FPEA_EPI_DIR="${FPEA_EPI_DIR:-$FPEA_HOME/epi_regfn}"
-  export FPEA_RESULTS="${FPEA_RESULTS:-$FPEA_FIN}"
+  # FPEA_RESULTS stays the artifact's data/results in rerun mode too: it is the comparison
+  # target of the audit stage and of derive (until 2026-11-11 it defaulted to $FPEA_FIN, where
+  # nothing writes popN.json etc., so the audit comparison could not run on a new machine)
 fi
 
 # --- 6. FPEA/UAFX outputs and results (artifact defaults; already set above in rerun mode) ---

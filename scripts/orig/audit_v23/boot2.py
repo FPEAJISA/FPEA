@@ -18,7 +18,7 @@ import os
 import random
 import statistics
 
-from common import GT, OUTDIR, RESULTS, module_name, outpath, selected_units, units
+from common import GT, OUTDIR, RESULTS, module_name, outpath, relunit, selected_units, units
 
 N = {'C1': 90831, 'C4only': 16329, 'C3': 8874, 'C5': 1331}
 n = {'C1': 80, 'C4only': 70, 'C3': 60, 'C5': 45}
@@ -59,7 +59,7 @@ def main():
     res = rp['pool']
     # the bootstrap draws from the stage-1 selection in its original (seed-913 shuffle) order;
     # the percentile results depend on this order
-    sel = selected_units()
+    sel = [relunit(u) for u in selected_units()]   # recon_pool2 keys are relative paths
     assert set(sel) == set(res), 'recon_pool2.json does not hold the seed-913 selection'
     units_all = units()
     pool_total = sum(len(v) for v in res.values())

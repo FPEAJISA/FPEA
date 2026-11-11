@@ -27,6 +27,11 @@ DIS_TIMEOUT = 300
 POOL_SIZE = 14
 CHUNKSIZE = 6
 NEG_UNITS = 500           # units scanned for the negative pool (after shuffling)
+# The 500 units of the original draw as relative paths (artifact data/gt/stage1_units_500.txt).
+# The seed-913 shuffle depends on the order of units.txt (filesystem order), so a regenerated
+# list would select other units; when this file is given it replaces the shuffle.
+STAGE1_FILE = os.environ.get('FPEA_STAGE1_UNITS', '')
+SRC_MARK = '/linux-5.17.11/'
 NEG_POOL_LIMIT = 50000    # stop scanning once the pool exceeds this
 NEG_SAMPLE = 200
 QUOTA = {'C1': 80, 'C4only': 70, 'C3': 60, 'C5': 45}
@@ -106,18 +111,34 @@ def neg(bc):
     return [(fn, mod) for fn in clean - entry_set]
 
 
-def collect_negative_pool(units):
-    """Negative candidates from the first NEG_UNITS of a shuffled unit list (seed 913)."""
+def stage1_units(units):
+    """The first NEG_UNITS of the shuffled unit list (seed 913), or the recorded original selection
+    (STAGE1_FILE, relative paths) joined with the root of units.txt."""
+    if STAGE1_FILE and os.path.exists(STAGE1_FILE):
+        u0 = units[0]
+        root = u0[:u0.index(SRC_MARK) + len(SRC_MARK)] if SRC_MARK in u0 else ''
+        sel = [root + line.strip() for line in open(STAGE1_FILE) if line.strip()]
+        print(f"stage-1 units from {STAGE1_FILE}: {len(sel)}")
+        return sel[:NEG_UNITS]
     random.seed(913)
     shuffled = units[:]
     random.shuffle(shuffled)
+    return shuffled[:NEG_UNITS]
+
+
+def collect_negative_pool(units):
+    """Negative candidates from the stage-1 units (stage1_units). The pool is returned sorted:
+    the original 2026-10 draw sampled it in worker-arrival order (imap_unordered), which is not
+    recorded, so the original 200 negatives are not re-drawable; they are linked to the pool by
+    membership (function, module), see recon_pool2.py."""
+    shuffled = stage1_units(units)
     pool = []
     with Pool(POOL_SIZE) as workers:
         for result in workers.imap_unordered(neg, shuffled[:NEG_UNITS], chunksize=CHUNKSIZE):
             pool += result
             if len(pool) > NEG_POOL_LIMIT:
                 break
-    return pool
+    return sorted(pool)
 
 
 # ── merge, blinded CSV + answer-key mapping ──

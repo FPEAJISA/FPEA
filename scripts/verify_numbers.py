@@ -58,6 +58,16 @@ ALLF = os.path.join(os.path.dirname(LINKOUT.rstrip('/')), 'allfiles.txt')
 # Stored unit list and rf output used for the original sample draw (see check_sample_reproduction)
 REPRO = E('FPEA_REPRO', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 UNITS_ORIG = E('FPEA_UNITS_ORIG', f'{REPRO}/data/fpea_out/list_5.17.11.txt')
+
+
+def audit_result(name):
+    """Result file of scripts/orig/audit_v23: the copy regenerated into out/ by the audit stage if
+    present, else the stored copy in data/results (in both modes; until 2026-11-11 popN.json was
+    read from FPEA_FINAL, where rerun mode never writes it)."""
+    for d in (E('FPEA_OUTDIR', ''), RESD or '', f'{REPRO}/data/results'):
+        if d and os.path.exists(f'{d}/{name}'):
+            return json.load(open(f'{d}/{name}'))
+    raise FileNotFoundError(name)
 RF_ORIG = E('FPEA_RF_ORIG', f'{REPRO}/data/fpea_out/rf_5.17.11')
 # re-run mode: items that cannot be reproduced, such as run times, are recorded as INFO only
 RERUN = E('FPEA_MODE') == 'rerun'
@@ -536,7 +546,7 @@ def check_recall(ref, pop):
     # name filter) minus the FPEA entry points. The pre-filter value totdef - nF = 112,856 is the
     # sensitivity figure of Section 5.10 (recall 0.934).
     neg_pop_pre = totdef - nF
-    popn = json.load(open(f'{FIN}/popN.json'))['totals']
+    popn = audit_result('popN.json')['totals']
     chk('5.1', 'defined functions after the 3.4 filter', 236515, popn['define_clean'])
     chk('5.1', 'defined functions before the filter (llvm-dis = fpea json)', (242823, 242823),
         (popn['define_all'], popn['json_defined']))
@@ -1099,11 +1109,7 @@ def check_audit_v23(ref, pop):
     tagging and the 80 author-judged cases), Table S3 (whitelist-only decomposition), Table 12
     row 1 (fpea14 = fpea16 on the same bitcode). Reads the result files written by
     scripts/orig/audit_v23/ (data/results; regenerated into out/ by derive)."""
-    def res(name):
-        for d in (os.environ.get('FPEA_OUTDIR', ''), FIN):
-            if d and os.path.exists(f'{d}/{name}'):
-                return json.load(open(f'{d}/{name}'))
-        raise FileNotFoundError(name)
+    res = audit_result
 
     # --- negative pool (recon_pool2) and the two FN estimators / bootstrap (boot2)
     rp = res('recon_pool2.json')
@@ -1210,7 +1216,7 @@ def check_audit_v23(ref, pop):
     chk('Table S3', 'not identified in the defining unit: static-call trampolines / registered '
         'in another unit', (4, 342), (len(x['ext_static_call_trampolines']),
                                        x['ext_other_unit_registered']))
-    chk('Table S3 / S6', 'other-unit registered: link layer recovers / inter-module', (304, 38),
+    chk('Table S3 / S6', 'other-unit registered: link layer recovers / not recovered', (304, 38),
         (x['ext_link_recovered'], len(x['ext_link_unrecovered'])))
     chk('Table S3', 'defined-in-unit 289 = tracepoint by-products 25 + real ioctl handlers 264',
         (25, 264), (len(x['defined_trace_artifacts']), x['defined_real']))
@@ -1226,9 +1232,22 @@ def check_audit_v23(ref, pop):
     chk('5.3', 'whitelist-side errors: tracepoint 25 + static-call 4 + outside drivers 4', 33,
         len(x['defined_trace_artifacts']) + len(x['ext_static_call_trampolines'])
         + len(x['ext_outside_drivers']))
-    chk('5.10', 'inter-module examples remain unrecovered', True,
-        {'drm_ioctl', 'ata_scsi_ioctl', 'dvb_generic_ioctl'} <= set(x['ext_link_unrecovered'])
-        and 'scsi_ioctl' in set(x['defined_link_unrecovered']) | set(x['ext_link_unrecovered']))
+    chk('5.10', 'inter-module examples (drm_ioctl, ata_scsi_ioctl, dvb_generic_ioctl) are among the 68 not recovered', True,
+        {'drm_ioctl', 'ata_scsi_ioctl', 'dvb_generic_ioctl'} <= set(x['ext_link_unrecovered']))
+    # --- why the 68 are not recovered (resid68.py, 2026-11-11): Section 5.3 / 5.10, S6 (b')
+    r68 = res('resid68.json')
+    chk('5.3 / 5.10 / S6', 'unrecovered 68: inter-module / unlinked module / direct-call only / other',
+        (68, 29, 9, 30, 0),
+        (r68['n'], r68['counts'].get('inter_module', 0), r68['counts'].get('unlinked_module', 0),
+         r68['counts'].get('direct_call_only', 0),
+         sum(v for k, v in r68['counts'].items()
+             if k not in ('inter_module', 'unlinked_module', 'direct_call_only'))))
+    chk('5.10 / S6', 'examples: drm_ioctl, ata_scsi_ioctl, dvb_generic_ioctl inter-module; scsi_ioctl, cdrom_ioctl direct-call only',
+        ('inter_module',) * 3 + ('direct_call_only',) * 2,
+        tuple(r68['classes'][f] for f in ('drm_ioctl', 'ata_scsi_ioctl', 'dvb_generic_ioctl',
+                                           'scsi_ioctl', 'cdrom_ioctl')))
+    chk('S6', 'drm_ioctl / ata_scsi_ioctl: files of other modules taking the address', (54, 91),
+        (len(r68['detail']['drm_ioctl']['at_other']), len(r68['detail']['ata_scsi_ioctl']['at_other'])))
 
     # --- fpea14 = fpea16 on the same bitcode (Table 12 row 1, Section 5.5 first axis)
     tm = res('typed_mode_cmp.json')

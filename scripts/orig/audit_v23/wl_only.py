@@ -13,7 +13,7 @@ import re
 import subprocess
 from multiprocessing import Pool
 
-from common import DIS14, NPROC, RF, RW, outpath, rf_json, units
+from common import DIS14, NPROC, RF, RW, outpath, relunit, rf_json, units
 
 DECL_RE = re.compile(r'^declare[^@]*@([\w.$]+)\(', re.M)
 DEF_RE = re.compile(r'^define[^@]*@([\w.$]+)\(', re.M)
@@ -73,7 +73,9 @@ def main():
                    ext_pairs=len(ext), ext_unique=len(extfn), ext_top=extfn.most_common(20),
                    ext_in_fpea_elsewhere=sum(1 for fn in extfn if fn in Fnames),
                    defined_not_fpea=len(defined), defined_unique=len({fn for u, fn in defined}),
-                   rows=[[u, fn, Wkind[(u, fn)], c] for u, fn, c in rows]),
+                   # unit paths relative to the source tree (drivers/…), so that a re-run under
+                   # another root compares equal
+                   rows=[[relunit(u), fn, Wkind[(u, fn)], c] for u, fn, c in rows]),
               open(outpath('wl_only.json'), 'w'), indent=1, ensure_ascii=False)
 
 

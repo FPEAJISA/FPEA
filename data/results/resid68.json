@@ -1,0 +1,2567 @@
+{
+ "n": 68,
+ "classes": {
+  "NCR_700_intr": "inter_module",
+  "aac_dev_ioctl": "direct_call_only",
+  "aac_do_ioctl": "direct_call_only",
+  "altera_spi_irq": "inter_module",
+  "amd_iommu_int_handler": "inter_module",
+  "amd_iommu_int_thread": "inter_module",
+  "arcnet_interrupt": "inter_module",
+  "ata_scsi_ioctl": "inter_module",
+  "atomisp_isr": "unlinked_module",
+  "atomisp_isr_thread": "unlinked_module",
+  "cdrom_ioctl": "direct_call_only",
+  "do_rangeinfo_ioctl": "direct_call_only",
+  "drm_compat_ioctl": "inter_module",
+  "drm_ioctl": "inter_module",
+  "dvb_generic_ioctl": "inter_module",
+  "ei_interrupt": "inter_module",
+  "esas2r_process_fs_ioctl": "direct_call_only",
+  "esas2r_process_vda_ioctl": "direct_call_only",
+  "fbcon_get_con2fb_map_ioctl": "direct_call_only",
+  "fbcon_set_con2fb_map_ioctl": "direct_call_only",
+  "generic_mii_ioctl": "direct_call_only",
+  "hdlc_ioctl": "inter_module",
+  "iio_trigger_generic_data_rdy_poll": "inter_module",
+  "il_isr": "inter_module",
+  "isc_interrupt": "inter_module",
+  "iwl_pcie_irq_handler": "unlinked_module",
+  "iwl_pcie_irq_msix_handler": "unlinked_module",
+  "iwl_pcie_irq_rx_msix_handler": "unlinked_module",
+  "iwl_pcie_isr": "unlinked_module",
+  "iwl_pcie_msix_isr": "unlinked_module",
+  "lan743x_ptp_ioctl": "direct_call_only",
+  "mdio_mii_ioctl": "direct_call_only",
+  "mt76x02_irq_handler": "inter_module",
+  "nvif_client_ioctl": "direct_call_only",
+  "nvif_object_ioctl": "direct_call_only",
+  "nvkm_ioctl": "direct_call_only",
+  "orinoco_interrupt": "inter_module",
+  "parport_irq_handler": "inter_module",
+  "phy_do_ioctl": "inter_module",
+  "phylink_mii_ioctl": "direct_call_only",
+  "pppox_compat_ioctl": "inter_module",
+  "pppox_ioctl": "inter_module",
+  "qlogicfas408_ihandl": "inter_module",
+  "sas_ioctl": "inter_module",
+  "scsi_esp_intr": "inter_module",
+  "scsi_ioctl": "direct_call_only",
+  "svm_ioctl": "direct_call_only",
+  "t1_interrupt": "unlinked_module",
+  "t1_interrupt_thread": "unlinked_module",
+  "tmio_mmc_irq": "inter_module",
+  "tsnep_ptp_ioctl": "direct_call_only",
+  "tty_jobctrl_ioctl": "direct_call_only",
+  "usif_ioctl": "direct_call_only",
+  "vbg_core_ioctl": "direct_call_only",
+  "vfio_fsl_mc_set_irqs_ioctl": "direct_call_only",
+  "vfio_pci_core_ioctl": "inter_module",
+  "vfio_pci_set_irqs_ioctl": "direct_call_only",
+  "vfio_platform_set_irqs_ioctl": "direct_call_only",
+  "vhost_dev_ioctl": "direct_call_only",
+  "vhost_vring_ioctl": "direct_call_only",
+  "vmw_simple_resource_create_ioctl": "direct_call_only",
+  "vring_interrupt": "inter_module",
+  "vt_compat_ioctl": "inter_module",
+  "vt_do_kbkeycode_ioctl": "direct_call_only",
+  "vt_do_kdgkb_ioctl": "direct_call_only",
+  "vt_do_kdsk_ioctl": "direct_call_only",
+  "vt_ioctl": "inter_module",
+  "xillybus_isr": "inter_module"
+ },
+ "counts": {
+  "inter_module": 29,
+  "direct_call_only": 30,
+  "unlinked_module": 9
+ },
+ "detail": {
+  "NCR_700_intr": {
+   "defined_in": [
+    "drivers_scsi_53c700.bc"
+   ],
+   "at_other": {
+    "drivers_scsi_sim710.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_scsi_sim710.bc": [
+     "%97 = tail call i32 @request_threaded_irq(i32 noundef %56, ptr noundef nonnull @NCR_700_intr, ptr noundef null, i64 noundef 128, ptr noundef @.str.8, ptr noundef nonnull %96) #10"
+    ]
+   }
+  },
+  "aac_dev_ioctl": {
+   "defined_in": [
+    "drivers_scsi_aacraid_aacraid.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "aac_do_ioctl": {
+   "defined_in": [
+    "drivers_scsi_aacraid_aacraid.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "altera_spi_irq": {
+   "defined_in": [
+    "drivers_spi_spi-altera-core.bc"
+   ],
+   "at_other": {
+    "drivers_spi_spi-altera-platform.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_spi_spi-altera-platform.bc": [
+     "%88 = tail call i32 @devm_request_threaded_irq(ptr noundef %4, i32 noundef %81, ptr noundef nonnull @altera_spi_irq, ptr noundef null, i64 noundef 0, ptr noundef %86, ptr noundef nonnull %87) #5"
+    ]
+   }
+  },
+  "amd_iommu_int_handler": {
+   "defined_in": [
+    "drivers_iommu_amd_iommu.o.bc"
+   ],
+   "at_other": {
+    "drivers_iommu_amd_init.o.bc": {
+     "call_arg": 2
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_iommu_amd_init.o.bc": [
+     "%38 = call i32 @request_threaded_irq(i32 noundef %34, ptr noundef nonnull @amd_iommu_int_handler, ptr noundef nonnull @amd_iommu_int_thread, i64 noundef 0, ptr noundef @.str.173, ptr noundef %37) #22",
+     "%57 = call i32 @request_threaded_irq(i32 noundef %55, ptr noundef nonnull @amd_iommu_int_handler, ptr noundef nonnull @amd_iommu_int_thread, i64 noundef 0, ptr noundef @.str.173, ptr noundef %56) #22"
+    ]
+   }
+  },
+  "amd_iommu_int_thread": {
+   "defined_in": [
+    "drivers_iommu_amd_iommu.o.bc"
+   ],
+   "at_other": {
+    "drivers_iommu_amd_init.o.bc": {
+     "call_arg": 2
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_iommu_amd_init.o.bc": [
+     "%38 = call i32 @request_threaded_irq(i32 noundef %34, ptr noundef nonnull @amd_iommu_int_handler, ptr noundef nonnull @amd_iommu_int_thread, i64 noundef 0, ptr noundef @.str.173, ptr noundef %37) #22",
+     "%57 = call i32 @request_threaded_irq(i32 noundef %55, ptr noundef nonnull @amd_iommu_int_handler, ptr noundef nonnull @amd_iommu_int_thread, i64 noundef 0, ptr noundef @.str.173, ptr noundef %56) #22"
+    ]
+   }
+  },
+  "arcnet_interrupt": {
+   "defined_in": [
+    "drivers_net_arcnet_arcnet.bc"
+   ],
+   "at_other": {
+    "drivers_net_arcnet_com20020.bc": {
+     "call_arg": 1
+    },
+    "drivers_net_arcnet_com90io.bc": {
+     "call_arg": 1
+    },
+    "drivers_net_arcnet_com90xx.bc": {
+     "call_arg": 1
+    },
+    "drivers_net_arcnet_arc-rimi.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 4,
+   "examples": {
+    "drivers_net_arcnet_com20020.bc": [
+     "%67 = call i32 @request_threaded_irq(i32 noundef %64, ptr noundef nonnull @arcnet_interrupt, ptr noundef null, i64 noundef %65, ptr noundef @.str.4, ptr noundef %66) #7"
+    ],
+    "drivers_net_arcnet_com90io.bc": [
+     "%9 = tail call i32 @request_threaded_irq(i32 noundef %7, ptr noundef nonnull @arcnet_interrupt, ptr noundef null, i64 noundef 0, ptr noundef @.str.17, ptr noundef %8) #6"
+    ],
+    "drivers_net_arcnet_com90xx.bc": [
+     "%55 = tail call i32 @request_threaded_irq(i32 noundef %1, ptr noundef nonnull @arcnet_interrupt, ptr noundef null, i64 noundef 0, ptr noundef @.str.13, ptr noundef %54) #11"
+    ],
+    "drivers_net_arcnet_arc-rimi.bc": [
+     "%17 = tail call i32 @request_threaded_irq(i32 noundef %15, ptr noundef nonnull @arcnet_interrupt, ptr noundef null, i64 noundef 0, ptr noundef @.str.21, ptr noundef %16) #6"
+    ]
+   }
+  },
+  "ata_scsi_ioctl": {
+   "defined_in": [
+    "drivers_ata_libata.bc"
+   ],
+   "at_other": {
+    "drivers_ata_ahci_brcm.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_ceva.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_da850.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_dm816.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_qoriq.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_seattle.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_sunxi.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_tegra.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_imx.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_mtk.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_mvebu.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_platform.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_acard-ahci.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_cs5520.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_cs5530.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_cs5535.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_cs5536.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_atp867x.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_bk3710.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_cmd640.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_cmd64x.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_cypress.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_efar.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_ftide010.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_hpt366.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_amd.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_arasan_cf.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_artop.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_atiixp.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_netcell.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_ninja32.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_ns87410.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_ns87415.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_hpt37x.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_hpt3x2n.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_hpt3x3.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_imx.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ahci_xgene.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ata_generic.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_ata_piix.bc": {
+     "global_init_other": 4
+    },
+    "drivers_ata_pata_isapnp.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_it8213.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_it821x.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_ixp4xx_cf.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_of_platform.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_oldpiix.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_opti.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_optidma.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_platform.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_pxa.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_radisys.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_rdc.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_pcmcia.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_pdc2027x.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_pdc202xx_old.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_piccolo.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_jmicron.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_legacy.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_marvell.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_mpiix.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_serverworks.bc": {
+     "global_init_other": 4
+    },
+    "drivers_ata_pata_sil680.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_sis.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_sl82c105.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_rz1000.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_samsung_cf.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_sc1200.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_sch.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_vsc.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_fsl.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_highbank.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_inic162x.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_triflex.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_via.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pdc_adma.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_dwc_460ex.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_svw.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_sx4.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_uli.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_via.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_rcar.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_sil24.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_sil.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_sis.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_mv.bc": {
+     "global_init_other": 4
+    },
+    "drivers_ata_sata_nv.bc": {
+     "global_init_other": 6
+    },
+    "drivers_ata_sata_promise.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_sata_qstor.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_acpi.bc": {
+     "global_init_other": 2
+    },
+    "drivers_ata_pata_ali.bc": {
+     "global_init_other": 2
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 91,
+   "examples": {
+    "drivers_ata_ahci_brcm.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_ceva.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_da850.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_dm816.bc": [
+     "@ahci_dm816_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr ",
+     "@ahci_dm816_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr "
+    ],
+    "drivers_ata_ahci_qoriq.bc": [
+     "@ahci_qoriq_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr",
+     "@ahci_qoriq_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr"
+    ],
+    "drivers_ata_ahci_seattle.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_sunxi.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_tegra.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.5, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.5, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null"
+    ],
+    "drivers_ata_ahci_imx.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_mtk.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_mvebu.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ahci_platform.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_acard-ahci.bc": [
+     "@acard_ahci_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.1, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, p",
+     "@acard_ahci_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.1, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, p"
+    ],
+    "drivers_ata_ahci.bc": [
+     "@ahci_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@ahci_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,"
+    ],
+    "drivers_ata_pata_cs5520.bc": [
+     "@cs5520_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@cs5520_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_cs5530.bc": [
+     "@cs5530_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@cs5530_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_cs5535.bc": [
+     "@cs5535_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@cs5535_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_cs5536.bc": [
+     "@cs5536_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@cs5536_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_atp867x.bc": [
+     "@atp867x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@atp867x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_bk3710.bc": [
+     "@pata_bk3710_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.5, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@pata_bk3710_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.5, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_pata_cmd640.bc": [
+     "@cmd640_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@cmd640_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_cmd64x.bc": [
+     "@cmd64x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@cmd64x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_cypress.bc": [
+     "@cy82c693_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@cy82c693_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_pata_efar.bc": [
+     "@efar_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@efar_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,"
+    ],
+    "drivers_ata_pata_ftide010.bc": [
+     "@pata_ftide010_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@pata_ftide010_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_pata_hpt366.bc": [
+     "@hpt36x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@hpt36x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_amd.bc": [
+     "@amd_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@amd_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_pata_arasan_cf.bc": [
+     "@arasan_cf_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr ",
+     "@arasan_cf_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr "
+    ],
+    "drivers_ata_pata_artop.bc": [
+     "@artop_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null",
+     "@artop_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null"
+    ],
+    "drivers_ata_pata_atiixp.bc": [
+     "@atiixp_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@atiixp_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_netcell.bc": [
+     "@netcell_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@netcell_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_ninja32.bc": [
+     "@ninja32_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@ninja32_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_ns87410.bc": [
+     "@ns87410_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@ns87410_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_ns87415.bc": [
+     "@ns87415_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@ns87415_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_hpt37x.bc": [
+     "@hpt37x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@hpt37x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_hpt3x2n.bc": [
+     "@hpt3x2n_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@hpt3x2n_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_hpt3x3.bc": [
+     "@hpt3x3_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@hpt3x3_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_imx.bc": [
+     "@pata_imx_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@pata_imx_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_ahci_xgene.bc": [
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@ahci_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_ata_generic.bc": [
+     "@generic_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@generic_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_ata_piix.bc": [
+     "@piix_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@piix_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@piix_sidpr_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr"
+    ],
+    "drivers_ata_pata_isapnp.bc": [
+     "@isapnp_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@isapnp_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_it8213.bc": [
+     "@it8213_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@it8213_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_it821x.bc": [
+     "@it821x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@it821x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_ixp4xx_cf.bc": [
+     "@ixp4xx_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@ixp4xx_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_of_platform.bc": [
+     "@pata_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ",
+     "@pata_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_pata_oldpiix.bc": [
+     "@oldpiix_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@oldpiix_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_opti.bc": [
+     "@opti_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@opti_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,"
+    ],
+    "drivers_ata_pata_optidma.bc": [
+     "@optidma_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@optidma_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_platform.bc": [
+     "@pata_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.11, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr nul",
+     "@pata_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.11, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_pxa.bc": [
+     "@pxa_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@pxa_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_radisys.bc": [
+     "@radisys_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@radisys_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_rdc.bc": [
+     "@rdc_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@rdc_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_pata_pcmcia.bc": [
+     "@pcmcia_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.71, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr ",
+     "@pcmcia_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.71, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr "
+    ],
+    "drivers_ata_pata_pdc2027x.bc": [
+     "@pdc2027x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@pdc2027x_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_pata_pdc202xx_old.bc": [
+     "@pdc202xx_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@pdc202xx_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_pata_piccolo.bc": [
+     "@tosh_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@tosh_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,"
+    ],
+    "drivers_ata_pata_jmicron.bc": [
+     "@jmicron_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@jmicron_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_legacy.bc": [
+     "@legacy_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.17, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr ",
+     "@legacy_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.17, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr "
+    ],
+    "drivers_ata_pata_marvell.bc": [
+     "@marvell_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@marvell_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_mpiix.bc": [
+     "@mpiix_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null",
+     "@mpiix_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null"
+    ],
+    "drivers_ata_pata_serverworks.bc": [
+     "@serverworks_csb_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null",
+     "@serverworks_csb_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null",
+     "@serverworks_osb4_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_sil680.bc": [
+     "@sil680_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@sil680_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_sis.bc": [
+     "@sis_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@sis_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_pata_sl82c105.bc": [
+     "@sl82c105_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@sl82c105_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_pata_rz1000.bc": [
+     "@rz1000_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@rz1000_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_samsung_cf.bc": [
+     "@pata_s3c_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@pata_s3c_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_pata_sc1200.bc": [
+     "@sc1200_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@sc1200_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_sch.bc": [
+     "@sch_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@sch_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_sata_vsc.bc": [
+     "@vsc_sata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@vsc_sata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_sata_fsl.bc": [
+     "@sata_fsl_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.7, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr",
+     "@sata_fsl_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.7, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr"
+    ],
+    "drivers_ata_sata_highbank.bc": [
+     "@ahci_highbank_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.32, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null",
+     "@ahci_highbank_platform_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str.32, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null"
+    ],
+    "drivers_ata_sata_inic162x.bc": [
+     "@inic_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@inic_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,"
+    ],
+    "drivers_ata_pata_triflex.bc": [
+     "@triflex_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@triflex_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_pata_via.bc": [
+     "@via_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@via_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_pdc_adma.bc": [
+     "@adma_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@adma_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_sata_dwc_460ex.bc": [
+     "@sata_dwc_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@sata_dwc_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_sata_svw.bc": [
+     "@k2_sata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@k2_sata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_sata_sx4.bc": [
+     "@pdc_sata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n",
+     "@pdc_sata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr n"
+    ],
+    "drivers_ata_sata_uli.bc": [
+     "@uli_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@uli_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_sata_via.bc": [
+     "@svia_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,",
+     "@svia_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null,"
+    ],
+    "drivers_ata_sata_rcar.bc": [
+     "@sata_rcar_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr ",
+     "@sata_rcar_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr "
+    ],
+    "drivers_ata_sata_sil24.bc": [
+     "@sil24_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null",
+     "@sil24_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null"
+    ],
+    "drivers_ata_sata_sil.bc": [
+     "@sil_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@sil_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_sata_sis.bc": [
+     "@sis_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@sis_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_sata_mv.bc": [
+     "@mv5_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@mv5_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@mv6_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ],
+    "drivers_ata_sata_nv.bc": [
+     "@nv_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, p",
+     "@nv_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, p",
+     "@nv_adma_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_sata_promise.bc": [
+     "@pdc_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu",
+     "@pdc_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nu"
+    ],
+    "drivers_ata_sata_qstor.bc": [
+     "@qs_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul",
+     "@qs_ata_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr nul"
+    ],
+    "drivers_ata_pata_acpi.bc": [
+     "@pacpi_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null",
+     "@pacpi_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null"
+    ],
+    "drivers_ata_pata_ali.bc": [
+     "@ali_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, ",
+     "@ali_sht = internal global %struct.scsi_host_template { i32 0, ptr @ata_scsi_queuecmd, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @ata_scsi_ioctl, ptr @ata_scsi_ioctl, ptr null, ptr null, ptr null, ptr null, "
+    ]
+   }
+  },
+  "atomisp_isr": {
+   "defined_in": [
+    "drivers/staging/media/atomisp/pci/.atomisp_cmd.o.bc"
+   ],
+   "at_other": {
+    "drivers/staging/media/atomisp/pci/.atomisp_v4l2.o.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/staging/media/atomisp/pci/.atomisp_v4l2.o.bc": [
+     "%229 = call i32 @devm_request_threaded_irq(ptr noundef %39, i32 noundef %228, ptr noundef nonnull @atomisp_isr, ptr noundef nonnull @atomisp_isr_thread, i64 noundef 128, ptr noundef @.str.87, ptr noundef nonnull %65) #13"
+    ]
+   }
+  },
+  "atomisp_isr_thread": {
+   "defined_in": [
+    "drivers/staging/media/atomisp/pci/.atomisp_cmd.o.bc"
+   ],
+   "at_other": {
+    "drivers/staging/media/atomisp/pci/.atomisp_v4l2.o.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/staging/media/atomisp/pci/.atomisp_v4l2.o.bc": [
+     "%229 = call i32 @devm_request_threaded_irq(ptr noundef %39, i32 noundef %228, ptr noundef nonnull @atomisp_isr, ptr noundef nonnull @atomisp_isr_thread, i64 noundef 128, ptr noundef @.str.87, ptr noundef nonnull %65) #13"
+    ]
+   }
+  },
+  "cdrom_ioctl": {
+   "defined_in": [
+    "drivers_cdrom_cdrom.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 2,
+   "examples": {}
+  },
+  "do_rangeinfo_ioctl": {
+   "defined_in": [
+    "drivers_comedi_comedi.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "drm_compat_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_drm.bc"
+   ],
+   "at_other": {
+    "drivers_gpu_drm_ast_ast.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_panel_panel-ilitek-ili9341.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_ingenic_ingenic-drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_kmb_kmb-drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_arm_display_komeda_komeda.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_arm_hdlcd.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_arm_mali-dp.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_aspeed_aspeed_gfx.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_lima_lima.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_mcde_mcde_drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_mgag200_mgag200.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_hx8357d.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9163.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9225.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9341.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_arcpgu.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_bochs.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_cirrus.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_gm12u320.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_panfrost_panfrost.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_gma500_gma500_gfx.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_gud_gud.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_hyperv_hyperv_drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_sis_sis.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_sprd_sprd-drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tdfx_tdfx.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tidss_tidss.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9486.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_mi0283qt.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_repaper.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_simpledrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_st7586.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_st7735r.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tve200_tve200_drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_etnaviv_etnaviv.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_exynos_exynosdrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_rockchip_rockchipdrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_savage_savage.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vgem_vgem.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_via_via.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_virtio_virtio-gpu.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vkms_vkms.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_udl_udl.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_v3d_v3d.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vboxvideo_vboxvideo.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vc4_vc4.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_xen_drm_xen_front.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_xlnx_zynqmp-dpsub.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_qxl_qxl.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_imx_imxdrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_msm_msm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_mxsfb_mxsfb.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 8,
+   "declared_in": 59,
+   "examples": {
+    "drivers_gpu_drm_ast_ast.bc": [
+     "@ast_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_panel_panel-ilitek-ili9341.bc": [
+     "@ili9341_dbi_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_ingenic_ingenic-drm.bc": [
+     "@ingenic_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_kmb_kmb-drm.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_arm_display_komeda_komeda.bc": [
+     "@komeda_cma_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_comp"
+    ],
+    "drivers_gpu_drm_arm_hdlcd.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_arm_mali-dp.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_aspeed_aspeed_gfx.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_lima_lima.bc": [
+     "@lima_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm"
+    ],
+    "drivers_gpu_drm_mcde_mcde_drm.bc": [
+     "@drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_mgag200_mgag200.bc": [
+     "@mgag200_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_"
+    ],
+    "drivers_gpu_drm_tiny_hx8357d.bc": [
+     "@hx8357d_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_ili9163.bc": [
+     "@ili9163_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_ili9225.bc": [
+     "@ili9225_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_ili9341.bc": [
+     "@ili9341_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_arcpgu.bc": [
+     "@arcpgu_drm_ops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compa"
+    ],
+    "drivers_gpu_drm_tiny_bochs.bc": [
+     "@bochs_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_tiny_cirrus.bc": [
+     "@cirrus_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_i"
+    ],
+    "drivers_gpu_drm_tiny_gm12u320.bc": [
+     "@gm12u320_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_panfrost_panfrost.bc": [
+     "@panfrost_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr "
+    ],
+    "drivers_gpu_drm_gma500_gma500_gfx.bc": [
+     "@psb_gem_fops = internal constant %struct.file_operations { ptr @__this_module, ptr null, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @psb_unlocked_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_gud_gud.bc": [
+     "@gud_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_hyperv_hyperv_drm.bc": [
+     "@hv_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl"
+    ],
+    "drivers_gpu_drm_sis_sis.bc": [
+     "@sis_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_sprd_sprd-drm.bc": [
+     "@sprd_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_tdfx_tdfx.bc": [
+     "@tdfx_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_i"
+    ],
+    "drivers_gpu_drm_tidss_tidss.bc": [
+     "@tidss_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_tiny_ili9486.bc": [
+     "@ili9486_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_mi0283qt.bc": [
+     "@mi0283qt_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_tiny_repaper.bc": [
+     "@repaper_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_simpledrm.bc": [
+     "@simpledrm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compa"
+    ],
+    "drivers_gpu_drm_tiny_st7586.bc": [
+     "@st7586_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_i"
+    ],
+    "drivers_gpu_drm_tiny_st7735r.bc": [
+     "@st7735r_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tve200_tve200_drm.bc": [
+     "@drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_etnaviv_etnaviv.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_exynos_exynosdrm.bc": [
+     "@exynos_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @d"
+    ],
+    "drivers_gpu_drm_rockchip_rockchipdrm.bc": [
+     "@rockchip_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr "
+    ],
+    "drivers_gpu_drm_savage_savage.bc": [
+     "@savage_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_vgem_vgem.bc": [
+     "@vgem_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_via_via.bc": [
+     "@via_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_virtio_virtio-gpu.bc": [
+     "@virtio_gpu_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @d"
+    ],
+    "drivers_gpu_drm_vkms_vkms.bc": [
+     "@vkms_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_udl_udl.bc": [
+     "@udl_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_comp"
+    ],
+    "drivers_gpu_drm_v3d_v3d.bc": [
+     "@v3d_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_vboxvideo_vboxvideo.bc": [
+     "@vbox_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioc"
+    ],
+    "drivers_gpu_drm_vc4_vc4.bc": [
+     "@vc4_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_xen_drm_xen_front.bc": [
+     "@xen_drm_dev_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_xlnx_zynqmp-dpsub.bc": [
+     "@zynqmp_dpsub_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @dr"
+    ],
+    "drivers_gpu_drm_qxl_qxl.bc": [
+     "@qxl_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_imx_imxdrm.bc": [
+     "@imx_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_"
+    ],
+    "drivers_gpu_drm_msm_msm.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_mxsfb_mxsfb.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ]
+   }
+  },
+  "drm_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_drm.bc"
+   ],
+   "at_other": {
+    "drivers_gpu_drm_ast_ast.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_panel_panel-ilitek-ili9341.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_ingenic_ingenic-drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_kmb_kmb-drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_arm_display_komeda_komeda.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_arm_hdlcd.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_arm_mali-dp.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_aspeed_aspeed_gfx.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_lima_lima.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_mcde_mcde_drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_mgag200_mgag200.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_mga_mga.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_hx8357d.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9163.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9225.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9341.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_arcpgu.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_bochs.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_cirrus.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_gm12u320.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_panfrost_panfrost.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_gud_gud.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_hyperv_hyperv_drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_sis_sis.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_sprd_sprd-drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tdfx_tdfx.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tidss_tidss.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_ili9486.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_mi0283qt.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_repaper.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_simpledrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_st7586.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tiny_st7735r.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_tve200_tve200_drm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_etnaviv_etnaviv.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_exynos_exynosdrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_rockchip_rockchipdrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_savage_savage.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vgem_vgem.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_via_via.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_virtio_virtio-gpu.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vkms_vkms.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_udl_udl.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_v3d_v3d.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vboxvideo_vboxvideo.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_vc4_vc4.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_xen_drm_xen_front.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_xlnx_zynqmp-dpsub.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_qxl_qxl.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_r128_r128.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_i915_i915.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_imx_imxdrm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_msm_msm.bc": {
+     "global_init_other": 1
+    },
+    "drivers_gpu_drm_mxsfb_mxsfb.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 13,
+   "declared_in": 59,
+   "examples": {
+    "drivers_gpu_drm_ast_ast.bc": [
+     "@ast_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_panel_panel-ilitek-ili9341.bc": [
+     "@ili9341_dbi_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_ingenic_ingenic-drm.bc": [
+     "@ingenic_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_kmb_kmb-drm.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_arm_display_komeda_komeda.bc": [
+     "@komeda_cma_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_comp"
+    ],
+    "drivers_gpu_drm_arm_hdlcd.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_arm_mali-dp.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_aspeed_aspeed_gfx.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_lima_lima.bc": [
+     "@lima_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm"
+    ],
+    "drivers_gpu_drm_mcde_mcde_drm.bc": [
+     "@drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_mgag200_mgag200.bc": [
+     "@mgag200_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_"
+    ],
+    "drivers_gpu_drm_mga_mga.bc": [
+     "@mga_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @mga_compat_io"
+    ],
+    "drivers_gpu_drm_tiny_hx8357d.bc": [
+     "@hx8357d_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_ili9163.bc": [
+     "@ili9163_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_ili9225.bc": [
+     "@ili9225_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_ili9341.bc": [
+     "@ili9341_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_arcpgu.bc": [
+     "@arcpgu_drm_ops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compa"
+    ],
+    "drivers_gpu_drm_tiny_bochs.bc": [
+     "@bochs_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_tiny_cirrus.bc": [
+     "@cirrus_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_i"
+    ],
+    "drivers_gpu_drm_tiny_gm12u320.bc": [
+     "@gm12u320_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_panfrost_panfrost.bc": [
+     "@panfrost_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr "
+    ],
+    "drivers_gpu_drm_gud_gud.bc": [
+     "@gud_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_hyperv_hyperv_drm.bc": [
+     "@hv_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl"
+    ],
+    "drivers_gpu_drm_sis_sis.bc": [
+     "@sis_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_sprd_sprd-drm.bc": [
+     "@sprd_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_tdfx_tdfx.bc": [
+     "@tdfx_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_i"
+    ],
+    "drivers_gpu_drm_tidss_tidss.bc": [
+     "@tidss_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_tiny_ili9486.bc": [
+     "@ili9486_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_mi0283qt.bc": [
+     "@mi0283qt_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_tiny_repaper.bc": [
+     "@repaper_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tiny_simpledrm.bc": [
+     "@simpledrm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compa"
+    ],
+    "drivers_gpu_drm_tiny_st7586.bc": [
+     "@st7586_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_i"
+    ],
+    "drivers_gpu_drm_tiny_st7735r.bc": [
+     "@st7735r_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_tve200_tve200_drm.bc": [
+     "@drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_etnaviv_etnaviv.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_exynos_exynosdrm.bc": [
+     "@exynos_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @d"
+    ],
+    "drivers_gpu_drm_rockchip_rockchipdrm.bc": [
+     "@rockchip_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr "
+    ],
+    "drivers_gpu_drm_savage_savage.bc": [
+     "@savage_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat"
+    ],
+    "drivers_gpu_drm_vgem_vgem.bc": [
+     "@vgem_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_via_via.bc": [
+     "@via_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_io"
+    ],
+    "drivers_gpu_drm_virtio_virtio-gpu.bc": [
+     "@virtio_gpu_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @d"
+    ],
+    "drivers_gpu_drm_vkms_vkms.bc": [
+     "@vkms_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_udl_udl.bc": [
+     "@udl_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_comp"
+    ],
+    "drivers_gpu_drm_v3d_v3d.bc": [
+     "@v3d_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_vboxvideo_vboxvideo.bc": [
+     "@vbox_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioc"
+    ],
+    "drivers_gpu_drm_vc4_vc4.bc": [
+     "@vc4_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_"
+    ],
+    "drivers_gpu_drm_xen_drm_xen_front.bc": [
+     "@xen_drm_dev_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_com"
+    ],
+    "drivers_gpu_drm_xlnx_zynqmp-dpsub.bc": [
+     "@zynqmp_dpsub_drm_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @dr"
+    ],
+    "drivers_gpu_drm_qxl_qxl.bc": [
+     "@qxl_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioct"
+    ],
+    "drivers_gpu_drm_r128_r128.bc": [
+     "@r128_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @r128_compat_"
+    ],
+    "drivers_gpu_drm_i915_i915.bc": [
+     "@i915_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @i915_io"
+    ],
+    "drivers_gpu_drm_imx_imxdrm.bc": [
+     "@imx_drm_driver_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_"
+    ],
+    "drivers_gpu_drm_msm_msm.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ],
+    "drivers_gpu_drm_mxsfb_mxsfb.bc": [
+     "@fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr @drm_read, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @drm_poll, ptr @drm_ioctl, ptr @drm_compat_ioctl, p"
+    ]
+   }
+  },
+  "dvb_generic_ioctl": {
+   "defined_in": [
+    "drivers_media_dvb-core_dvb-core.bc"
+   ],
+   "at_other": {
+    "drivers_media_firewire_firedtv.bc": {
+     "global_init_other": 1
+    },
+    "drivers_staging_media_av7110_dvb-ttpci.bc": {
+     "global_init_other": 6
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 2,
+   "examples": {
+    "drivers_media_firewire_firedtv.bc": [
+     "@fdtv_ca_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @fdtv_ca_io_poll, ptr @dvb_generic_ioctl, ptr nu"
+    ],
+    "drivers_staging_media_av7110_dvb-ttpci.bc": [
+     "@dvb_video_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr @dvb_video_write, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @dvb_video_poll, ptr @dvb_generic_",
+     "@dvb_video_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr @dvb_video_write, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @dvb_video_poll, ptr @dvb_generic_",
+     "@dvb_audio_fops = internal constant %struct.file_operations { ptr @__this_module, ptr @noop_llseek, ptr null, ptr @dvb_audio_write, ptr null, ptr null, ptr null, ptr null, ptr null, ptr @dvb_audio_poll, ptr @dvb_generic_"
+    ]
+   }
+  },
+  "ei_interrupt": {
+   "defined_in": [
+    "drivers_net_ethernet_8390_8390.bc"
+   ],
+   "at_other": {
+    "drivers_net_ethernet_8390_ne2k-pci.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 2,
+   "examples": {
+    "drivers_net_ethernet_8390_ne2k-pci.bc": [
+     "%5 = tail call i32 @request_threaded_irq(i32 noundef %3, ptr noundef nonnull @ei_interrupt, ptr noundef null, i64 noundef 128, ptr noundef %4, ptr noundef %4) #9"
+    ]
+   }
+  },
+  "esas2r_process_fs_ioctl": {
+   "defined_in": [
+    "drivers_scsi_esas2r_esas2r.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "esas2r_process_vda_ioctl": {
+   "defined_in": [
+    "drivers_scsi_esas2r_esas2r.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "fbcon_get_con2fb_map_ioctl": {
+   "defined_in": [
+    "drivers_video_fbdev_core_fb.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "fbcon_set_con2fb_map_ioctl": {
+   "defined_in": [
+    "drivers_video_fbdev_core_fb.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "generic_mii_ioctl": {
+   "defined_in": [
+    "drivers_net_mii.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 29,
+   "declared_in": 28,
+   "examples": {}
+  },
+  "hdlc_ioctl": {
+   "defined_in": [
+    "drivers_net_wan_hdlc.bc"
+   ],
+   "at_other": {
+    "drivers_net_wan_lmc_lmc.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 8,
+   "declared_in": 8,
+   "examples": {
+    "drivers_net_wan_lmc_lmc.bc": [
+     "@lmc_ops = internal constant %struct.net_device_ops { ptr null, ptr null, ptr @lmc_open, ptr @lmc_close, ptr @hdlc_start_xmit, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr null, ptr"
+    ]
+   }
+  },
+  "iio_trigger_generic_data_rdy_poll": {
+   "defined_in": [
+    "drivers_iio_industrialio.bc"
+   ],
+   "at_other": {
+    "drivers_iio_accel_adxl355_core.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_accel_adxl372.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_accel_mxc4005.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_gyro_adxrs290.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_gyro_itg3200.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_health_afe4403.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_health_afe4404.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_imu_adis_lib.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_imu_bmi160_bmi160_core.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_imu_inv_mpu6050_inv-mpu6050.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_light_si1145.bc": {
+     "call_arg": 1
+    },
+    "drivers_iio_magnetometer_bmc150_magn.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 12,
+   "examples": {
+    "drivers_iio_accel_adxl355_core.bc": [
+     "%94 = call i32 @devm_request_threaded_irq(ptr noundef %91, i32 noundef %73, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 8192, ptr noundef @.str.19, ptr noundef %93) #7"
+    ],
+    "drivers_iio_accel_adxl372.bc": [
+     "%160 = call i32 @devm_request_threaded_irq(ptr noundef %0, i32 noundef %156, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 8193, ptr noundef %157, ptr noundef %159) #12"
+    ],
+    "drivers_iio_accel_mxc4005.bc": [
+     "%56 = call i32 @devm_request_threaded_irq(ptr noundef %4, i32 noundef %54, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 8194, ptr noundef @.str.15, ptr noundef nonnull %55) #8"
+    ],
+    "drivers_iio_gyro_adxrs290.bc": [
+     "%128 = call i32 @devm_request_threaded_irq(ptr noundef %123, i32 noundef %125, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 8192, ptr noundef @.str.20, ptr noundef %127) #7"
+    ],
+    "drivers_iio_gyro_itg3200.bc": [
+     "%19 = tail call i32 @request_threaded_irq(i32 noundef %17, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 1, ptr noundef @.str.1.13, ptr noundef nonnull %18) #9"
+    ],
+    "drivers_iio_health_afe4403.bc": [
+     "%136 = tail call i32 @devm_request_threaded_irq(ptr noundef %130, i32 noundef %133, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 8192, ptr noundef @.str, ptr noundef %135) #7"
+    ],
+    "drivers_iio_health_afe4404.bc": [
+     "%114 = tail call i32 @devm_request_threaded_irq(ptr noundef %108, i32 noundef %111, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 8192, ptr noundef @.str, ptr noundef %113) #7"
+    ],
+    "drivers_iio_imu_adis_lib.bc": [
+     "%47 = tail call i32 @devm_request_threaded_irq(ptr noundef %41, i32 noundef %43, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef %39, ptr noundef %44, ptr noundef %46) #9"
+    ],
+    "drivers_iio_imu_bmi160_bmi160_core.bc": [
+     "%17 = tail call i32 @devm_request_threaded_irq(ptr noundef %6, i32 noundef %1, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef %15, ptr noundef @.str.1, ptr noundef nonnull %16) #7"
+    ],
+    "drivers_iio_imu_inv_mpu6050_inv-mpu6050.bc": [
+     "%19 = tail call i32 @devm_request_threaded_irq(ptr noundef %5, i32 noundef %16, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef %17, ptr noundef @.str.1.23, ptr noundef nonnull %18) "
+    ],
+    "drivers_iio_light_si1145.bc": [
+     "%19 = tail call i32 @devm_request_threaded_irq(ptr noundef %6, i32 noundef %17, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 2, ptr noundef @.str.43, ptr noundef nonnull %18) #5"
+    ],
+    "drivers_iio_magnetometer_bmc150_magn.bc": [
+     "%93 = tail call i32 @request_threaded_irq(i32 noundef %2, ptr noundef nonnull @iio_trigger_generic_data_rdy_poll, ptr noundef null, i64 noundef 8193, ptr noundef @.str.13, ptr noundef %92) #7"
+    ]
+   }
+  },
+  "il_isr": {
+   "defined_in": [
+    "drivers_net_wireless_intel_iwlegacy_iwlegacy.bc"
+   ],
+   "at_other": {
+    "drivers_net_wireless_intel_iwlegacy_iwl3945.bc": {
+     "call_arg": 1
+    },
+    "drivers_net_wireless_intel_iwlegacy_iwl4965.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 2,
+   "examples": {
+    "drivers_net_wireless_intel_iwlegacy_iwl3945.bc": [
+     "%155 = tail call i32 @request_threaded_irq(i32 noundef %154, ptr noundef nonnull @il_isr, ptr noundef null, i64 noundef 128, ptr noundef @.str.79, ptr noundef %10) #23"
+    ],
+    "drivers_net_wireless_intel_iwlegacy_iwl4965.bc": [
+     "%167 = tail call i32 @request_threaded_irq(i32 noundef %166, ptr noundef nonnull @il_isr, ptr noundef null, i64 noundef 128, ptr noundef @.str.432, ptr noundef %12) #28"
+    ]
+   }
+  },
+  "isc_interrupt": {
+   "defined_in": [
+    "drivers_media_platform_atmel_atmel-isc-base.bc"
+   ],
+   "at_other": {
+    "drivers_media_platform_atmel_atmel-isc.bc": {
+     "call_arg": 1
+    },
+    "drivers_media_platform_atmel_atmel-xisc.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 2,
+   "examples": {
+    "drivers_media_platform_atmel_atmel-isc.bc": [
+     "%30 = tail call i32 @devm_request_threaded_irq(ptr noundef %4, i32 noundef %27, ptr noundef nonnull @isc_interrupt, ptr noundef null, i64 noundef 0, ptr noundef @.str, ptr noundef nonnull %6) #10"
+    ],
+    "drivers_media_platform_atmel_atmel-xisc.bc": [
+     "%30 = tail call i32 @devm_request_threaded_irq(ptr noundef %4, i32 noundef %27, ptr noundef nonnull @isc_interrupt, ptr noundef null, i64 noundef 0, ptr noundef @.str, ptr noundef nonnull %6) #8"
+    ]
+   }
+  },
+  "iwl_pcie_irq_handler": {
+   "defined_in": [
+    "drivers/net/wireless/intel/iwlwifi/pcie/.rx.o.bc"
+   ],
+   "at_other": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": [
+     "%361 = call i32 @devm_request_threaded_irq(ptr noundef %16, i32 noundef %359, ptr noundef nonnull @iwl_pcie_isr, ptr noundef nonnull @iwl_pcie_irq_handler, i64 noundef 128, ptr noundef @.str.59, ptr noundef %360) #15"
+    ]
+   }
+  },
+  "iwl_pcie_irq_msix_handler": {
+   "defined_in": [
+    "drivers/net/wireless/intel/iwlwifi/pcie/.rx.o.bc"
+   ],
+   "at_other": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": {
+     "select_phi_ret": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": [
+     "%295 = select i1 %294, ptr @iwl_pcie_irq_msix_handler, ptr @iwl_pcie_irq_rx_msix_handler"
+    ]
+   }
+  },
+  "iwl_pcie_irq_rx_msix_handler": {
+   "defined_in": [
+    "drivers/net/wireless/intel/iwlwifi/pcie/.rx.o.bc"
+   ],
+   "at_other": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": {
+     "select_phi_ret": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": [
+     "%295 = select i1 %294, ptr @iwl_pcie_irq_msix_handler, ptr @iwl_pcie_irq_rx_msix_handler"
+    ]
+   }
+  },
+  "iwl_pcie_isr": {
+   "defined_in": [
+    "drivers/net/wireless/intel/iwlwifi/pcie/.rx.o.bc"
+   ],
+   "at_other": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": [
+     "%361 = call i32 @devm_request_threaded_irq(ptr noundef %16, i32 noundef %359, ptr noundef nonnull @iwl_pcie_isr, ptr noundef nonnull @iwl_pcie_irq_handler, i64 noundef 128, ptr noundef @.str.59, ptr noundef %360) #15"
+    ]
+   }
+  },
+  "iwl_pcie_msix_isr": {
+   "defined_in": [
+    "drivers/net/wireless/intel/iwlwifi/pcie/.rx.o.bc"
+   ],
+   "at_other": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/net/wireless/intel/iwlwifi/pcie/.trans.o.bc": [
+     "%297 = call i32 @devm_request_threaded_irq(ptr noundef %16, i32 noundef %292, ptr noundef nonnull @iwl_pcie_msix_isr, ptr noundef nonnull %295, i64 noundef 128, ptr noundef nonnull %288, ptr noundef %296) #15"
+    ]
+   }
+  },
+  "lan743x_ptp_ioctl": {
+   "defined_in": [
+    "drivers_net_ethernet_microchip_lan743x.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "mdio_mii_ioctl": {
+   "defined_in": [
+    "drivers_net_mdio.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 7,
+   "declared_in": 7,
+   "examples": {}
+  },
+  "mt76x02_irq_handler": {
+   "defined_in": [
+    "drivers_net_wireless_mediatek_mt76_mt76x02-lib.bc"
+   ],
+   "at_other": {
+    "drivers_net_wireless_mediatek_mt76_mt76x0_mt76x0e.bc": {
+     "call_arg": 1
+    },
+    "drivers_net_wireless_mediatek_mt76_mt76x2_mt76x2e.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 2,
+   "examples": {
+    "drivers_net_wireless_mediatek_mt76_mt76x0_mt76x0e.bc": [
+     "%43 = tail call i32 @devm_request_threaded_irq(ptr noundef %40, i32 noundef %42, ptr noundef nonnull @mt76x02_irq_handler, ptr noundef null, i64 noundef 128, ptr noundef @.str, ptr noundef nonnull %24) #8"
+    ],
+    "drivers_net_wireless_mediatek_mt76_mt76x2_mt76x2e.bc": [
+     "%42 = tail call i32 @devm_request_threaded_irq(ptr noundef %39, i32 noundef %41, ptr noundef nonnull @mt76x02_irq_handler, ptr noundef null, i64 noundef 128, ptr noundef @.str, ptr noundef nonnull %24) #9"
+    ]
+   }
+  },
+  "nvif_client_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_nouveau_nouveau.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 6,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "nvif_object_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_nouveau_nouveau.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 10,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "nvkm_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_nouveau_nouveau.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "orinoco_interrupt": {
+   "defined_in": [
+    "drivers_net_wireless_intersil_orinoco_orinoco.bc"
+   ],
+   "at_other": {
+    "drivers_net_wireless_intersil_orinoco_orinoco_nortel.bc": {
+     "call_arg": 2
+    },
+    "drivers_net_wireless_intersil_orinoco_orinoco_pci.bc": {
+     "call_arg": 2
+    },
+    "drivers_net_wireless_intersil_orinoco_orinoco_plx.bc": {
+     "call_arg": 2
+    },
+    "drivers_net_wireless_intersil_orinoco_orinoco_tmd.bc": {
+     "call_arg": 2
+    },
+    "drivers_net_wireless_intersil_orinoco_spectrum_cs.bc": {
+     "call_arg": 1
+    },
+    "drivers_net_wireless_intersil_orinoco_orinoco_cs.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 6,
+   "examples": {
+    "drivers_net_wireless_intersil_orinoco_orinoco_nortel.bc": [
+     "%42 = tail call i32 @request_threaded_irq(i32 noundef %40, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef @.str.3, ptr noundef nonnull %41) #6",
+     "%13 = tail call i32 @request_threaded_irq(i32 noundef %11, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef %12, ptr noundef %6) #6"
+    ],
+    "drivers_net_wireless_intersil_orinoco_orinoco_pci.bc": [
+     "%28 = tail call i32 @request_threaded_irq(i32 noundef %26, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef @.str.3, ptr noundef nonnull %27) #6",
+     "%13 = tail call i32 @request_threaded_irq(i32 noundef %11, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef %12, ptr noundef %6) #6"
+    ],
+    "drivers_net_wireless_intersil_orinoco_orinoco_plx.bc": [
+     "%42 = tail call i32 @request_threaded_irq(i32 noundef %40, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef @.str.3, ptr noundef nonnull %41) #6",
+     "%13 = tail call i32 @request_threaded_irq(i32 noundef %11, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef %12, ptr noundef %6) #6"
+    ],
+    "drivers_net_wireless_intersil_orinoco_orinoco_tmd.bc": [
+     "%36 = tail call i32 @request_threaded_irq(i32 noundef %34, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef @.str.3, ptr noundef nonnull %35) #6",
+     "%13 = tail call i32 @request_threaded_irq(i32 noundef %11, ptr noundef nonnull @orinoco_interrupt, ptr noundef null, i64 noundef 128, ptr noundef %12, ptr noundef %6) #6"
+    ],
+    "drivers_net_wireless_intersil_orinoco_spectrum_cs.bc": [
+     "%40 = tail call i32 @pcmcia_request_irq(ptr noundef %0, ptr noundef nonnull @orinoco_interrupt) #6"
+    ],
+    "drivers_net_wireless_intersil_orinoco_orinoco_cs.bc": [
+     "%39 = tail call i32 @pcmcia_request_irq(ptr noundef %0, ptr noundef nonnull @orinoco_interrupt) #6"
+    ]
+   }
+  },
+  "parport_irq_handler": {
+   "defined_in": [
+    "drivers_parport_parport.bc"
+   ],
+   "at_other": {
+    "drivers_parport_parport_pc.bc": {
+     "call_arg": 1
+    },
+    "drivers_parport_parport_ax88796.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 2,
+   "examples": {
+    "drivers_parport_parport_pc.bc": [
+     "%379 = call i32 @request_threaded_irq(i32 noundef %373, ptr noundef nonnull @parport_irq_handler, ptr noundef null, i64 noundef %376, ptr noundef %377, ptr noundef %378) #15"
+    ],
+    "drivers_parport_parport_ax88796.bc": [
+     "%63 = tail call i32 @request_threaded_irq(i32 noundef %36, ptr noundef nonnull @parport_irq_handler, ptr noundef null, i64 noundef 2, ptr noundef %61, ptr noundef nonnull %62) #9"
+    ]
+   }
+  },
+  "phy_do_ioctl": {
+   "defined_in": [
+    "drivers_net_phy_libphy.bc"
+   ],
+   "at_other": {
+    "drivers_net_ethernet_agere_et131x.bc": {
+     "global_init_other": 1
+    },
+    "drivers_net_ethernet_marvell_pxa168_eth.bc": {
+     "global_init_other": 1
+    },
+    "drivers_net_ethernet_rdc_r6040.bc": {
+     "global_init_other": 1
+    },
+    "drivers_net_ethernet_socionext_netsec.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 5,
+   "examples": {
+    "drivers_net_ethernet_agere_et131x.bc": [
+     "@et131x_netdev_ops = internal constant %struct.net_device_ops { ptr null, ptr null, ptr @et131x_open, ptr @et131x_close, ptr @et131x_tx, ptr null, ptr null, ptr null, ptr @et131x_multicast, ptr @eth_mac_addr, ptr @eth_va"
+    ],
+    "drivers_net_ethernet_marvell_pxa168_eth.bc": [
+     "@pxa168_eth_netdev_ops = internal constant %struct.net_device_ops { ptr null, ptr null, ptr @pxa168_eth_open, ptr @pxa168_eth_stop, ptr @pxa168_eth_start_xmit, ptr null, ptr null, ptr null, ptr @pxa168_eth_set_rx_mode, p"
+    ],
+    "drivers_net_ethernet_rdc_r6040.bc": [
+     "@r6040_netdev_ops = internal constant %struct.net_device_ops { ptr null, ptr null, ptr @r6040_open, ptr @r6040_close, ptr @r6040_start_xmit, ptr null, ptr null, ptr null, ptr @r6040_multicast_list, ptr @eth_mac_addr, ptr"
+    ],
+    "drivers_net_ethernet_socionext_netsec.bc": [
+     "@netsec_netdev_ops = internal constant %struct.net_device_ops { ptr @netsec_netdev_init, ptr @netsec_netdev_uninit, ptr @netsec_netdev_open, ptr @netsec_netdev_stop, ptr @netsec_netdev_start_xmit, ptr null, ptr null, ptr"
+    ]
+   }
+  },
+  "phylink_mii_ioctl": {
+   "defined_in": [
+    "drivers_net_phy_phylink.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 9,
+   "declared_in": 9,
+   "examples": {}
+  },
+  "pppox_compat_ioctl": {
+   "defined_in": [
+    "drivers_net_ppp_pppox.bc"
+   ],
+   "at_other": {
+    "drivers_net_ppp_pppoe.bc": {
+     "global_init_other": 1
+    },
+    "drivers_net_ppp_pptp.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 2,
+   "examples": {
+    "drivers_net_ppp_pppoe.bc": [
+     "@pppoe_ops = internal constant %struct.proto_ops { i32 24, ptr @__this_module, ptr @pppoe_release, ptr @sock_no_bind, ptr @pppoe_connect, ptr @sock_no_socketpair, ptr @sock_no_accept, ptr @pppoe_getname, ptr @datagram_po"
+    ],
+    "drivers_net_ppp_pptp.bc": [
+     "@pptp_ops = internal constant %struct.proto_ops { i32 24, ptr @__this_module, ptr @pptp_release, ptr @pptp_bind, ptr @pptp_connect, ptr @sock_no_socketpair, ptr @sock_no_accept, ptr @pptp_getname, ptr null, ptr @pppox_io"
+    ]
+   }
+  },
+  "pppox_ioctl": {
+   "defined_in": [
+    "drivers_net_ppp_pppox.bc"
+   ],
+   "at_other": {
+    "drivers_net_ppp_pppoe.bc": {
+     "global_init_other": 1
+    },
+    "drivers_net_ppp_pptp.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 2,
+   "examples": {
+    "drivers_net_ppp_pppoe.bc": [
+     "@pppoe_ops = internal constant %struct.proto_ops { i32 24, ptr @__this_module, ptr @pppoe_release, ptr @sock_no_bind, ptr @pppoe_connect, ptr @sock_no_socketpair, ptr @sock_no_accept, ptr @pppoe_getname, ptr @datagram_po"
+    ],
+    "drivers_net_ppp_pptp.bc": [
+     "@pptp_ops = internal constant %struct.proto_ops { i32 24, ptr @__this_module, ptr @pptp_release, ptr @pptp_bind, ptr @pptp_connect, ptr @sock_no_socketpair, ptr @sock_no_accept, ptr @pptp_getname, ptr null, ptr @pppox_io"
+    ]
+   }
+  },
+  "qlogicfas408_ihandl": {
+   "defined_in": [
+    "drivers_scsi_qlogicfas408.bc"
+   ],
+   "at_other": {
+    "drivers_scsi_pcmcia_qlogic_cs.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_scsi_pcmcia_qlogic_cs.bc": [
+     "%28 = tail call i32 @request_threaded_irq(i32 noundef %1, ptr noundef nonnull @qlogicfas408_ihandl, ptr noundef null, i64 noundef 0, ptr noundef @qlogic_name, ptr noundef nonnull %27) #7"
+    ]
+   }
+  },
+  "sas_ioctl": {
+   "defined_in": [
+    "drivers_scsi_libsas_libsas.bc"
+   ],
+   "at_other": {
+    "drivers_scsi_hisi_sas_hisi_sas_v1_hw.bc": {
+     "global_init_other": 2
+    },
+    "drivers_scsi_hisi_sas_hisi_sas_v2_hw.bc": {
+     "global_init_other": 2
+    },
+    "drivers_scsi_hisi_sas_hisi_sas_v3_hw.bc": {
+     "global_init_other": 2
+    },
+    "drivers_scsi_aic94xx_aic94xx.bc": {
+     "global_init_other": 2
+    },
+    "drivers_scsi_isci_isci.bc": {
+     "global_init_other": 2
+    },
+    "drivers_scsi_mvsas_mvsas.bc": {
+     "global_init_other": 2
+    },
+    "drivers_scsi_pm8001_pm80xx.bc": {
+     "global_init_other": 2
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 7,
+   "examples": {
+    "drivers_scsi_hisi_sas_hisi_sas_v1_hw.bc": [
+     "@sht_v1_hw = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_",
+     "@sht_v1_hw = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_"
+    ],
+    "drivers_scsi_hisi_sas_hisi_sas_v2_hw.bc": [
+     "@sht_v2_hw = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_",
+     "@sht_v2_hw = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_"
+    ],
+    "drivers_scsi_hisi_sas_hisi_sas_v3_hw.bc": [
+     "@sht_v3_hw = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_",
+     "@sht_v3_hw = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_"
+    ],
+    "drivers_scsi_aic94xx_aic94xx.bc": [
+     "@aic94xx_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str.5, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_dev",
+     "@aic94xx_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str.5, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_dev"
+    ],
+    "drivers_scsi_isci_isci.bc": [
+     "@isci_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str.3, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr @sas_eh_abort_handler, p",
+     "@isci_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str.3, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr @sas_eh_abort_handler, p"
+    ],
+    "drivers_scsi_mvsas_mvsas.bc": [
+     "@mvs_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_re",
+     "@mvs_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device_re"
+    ],
+    "drivers_scsi_pm8001_pm80xx.bc": [
+     "@pm8001_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device",
+     "@pm8001_sht = internal global %struct.scsi_host_template { i32 0, ptr @sas_queuecommand, ptr null, ptr @__this_module, ptr @.str, ptr null, ptr @sas_ioctl, ptr @sas_ioctl, ptr null, ptr null, ptr null, ptr @sas_eh_device"
+    ]
+   }
+  },
+  "scsi_esp_intr": {
+   "defined_in": [
+    "drivers_scsi_esp_scsi.bc"
+   ],
+   "at_other": {
+    "drivers_scsi_am53c974.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_scsi_am53c974.bc": [
+     "%76 = tail call i32 @request_threaded_irq(i32 noundef %75, ptr noundef nonnull @scsi_esp_intr, ptr noundef null, i64 noundef 128, ptr noundef @.str, ptr noundef %24) #10"
+    ]
+   }
+  },
+  "scsi_ioctl": {
+   "defined_in": [
+    "drivers_scsi_scsi_mod.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 6,
+   "declared_in": 5,
+   "examples": {}
+  },
+  "svm_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_amd_amdgpu_amdgpu.bc",
+    "drivers_gpu_drm_amd_amdkfd_kfd_svm.o.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 1,
+   "examples": {}
+  },
+  "t1_interrupt": {
+   "defined_in": [
+    "drivers/net/ethernet/chelsio/cxgb/.sge.o.bc"
+   ],
+   "at_other": {
+    "drivers/net/ethernet/chelsio/cxgb/.cxgb2.o.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 1,
+   "examples": {
+    "drivers/net/ethernet/chelsio/cxgb/.cxgb2.o.bc": [
+     "%65 = tail call i32 @request_threaded_irq(i32 noundef %58, ptr noundef nonnull @t1_interrupt, ptr noundef nonnull @t1_interrupt_thread, i64 noundef %61, ptr noundef %63, ptr noundef %64) #17"
+    ]
+   }
+  },
+  "t1_interrupt_thread": {
+   "defined_in": [
+    "drivers/net/ethernet/chelsio/cxgb/.sge.o.bc"
+   ],
+   "at_other": {
+    "drivers/net/ethernet/chelsio/cxgb/.cxgb2.o.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers/net/ethernet/chelsio/cxgb/.cxgb2.o.bc": [
+     "%65 = tail call i32 @request_threaded_irq(i32 noundef %58, ptr noundef nonnull @t1_interrupt, ptr noundef nonnull @t1_interrupt_thread, i64 noundef %61, ptr noundef %63, ptr noundef %64) #17"
+    ]
+   }
+  },
+  "tmio_mmc_irq": {
+   "defined_in": [
+    "drivers_mmc_host_tmio_mmc_core.bc"
+   ],
+   "at_other": {
+    "drivers_mmc_host_renesas_sdhi_core.bc": {
+     "call_arg": 1
+    },
+    "drivers_mmc_host_uniphier-sd.bc": {
+     "call_arg": 1
+    },
+    "drivers_mmc_host_tmio_mmc.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 3,
+   "examples": {
+    "drivers_mmc_host_renesas_sdhi_core.bc": [
+     "%333 = tail call i32 @devm_request_threaded_irq(ptr noundef %5, i32 noundef %324, ptr noundef nonnull @tmio_mmc_irq, ptr noundef null, i64 noundef 0, ptr noundef %332, ptr noundef %59) #7"
+    ],
+    "drivers_mmc_host_uniphier-sd.bc": [
+     "%160 = tail call i32 @devm_request_threaded_irq(ptr noundef %2, i32 noundef %3, ptr noundef nonnull @tmio_mmc_irq, ptr noundef null, i64 noundef 128, ptr noundef %159, ptr noundef %46) #8"
+    ],
+    "drivers_mmc_host_tmio_mmc.bc": [
+     "%69 = tail call i32 @devm_request_threaded_irq(ptr noundef %8, i32 noundef %18, ptr noundef nonnull @tmio_mmc_irq, ptr noundef null, i64 noundef 2, ptr noundef %68, ptr noundef %33) #5"
+    ]
+   }
+  },
+  "tsnep_ptp_ioctl": {
+   "defined_in": [
+    "drivers_net_ethernet_engleder_tsnep.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "tty_jobctrl_ioctl": {
+   "defined_in": [
+    "drivers_tty_tty_jobctrl.o.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 1,
+   "examples": {}
+  },
+  "usif_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_nouveau_nouveau.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "vbg_core_ioctl": {
+   "defined_in": [
+    "drivers_virt_vboxguest_vboxguest.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "vfio_fsl_mc_set_irqs_ioctl": {
+   "defined_in": [
+    "drivers_vfio_fsl-mc_vfio-fsl-mc.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "vfio_pci_core_ioctl": {
+   "defined_in": [
+    "drivers_vfio_pci_vfio-pci-core.bc"
+   ],
+   "at_other": {
+    "drivers_vfio_pci_vfio-pci.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_vfio_pci_vfio-pci.bc": [
+     "@vfio_pci_ops = internal constant %struct.vfio_device_ops { ptr @.str.4, ptr @vfio_pci_open_device, ptr @vfio_pci_core_close_device, ptr @vfio_pci_core_read, ptr @vfio_pci_core_write, ptr @vfio_pci_core_ioctl, ptr @vfio_"
+    ]
+   }
+  },
+  "vfio_pci_set_irqs_ioctl": {
+   "defined_in": [
+    "drivers_vfio_pci_vfio-pci-core.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "vfio_platform_set_irqs_ioctl": {
+   "defined_in": [
+    "drivers_vfio_platform_vfio-platform-base.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "vhost_dev_ioctl": {
+   "defined_in": [
+    "drivers_vhost_vhost.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 4,
+   "declared_in": 4,
+   "examples": {}
+  },
+  "vhost_vring_ioctl": {
+   "defined_in": [
+    "drivers_vhost_vhost.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 4,
+   "declared_in": 4,
+   "examples": {}
+  },
+  "vmw_simple_resource_create_ioctl": {
+   "defined_in": [
+    "drivers_gpu_drm_vmwgfx_vmwgfx.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 0,
+   "examples": {}
+  },
+  "vring_interrupt": {
+   "defined_in": [
+    "drivers_virtio_virtio_ring.o.bc"
+   ],
+   "at_other": {
+    "drivers_virtio_virtio_pci.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 5,
+   "declared_in": 4,
+   "examples": {
+    "drivers_virtio_virtio_pci.bc": [
+     "%246 = tail call i32 @request_threaded_irq(i32 noundef %241, ptr noundef nonnull @vring_interrupt, ptr noundef null, i64 noundef 0, ptr noundef %243, ptr noundef %245) #12"
+    ]
+   }
+  },
+  "vt_compat_ioctl": {
+   "defined_in": [
+    "drivers_tty_vt_vt_ioctl.o.bc"
+   ],
+   "at_other": {
+    "drivers_tty_vt_vt.o.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 1,
+   "examples": {
+    "drivers_tty_vt_vt.o.bc": [
+     "@con_ops = internal constant %struct.tty_operations { ptr null, ptr @con_install, ptr null, ptr @con_open, ptr @con_close, ptr @con_shutdown, ptr @con_cleanup, ptr @con_write, ptr @con_put_char, ptr @con_flush_chars, ptr"
+    ]
+   }
+  },
+  "vt_do_kbkeycode_ioctl": {
+   "defined_in": [
+    "drivers_tty_vt_keyboard.o.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 1,
+   "examples": {}
+  },
+  "vt_do_kdgkb_ioctl": {
+   "defined_in": [
+    "drivers_tty_vt_keyboard.o.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 1,
+   "examples": {}
+  },
+  "vt_do_kdsk_ioctl": {
+   "defined_in": [
+    "drivers_tty_vt_keyboard.o.bc"
+   ],
+   "at_other": {},
+   "at_own": {},
+   "direct_calls": 1,
+   "declared_in": 1,
+   "examples": {}
+  },
+  "vt_ioctl": {
+   "defined_in": [
+    "drivers_tty_vt_vt_ioctl.o.bc"
+   ],
+   "at_other": {
+    "drivers_tty_vt_vt.o.bc": {
+     "global_init_other": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 2,
+   "declared_in": 1,
+   "examples": {
+    "drivers_tty_vt_vt.o.bc": [
+     "@con_ops = internal constant %struct.tty_operations { ptr null, ptr @con_install, ptr null, ptr @con_open, ptr @con_close, ptr @con_shutdown, ptr @con_cleanup, ptr @con_write, ptr @con_put_char, ptr @con_flush_chars, ptr"
+    ]
+   }
+  },
+  "xillybus_isr": {
+   "defined_in": [
+    "drivers_char_xillybus_xillybus_core.bc"
+   ],
+   "at_other": {
+    "drivers_char_xillybus_xillybus_of.bc": {
+     "call_arg": 1
+    },
+    "drivers_char_xillybus_xillybus_pcie.bc": {
+     "call_arg": 1
+    }
+   },
+   "at_own": {},
+   "direct_calls": 0,
+   "declared_in": 2,
+   "examples": {
+    "drivers_char_xillybus_xillybus_of.bc": [
+     "%18 = tail call i32 @devm_request_threaded_irq(ptr noundef %2, i32 noundef %17, ptr noundef nonnull @xillybus_isr, ptr noundef null, i64 noundef 0, ptr noundef @xillyname, ptr noundef nonnull %16) #5"
+    ],
+    "drivers_char_xillybus_xillybus_pcie.bc": [
+     "%43 = tail call i32 @devm_request_threaded_irq(ptr noundef %3, i32 noundef %42, ptr noundef nonnull @xillybus_isr, ptr noundef null, i64 noundef 0, ptr noundef @.str, ptr noundef nonnull %7) #5"
+    ]
+   }
+  }
+ }
+}

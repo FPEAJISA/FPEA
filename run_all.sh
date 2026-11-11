@@ -10,7 +10,7 @@
 #   sample         4a: reference-set sampling (for reference only; the original sample is preserved)
 #   pilots         5 : top-caller pilot
 #   audit          A : 2026-11-09 audit scripts that need bitcode (scripts/orig/audit_v23: popN, recon_pool2,
-#                      defmap, wl_only, at_only) → out/, compared with data/results; allowed in both modes
+#                      defmap, wl_only, at_only, resid68) → out/, compared with data/results; allowed in both modes
 #   figures        6 : figures
 #   derive         D : regenerate derived results + compare with stored copies; in rerun also the metric scripts (final_calc_expert, review_check)
 #   verify[-heavy] V : compare paper numbers
@@ -347,7 +347,10 @@ sample(){
   D=$FPEA_WORK/sample_rerun
   mkdir -p $D
   cp $PASSD/sample_gt_unit.py $D/
-  (cd $D && python3 sample_gt_unit.py) > $L/sample.log 2>&1 || fail "4a sample_gt_unit.py ($L/sample.log)"
+  # the stage-1 units of the original draw (data/gt/stage1_units_500.txt, relative paths): the
+  # shuffle of the regenerated unit list would select other units (its order is filesystem order)
+  (cd $D && FPEA_STAGE1_UNITS=$FPEA_DATA/gt/stage1_units_500.txt python3 sample_gt_unit.py) > $L/sample.log 2>&1 \
+    || fail "4a sample_gt_unit.py ($L/sample.log)"
   # compare the new sample with the preserved original
   python3 - "$D/gt_sample_unit.json" "$PASSD/gt_sample_unit.json" <<'PY'
 import json
@@ -356,7 +359,8 @@ import sys
 a, b = [json.load(open(p)) for p in sys.argv[1:3]]
 print('positives 255 identical:', a['pos'] == b['pos'],
       ' negatives 200 identical:', a['neg'] == b['neg'],
-      '(negatives depend on multiprocessing order and may differ)')
+      '(a new draw from the same 500-unit pool; the original 200 were drawn in worker-arrival order,'
+      ' their pool membership is checked by recon_pool2 in the audit stage)')
 PY
 }
 
@@ -377,7 +381,7 @@ pilots(){
 # trees and the stored unit outputs, writes to $FPEA_OUTDIR, so it is allowed in artifact mode too.
 audit(){
   A=$OR/audit_v23
-  say "A) audit scripts (bitcode needed): popN, recon_pool2, defmap, wl_only, at_only → $FPEA_OUTDIR, compared with $FPEA_RESULTS"
+  say "A) audit scripts (bitcode needed): popN, recon_pool2, defmap, wl_only, at_only, resid68 → $FPEA_OUTDIR, compared with $FPEA_RESULTS (unit paths are recorded relative to the 5.17.11 source tree)"
   # without the bitcode (artifact mode on a machine without the trees) the stage is skipped —
   # a documented fallback, not a failure; in rerun mode the trees must exist
   if ! { [ -x "$FPEA_DIS16" ] && [ -f "$(head -1 $FPEA_UNITS)" ]; }; then
@@ -387,7 +391,7 @@ audit(){
   fi
   export FPEA_AUDIT_OUT=$FPEA_OUTDIR
   (cd $A && python3 popN.py && python3 recon_pool2.py && bash defmap.sh $FPEA_UNITS $FPEA_OUTDIR/defmap_5.17.11.tsv.gz \
-      && python3 wl_only.py && python3 at_only.py) > $L/audit.log 2>&1 \
+      && python3 wl_only.py && python3 at_only.py && python3 resid68.py) > $L/audit.log 2>&1 \
     || fail "A audit scripts ($L/audit.log)"
   CMP=$(python3 - "$FPEA_OUTDIR" "$FPEA_RESULTS" <<'PY'
 import gzip, json, sys
@@ -404,6 +408,8 @@ print('- at_only.json (pairs and categories):', 'SAME' if same else 'DIFF')
 da = set(gzip.open(f'{O}/defmap_5.17.11.tsv.gz', 'rt').read().split('\n'))
 db = set(gzip.open(f'{R}/defmap_5.17.11.tsv.gz', 'rt').read().split('\n'))
 print('- defmap_5.17.11.tsv.gz:', 'SAME' if da == db else 'DIFF')
+a, b = j(f'{O}/resid68.json'), j(f'{R}/resid68.json')
+print('- resid68.json (class of every unrecovered name):', 'SAME' if a['classes'] == b['classes'] else 'DIFF')
 PY
   ) || fail "A comparison of the audit outputs with $FPEA_RESULTS"
   echo "$CMP" | tee -a $L/run_all.log

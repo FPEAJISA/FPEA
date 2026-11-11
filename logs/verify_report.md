@@ -1,6 +1,6 @@
 # Numeric verification report (verify_numbers.py)
 
-- checks 345: OK 345, MISMATCH 0, INFO 8
+- checks 348: OK 348, MISMATCH 0, INFO 8
 
 ## All checks
 
@@ -341,12 +341,15 @@
 | OK | Table S3 | outside drivers/: compat_ptr_ioctl etc. | ['blkdev_compat_ptr_ioctl', 'compat_ptr_ioctl', 'hpet_rtc_interrupt', 'snd_pcm_lib_ioctl'] | ['blkdev_compat_ptr_ioctl', 'compat_ptr_ioctl', 'hpet_rtc_interrupt', 'snd_pcm_lib_ioctl'] |  |
 | OK | Table S3 | FPEA identifies in the defining unit | 9 | 9 |  |
 | OK | Table S3 | not identified in the defining unit: static-call trampolines / registered in another unit | (4, 342) | (4, 342) |  |
-| OK | Table S3 / S6 | other-unit registered: link layer recovers / inter-module | (304, 38) | (304, 38) |  |
+| OK | Table S3 / S6 | other-unit registered: link layer recovers / not recovered | (304, 38) | (304, 38) |  |
 | OK | Table S3 | defined-in-unit 289 = tracepoint by-products 25 + real ioctl handlers 264 | (25, 264) | (25, 264) |  |
 | OK | Table S3 / S6 | real ioctl handlers: link layer recovers / remain | (224, 40) | (224, 40) |  |
 | OK | 5.3 / S6 | shared handlers: row sums (342+264 / 304+224 / 38+40), by name (total / link recovered / remaining), names in both rows, unique functions of the 987 | (606, 528, 78, 372, 304, 68, 234, 414) | (606, 528, 78, 372, 304, 68, 234, 414) |  |
 | OK | 5.3 | whitelist-side errors: tracepoint 25 + static-call 4 + outside drivers 4 | 33 | 33 |  |
-| OK | 5.10 | inter-module examples remain unrecovered | True | True |  |
+| OK | 5.10 | inter-module examples (drm_ioctl, ata_scsi_ioctl, dvb_generic_ioctl) are among the 68 not recovered | True | True |  |
+| OK | 5.3 / 5.10 / S6 | unrecovered 68: inter-module / unlinked module / direct-call only / other | (68, 29, 9, 30, 0) | (68, 29, 9, 30, 0) |  |
+| OK | 5.10 / S6 | examples: drm_ioctl, ata_scsi_ioctl, dvb_generic_ioctl inter-module; scsi_ioctl, cdrom_ioctl direct-call only | ('inter_module', 'inter_module', 'inter_module', 'direct_call_only', 'direct_call_only') | ('inter_module', 'inter_module', 'inter_module', 'direct_call_only', 'direct_call_only') |  |
+| OK | S6 | drm_ioctl / ata_scsi_ioctl: files of other modules taking the address | (54, 91) | (54, 91) |  |
 | OK | Table 12 / 5.5 axis 1 | fpea14 = fpea16 on the LLVM 14 bitcode | (129967, 129967) | (129967, 129967) |  |
 | OK | Table 12 / 5.5 axis 1 | differing units / only14 / only16 / label diff / defined diff | (0, 0, 0, 0, 0) | (0, 0, 0, 0, 0) |  |
 | OK | Table 12 / 5.5 axis 1 | units compared | 15522 | 15522 |  |
