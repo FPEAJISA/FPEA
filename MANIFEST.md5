@@ -96,9 +96,9 @@ e74592f65daeed91d4fd6a352c9bef3b  figures/fig2_version_stability.svg
 4d04b1a460fea55f1993099916d8f659  figures/fig4_offset_drift.pdf
 83e26bdbdb6a029c07e2345fd23419c6  figures/fig4_offset_drift.png
 a2fc35db8cb1f8e5a3bb8e6231abae01  figures/fig4_offset_drift.svg
-2c1e65896fcf2dad68912ba348201808  figures/fig5_uafx_kinds.pdf
-8ca00ccb13badc995fc12e6589950354  figures/fig5_uafx_kinds.png
-e7541e8def44a23f6facdc438e099d0c  figures/fig5_uafx_kinds.svg
+c1fe7afc9148f2df36163263d5cd0a47  figures/fig5_uafx_kinds.pdf
+21a5443127c249b0d116bbee6be77776  figures/fig5_uafx_kinds.png
+066c8afa7a6e633c39025a6969b060cf  figures/fig5_uafx_kinds.svg
 8823303ee685b22ee804eb4dbdd6d30a  figures/fig6_subsystem_ratio.pdf
 4b761f5a62952b189971fd7da300e61b  figures/fig6_subsystem_ratio.png
 b14310634bf12d23f044a6da5064fc20  figures/fig6_subsystem_ratio.svg
@@ -143,7 +143,7 @@ ccf5a1abfe41f9a2f55530333940128f  scripts/orig/audit_v23/wl_ext.py
 b958aaa11fbdac9448c947e9d5c3a8a2  scripts/orig/final/final_calc_expert.py
 e82b3cead6c869e093dacf7fe8d23a3a  scripts/orig/final/review_check.py
 f424b8d07183a9fa3cdf1091bba013d3  scripts/orig/final_scripts/fig2.py
-871ae235f33a677328de791e2cadd20c  scripts/orig/final_scripts/fig_all.py
+494461e0d80ca73657d0c0f7ab6acfbc  scripts/orig/final_scripts/fig_all.py
 1727bdf889c934fd4245086943762922  scripts/orig/final_scripts/placeholder_trigger_hdr.py
 e6139094b82458225fcce8ef41c310ce  scripts/orig/final_scripts/placeholder_trigger.py
 43fc6a0cfa4c151e8d378a288bcd5e73  scripts/orig/final_scripts/tca_pilot.py

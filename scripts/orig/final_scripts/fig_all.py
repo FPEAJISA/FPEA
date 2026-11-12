@@ -49,8 +49,8 @@ OFFSET_ROWS = [
 # fig5: UAFX rule kinds, legend labels and colours
 KINDS = ['READ_HDR', 'WRITE_HDR', 'MY_IOCTL', 'IOCTL_CAND', 'INT_HANDLER_T']
 KIND_LABEL = {'READ_HDR': 'READ_HDR (name+index)', 'WRITE_HDR': 'WRITE_HDR (name+index)',
-              'MY_IOCTL': 'MY_IOCTL (name+index)', 'IOCTL_CAND': 'IOCTL_CAND (signature)',
-              'INT_HANDLER_T': 'INT_HANDLER_T (signature)'}
+              'MY_IOCTL': 'MY_IOCTL (name+index)', 'IOCTL_CAND': 'IOCTL_CAND (name heuristic)',
+              'INT_HANDLER_T': 'INT_HANDLER_T (fn-ptr argument)'}
 KIND_COLOR = {'READ_HDR': '#c53030', 'WRITE_HDR': '#dd6b20', 'MY_IOCTL': '#b7791f',
               'IOCTL_CAND': '#718096', 'INT_HANDLER_T': '#2b6cb0'}
 # fig6: overall entry-point share of all drivers (entry points / defined functions)
