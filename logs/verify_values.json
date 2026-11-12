@@ -887,6 +887,9 @@
   6.1,
   6.9
  ],
+ "5.2 / S5|Horvitz-Thompson weight of every sampled negative (both stages SRS)": 476.7,
+ "5.2 / S5|expansion estimate of |N|: N_HT = 15,522/500 * |pool|": 95336,
+ "5.2 / S5|ratio estimator = expansion estimator calibrated to the known |N|: FN_HT * |N| / N_HT": 7991,
  "5.2|expansion estimator FN_S = |pool|/200 * 15": 230,
  "5.2|expansion estimator FN_HT = 15,522/500 * FN_S": 7150,
  "5.2|recall (expansion estimator, sensitivity)": 0.944,
@@ -1048,8 +1051,8 @@
  ],
  "Table 12 / 5.5 axis 1|units compared": 15522,
  "Table S3 heavy|unit-layer WL∖FPEA 987 breakdown (kind|class: n)": {
-  "IOCTL_CAND|defined_not_FPEA": 289,
   "IOCTL_CAND|external_declared": 547,
+  "IOCTL_CAND|defined_not_FPEA": 289,
   "INT_HANDLER_T|external_declared": 151
  },
  "Table 2 auxiliary heavy|C3-only used only by iterator-type APIs": 677,

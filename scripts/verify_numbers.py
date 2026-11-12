@@ -1127,7 +1127,13 @@ def check_audit_v23(ref, pop):
         note='500/15,522 x 200/3,071 (the text says approximately 0.0021)')
     chk('5.2', 'pool density of the selected units vs population (per unit)', (6.1, 6.9),
         (round(rp['pool_total'] / 500, 1), round(106548 / 15522, 1)))
+    chk('5.2 / S5', 'Horvitz-Thompson weight of every sampled negative (both stages SRS)', 476.7,
+        round(15522 / 500 * rp['pool_total'] / 200, 1))
+    chk('5.2 / S5', 'expansion estimate of |N|: N_HT = 15,522/500 * |pool|', 95336,
+        round(15522 / 500 * rp['pool_total']))
     b = res('boot2_results.json')['N_clean']
+    chk('5.2 / S5', 'ratio estimator = expansion estimator calibrated to the known |N|: '
+        'FN_HT * |N| / N_HT', 7991, round(b['FN_ht'] * 106548 / (15522 / 500 * rp['pool_total'])))
     chk('5.2', 'expansion estimator FN_S = |pool|/200 * 15', 230, round(b['FN_S']))
     chk('5.2', 'expansion estimator FN_HT = 15,522/500 * FN_S', 7150, round(b['FN_ht']))
     chk('5.2', 'recall (expansion estimator, sensitivity)', 0.944, r3(b['recall_ht']))

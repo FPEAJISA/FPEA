@@ -107,8 +107,8 @@ b14310634bf12d23f044a6da5064fc20  figures/fig6_subsystem_ratio.svg
 e0c8b816930a5b3d8b8d191059c7d56b  figures/fig7_precision_strata.svg
 71be1b3360393bf3d7a58ccd0af64fa8  .gitignore
 e3beafad44867c50481411642f31ef26  LICENSE
-3f9b263288eb0f5e538e135cf16e1e37  logs/verify_report.md
-5a74bb57aef8da19e1e73f1db50ee59c  logs/verify_values.json
+d3877041e55000653c141a30dedec200  logs/verify_report.md
+7a5efc1b01e277b606fda62589a8d1a9  logs/verify_values.json
 8d99703dbc4ecd5d5c6f9c4985c5917a  out/boot2_results.json
 51f338e66e519927ea4643c20f9e30b6  out/derive_report.md
 838315b4790a4bbf915d36f8bf2656a2  out/fp_types.json
@@ -121,7 +121,7 @@ bdab744bfdc03e87875a301c1ef5624b  out/randstruct_vs_norand_714.json
 59189b69faa46cafaa3db2f2656bb815  out/typed_vs_opaque.json
 b034b9fc99de6be868ae0cf8996348e7  out/version_results.json
 ac2763f85a5ea968b994c080368b5b46  out/wl_ext.json
-df134966c68c50f3c09311db67c8dc18  README.md
+c52081751d836365a9bc0421febf2252  README.md
 5d0b63dc21bf199f10a224c1a75bbaee  run_all.sh
 15850cf8caca0a3bec9b660d16583f89  scripts/build_kernel.sh
 1252805941fca5826a14e6c1feeb7efc  scripts/derive_results.py
@@ -167,7 +167,7 @@ abfabccb384710aa8a04c126485fa2ad  scripts/orig/scratchpad/kind_drift.py
 35ac7496c218a5589737846fbf2d1d9d  scripts/orig/scratchpad/semantic_hit_all.sh
 ae1e4e6490f21560bfaec4ee3f3a1549  scripts/orig/scratchpad/semantic_hit.py
 7baa009abb352dce6e1a9a3d49f401ad  scripts/setup.py
-5ba5747616e12e00527059780a6c40d5  scripts/verify_numbers.py
+8fe6bdcf6bafddafbe6e243e5c15bbab  scripts/verify_numbers.py
 a1068edf216bd59b8bccd66b58c763f3  THIRD_PARTY.md
 37d6ad38cc3d01d36d1672acfc4f315c  tool/build.sh
 01212923a42b9a3b1e7966feb6c36c0c  tool/fpea.cpp
