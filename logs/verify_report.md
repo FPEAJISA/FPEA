@@ -309,7 +309,7 @@
 | OK | 5.2 | conditional inclusion probability 200/|pool(S)| | 0.065 | 0.065 |  |
 | OK | 5.2 | unconditional inclusion probability (approx.) | 0.0021 | 0.0021 | 500/15,522 x 200/3,071 (the text says approximately 0.0021) |
 | OK | 5.2 | pool density of the selected units vs population (per unit) | (6.1, 6.9) | (6.1, 6.9) |  |
-| OK | 5.2 / S5 | Horvitz-Thompson weight of every sampled negative (both stages SRS) | 476.7 | 476.7 |  |
+| OK | 5.2 / S5 | two-phase expansion weight (15,522/500)(|pool|/200), conditional on the realised pool | 476.7 | 476.7 |  |
 | OK | 5.2 / S5 | expansion estimate of |N|: N_HT = 15,522/500 * |pool| | 95336 | 95336 |  |
 | OK | 5.2 / S5 | ratio estimator = expansion estimator calibrated to the known |N|: FN_HT * |N| / N_HT | 7991 | 7991 |  |
 | OK | 5.2 | expansion estimator FN_S = |pool|/200 * 15 | 230 | 230 |  |
@@ -356,7 +356,7 @@
 | OK | Table 12 / 5.5 axis 1 | fpea14 = fpea16 on the LLVM 14 bitcode | (129967, 129967) | (129967, 129967) |  |
 | OK | Table 12 / 5.5 axis 1 | differing units / only14 / only16 / label diff / defined diff | (0, 0, 0, 0, 0) | (0, 0, 0, 0, 0) |  |
 | OK | Table 12 / 5.5 axis 1 | units compared | 15522 | 15522 |  |
-| OK | Table S3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} |  |
+| OK | Table S3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | {'IOCTL_CAND|external_declared': 547, 'INT_HANDLER_T|external_declared': 151, 'IOCTL_CAND|defined_not_FPEA': 289} |  |
 | OK | Table 2 auxiliary heavy | C3-only used only by iterator-type APIs | 677 | 677 | definition: every call taking the address as an argument matches ITER (fp_audit.py regex); the earlier 726 is not reproducible |
 | OK | Table 2 auxiliary | iterator share % | 0.52 | 0.52 |  |
 | OK | 5.10 ath12k | 6.9 mac unit FPEA / C1 in @ath12k_ops | (45, 34) | (45, 34) |  |

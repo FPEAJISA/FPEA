@@ -1127,7 +1127,7 @@ def check_audit_v23(ref, pop):
         note='500/15,522 x 200/3,071 (the text says approximately 0.0021)')
     chk('5.2', 'pool density of the selected units vs population (per unit)', (6.1, 6.9),
         (round(rp['pool_total'] / 500, 1), round(106548 / 15522, 1)))
-    chk('5.2 / S5', 'Horvitz-Thompson weight of every sampled negative (both stages SRS)', 476.7,
+    chk('5.2 / S5', 'two-phase expansion weight (15,522/500)(|pool|/200), conditional on the realised pool', 476.7,
         round(15522 / 500 * rp['pool_total'] / 200, 1))
     chk('5.2 / S5', 'expansion estimate of |N|: N_HT = 15,522/500 * |pool|', 95336,
         round(15522 / 500 * rp['pool_total']))

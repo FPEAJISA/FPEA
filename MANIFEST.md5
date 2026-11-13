@@ -107,8 +107,8 @@ b14310634bf12d23f044a6da5064fc20  figures/fig6_subsystem_ratio.svg
 e0c8b816930a5b3d8b8d191059c7d56b  figures/fig7_precision_strata.svg
 71be1b3360393bf3d7a58ccd0af64fa8  .gitignore
 e3beafad44867c50481411642f31ef26  LICENSE
-d3877041e55000653c141a30dedec200  logs/verify_report.md
-7a5efc1b01e277b606fda62589a8d1a9  logs/verify_values.json
+faee1c9f1a0773729c2d4548fab22261  logs/verify_report.md
+516035bd34b1f46f441853dee665100c  logs/verify_values.json
 8d99703dbc4ecd5d5c6f9c4985c5917a  out/boot2_results.json
 51f338e66e519927ea4643c20f9e30b6  out/derive_report.md
 838315b4790a4bbf915d36f8bf2656a2  out/fp_types.json
@@ -167,7 +167,7 @@ abfabccb384710aa8a04c126485fa2ad  scripts/orig/scratchpad/kind_drift.py
 35ac7496c218a5589737846fbf2d1d9d  scripts/orig/scratchpad/semantic_hit_all.sh
 ae1e4e6490f21560bfaec4ee3f3a1549  scripts/orig/scratchpad/semantic_hit.py
 7baa009abb352dce6e1a9a3d49f401ad  scripts/setup.py
-8fe6bdcf6bafddafbe6e243e5c15bbab  scripts/verify_numbers.py
+755bcf8c4eb956b59bb9bcd5dafd654c  scripts/verify_numbers.py
 a1068edf216bd59b8bccd66b58c763f3  THIRD_PARTY.md
 37d6ad38cc3d01d36d1672acfc4f315c  tool/build.sh
 01212923a42b9a3b1e7966feb6c36c0c  tool/fpea.cpp
