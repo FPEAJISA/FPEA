@@ -458,6 +458,42 @@
  ],
  "Table 11 semantic hit rate formula|7.1.4-norand": 5.79,
  "Table 11|6.9 index-shifted slots": 1133,
+ "Table 11 RANDSTRUCT semantic (recovered permutation)|7.1.4": [
+  9185,
+  2927,
+  2436,
+  26.52,
+  2967,
+  1844
+ ],
+ "Table 11 RANDSTRUCT semantic formula|7.1.4": 26.52,
+ "Table 11 RANDSTRUCT semantic decomposition|file_operations.read at index 2 / non-randomised structs / expected hits / expected %": [
+  2433,
+  3,
+  267.9,
+  2.92
+ ],
+ "Table 11 RANDSTRUCT simple hit agreement|7.1.4 (randperm file)": [
+  11136,
+  6127,
+  55.02
+ ],
+ "Table 11 RANDSTRUCT legacy counters reproduced|7.1.4-norand": [
+  11136,
+  5919,
+  9185,
+  3163,
+  532,
+  4732,
+  3748
+ ],
+ "Table 11 RANDSTRUCT file_operations permutation|paired globals / vote conflicts / read 3->2, write 4->15, unlocked_ioctl 10->31": [
+  2800,
+  0,
+  2,
+  15,
+  31
+ ],
  "Table 9 named/literal|5.17.11 file_operations/LITERAL": [
   2102,
   12
@@ -1051,9 +1087,9 @@
  ],
  "Table 12 / 5.5 axis 1|units compared": 15522,
  "Table S3 heavy|unit-layer WL∖FPEA 987 breakdown (kind|class: n)": {
+  "IOCTL_CAND|defined_not_FPEA": 289,
   "IOCTL_CAND|external_declared": 547,
-  "INT_HANDLER_T|external_declared": 151,
-  "IOCTL_CAND|defined_not_FPEA": 289
+  "INT_HANDLER_T|external_declared": 151
  },
  "Table 2 auxiliary heavy|C3-only used only by iterator-type APIs": 677,
  "Table 2 auxiliary|iterator share %": 0.52,

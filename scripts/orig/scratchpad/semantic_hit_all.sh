@@ -20,4 +20,8 @@ semantic_hit 5.17.11 $H/rerun/nosan/src14/linux-5.17.11 5.17
 semantic_hit 5.19.17 $H/linux_bc/nosan-rb-5.19.17 5.19
 semantic_hit 6.9 $H/linux_bc/nosan-rb-6.9 6.9
 semantic_hit 7.1.4 $H/linux_bc/nosan-rb-7.1.4 rand
+# RANDSTRUCT_FULL semantic hit rate with the per-struct permutation recovered from the IR (pairs the
+# NONE and FULL trees; 2026-11-20) -> $H/fpea_gt/final/semantic_hit_7.1.4-randperm.json
+FPEA_RANDSTRUCT_SEED=${FPEA_DATA:-$H/fpea_gt/fpea_public/data}/randstruct_7.1.4/randstruct.seed \
+  python3 randstruct_semantic.py $H/linux_bc/nosan-rb-7.1.4-norand $H/linux_bc/nosan-rb-7.1.4 >> $LOG 2>&1
 echo ALLDONE >> $LOG

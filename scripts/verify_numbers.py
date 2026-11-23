@@ -787,6 +787,38 @@ def check_hit_rates():
         chk('Table 11 semantic hit rate formula', v, rate, round(sem / wh * 100, 2))
     chk('Table 11', '6.9 index-shifted slots', 1133,
         json.load(open(f'{FIN}/semantic_hit_6.9.json'))['index_moved'])
+    # RANDSTRUCT_FULL semantic hit rate judged with the per-struct permutation recovered from the IR
+    # (scripts/orig/scratchpad/randstruct_semantic.py, 2026-11-20; replaces the former "~0 (by design)")
+    rp = f'{FIN}/semantic_hit_7.1.4-randperm.json'
+    if os.path.exists(rp):
+        s = json.load(open(rp))
+        chk('Table 11 RANDSTRUCT semantic (recovered permutation)', '7.1.4',
+            (9185, 2927, 2436, 26.52, 2967, 1844),
+            (s['with_header'], s['index_same'], s['semantic_hit'], s['rate_semantic_within_header'],
+             s['wrong_field_fn'], s['intended_missed']))
+        chk('Table 11 RANDSTRUCT semantic formula', '7.1.4', 26.52, round(2436 / 9185 * 100, 2))
+        chk('Table 11 RANDSTRUCT semantic decomposition',
+            'file_operations.read at index 2 / non-randomised structs / expected hits / expected %',
+            (2433, 3, 267.9, 2.92),
+            (s['hits_from_file_operations_read'], s['hits_from_non_randomised_structs'],
+             s['expected_semantic_hits_uniform_perm'], s['expected_rate_uniform_perm_pct']))
+        chk('Table 11 RANDSTRUCT simple hit agreement', '7.1.4 (randperm file)', (11136, 6127, 55.02),
+            (s['designated'], s['has_fn'], s['rate_has_fn']))
+        chk('Table 11 RANDSTRUCT legacy counters reproduced', '7.1.4-norand',
+            (11136, 5919, 9185, 3163, 532, 4732, 3748),
+            tuple(s['legacy_counters']['7.1.4-norand (header 7.1)'][k] for k in
+                  ('designated', 'has_fn', 'with_header', 'index_same', 'semantic_hit',
+                   'wrong_field_fn', 'intended_missed')))
+        pr = s['permutation_report']['struct.file_operations']
+        chk('Table 11 RANDSTRUCT file_operations permutation',
+            'paired globals / vote conflicts / read 3->2, write 4->15, unlocked_ioctl 10->31',
+            (2800, 0, 2, 15, 31),
+            (pr['paired'], pr['conflicts'], s['permutation']['struct.file_operations']['3'],
+             s['permutation']['struct.file_operations']['4'],
+             s['permutation']['struct.file_operations']['10']))
+    else:
+        info('Table 11 RANDSTRUCT semantic', 'semantic_hit_7.1.4-randperm.json missing', None,
+             'run scripts/orig/scratchpad/randstruct_semantic.py (needs both 7.1.4 bitcode trees)')
 
 
 # ---------------------------------------------------------------- 7. named/literal, placeholder

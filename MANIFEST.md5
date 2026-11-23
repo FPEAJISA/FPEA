@@ -71,6 +71,7 @@ b2fc8897e6a00d20527638f0371463aa  data/results/review_check.json
 c0f7c97f4d089463456154db87bd5034  data/results/semantic_hit_6.9.json
 0a9a247d52a91aa1c9d5daf3e701d027  data/results/semantic_hit_7.1.4.json
 d9fa12ed0c4c63f2401e704d9484ee93  data/results/semantic_hit_7.1.4-norand.json
+587543d2b74f5836a079757cfb245230  data/results/semantic_hit_7.1.4-randperm.json
 0f738b33b1118fae2dc3179a2e85b07d  data/results/strata_pop.json
 15bdb7ebc941c85f6c855d9c71a07e49  data/results/subsystem_ratio.json
 66aee455733c6596bdfeea0e7f2c95ad  data/results/tca_pilot.log
@@ -107,8 +108,8 @@ b14310634bf12d23f044a6da5064fc20  figures/fig6_subsystem_ratio.svg
 e0c8b816930a5b3d8b8d191059c7d56b  figures/fig7_precision_strata.svg
 71be1b3360393bf3d7a58ccd0af64fa8  .gitignore
 e3beafad44867c50481411642f31ef26  LICENSE
-faee1c9f1a0773729c2d4548fab22261  logs/verify_report.md
-516035bd34b1f46f441853dee665100c  logs/verify_values.json
+9bdc23134d44334c2293727b0bf06fb6  logs/verify_report.md
+e522502fab4695a33384d26706c1add0  logs/verify_values.json
 8d99703dbc4ecd5d5c6f9c4985c5917a  out/boot2_results.json
 51f338e66e519927ea4643c20f9e30b6  out/derive_report.md
 838315b4790a4bbf915d36f8bf2656a2  out/fp_types.json
@@ -142,7 +143,7 @@ ccf5a1abfe41f9a2f55530333940128f  scripts/orig/audit_v23/wl_ext.py
 69666b284379b65ac8093cdadc809efc  scripts/orig/epi_regfn/struct_drift_full.py
 b958aaa11fbdac9448c947e9d5c3a8a2  scripts/orig/final/final_calc_expert.py
 e82b3cead6c869e093dacf7fe8d23a3a  scripts/orig/final/review_check.py
-f424b8d07183a9fa3cdf1091bba013d3  scripts/orig/final_scripts/fig2.py
+743ade91c10d6c958a5a5f106e0c6db1  scripts/orig/final_scripts/fig2.py
 494461e0d80ca73657d0c0f7ab6acfbc  scripts/orig/final_scripts/fig_all.py
 1727bdf889c934fd4245086943762922  scripts/orig/final_scripts/placeholder_trigger_hdr.py
 e6139094b82458225fcce8ef41c310ce  scripts/orig/final_scripts/placeholder_trigger.py
@@ -164,10 +165,11 @@ a7ba42368d1ca4683e9a64d2302deb7d  scripts/orig/nosan/fp_audit.py
 abfabccb384710aa8a04c126485fa2ad  scripts/orig/scratchpad/kind_drift.py
 4cbf588243f0ad5c29d857a52099daa7  scripts/orig/scratchpad/literal_struct_scan.sh
 9d955b6694268c81d402c61966a40396  scripts/orig/scratchpad/placeholder_scan.sh
-35ac7496c218a5589737846fbf2d1d9d  scripts/orig/scratchpad/semantic_hit_all.sh
+a2360789d061280d89a19292f793a64d  scripts/orig/scratchpad/randstruct_semantic.py
+3a3b657f2376687b0f74864bf4f5a7d2  scripts/orig/scratchpad/semantic_hit_all.sh
 ae1e4e6490f21560bfaec4ee3f3a1549  scripts/orig/scratchpad/semantic_hit.py
 7baa009abb352dce6e1a9a3d49f401ad  scripts/setup.py
-755bcf8c4eb956b59bb9bcd5dafd654c  scripts/verify_numbers.py
+7bec1a8c852d1dfc8f4f597a91236f38  scripts/verify_numbers.py
 a1068edf216bd59b8bccd66b58c763f3  THIRD_PARTY.md
 37d6ad38cc3d01d36d1672acfc4f315c  tool/build.sh
 01212923a42b9a3b1e7966feb6c36c0c  tool/fpea.cpp
