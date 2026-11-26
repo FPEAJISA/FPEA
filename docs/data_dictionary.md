@@ -78,3 +78,22 @@ In derived files the suffix `(adjudicated)` marks a rule taken from the adjudica
 | `typed_mode_cmp.json` | `typed_cmp_unit.py` | fpea14 vs fpea16 on the same LLVM 14 bitcode (`data/fpea_out/rf14_5.17.11` vs `rf_5.17.11`): 129,967 = 129,967, 0 differing units, 0 label differences |
 
 Correction recorded here: the first decomposition of the 698 external pairs (2026-11-09, used in manuscript v2.2/v2.3) read a symbol map whose parallel writers had interleaved 1,440 lines; it reported 355 external names / 348 in `drivers/` / 7 outside / 339 missed / 301 recovered. The clean map gives 359 / 355 / 4 / 346 (of which 4 are static-call trampolines) / 304. The 289 defined-in-unit figures (25 / 264 / 224 / 40) and the link-layer residual (row sums 38 + 40 = 78; 68 by name) are unchanged.
+
+## RANDSTRUCT_FULL semantic hit rate (`data/results/semantic_hit_7.1.4-randperm.json`, written by `scripts/orig/scratchpad/randstruct_semantic.py`, 2026-11-20)
+
+Under `CONFIG_RANDSTRUCT_FULL` the header field order no longer describes the IR, so the semantic hit rate of the UAFX name + index rules (Table 5 / Supplementary Table S11, row "7.1.4 RANDSTRUCT") cannot be judged against `data/epi/handler_offset.json`. The script pairs the same-named rule-struct globals of the `7.1.4-norand` (`RANDSTRUCT_NONE`) and `7.1.4` (`RANDSTRUCT_FULL`) bitcode trees (19,649 drivers/ units each), votes a field permutation per struct from the initializer values that are unique on both sides, and re-evaluates every rule slot against the permuted layout. It is run by `semantic_hit_all.sh` after the `7.1.4 rand` pass and needs both trees and the seed file `data/randstruct_7.1.4/randstruct.seed` (`FPEA_RANDSTRUCT_SEED`).
+
+| key | content |
+|---|---|
+| `units`, `designated`, `has_fn`, `rate_has_fn` | 19,649 units; 11,136 named rule-struct slots; 6,127 with a function at the rule index (simple hit rate 55.02 %, identical to `semantic_hit_7.1.4.json`) |
+| `with_header`, `index_same`, `semantic_hit`, `rate_semantic_within_header` | 9,185 slots of the 8 header-parsable structs; 2,927 whose intended field is still at the rule index after the permutation; 2,436 of those hold a function (26.52 %) |
+| `index_moved`, `wrong_field_fn`, `intended_missed` | 6,258 slots whose intended field moved; 2,967 slots where the rule index now holds a different handler; 1,844 intended handlers that the rule misses |
+| `hits_from_file_operations_read`, `hits_from_non_randomised_structs` | 2,433 hits are `file_operations.read`, which this seed permuted onto index 2 (the 5.17-based rule index); 3 hits come from structs that RANDSTRUCT does not permute (`watchdog_ops` 1, `proto_ops` 2) |
+| `expected_semantic_hits_uniform_perm`, `expected_rate_uniform_perm_pct` | 267.9 hits (2.92 %) expected if the permuted structs were permuted uniformly at random |
+| `permutation`, `permutation_report` | NONE → FULL field index map per struct (`file_operations`: owner 0→7, fop_flags 1→20, llseek 2→29, read 3→2, write 4→15, unlocked_ioctl 10→31, compat_ioctl 11→21, open 13→10, release 15→19); paired globals 4,489 per tree, 0 conflicting votes |
+| `layout_note` | which rule structs RANDSTRUCT permutes (`file_operations`, `tty_operations`, `rtc_class_ops`, `snd_pcm_ops`: all members function pointers or `__randomize_layout`) and which it leaves in header order because they hold a non-function-pointer member (`net_device_ops`, `watchdog_ops`, `block_device_operations`, `proto_ops`) |
+| `per_rule` | keyed `struct:index:rule` (e.g. `file_operations:3:WRITE_HDR`): `slots`, `has_fn`, `index_same` / `semantic_hit` or `wrong_field_fn` / `intended_missed` (`intended_field_absent` when the header field has no IR counterpart); e.g. the write rule (index 3) points to a field no initializer sets (0 functions, 1,110 intended writes missed) and the unlocked_ioctl rule (index 10) points to `open` (2,630 wrong handlers) |
+| `legacy_counters` | the counters of `semantic_hit.py` for `7.1.4-norand` (11,136 / 5,919 / 9,185 / 3,163 / 532 / 4,732 / 3,748) and `7.1.4` (11,136 / 6,127), reproduced by this script |
+| `randstruct_seed` | the seed of the measured build (`data/randstruct_7.1.4/randstruct.seed`) |
+
+The manuscript rows that previously read "≈0 (by design)" for this build are replaced by 26.52 % with this decomposition; `scripts/verify_numbers.py` checks the six numbers above ("Table 11 RANDSTRUCT ..." rows, INFO when the file is absent) and `fig2.py` plots the rate as the RANDSTRUCT_FULL marker of Fig. 2.

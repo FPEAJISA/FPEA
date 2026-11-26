@@ -267,7 +267,7 @@ analyses(){
   (cd $EPID && python3 handler_offset.py > handler_offset.log 2>&1) \
     || fail "3-2a handler_offset.py ($EPID/handler_offset.log) — the 3-2 semantic hit rate would be empty"
 
-  say "   3-2 semantic hit rate, named/literal, placeholder units, version aggregation, per-kind loss"
+  say "   3-2 semantic hit rate (incl. the RANDSTRUCT_FULL rate under the recovered field permutation, randstruct_semantic.py), named/literal, placeholder units, version aggregation, per-kind loss"
   (
     cd $SPD \
       && bash semantic_hit_all.sh \
