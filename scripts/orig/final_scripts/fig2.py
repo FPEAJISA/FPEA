@@ -78,7 +78,7 @@ def draw_hit_rate(b, semantic, simple, rand, rand_sem):
     b.plot(list(x), simple, 's--', color='#a0aec0', lw=1.1, ms=3.5,
            label='Naive hit rate\n(any function at index)')
     b.scatter([3.18], [rand_sem], marker='x', color='#c53030', s=35, zorder=5)
-    b.annotate('RANDSTRUCT_FULL build (7.1.4):\nsemantic %.1f%% for this seed\n(read landed on index 2 by chance;\nexpected 2.9%%), naive %.0f%%'
+    b.annotate('RANDSTRUCT_FULL build (7.1.4):\nsemantic %.1f%% for this seed\n(read landed on its rule index, a 1/34\nchance; expected 1.4%%), naive %.0f%%'
                % (rand_sem, rand), (3.18, rand_sem), xytext=(-0.1, 3), fontsize=6.3, color='#c53030',
                arrowprops=dict(arrowstyle='-', color='#c53030', lw=0.8, shrinkB=3))
     for i, s in enumerate(semantic):

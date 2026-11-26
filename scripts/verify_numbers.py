@@ -798,10 +798,12 @@ def check_hit_rates():
              s['wrong_field_fn'], s['intended_missed']))
         chk('Table 11 RANDSTRUCT semantic formula', '7.1.4', 26.52, round(2436 / 9185 * 100, 2))
         chk('Table 11 RANDSTRUCT semantic decomposition',
-            'file_operations.read at index 2 / non-randomised structs / expected hits / expected %',
-            (2433, 3, 267.9, 2.92),
+            'file_operations.read at index 2 / non-randomised structs / expected hits / expected % (uniform permutation; a hit needs the intended field set)',
+            (2433, 3, 132.6, 1.44),
             (s['hits_from_file_operations_read'], s['hits_from_non_randomised_structs'],
              s['expected_semantic_hits_uniform_perm'], s['expected_rate_uniform_perm_pct']))
+        chk('Table 11 RANDSTRUCT semantic decomposition', 'P(read lands on its rule index) = 1/34 (%)',
+            2.94, round(100 * s['p_read_on_rule_index'], 2))
         chk('Table 11 RANDSTRUCT simple hit agreement', '7.1.4 (randperm file)', (11136, 6127, 55.02),
             (s['designated'], s['has_fn'], s['rate_has_fn']))
         chk('Table 11 RANDSTRUCT legacy counters reproduced', '7.1.4-norand',
@@ -817,8 +819,9 @@ def check_hit_rates():
              s['permutation']['struct.file_operations']['4'],
              s['permutation']['struct.file_operations']['10']))
     else:
-        info('Table 11 RANDSTRUCT semantic', 'semantic_hit_7.1.4-randperm.json missing', None,
-             'run scripts/orig/scratchpad/randstruct_semantic.py (needs both 7.1.4 bitcode trees)')
+        chk('Table 11 RANDSTRUCT semantic', 'semantic_hit_7.1.4-randperm.json present', True, False,
+            note='re-run stage 3-2 (semantic_hit_all.sh -> randstruct_semantic.py, needs both 7.1.4 bitcode trees) '
+                 'after pulling 4f6bd39 or later')
 
 
 # ---------------------------------------------------------------- 7. named/literal, placeholder

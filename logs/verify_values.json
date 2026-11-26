@@ -467,12 +467,13 @@
   1844
  ],
  "Table 11 RANDSTRUCT semantic formula|7.1.4": 26.52,
- "Table 11 RANDSTRUCT semantic decomposition|file_operations.read at index 2 / non-randomised structs / expected hits / expected %": [
+ "Table 11 RANDSTRUCT semantic decomposition|file_operations.read at index 2 / non-randomised structs / expected hits / expected % (uniform permutation; a hit needs the intended field set)": [
   2433,
   3,
-  267.9,
-  2.92
+  132.6,
+  1.44
  ],
+ "Table 11 RANDSTRUCT semantic decomposition|P(read lands on its rule index) = 1/34 (%)": 2.94,
  "Table 11 RANDSTRUCT simple hit agreement|7.1.4 (randperm file)": [
   11136,
   6127,
@@ -1087,9 +1088,9 @@
  ],
  "Table 12 / 5.5 axis 1|units compared": 15522,
  "Table S3 heavy|unit-layer WL∖FPEA 987 breakdown (kind|class: n)": {
-  "IOCTL_CAND|defined_not_FPEA": 289,
   "IOCTL_CAND|external_declared": 547,
-  "INT_HANDLER_T|external_declared": 151
+  "INT_HANDLER_T|external_declared": 151,
+  "IOCTL_CAND|defined_not_FPEA": 289
  },
  "Table 2 auxiliary heavy|C3-only used only by iterator-type APIs": 677,
  "Table 2 auxiliary|iterator share %": 0.52,

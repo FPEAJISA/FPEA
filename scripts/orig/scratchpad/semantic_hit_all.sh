@@ -3,6 +3,7 @@
 # layout build 7.1.4 uses 'rand'), appending all output to $S/semantic_hit.log.
 # roots of the original measurement layout (set by env.sh: FPEA_HOME, FPEA_TMP, FPEA_WORK; on the
 # measurement server they were the home directory, /tmp and the session scratchpad)
+set -eo pipefail   # a failing semantic_hit.py / randstruct_semantic.py must fail this script (run_all.sh 3-2 checks the exit code)
 H=${FPEA_HOME:-$HOME}
 T=${FPEA_TMP:-/tmp}
 S=${FPEA_WORK:-$T/scratchpad}
@@ -24,4 +25,7 @@ semantic_hit 7.1.4 $H/linux_bc/nosan-rb-7.1.4 rand
 # NONE and FULL trees; 2026-11-20) -> $H/fpea_gt/final/semantic_hit_7.1.4-randperm.json
 FPEA_RANDSTRUCT_SEED=${FPEA_DATA:-$H/fpea_gt/fpea_public/data}/randstruct_7.1.4/randstruct.seed \
   python3 randstruct_semantic.py $H/linux_bc/nosan-rb-7.1.4-norand $H/linux_bc/nosan-rb-7.1.4 >> $LOG 2>&1
+for f in semantic_hit_7.1.4-norand semantic_hit_5.17.11 semantic_hit_5.19.17 semantic_hit_6.9 semantic_hit_7.1.4 semantic_hit_7.1.4-randperm; do
+  [ -s $H/fpea_gt/final/$f.json ] || { echo "ERROR: $H/fpea_gt/final/$f.json missing or empty" >> $LOG; exit 1; }
+done
 echo ALLDONE >> $LOG

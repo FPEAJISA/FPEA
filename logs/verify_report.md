@@ -1,6 +1,6 @@
 # Numeric verification report (verify_numbers.py)
 
-- checks 357: OK 357, MISMATCH 0, INFO 8
+- checks 358: OK 358, MISMATCH 0, INFO 8
 
 ## All checks
 
@@ -191,7 +191,8 @@
 | OK | Table 11 | 6.9 index-shifted slots | 1133 | 1133 |  |
 | OK | Table 11 RANDSTRUCT semantic (recovered permutation) | 7.1.4 | (9185, 2927, 2436, 26.52, 2967, 1844) | (9185, 2927, 2436, 26.52, 2967, 1844) |  |
 | OK | Table 11 RANDSTRUCT semantic formula | 7.1.4 | 26.52 | 26.52 |  |
-| OK | Table 11 RANDSTRUCT semantic decomposition | file_operations.read at index 2 / non-randomised structs / expected hits / expected % | (2433, 3, 267.9, 2.92) | (2433, 3, 267.9, 2.92) |  |
+| OK | Table 11 RANDSTRUCT semantic decomposition | file_operations.read at index 2 / non-randomised structs / expected hits / expected % (uniform permutation; a hit needs the intended field set) | (2433, 3, 132.6, 1.44) | (2433, 3, 132.6, 1.44) |  |
+| OK | Table 11 RANDSTRUCT semantic decomposition | P(read lands on its rule index) = 1/34 (%) | 2.94 | 2.94 |  |
 | OK | Table 11 RANDSTRUCT simple hit agreement | 7.1.4 (randperm file) | (11136, 6127, 55.02) | (11136, 6127, 55.02) |  |
 | OK | Table 11 RANDSTRUCT legacy counters reproduced | 7.1.4-norand | (11136, 5919, 9185, 3163, 532, 4732, 3748) | (11136, 5919, 9185, 3163, 532, 4732, 3748) |  |
 | OK | Table 11 RANDSTRUCT file_operations permutation | paired globals / vote conflicts / read 3->2, write 4->15, unlocked_ioctl 10->31 | (2800, 0, 2, 15, 31) | (2800, 0, 2, 15, 31) |  |
@@ -362,7 +363,7 @@
 | OK | Table 12 / 5.5 axis 1 | fpea14 = fpea16 on the LLVM 14 bitcode | (129967, 129967) | (129967, 129967) |  |
 | OK | Table 12 / 5.5 axis 1 | differing units / only14 / only16 / label diff / defined diff | (0, 0, 0, 0, 0) | (0, 0, 0, 0, 0) |  |
 | OK | Table 12 / 5.5 axis 1 | units compared | 15522 | 15522 |  |
-| OK | Table S3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | {'IOCTL_CAND|defined_not_FPEA': 289, 'IOCTL_CAND|external_declared': 547, 'INT_HANDLER_T|external_declared': 151} |  |
+| OK | Table S3 heavy | unit-layer WL∖FPEA 987 breakdown (kind|class: n) | {'IOCTL_CAND|external_declared': 547, 'IOCTL_CAND|defined_not_FPEA': 289, 'INT_HANDLER_T|external_declared': 151} | {'IOCTL_CAND|external_declared': 547, 'INT_HANDLER_T|external_declared': 151, 'IOCTL_CAND|defined_not_FPEA': 289} |  |
 | OK | Table 2 auxiliary heavy | C3-only used only by iterator-type APIs | 677 | 677 | definition: every call taking the address as an argument matches ITER (fp_audit.py regex); the earlier 726 is not reproducible |
 | OK | Table 2 auxiliary | iterator share % | 0.52 | 0.52 |  |
 | OK | 5.10 ath12k | 6.9 mac unit FPEA / C1 in @ath12k_ops | (45, 34) | (45, 34) |  |

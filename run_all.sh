@@ -276,6 +276,9 @@ analyses(){
       && python3 aggregate_versions.py \
       && python3 kind_drift.py
   ) > $L/analyses_sp.log 2>&1 || fail "3-2 semantic hit / literal struct / placeholder / aggregate_versions / kind_drift ($L/analyses_sp.log)"
+  for j in semantic_hit_7.1.4-norand semantic_hit_5.17.11 semantic_hit_5.19.17 semantic_hit_6.9 semantic_hit_7.1.4 semantic_hit_7.1.4-randperm; do
+    [ -s $FIN/$j.json ] || fail "3-2 $FIN/$j.json missing — semantic_hit_all.sh did not produce it (see $SPD/semantic_hit.log)"
+  done
   lit16_scan $FPEA_OUT/list_nosan16.txt $SPD/lit16_nosan16-5.17.11.txt
   lit16_scan $FPEA_OUT/list_7.1.4-norand.txt $SPD/lit16_7.1.4-norand.txt
   lit16_scan $FPEA_OUT/list_7.1.4.txt $SPD/lit16s_7.1.4.txt

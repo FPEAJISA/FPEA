@@ -16,8 +16,13 @@ FPEA_BC_714N / FPEA_BC_714, else $FPEA_HOME/linux_bc/nosan-rb-7.1.4{-norand,}). 
 line and writes $FPEA_HOME/fpea_gt/final/semantic_hit_7.1.4-randperm.json.  Measured 2026-11-20
 (seed data/randstruct_7.1.4/randstruct.seed): semantic hit 2,436 / 9,185 = 26.52%, of which 2,433
 come from file_operations.read being permuted to index 2 (= the 5.17 rule index) and 3 from
-structs that RANDSTRUCT_FULL does not randomise (watchdog_ops, proto_ops); the expectation under a
-uniform permutation of the randomised structs is 267.9 hits (2.92%).
+structs that RANDSTRUCT_FULL does not randomise (watchdog_ops, proto_ops).  The expected number of
+semantic hits under a uniform permutation of the randomised structs is sum over slots of
+[intended field holds a function] / n_fields (+ the hits of the non-randomised structs) = 132.6
+(1.44%); the probability of the single coincidence that produced the measured value, read landing
+on index 2 of the 34-field file_operations, is 1/34 = 2.9%.  (The 2026-11-20 run reported 267.9 /
+2.92%, which was the expected number of index-preserving slots, not of semantic hits; corrected
+2026-11-26.)
 """
 import json
 import os
@@ -180,7 +185,10 @@ def rand_semantic(full, perm):
                 intended = H[name]['5.17'][i] if i < len(H[name]['5.17']) else None
                 j = H[name]['7.1'].index(intended) if (intended and intended in H[name]['7.1']) else None
                 ir = p.get(j) if j is not None else None
-                if ir is not None and randomised:
+                # expected semantic hits under a uniform permutation: the intended field lands on
+                # the rule index with probability 1/n, and it is a hit only if that field holds a
+                # function in this initializer (fields[ir] is the intended field after the permutation)
+                if ir is not None and randomised and ir < len(fields) and FN_REF_RE.search(fields[ir]):
                     exp_hits += 1.0 / len(fields)
                 if ir == i:
                     r['index_same'] += 1
@@ -203,6 +211,9 @@ def rand_semantic(full, perm):
     r['hits_from_file_operations_read'] = per_rule['file_operations:2:READ_HDR'].get('semantic_hit', 0)
     r['expected_semantic_hits_uniform_perm'] = round(exp_hits + r.get('hits_from_non_randomised_structs', 0), 1)
     r['expected_rate_uniform_perm_pct'] = round(100 * r['expected_semantic_hits_uniform_perm'] / r['with_header'], 2)
+    # probability of the coincidence behind the measured value: read landing on its rule index
+    nf = _PERM_REPORT.get('struct.file_operations', {}).get('nfield')
+    r['p_read_on_rule_index'] = round(1.0 / nf, 4) if nf else None
     return r, {k: dict(v) for k, v in per_rule.items()}
 
 

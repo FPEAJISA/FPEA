@@ -7,27 +7,28 @@
  "no_header": 1951,
  "rate_has_fn": 55.02,
  "with_header": 9185,
- "index_same": 2927,
- "semantic_hit": 2436,
  "index_moved": 6258,
  "wrong_field_fn": 2967,
  "intended_missed": 1844,
+ "index_same": 2927,
+ "semantic_hit": 2436,
  "hits_from_non_randomised_structs": 3,
  "rate_semantic_within_header": 26.52,
  "hits_from_file_operations_read": 2433,
- "expected_semantic_hits_uniform_perm": 267.9,
- "expected_rate_uniform_perm_pct": 2.92,
+ "expected_semantic_hits_uniform_perm": 132.6,
+ "expected_rate_uniform_perm_pct": 1.44,
+ "p_read_on_rule_index": 0.0294,
  "randstruct_seed": "34da3c68d48067220ecd9b00fad084d8649a0dd2a44efe1d055c5acd984b7bb1",
  "legacy_counters": {
   "7.1.4-norand (header 7.1)": {
    "designated": 11136,
    "has_fn": 5919,
    "with_header": 9185,
+   "index_same": 3163,
+   "semantic_hit": 532,
    "index_moved": 6022,
    "wrong_field_fn": 4732,
    "intended_missed": 3748,
-   "index_same": 3163,
-   "semantic_hit": 532,
    "no_header": 1951
   },
   "7.1.4 (header rand)": {
@@ -47,19 +48,19 @@
   "proto_ops": "not randomised (family, owner)"
  },
  "permutation_report": {
-  "struct.file_operations": {
-   "nfield": 34,
-   "paired": 2800,
-   "resolved": 23,
+  "struct.rtc_class_ops": {
+   "nfield": 11,
+   "paired": 167,
+   "resolved": 11,
    "conflicts": 0,
    "injective": true,
    "identity": false,
    "len_mismatch": 0
   },
-  "struct.rtc_class_ops": {
-   "nfield": 11,
-   "paired": 167,
-   "resolved": 11,
+  "struct.file_operations": {
+   "nfield": 34,
+   "paired": 2800,
+   "resolved": 23,
    "conflicts": 0,
    "injective": true,
    "identity": false,
@@ -283,6 +284,19 @@
   }
  },
  "permutation": {
+  "struct.rtc_class_ops": {
+   "0": 8,
+   "1": 9,
+   "2": 10,
+   "3": 4,
+   "4": 5,
+   "5": 1,
+   "6": 6,
+   "7": 7,
+   "8": 2,
+   "9": 3,
+   "10": 0
+  },
   "struct.file_operations": {
    "0": 7,
    "1": 20,
@@ -307,19 +321,6 @@
    "31": 30,
    "32": 4,
    "33": 1
-  },
-  "struct.rtc_class_ops": {
-   "0": 8,
-   "1": 9,
-   "2": 10,
-   "3": 4,
-   "4": 5,
-   "5": 1,
-   "6": 6,
-   "7": 7,
-   "8": 2,
-   "9": 3,
-   "10": 0
   },
   "struct.tty_ldisc_ops": {
    "0": 0,
@@ -761,6 +762,12 @@
   }
  },
  "per_rule": {
+  "rtc_class_ops:2:IOCTL_HDR": {
+   "slots": 167,
+   "has_fn": 16,
+   "wrong_field_fn": 16,
+   "intended_missed": 161
+  },
   "file_operations:2:READ_HDR": {
    "slots": 2800,
    "has_fn": 2433,
@@ -778,12 +785,6 @@
    "has_fn": 2630,
    "wrong_field_fn": 2630,
    "intended_missed": 330
-  },
-  "rtc_class_ops:2:IOCTL_HDR": {
-   "slots": 167,
-   "has_fn": 16,
-   "wrong_field_fn": 16,
-   "intended_missed": 161
   },
   "block_device_operations:3:IOCTL_HDR": {
    "slots": 31,
