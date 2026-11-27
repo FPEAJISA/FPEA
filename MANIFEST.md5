@@ -83,7 +83,7 @@ f351b1aa928ec1fe51cad56298741452  data/results/uaf_subset_unit.json
 b034b9fc99de6be868ae0cf8996348e7  data/results/version_results.json
 ac2763f85a5ea968b994c080368b5b46  data/results/wl_ext.json
 7cb2432e757a0fb7cddc7155225c13f1  data/results/wl_only.json
-ec3ac633e80078acb6921ce7e78bfd1c  docs/data_dictionary.md
+47bd33a3ad90ca8ad557d19ddf5a545f  docs/data_dictionary.md
 be2ffe37a9e6957ac5b19948620aad75  env.sh
 0d56ccd048b2b75d8a95c277d35f462d  figures/fig1_overview.pdf
 04522a02a8e7670391733d472feb2dcc  figures/fig1_overview.png
@@ -122,7 +122,7 @@ bdab744bfdc03e87875a301c1ef5624b  out/randstruct_vs_norand_714.json
 59189b69faa46cafaa3db2f2656bb815  out/typed_vs_opaque.json
 b034b9fc99de6be868ae0cf8996348e7  out/version_results.json
 ac2763f85a5ea968b994c080368b5b46  out/wl_ext.json
-a31d87fb2930d922d603caa175b4f6dc  README.md
+3f57a673506cbc83a68015523917eaa5  README.md
 64769eefdbf9e6d1e797bb61267fa4db  run_all.sh
 15850cf8caca0a3bec9b660d16583f89  scripts/build_kernel.sh
 1252805941fca5826a14e6c1feeb7efc  scripts/derive_results.py
